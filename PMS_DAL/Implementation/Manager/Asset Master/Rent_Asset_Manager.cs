@@ -87,6 +87,17 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             return data;
         }
 
+        public async Task<DataTable> Mr_Asset_Rent_Select(string AsstNo)
+
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Rent_View", _dg_Asst_Mgt);
+
+            return data;
+        }
+
+
+
+
 
 
         public async Task<string> Rent_Asset_Save(List<Rent_Asset_Model> Asst_Rent)

@@ -93,6 +93,15 @@ namespace PMS_API.Controllers
 
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Mr_Asset_Rent_Select(string AsstNo)
+        {
+            var data = await _globalMaster.rent_Asset.Mr_Asset_Rent_Select(AsstNo);
+
+            return Ok(data);
+
+        }
+
         [HttpPost]
         public async Task<IActionResult> Rent_Asset_Save(List<Rent_Asset_Model> Asst_Rent)
         {

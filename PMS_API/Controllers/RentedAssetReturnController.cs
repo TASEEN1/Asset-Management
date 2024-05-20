@@ -53,7 +53,7 @@ namespace PMS_API.Controllers
         }
 
         //post
-        [HttpPost]
+        [HttpPut]
         public async Task<IActionResult> PutAssetRent(List<AssetRentComplete> put_asset_rent)
         {
             var data = await _globalMaster.rentedAssetReturnManager.PutAssetRent(put_asset_rent);
