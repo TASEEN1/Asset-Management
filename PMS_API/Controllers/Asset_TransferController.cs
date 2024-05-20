@@ -21,5 +21,14 @@ namespace PMS_API.Controllers
             var data= _globalMaster.asset_TransferManager.Get_Company_CH();
             return Ok(data);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> BindFloor(int ComID)
+        {
+            var data= _globalMaster.asset_TransferManager.BindFloor(ComID);
+            return Ok(data);
+
+
+        }
     }
 }

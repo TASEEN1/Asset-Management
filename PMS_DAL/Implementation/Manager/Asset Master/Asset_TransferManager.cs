@@ -3,9 +3,11 @@ using PMS_BLL.Interfaces.Manager.AssetMaster;
 using PMS_BLL.Utility;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,5 +35,11 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             var data = await _SqlCommon.get_InformationDataTableAsync("SELECT DISTINCT dbo.Smt_Company.nCompanyID, dbo.Smt_Company.cCmpName FROM dbo.Smt_StyleMaster INNER JOIN dbo.Smt_Company ON dbo.Smt_StyleMaster.cCmp = dbo.Smt_Company.nCompanyID where ConfirmStatus='CONF' order by cCmpName",_specfo_conn);
             return data;
         }
+        public async Task<DataTable> BindFloor( int ComID)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("SELECT nFloor, cFloor_Descriptin from Smt_Floor where CompanyID = '"+ ComID + "' Order by cFloor_Descriptin ",_specfo_conn);
+            return data;
+        }
+        
     }
 }
