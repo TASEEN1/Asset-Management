@@ -87,13 +87,23 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             return data;
         }
 
-        public async Task<DataTable> Mr_Asset_Rent_Select(string AsstNo)
+        public async Task<DataTable> GetAssetRentSelectView( )
 
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Rent_View", _dg_Asst_Mgt);
 
             return data;
         }
+        public async Task<DataTable> GetAssetRentSelect(string AssetNO)
+
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Rent_Select '"+ AssetNO + "'" , _dg_Asst_Mgt);
+
+            return data;
+        }
+
+
+
 
 
 

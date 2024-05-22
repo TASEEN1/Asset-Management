@@ -94,13 +94,23 @@ namespace PMS_API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Mr_Asset_Rent_Select(string AsstNo)
+        public async Task<IActionResult> GetAssetRentSelectView()
         {
-            var data = await _globalMaster.rent_Asset.Mr_Asset_Rent_Select(AsstNo);
+            var data = await _globalMaster.rent_Asset.GetAssetRentSelectView();
 
             return Ok(data);
 
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAssetRentSelect( string AssetNO)
+        {
+            var data = await _globalMaster.rent_Asset.GetAssetRentSelect(AssetNO);
+
+            return Ok(data);
+
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> Rent_Asset_Save(List<Rent_Asset_Model> Asst_Rent)

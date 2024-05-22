@@ -19,7 +19,11 @@ namespace PMS_BLL.Interfaces.Manager.AssetMaster
         public Task<DataTable> EGet_Asst_No(int ComID);
 
         public Task<string> Internal_Transfer_Save(List<Asset_Transfer_Model> App);
-        public Task<DataTable> Internal_Transfer_View(int ComID , string UID);
+        public Task<string> External_Transfer_Save(List<Asset_Transfer_Model> App);
+        public Task<DataTable> GetInternalTransferAddView( int ComID , string InputUser);
+        public Task<DataTable> GetExternalTransferAddView(int ComID, string InputUser);
+        public Task<DataTable> GetExternalTransferView(int ComID);
+
 
 
     }

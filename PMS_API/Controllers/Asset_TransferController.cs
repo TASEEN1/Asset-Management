@@ -59,9 +59,31 @@ namespace PMS_API.Controllers
 
         }
         [HttpGet]
-        public async Task<IActionResult> Internal_Transfer_View(int comID , string UID)
+        public async Task<IActionResult> GetInternalTransferAddView(int comID , string InputUser)
         {
-            var data = await _globalMaster.asset_TransferManager.Internal_Transfer_View(comID, UID);
+            var data = await _globalMaster.asset_TransferManager.GetInternalTransferAddView(comID , InputUser);
+            return Ok(data);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> External_Transfer_Save(List<Asset_Transfer_Model> App)
+        {
+            var data = await _globalMaster.asset_TransferManager.External_Transfer_Save(App);
+            return Ok(new { message = data });
+
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetExternalTransferAddView(int ComID, string InputUser)
+        {
+            var data = await _globalMaster.asset_TransferManager.GetExternalTransferAddView(ComID, InputUser);
+            return Ok(data);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetExternalTransferView(int ComID)
+        {
+            var data = await _globalMaster.asset_TransferManager.GetExternalTransferView(ComID);
             return Ok(data);
         }
     }

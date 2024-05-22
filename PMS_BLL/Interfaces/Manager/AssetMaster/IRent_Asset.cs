@@ -20,7 +20,9 @@ namespace PMS_BLL.Interfaces.Manager.AssetMaster
         Task<DataTable> GetAsstSpecialFeature(); 
         Task<DataTable> GetAssetStatus();
         Task<DataTable> GetCurrency();
-        Task<DataTable> Mr_Asset_Rent_Select(string AsstNo);
+        Task<DataTable> GetAssetRentSelectView();
+
+        Task<DataTable> GetAssetRentSelect( string AssetNO);
 
         Task<string> Rent_Asset_Save(List<Rent_Asset_Model> Asst_Rent);
         Task<string> Update_Asset_Rent (List<Rent_Asset_Model> Asst_Rent_put);

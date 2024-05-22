@@ -23,6 +23,8 @@ namespace PMS_BOL.Models
         public string Remarks { get; set; }
         public string InputUser { get; set; }
 
+      
+
 
     }
 }

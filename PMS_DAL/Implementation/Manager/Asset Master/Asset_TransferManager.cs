@@ -84,7 +84,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
                     cmd.Parameters.AddWithValue("@FloorTo", Apps.FloorTo);
                     cmd.Parameters.AddWithValue("@LineFrom", Apps.LineFrom);
                     cmd.Parameters.AddWithValue("@LineTo", Apps.LineTo);
-                    cmd.Parameters.AddWithValue("@Status", Apps.Status);
+                    cmd.Parameters.AddWithValue("@Status", "IN");
                     cmd.Parameters.AddWithValue("@Remarks", Apps.Remarks);
                     cmd.Parameters.AddWithValue("@InputUser", Apps.InputUser);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
@@ -107,9 +107,67 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             return message;
         }
 
-        public async Task<DataTable> Internal_Transfer_View(int comID, string UID)
+
+
+        public async Task<DataTable> GetInternalTransferAddView(int ComID, string InputUser)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Internal_Transfer_Add_View '" + comID + "' and ' " + UID + "'", _dg_Asst_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Internal_Transfer_Add_View " + ComID + ",'"+ InputUser +"'" , _dg_Asst_Mgt);
+            return data;
+        }
+        
+
+        public async Task<string> External_Transfer_Save(List<Asset_Transfer_Model> App)
+        {
+            string message = string.Empty;
+            await _dg_Asst_Mgt.OpenAsync();
+
+
+            try
+            {
+                foreach (Asset_Transfer_Model Apps in App)
+                {
+                    SqlCommand cmd = new SqlCommand("Mr_External_Transfer_Save", _dg_Asst_Mgt);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@AssetNo", Apps.AssetNo);
+                    cmd.Parameters.AddWithValue("@Date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@ComFrom", Apps.ComFrom);
+                    cmd.Parameters.AddWithValue("@ComTo", Apps.ComTo);
+                    cmd.Parameters.AddWithValue("@FloorFrom", 1);
+                    cmd.Parameters.AddWithValue("@FloorTo", 1);
+                    cmd.Parameters.AddWithValue("@LineFrom", 1);
+                    cmd.Parameters.AddWithValue("@LineTo", 1); 
+                    cmd.Parameters.AddWithValue("@Status", "Ex");
+                    cmd.Parameters.AddWithValue("@Remarks", Apps.Remarks);
+                    cmd.Parameters.AddWithValue("@InputUser", Apps.InputUser);
+                    cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+                    cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+                    await cmd.ExecuteNonQueryAsync();
+                    message = (string)cmd.Parameters["@ERROR"].Value;
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                _dg_Asst_Mgt.Close();
+            }
+            return message;
+        }
+
+        public async Task<DataTable> GetExternalTransferAddView(int ComID , string InputUser)
+        {
+
+            var data = await _SqlCommon.get_InformationDataTableAsync("Mr_External_Transfer_Add_View " + ComID + ",'"+ InputUser+"'",_dg_Asst_Mgt);
+            return data;
+        }
+        public async Task<DataTable> GetExternalTransferView(int comID)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("Mr_External_Transfer_View '" + comID + "'", _dg_Asst_Mgt);
             return data;
         }
     }
