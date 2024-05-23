@@ -98,15 +98,15 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
         return message;
         }
 
-        public async Task<DataTable> ForApproval_AssetReturnView(int comID)
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Return_Approval_View '" + comID + "'", _dg_Asst_Mgt);
-            return data;
+        //public async Task<DataTable> ForApproval_AssetReturnView(int comID)
+        //{
+        //    var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Return_Approval_View '" + comID + "'", _dg_Asst_Mgt);
+        //    return data;
 
 
-        }
+        //}
 
-        // data not get
+      
         public async Task<DataTable> ForApproval_Asset_ReturnView(int comID)
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Return_For_Approval_View '" + comID + "'", _dg_Asst_Mgt);

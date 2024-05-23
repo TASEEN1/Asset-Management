@@ -60,13 +60,13 @@ namespace PMS_API.Controllers
             return Ok(new { message = data });
         }
 
-        [HttpGet]
-        public async Task<IActionResult> ForApproval_AssetReturnView(int comID)
-        {
-            var data = await _globalMaster.rentedAssetReturnManager.ForApproval_AssetReturnView(comID);
-            return Ok(data);
+        //[HttpGet]
+        //public async Task<IActionResult> ForApproval_AssetReturnView(int comID)
+        //{
+        //    var data = await _globalMaster.rentedAssetReturnManager.ForApproval_AssetReturnView(comID);
+        //    return Ok(data);
 
-        }
+        //}
 
 
         [HttpGet]
@@ -76,7 +76,7 @@ namespace PMS_API.Controllers
             return Ok(data);
 
         }
-        [HttpPost]
+        [HttpPut]
         public async Task<IActionResult> ForApproval_Asset_Return(List<AssetForApprove> App)
         {
             var data = await _globalMaster.rentedAssetReturnManager.ForApproval_Asset_Return(App);

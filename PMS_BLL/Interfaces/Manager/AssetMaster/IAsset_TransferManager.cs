@@ -23,6 +23,8 @@ namespace PMS_BLL.Interfaces.Manager.AssetMaster
         public Task<DataTable> GetInternalTransferAddView( int ComID , string InputUser);
         public Task<DataTable> GetExternalTransferAddView(int ComID, string InputUser);
         public Task<DataTable> GetExternalTransferView(int ComID);
+        public Task<DataTable>GetInternalTransferView(int ComID);
+
 
 
 

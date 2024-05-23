@@ -170,5 +170,11 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             var data = await _SqlCommon.get_InformationDataTableAsync("Mr_External_Transfer_View '" + comID + "'", _dg_Asst_Mgt);
             return data;
         }
+
+        public async Task<DataTable> GetInternalTransferView(int comID)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Internal_Transfer_View '" + comID + "'", _dg_Asst_Mgt);
+            return data;
+        }
     }
 }

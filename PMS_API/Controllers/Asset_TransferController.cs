@@ -86,5 +86,12 @@ namespace PMS_API.Controllers
             var data = await _globalMaster.asset_TransferManager.GetExternalTransferView(ComID);
             return Ok(data);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetInternalTransferView(int ComID)
+        {
+            var data = await _globalMaster.asset_TransferManager.GetInternalTransferView(ComID);
+            return Ok(data);
+        }
     }
 }
