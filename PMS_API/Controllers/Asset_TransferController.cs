@@ -93,5 +93,24 @@ namespace PMS_API.Controllers
             var data = await _globalMaster.asset_TransferManager.GetInternalTransferView(ComID);
             return Ok(data);
         }
+        [HttpPut]
+        public async Task<IActionResult> Asset_InternalTransfer_Approval(List<Asset_Internal_Transfer_Approval> App)
+        {
+            var data = await _globalMaster.asset_TransferManager.Asset_InternalTransfer_Approval(App);
+            return Ok(new { message = data });
+        }
+        [HttpPut]
+        public async Task<IActionResult> Asset_ExternalTransfer_Approval(List<Asset_External_Transfer_Approval> App)
+        {
+            var data = await _globalMaster.asset_TransferManager.Asset_ExternalTransfer_Approval(App);
+            return Ok(new { message = data });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetTransferView(int ComID)
+        {
+            var data = await _globalMaster.asset_TransferManager.GetTransferView(ComID);
+            return Ok(data);
+        }
     }
 }

@@ -176,5 +176,76 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Internal_Transfer_View '" + comID + "'", _dg_Asst_Mgt);
             return data;
         }
+
+        public async Task<bool> Asset_InternalTransfer_Approval(List< Asset_Internal_Transfer_Approval> App)
+        {
+            bool flag = false;
+            try
+            {
+                foreach (Asset_Internal_Transfer_Approval Apps in App)
+                {
+                    await _dg_Asst_Mgt.OpenAsync();
+                    SqlCommand cmd = new SqlCommand("Mr_Internal_Asset_For_Approval", _dg_Asst_Mgt);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@RefNo", Apps.RefNo);
+                    cmd.Parameters.AddWithValue("@Appby", Apps.Approval_by);
+
+                    await cmd.ExecuteNonQueryAsync();
+                    await _dg_Asst_Mgt.CloseAsync();
+                }
+                flag = true;
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+                flag = false;
+            }
+            finally
+            {
+                await _dg_Asst_Mgt.CloseAsync();
+            }
+            return flag;
+        }
+
+        public async Task<bool> Asset_ExternalTransfer_Approval(List<Asset_External_Transfer_Approval> App)
+        {
+            bool flag = false;
+            try
+            {
+                foreach(Asset_External_Transfer_Approval Apps in App)
+                {
+                    await _dg_Asst_Mgt.OpenAsync();
+                    SqlCommand cmd = new SqlCommand("Mr_External_Asset_For_Approval", _dg_Asst_Mgt);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@AssetNo", Apps.AssetNo);
+                    cmd.Parameters.AddWithValue("@Appby", Apps.Approval_by);
+                    await cmd.ExecuteNonQueryAsync();
+                    await _dg_Asst_Mgt.CloseAsync();
+
+                }
+                flag = true;
+
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+                flag = false;
+            }
+            finally
+            {
+                await _dg_Asst_Mgt.CloseAsync();
+            }
+            return flag;
+
+        }
+        public async Task<DataTable> GetTransferView(int ComID)
+        {
+
+            var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Internal_Transfer_Approved_View'"+ ComID + "'", _dg_Asst_Mgt);
+            return data;
+        }
+
+
     }
 }

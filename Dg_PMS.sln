@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMS_BOL", "PMS_BOL\PMS_BOL.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMS_API", "PMS_API\PMS_API.csproj", "{BBD632D0-42CD-4177-88D5-3793D75A9179}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportServeice", "ReportServeice\ReportServeice.csproj", "{D1751EC9-EFC7-4856-8211-CE07B185A6DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BBD632D0-42CD-4177-88D5-3793D75A9179}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBD632D0-42CD-4177-88D5-3793D75A9179}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBD632D0-42CD-4177-88D5-3793D75A9179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1751EC9-EFC7-4856-8211-CE07B185A6DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1751EC9-EFC7-4856-8211-CE07B185A6DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1751EC9-EFC7-4856-8211-CE07B185A6DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1751EC9-EFC7-4856-8211-CE07B185A6DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

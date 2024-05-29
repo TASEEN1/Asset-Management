@@ -22,13 +22,17 @@ namespace PMS_DAL.Implementation
             _sqlCommon = sqlCommon;
             _webHostEnvironment = webHostEnvironment;
             userLogin = new UserLoginManager(_sqlCommon);
-     
+
             cuttingmanager = new CuttingManager(_sqlCommon);
             cuttingreportmanager = new CuttingReportManager(_sqlCommon, _webHostEnvironment);
             assetmastermanager = new AssetMasterManager(_sqlCommon);
             rent_Asset = new Rent_Asset_Manager(_sqlCommon);
             rentedAssetReturnManager = new RentedAssetReturnManager(_sqlCommon);
             asset_TransferManager = new Asset_TransferManager(_sqlCommon);
+            asset_Running_Repair = new Asset_Running_RepairManager(_sqlCommon);
+            schedule_Maintenance = new scheduleMaintenanceManager(_sqlCommon);
+            asset_ReportManager = new AssetReportManager(_sqlCommon, _webHostEnvironment);
+
 
 
 
@@ -42,6 +46,15 @@ namespace PMS_DAL.Implementation
         public IRentedAssetReturnManager rentedAssetReturnManager { get; private set; }
 
         public IAsset_TransferManager asset_TransferManager { get; private set; }
+
+
+
+        public IAsset_Running_Repair asset_Running_Repair { get; private set; }
+
+        public Ischedule_Maintenance schedule_Maintenance { get; private set; }
+
+        public IassetReportManager asset_ReportManager { get; private set; }
+
 
     }
 }

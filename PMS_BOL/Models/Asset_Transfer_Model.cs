@@ -27,4 +27,19 @@ namespace PMS_BOL.Models
 
 
     }
+
+    public class Asset_Internal_Transfer_Approval
+    {
+        public string RefNo { get; set; }
+        public string Approval_by { get; set; }
+
+    }
+
+    public class Asset_External_Transfer_Approval
+    {
+        public string AssetNo { get; set; }
+
+        public string Approval_by { get; set; }
+
+    }
 }

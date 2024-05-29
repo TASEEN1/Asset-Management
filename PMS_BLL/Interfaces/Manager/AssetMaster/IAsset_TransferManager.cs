@@ -25,6 +25,14 @@ namespace PMS_BLL.Interfaces.Manager.AssetMaster
         public Task<DataTable> GetExternalTransferView(int ComID);
         public Task<DataTable>GetInternalTransferView(int ComID);
 
+        Task<bool> Asset_InternalTransfer_Approval(List<Asset_Internal_Transfer_Approval> App);
+        Task<bool> Asset_ExternalTransfer_Approval(List<Asset_External_Transfer_Approval> App);
+        Task<DataTable>GetTransferView(int ComID);
+
+
+
+
+
 
 
 

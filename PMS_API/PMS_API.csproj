@@ -5,6 +5,14 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CoreApiResponse" Version="1.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.21" />
@@ -16,6 +24,14 @@
     <ProjectReference Include="..\PMS_DAL\PMS_DAL.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Content Update="wwwroot\Report\Cutting_Report\CuttingDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CuttingDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Update="wwwroot\Report\Cutting_Report\CuttingDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CuttingDataSet.Designer.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
 </Project>
