@@ -17,7 +17,7 @@ namespace PMS_BLL.Interfaces
         IAsset_TransferManager asset_TransferManager { get; }
         IAsset_Running_Repair asset_Running_Repair { get; }
         Ischedule_Maintenance schedule_Maintenance { get; }
-        IassetReportManager asset_ReportManager { get; }
+        IAssetReportManager asset_ReportManager { get; }
 
        
     }

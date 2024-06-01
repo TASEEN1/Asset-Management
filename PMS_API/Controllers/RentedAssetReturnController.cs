@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PMS_BLL.Interfaces;
 using PMS_BOL.Models;
+using System.Data;
 
 namespace PMS_API.Controllers
 {
@@ -37,6 +38,12 @@ namespace PMS_API.Controllers
         {
             var data = await _globalMaster.rentedAssetReturnManager.GetRentAssetList(currentHolderId, supplierId);
             return Ok(data);
+        }
+        [HttpPut]
+        public async Task<IActionResult> PutReturnAdd(List<RentAssetAdd> put_return_add)
+        {
+            var data = await _globalMaster.rentedAssetReturnManager.PutReturnAdd(put_return_add);
+            return Ok(new { message = data });
         }
         [HttpGet]
         public async Task<IActionResult> GetReturnAddView(int currentHolderId, string supplierId)

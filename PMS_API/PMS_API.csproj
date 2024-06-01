@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Report\Report Dataset\AssetDataSet.xsc" />
+    <Content Remove="wwwroot\Report\Report Dataset\AssetDataSet.xsd" />
+    <Content Remove="wwwroot\Report\Report Dataset\AssetDataSet.xss" />
     <Content Remove="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
   </ItemGroup>
 
@@ -33,5 +36,32 @@
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CuttingDataSet.Designer.cs</LastGenOutput>
     </Content>
+    <Content Update="wwwroot\Report\Report Dataset\AssetDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AssetDataSet.xsd</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Report\Report Dataset\AssetDataSet.xsc" />
+    <None Include="wwwroot\Report\Report Dataset\AssetDataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>AssetDataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\Report\Report Dataset\AssetDataSet.xss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Mr_Asset_InfoDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Mr_Asset_InfoDataSet.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Mr_Asset_InfoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Mr_Asset_InfoDataSet.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 </Project>

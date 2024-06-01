@@ -48,6 +48,40 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Return_Filter '" + currentHolderId + "','" + supplierId + "'",_dg_Asst_Mgt);
             return data;
         }
+        public async Task<string> PutReturnAdd(List<RentAssetAdd> put_return_add)
+        {
+            //string message = string.Empty;
+            string message = "ok";
+            await _dg_Asst_Mgt.OpenAsync();
+            try
+            {
+                foreach (RentAssetAdd modelVar in put_return_add)
+                {
+                    SqlCommand cmd = new SqlCommand("Mr_Asset_Return_Add", _dg_Asst_Mgt);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@AssetNo", modelVar.RentAssetNo);
+                    await cmd.ExecuteNonQueryAsync();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                ex.ToString();
+
+            }
+
+            finally
+            {
+
+                _dg_Asst_Mgt.Close();
+
+            }
+            return message;
+
+        }
+
+
+
         public async Task<DataTable> GetReturnAddView(int currentHolderId, string supplierId)
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Return_Add_View '" + currentHolderId + "','" + supplierId + "'", _dg_Asst_Mgt);
@@ -98,20 +132,19 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
         return message;
         }
 
-        //public async Task<DataTable> ForApproval_AssetReturnView(int comID)
-        //{
-        //    var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Return_Approval_View '" + comID + "'", _dg_Asst_Mgt);
-        //    return data;
+        public async Task<DataTable> ForApproval_AssetReturnView(int comID)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Return_Approval_View '" + comID + "'", _dg_Asst_Mgt);
+            return data;
 
 
-        //}
+        }
 
-      
+
         public async Task<DataTable> ForApproval_Asset_ReturnView(int comID)
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Return_For_Approval_View '" + comID + "'", _dg_Asst_Mgt);
             return data;
-
 
         }
 

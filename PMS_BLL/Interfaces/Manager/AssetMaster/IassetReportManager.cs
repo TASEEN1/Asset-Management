@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PMS_BLL.Interfaces.Manager.AssetMaster
 {
-    public interface IassetReportManager
+    public interface IAssetReportManager
     {
-        public byte[] AssetInfoDetailsRpt(string reportType, int comID, string AsstCat, int status, int floor, int line, string UserName);
+        public byte[] AssetInfoDetailsRpt(string reportType, int comID);
 
     }
 }
