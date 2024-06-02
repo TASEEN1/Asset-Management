@@ -13,7 +13,7 @@ using System.Data;
 
 namespace PMS_DAL.Implementation.Manager.Asset_Master
 {
-    public class AssetReportManager:IassetReportManager
+    public class AssetReportManager:IAssetReportManager
     {
         private readonly Dg_SqlCommon _SqlCommon;
         private readonly SqlConnection _specfo_conn;
@@ -30,7 +30,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             _SpecFoInventory = new SqlConnection(Dg_Getway.SpecFoInventory);
         }
 
-        public byte[] AssetInfoDetailsRpt(string reportType, int comID, string AsstCat, int status, int floor, int line, string UserName)
+        public byte[] AssetDetailsSummary(string reportType, int comID, string AsstCat, int status, int floor, int line, string UserName)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
@@ -38,19 +38,50 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
             var tbldata = new DataTable[]
             {
-                 _SqlCommon.get_InformationDataTable("Mr_Asset_Master_List_Info_Rpt '"+ AsstCat + "','"+status+"','"+floor+"','"+line+"'",_dg_Asst_Mgt),
+                 //_SqlCommon.get_InformationDataTable("Mr_Asset_Details_Summary_Rpt '"+ AsstCat + "','"+status+"','"+floor+"','"+line+"'",_dg_Asst_Mgt),
+                 _SqlCommon.get_InformationDataTable("Mr_Asset_Details_Summary_Rpt '"+ comID + "'",_dg_Asst_Mgt)
 
             };
             var strSetName = new string[]
             {
-                "DataSet1"
+                "AsstDetailSumm"
             };
-            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Asset_report\\AssetInfoDetailsRpt.rdlc";
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Asset_report\\AssetDetailsSummary.rdlc";
             ReportParameterCollection reportParameters = new ReportParameterCollection
             {
             new ReportParameter("Company",ComName),
             new ReportParameter("Add1", cAdd1),
-            new ReportParameter("Title", "Asset Information Details"),
+            new ReportParameter("Title", "Asset Details Summary"),
+            new ReportParameter("PrintUser",  "" + UserName + "")
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+
+
+        }
+
+        public byte[] AssetDetailsReport(string reportType, int comID,  string UserName)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            var tbldata = new DataTable[]
+            {
+                 //_SqlCommon.get_InformationDataTable("Mr_Asset_Details_Summary_Rpt '"+ AsstCat + "','"+status+"','"+floor+"','"+line+"'",_dg_Asst_Mgt),
+                 _SqlCommon.get_InformationDataTable("Mr_Asset_Master_List_Info_Rpt '"+ comID + "'",_dg_Asst_Mgt)
+
+            };
+            var strSetName = new string[]
+            {
+                "Asset_DtailsDataset"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Asset_report\\Asset Details.rdlc";
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title", "Asset Details Report"),
             new ReportParameter("PrintUser",  "" + UserName + "")
             };
             byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
@@ -125,6 +156,21 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             }
             return reportBytes;
         }
+
+        //public string GetContentType(string reportType)
+        //{
+        //    switch (reportType.ToUpper())
+        //    {
+        //        case "PDF":
+        //            return "rpt.pdf";
+        //        case "EXCEL":
+        //            return "rpt.xls";
+        //        case "WORD":
+        //            return "rpt.doc";
+        //        default:
+        //            throw new ArgumentException("Unsupported report type");
+        //    }
+        //}
 
 
 

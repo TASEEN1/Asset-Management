@@ -46,6 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Asset_DtailsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Asset_DtailsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AsstDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AsstDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +74,29 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Asset Details.rdlc" />
+    <None Include="Asset_DtailsDataSet.xsc">
+      <DependentUpon>Asset_DtailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Asset_DtailsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Asset_DtailsDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Asset_DtailsDataSet.xss">
+      <DependentUpon>Asset_DtailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AsstDataSet.xsc">
+      <DependentUpon>AsstDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AsstDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AsstDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AsstDataSet.xss">
+      <DependentUpon>AsstDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

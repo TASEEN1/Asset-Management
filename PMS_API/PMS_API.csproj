@@ -7,10 +7,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Report\Asset_report\Asset Details.rdlc" />
     <Content Remove="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.Designer.cs" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xsc" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xsd" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xss" />
+    <Content Remove="wwwroot\Report\ReportDataSet\AsstDataSet.Designer.cs" />
+    <Content Remove="wwwroot\Report\ReportDataSet\AsstDataSet.xsc" />
+    <Content Remove="wwwroot\Report\ReportDataSet\AsstDataSet.xsd" />
+    <Content Remove="wwwroot\Report\ReportDataSet\AsstDataSet.xss" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Asset_DtailsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wwwroot\Report\ReportDataSet\AsstDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AsstDataSet.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\Report\Asset_report\Asset Details.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
   </ItemGroup>
   <ItemGroup>
@@ -33,5 +56,21 @@
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CuttingDataSet.Designer.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xsc" />
+    <None Include="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>Asset_DtailsDataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xss" />
+    <None Include="wwwroot\Report\ReportDataSet\AsstDataSet.xsc" />
+    <None Include="wwwroot\Report\ReportDataSet\AsstDataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>AsstDataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\Report\ReportDataSet\AsstDataSet.xss" />
   </ItemGroup>
 </Project>

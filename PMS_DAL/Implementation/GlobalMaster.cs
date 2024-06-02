@@ -53,7 +53,7 @@ namespace PMS_DAL.Implementation
 
         public Ischedule_Maintenance schedule_Maintenance { get; private set; }
 
-        public IassetReportManager asset_ReportManager { get; private set; }
+        public IAssetReportManager asset_ReportManager { get; private set; }
 
 
     }

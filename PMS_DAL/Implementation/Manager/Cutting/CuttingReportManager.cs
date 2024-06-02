@@ -22,8 +22,8 @@ namespace PMS_DAL.Implementation.Manager.Cutting
             _webHostEnvironment = webHostEnvironment;
             _dg_pms_conn = new SqlConnection(Dg_Getway.PmsCon);
             _specfo_conn = new SqlConnection(Dg_Getway.SpecFoCon);
-            _dg_barcode_conn = new SqlConnection(Dg_Getway.dg_barcode);
-            _dg_smartCode_conn = new SqlConnection(Dg_Getway.dg_smart_code);
+            //_dg_barcode_conn = new SqlConnection(Dg_Getway.dg_barcode);
+            //_dg_smartCode_conn = new SqlConnection(Dg_Getway.dg_smart_code);
         }
 
         // Cutting Report Cut, Lay and Style wise
@@ -314,6 +314,7 @@ namespace PMS_DAL.Implementation.Manager.Cutting
             }
             localReport.ReportPath = rdlcFilePath;
             localReport.EnableExternalImages = true;
+            
             if (reportParameters != null)
             {
                 localReport.SetParameters(reportParameters);
