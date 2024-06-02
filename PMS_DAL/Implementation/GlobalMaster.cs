@@ -4,7 +4,6 @@ using PMS_BLL.Interfaces.Manager;
 using PMS_BLL.Interfaces.Manager.Asset_Master;
 using PMS_BLL.Interfaces.Manager.AssetMaster;
 using PMS_BLL.Interfaces.Manager.Cutting;
-
 using PMS_BLL.Utility;
 using PMS_DAL.Implementation.Manager;
 using PMS_DAL.Implementation.Manager.Asset_Master;
@@ -22,7 +21,6 @@ namespace PMS_DAL.Implementation
             _sqlCommon = sqlCommon;
             _webHostEnvironment = webHostEnvironment;
             userLogin = new UserLoginManager(_sqlCommon);
-
             cuttingmanager = new CuttingManager(_sqlCommon);
             cuttingreportmanager = new CuttingReportManager(_sqlCommon, _webHostEnvironment);
             assetmastermanager = new AssetMasterManager(_sqlCommon);
@@ -32,11 +30,6 @@ namespace PMS_DAL.Implementation
             asset_Running_Repair = new Asset_Running_RepairManager(_sqlCommon);
             schedule_Maintenance = new scheduleMaintenanceManager(_sqlCommon);
             asset_ReportManager = new AssetReportManager(_sqlCommon, _webHostEnvironment);
-
-
-
-
-
         }
         public IUserLoginManager userLogin { get; private set; }
         public ICuttingManager cuttingmanager { get; private set; }
@@ -44,17 +37,9 @@ namespace PMS_DAL.Implementation
         public IAssetMasterManager assetmastermanager { get; private set; }
         public IRent_Asset rent_Asset { get; private set; }
         public IRentedAssetReturnManager rentedAssetReturnManager { get; private set; }
-
         public IAsset_TransferManager asset_TransferManager { get; private set; }
-
-
-
         public IAsset_Running_Repair asset_Running_Repair { get; private set; }
-
         public Ischedule_Maintenance schedule_Maintenance { get; private set; }
-
         public IAssetReportManager asset_ReportManager { get; private set; }
-
-
     }
 }

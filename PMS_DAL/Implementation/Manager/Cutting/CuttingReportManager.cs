@@ -78,7 +78,7 @@ namespace PMS_DAL.Implementation.Manager.Cutting
             new ReportParameter("Company",ComName),
             new ReportParameter("Add1", cAdd1),
             new ReportParameter("Title", "Cutting Report- Country Wise"),
-             new ReportParameter("PrintUser",  "" + UserName + "")
+            new ReportParameter("PrintUser",  "" + UserName + "")
 
             };
             byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
@@ -229,7 +229,6 @@ namespace PMS_DAL.Implementation.Manager.Cutting
             ReportParameterCollection reportParameters = new ReportParameterCollection
             {
             new ReportParameter("Company",ComName),
-           
             new ReportParameter("Add1", cAdd1),
             new ReportParameter("Title", "Style and PO No Wise Cut To Input Report- Style No:" + style + ", PO No:" + PO + ""),
             new ReportParameter("PrintUser", "" + UserName + "")
@@ -265,7 +264,6 @@ namespace PMS_DAL.Implementation.Manager.Cutting
             new ReportParameter("Add1", cAdd1),
             new ReportParameter("Title", "Style and PO No Wise Cut To Input Report- Style No:" + style + ""),
             new ReportParameter("PrintUser", "" + UserName + "")
-
             };
             byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
             return reportBytes;

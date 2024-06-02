@@ -30,7 +30,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             _SpecFoInventory = new SqlConnection(Dg_Getway.SpecFoInventory);
         }
 
-        public byte[] AssetInfoDetailsRpt(string reportType, int comID)
+        public byte[] AssetDetailsSummary(string reportType, int comID, string UserName)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
@@ -45,20 +45,83 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             {
                 "DataSet1"
             };
-            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Asset_report\\AssetInfoDetailsRpt.rdlc";
-            //ReportParameterCollection reportParameters = new ReportParameterCollection
-            //{
-            //new ReportParameter("Company",ComName),
-            //new ReportParameter("Add1", cAdd1),
-            //new ReportParameter("Title", "Asset Information Details"),
-            //new ReportParameter("PrintUser",  "" + UserName + "")
-            //};
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Asset_Report\\AssetDetailsSummary.rdlc";
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title", "Asset Information Details"),
+            new ReportParameter("PrintUser",  "" + UserName + "")
+            };
             byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType);
                 //, reportParameters);
             return reportBytes;
 
 
         }
+        //1 no report - Asset Management Report - M A Master List Rpt 
+        public byte[] AssetManagementReport(string reportType, int comID, string UserName)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            var tbldata = new DataTable[]
+            {
+                _SqlCommon.get_InformationDataTable("Mr_Asset_Master_List_Rpt '" + comID + "'", _dg_Asst_Mgt),
+                //_SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Wise_Report '"+styleID+"'", _dg_pms_conn),
+                //_SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Line_Wise_Report '"+styleID+"'", _dg_pms_conn),
+                //     _SqlCommon.get_InformationDataTable("Mr_Cut_Fabrics_Closing_Rpt '"+styleID+"'", _dg_pms_conn),
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Asset_Report\\AssetManagementReport.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title", "Asset Details Report- Factory: " + ComName + ""),
+            new ReportParameter("PrintUser", "" + UserName + "")
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
+
+        //1 no report - Asset Management Report - M A Master List Rpt 
+        public byte[] AssetSummaryReport(string reportType, int comID, string UserName)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            var tbldata = new DataTable[]
+            {
+                _SqlCommon.get_InformationDataTable("Mr_Asset_Summary_Rpt '" + comID + "'", _dg_Asst_Mgt),
+                //_SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Wise_Report '"+styleID+"'", _dg_pms_conn),
+                //_SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Line_Wise_Report '"+styleID+"'", _dg_pms_conn),
+                //     _SqlCommon.get_InformationDataTable("Mr_Cut_Fabrics_Closing_Rpt '"+styleID+"'", _dg_pms_conn),
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Asset_Report\\AssetSummaryReport.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title", "Asset Summary Report- Factory: " + ComName + ""),
+            new ReportParameter("PrintUser", "" + UserName + "")
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
+
+
 
         //Common Report Code
         private byte[] GenerateReport(DataTable dataTable, string datasetName, string rdlcFilePath, string reportType, ReportParameterCollection reportParameters = null)

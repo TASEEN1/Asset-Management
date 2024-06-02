@@ -103,13 +103,13 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
                 foreach(AssetRentComplete modelVar in put_asset_rent){
                     SqlCommand cmd = new SqlCommand("Mr_Asset_rent_Complete", _dg_Asst_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@ReturnRefNo ", modelVar.ReturnRefNo);
-                    cmd.Parameters.AddWithValue("@ReturnDate ", modelVar.ReturnDate);
-                    cmd.Parameters.AddWithValue("@ReturnUser ", modelVar.ReturnUser);
-                    cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
-                    cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+                    cmd.Parameters.AddWithValue("@ReturnRefNo", modelVar.ReturnRefNo);
+                    cmd.Parameters.AddWithValue("@ReturnDate", modelVar.ReturnDate);
+                    cmd.Parameters.AddWithValue("@ReturnUser", modelVar.ReturnUser);
+                    //cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+                    //cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
-                    message = (string)cmd.Parameters["@ERROR"].Value;
+                    //message = (string)cmd.Parameters["@ERROR"].Value;
 
 
 

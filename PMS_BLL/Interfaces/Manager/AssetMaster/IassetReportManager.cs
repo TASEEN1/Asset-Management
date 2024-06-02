@@ -8,7 +8,10 @@ namespace PMS_BLL.Interfaces.Manager.AssetMaster
 {
     public interface IAssetReportManager
     {
-        public byte[] AssetInfoDetailsRpt(string reportType, int comID);
+        public byte[] AssetDetailsSummary(string reportType, int comID, string UserName);
+        public byte[] AssetManagementReport(string reportType, int comID, string UserName);
+        public byte[] AssetSummaryReport(string reportType, int comID, string UserName);
+
 
     }
 }

@@ -19,7 +19,7 @@
             {
                 if (_dg_pms == null)
                 {
-                    _dg_pms = String.Format("Data Source=.;Initial Catalog=Mr_PMS;Persist Security Info=true; User ID=sa; Password=hihowareyou;TrustServerCertificate=True");
+                    _dg_pms = String.Format("Data Source=192.168.100.250;Initial Catalog=Mr_PMS;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
                 }
                 return _dg_pms;
             }
@@ -32,7 +32,7 @@
             {
                 if (_SpecFoCon == null)
                 {
-                    _SpecFoCon = String.Format("Data Source=.;Initial Catalog=SpecFo;Persist Security Info=true; User ID=sa; Password=hihowareyou;TrustServerCertificate=True");
+                    _SpecFoCon = String.Format("Data Source=192.168.100.250;Initial Catalog=SpecFo;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
                 }
                 return _SpecFoCon;
             }
@@ -45,7 +45,7 @@
             {
                 if (_SpecFoInventory == null)
                 {
-                    _SpecFoInventory = String.Format("Data Source=.;Initial Catalog=SpecFo_Inventory;Persist Security Info=true; User ID=sa; Password=dg@2022;TrustServerCertificate=True");
+                    _SpecFoInventory = String.Format("Data Source=192.168.100.250;Initial Catalog=SpecFo_Inventory;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
                 }
                 return _SpecFoInventory;
             }
@@ -119,7 +119,7 @@
             {
                 if (_dg_asset_mngt == null)
                 {
-                    _dg_asset_mngt = String.Format("Data Source=.;Initial Catalog=Mr_Asset_Info;Persist Security Info=true; User ID=sa; Password=hihowareyou;TrustServerCertificate=True");
+                    _dg_asset_mngt = String.Format("Data Source=192.168.100.250;Initial Catalog=Mr_Asset_Info;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
                 }
                 return _dg_asset_mngt;
             }
