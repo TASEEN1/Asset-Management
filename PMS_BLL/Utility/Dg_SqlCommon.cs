@@ -110,5 +110,21 @@ namespace PMS_BLL.Utility
         {
             throw new NotImplementedException();
         }
+
+        //public String GetContentType(string reportType)
+        //{
+        //    switch (reportType.ToUpper())
+        //    {
+        //        case "PDF":
+        //            return "rpt.pdf";
+        //        case "EXCEL":
+        //            return "rpt.xls";
+        //        case "WORD":
+        //            return "rpt.doc";
+        //        default:
+        //            throw new ArgumentException("Unsupported report type");
+        //    }
+        //}
+
     }
 }

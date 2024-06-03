@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Reporting.Map.WebForms.BingMaps;
 using PMS_BLL.Interfaces;
+using PMS_BLL.Utility;
+using PMS_DAL.Implementation.Manager.Asset_Master;
 using System.Drawing;
 using System.Net.Mime;
 
@@ -37,6 +39,7 @@ namespace PMS_API.Controllers
         {
             var data = _globalMaster.asset_ReportManager.AssetSummaryReport(reportType, comID, UserName);
             return File(data, MediaTypeNames.Application.Octet, (reportType));
+            //return File(data, MediaTypeNames.Application.Octet, "PDF");
         }
 
     }
