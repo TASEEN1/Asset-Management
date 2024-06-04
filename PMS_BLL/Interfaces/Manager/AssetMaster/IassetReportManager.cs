@@ -11,7 +11,7 @@ namespace PMS_BLL.Interfaces.Manager.AssetMaster
         public byte[] AssetDetailsSummary(string reportType, int comID, string UserName);
         public byte[] AssetManagementReport(string reportType, int comID, string UserName);
         public byte[] AssetSummaryReport(string reportType, int comID, string UserName);
-
+        public byte[] RentedAssetDetailsReport(string reportType, int comID, string UserName);
 
     }
 }

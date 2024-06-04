@@ -41,6 +41,13 @@ namespace PMS_API.Controllers
             return File(data, MediaTypeNames.Application.Octet, (reportType));
             //return File(data, MediaTypeNames.Application.Octet, "PDF");
         }
+        [HttpGet]
+        public async Task<IActionResult> RentedAssetDetailsReport(string reportType, int comID, string UserName)
+        {
+            var data = _globalMaster.asset_ReportManager.RentedAssetDetailsReport(reportType, comID, UserName);
+            return File(data, MediaTypeNames.Application.Octet, (reportType));
+            //return File(data, MediaTypeNames.Application.Octet, "PDF");
+        }
 
     }
 }

@@ -90,7 +90,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             return reportBytes;
         }
 
-        //1 no report - Asset Management Report - M A Master List Rpt 
+        //4 no report - Asset Summary Report - M A Summary Rpt 
         public byte[] AssetSummaryReport(string reportType, int comID, string UserName)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
@@ -120,7 +120,36 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
             return reportBytes;
         }
-
+        //8 no report - Asset Summary Report - Mr_Rented_Asset_Details_Rpt
+        public byte[] RentedAssetDetailsReport(string reportType, int comID, string UserName)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            var tbldata = new DataTable[]
+            {
+                _SqlCommon.get_InformationDataTable("Mr_Rented_Asset_Details_Rpt '" + comID + "'", _dg_Asst_Mgt),
+                //_SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Wise_Report '"+styleID+"'", _dg_pms_conn),
+                //_SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Line_Wise_Report '"+styleID+"'", _dg_pms_conn),
+                //     _SqlCommon.get_InformationDataTable("Mr_Cut_Fabrics_Closing_Rpt '"+styleID+"'", _dg_pms_conn),
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Asset_Report\\RentedAssetDetailsReport.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title", "Rented Asset Details Report- Factory: " + ComName + ""),
+            new ReportParameter("PrintUser", "" + UserName + "")
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
 
 
         //Common Report Code

@@ -9,6 +9,7 @@
   <ItemGroup>
     <Content Remove="wwwroot\Report\Asset_Report\AssetManagementReport.rdlc" />
     <Content Remove="wwwroot\Report\Asset_Report\AssetSummaryReport.rdlc" />
+    <Content Remove="wwwroot\Report\Asset_Report\RentedAssetDetailsReport.rdlc" />
     <Content Remove="wwwroot\Report\Report Dataset\AssetDataSet.xsc" />
     <Content Remove="wwwroot\Report\Report Dataset\AssetDataSet.xsd" />
     <Content Remove="wwwroot\Report\Report Dataset\AssetDataSet.xss" />
@@ -19,6 +20,7 @@
     <EmbeddedResource Include="wwwroot\Report\Asset_Report\AssetDetailsSummary.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Asset_Report\AssetManagementReport.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Asset_Report\AssetSummaryReport.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Asset_Report\RentedAssetDetailsReport.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CoreApiResponse" Version="1.0.1" />

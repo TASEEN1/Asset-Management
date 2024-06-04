@@ -102,14 +102,6 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             return data;
         }
 
-
-
-
-
-
-
-
-
         public async Task<string> Rent_Asset_Save(List<Rent_Asset_Model> Asst_Rent)
         {
             string message = string.Empty;
@@ -147,8 +139,6 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
                     await cmd.ExecuteNonQueryAsync();
                     message = (string)cmd.Parameters["@ERROR"].Value;
                 }
-
-
 
             }
             catch (Exception ex)
@@ -215,11 +205,6 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             }
             return message;
         }
-
-
-       
-
-
 
 
     }
