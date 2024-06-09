@@ -32,7 +32,11 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
         
         private Mr_Asset_Summary_RptDataTable tableMr_Asset_Summary_Rpt;
         
-        private Mr_Rented_Asset_Details_RptDataTable tableMr_Rented_Asset_Details_Rpt;
+        private DG_Rented_Asset_Details_RptDataTable tableDG_Rented_Asset_Details_Rpt;
+        
+        private DG_Internal_Fixed_Asset_Transfer_RptDataTable tableDG_Internal_Fixed_Asset_Transfer_Rpt;
+        
+        private DG_External_Fixed_Asset_Transfer_RptDataTable tableDG_External_Fixed_Asset_Transfer_Rpt;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -74,8 +78,14 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
                 if ((ds.Tables["Mr_Asset_Summary_Rpt"] != null)) {
                     base.Tables.Add(new Mr_Asset_Summary_RptDataTable(ds.Tables["Mr_Asset_Summary_Rpt"]));
                 }
-                if ((ds.Tables["Mr_Rented_Asset_Details_Rpt"] != null)) {
-                    base.Tables.Add(new Mr_Rented_Asset_Details_RptDataTable(ds.Tables["Mr_Rented_Asset_Details_Rpt"]));
+                if ((ds.Tables["DG_Rented_Asset_Details_Rpt"] != null)) {
+                    base.Tables.Add(new DG_Rented_Asset_Details_RptDataTable(ds.Tables["DG_Rented_Asset_Details_Rpt"]));
+                }
+                if ((ds.Tables["DG_Internal_Fixed_Asset_Transfer_Rpt"] != null)) {
+                    base.Tables.Add(new DG_Internal_Fixed_Asset_Transfer_RptDataTable(ds.Tables["DG_Internal_Fixed_Asset_Transfer_Rpt"]));
+                }
+                if ((ds.Tables["DG_External_Fixed_Asset_Transfer_Rpt"] != null)) {
+                    base.Tables.Add(new DG_External_Fixed_Asset_Transfer_RptDataTable(ds.Tables["DG_External_Fixed_Asset_Transfer_Rpt"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -139,9 +149,29 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Mr_Rented_Asset_Details_RptDataTable Mr_Rented_Asset_Details_Rpt {
+        public DG_Rented_Asset_Details_RptDataTable DG_Rented_Asset_Details_Rpt {
             get {
-                return this.tableMr_Rented_Asset_Details_Rpt;
+                return this.tableDG_Rented_Asset_Details_Rpt;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DG_Internal_Fixed_Asset_Transfer_RptDataTable DG_Internal_Fixed_Asset_Transfer_Rpt {
+            get {
+                return this.tableDG_Internal_Fixed_Asset_Transfer_Rpt;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DG_External_Fixed_Asset_Transfer_RptDataTable DG_External_Fixed_Asset_Transfer_Rpt {
+            get {
+                return this.tableDG_External_Fixed_Asset_Transfer_Rpt;
             }
         }
         
@@ -224,8 +254,14 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
                 if ((ds.Tables["Mr_Asset_Summary_Rpt"] != null)) {
                     base.Tables.Add(new Mr_Asset_Summary_RptDataTable(ds.Tables["Mr_Asset_Summary_Rpt"]));
                 }
-                if ((ds.Tables["Mr_Rented_Asset_Details_Rpt"] != null)) {
-                    base.Tables.Add(new Mr_Rented_Asset_Details_RptDataTable(ds.Tables["Mr_Rented_Asset_Details_Rpt"]));
+                if ((ds.Tables["DG_Rented_Asset_Details_Rpt"] != null)) {
+                    base.Tables.Add(new DG_Rented_Asset_Details_RptDataTable(ds.Tables["DG_Rented_Asset_Details_Rpt"]));
+                }
+                if ((ds.Tables["DG_Internal_Fixed_Asset_Transfer_Rpt"] != null)) {
+                    base.Tables.Add(new DG_Internal_Fixed_Asset_Transfer_RptDataTable(ds.Tables["DG_Internal_Fixed_Asset_Transfer_Rpt"]));
+                }
+                if ((ds.Tables["DG_External_Fixed_Asset_Transfer_Rpt"] != null)) {
+                    base.Tables.Add(new DG_External_Fixed_Asset_Transfer_RptDataTable(ds.Tables["DG_External_Fixed_Asset_Transfer_Rpt"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -284,10 +320,22 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
                     this.tableMr_Asset_Summary_Rpt.InitVars();
                 }
             }
-            this.tableMr_Rented_Asset_Details_Rpt = ((Mr_Rented_Asset_Details_RptDataTable)(base.Tables["Mr_Rented_Asset_Details_Rpt"]));
+            this.tableDG_Rented_Asset_Details_Rpt = ((DG_Rented_Asset_Details_RptDataTable)(base.Tables["DG_Rented_Asset_Details_Rpt"]));
             if ((initTable == true)) {
-                if ((this.tableMr_Rented_Asset_Details_Rpt != null)) {
-                    this.tableMr_Rented_Asset_Details_Rpt.InitVars();
+                if ((this.tableDG_Rented_Asset_Details_Rpt != null)) {
+                    this.tableDG_Rented_Asset_Details_Rpt.InitVars();
+                }
+            }
+            this.tableDG_Internal_Fixed_Asset_Transfer_Rpt = ((DG_Internal_Fixed_Asset_Transfer_RptDataTable)(base.Tables["DG_Internal_Fixed_Asset_Transfer_Rpt"]));
+            if ((initTable == true)) {
+                if ((this.tableDG_Internal_Fixed_Asset_Transfer_Rpt != null)) {
+                    this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.InitVars();
+                }
+            }
+            this.tableDG_External_Fixed_Asset_Transfer_Rpt = ((DG_External_Fixed_Asset_Transfer_RptDataTable)(base.Tables["DG_External_Fixed_Asset_Transfer_Rpt"]));
+            if ((initTable == true)) {
+                if ((this.tableDG_External_Fixed_Asset_Transfer_Rpt != null)) {
+                    this.tableDG_External_Fixed_Asset_Transfer_Rpt.InitVars();
                 }
             }
         }
@@ -308,8 +356,12 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             base.Tables.Add(this.tableMr_Asset_Master_List_Rpt);
             this.tableMr_Asset_Summary_Rpt = new Mr_Asset_Summary_RptDataTable();
             base.Tables.Add(this.tableMr_Asset_Summary_Rpt);
-            this.tableMr_Rented_Asset_Details_Rpt = new Mr_Rented_Asset_Details_RptDataTable();
-            base.Tables.Add(this.tableMr_Rented_Asset_Details_Rpt);
+            this.tableDG_Rented_Asset_Details_Rpt = new DG_Rented_Asset_Details_RptDataTable();
+            base.Tables.Add(this.tableDG_Rented_Asset_Details_Rpt);
+            this.tableDG_Internal_Fixed_Asset_Transfer_Rpt = new DG_Internal_Fixed_Asset_Transfer_RptDataTable();
+            base.Tables.Add(this.tableDG_Internal_Fixed_Asset_Transfer_Rpt);
+            this.tableDG_External_Fixed_Asset_Transfer_Rpt = new DG_External_Fixed_Asset_Transfer_RptDataTable();
+            base.Tables.Add(this.tableDG_External_Fixed_Asset_Transfer_Rpt);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -338,7 +390,19 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeMr_Rented_Asset_Details_Rpt() {
+        private bool ShouldSerializeDG_Rented_Asset_Details_Rpt() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeDG_Internal_Fixed_Asset_Transfer_Rpt() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeDG_External_Fixed_Asset_Transfer_Rpt() {
             return false;
         }
         
@@ -410,7 +474,13 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
         public delegate void Mr_Asset_Summary_RptRowChangeEventHandler(object sender, Mr_Asset_Summary_RptRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void Mr_Rented_Asset_Details_RptRowChangeEventHandler(object sender, Mr_Rented_Asset_Details_RptRowChangeEvent e);
+        public delegate void DG_Rented_Asset_Details_RptRowChangeEventHandler(object sender, DG_Rented_Asset_Details_RptRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void DG_Internal_Fixed_Asset_Transfer_RptRowChangeEventHandler(object sender, DG_Internal_Fixed_Asset_Transfer_RptRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void DG_External_Fixed_Asset_Transfer_RptRowChangeEventHandler(object sender, DG_External_Fixed_Asset_Transfer_RptRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2030,7 +2100,7 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Mr_Rented_Asset_Details_RptDataTable : global::System.Data.TypedTableBase<Mr_Rented_Asset_Details_RptRow> {
+        public partial class DG_Rented_Asset_Details_RptDataTable : global::System.Data.TypedTableBase<DG_Rented_Asset_Details_RptRow> {
             
             private global::System.Data.DataColumn columnRentAssetNo;
             
@@ -2050,8 +2120,8 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Mr_Rented_Asset_Details_RptDataTable() {
-                this.TableName = "Mr_Rented_Asset_Details_Rpt";
+            public DG_Rented_Asset_Details_RptDataTable() {
+                this.TableName = "DG_Rented_Asset_Details_Rpt";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -2059,7 +2129,7 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal Mr_Rented_Asset_Details_RptDataTable(global::System.Data.DataTable table) {
+            internal DG_Rented_Asset_Details_RptDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -2076,7 +2146,7 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected Mr_Rented_Asset_Details_RptDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DG_Rented_Asset_Details_RptDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -2156,34 +2226,34 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Mr_Rented_Asset_Details_RptRow this[int index] {
+            public DG_Rented_Asset_Details_RptRow this[int index] {
                 get {
-                    return ((Mr_Rented_Asset_Details_RptRow)(this.Rows[index]));
+                    return ((DG_Rented_Asset_Details_RptRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event Mr_Rented_Asset_Details_RptRowChangeEventHandler Mr_Rented_Asset_Details_RptRowChanging;
+            public event DG_Rented_Asset_Details_RptRowChangeEventHandler DG_Rented_Asset_Details_RptRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event Mr_Rented_Asset_Details_RptRowChangeEventHandler Mr_Rented_Asset_Details_RptRowChanged;
+            public event DG_Rented_Asset_Details_RptRowChangeEventHandler DG_Rented_Asset_Details_RptRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event Mr_Rented_Asset_Details_RptRowChangeEventHandler Mr_Rented_Asset_Details_RptRowDeleting;
+            public event DG_Rented_Asset_Details_RptRowChangeEventHandler DG_Rented_Asset_Details_RptRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event Mr_Rented_Asset_Details_RptRowChangeEventHandler Mr_Rented_Asset_Details_RptRowDeleted;
+            public event DG_Rented_Asset_Details_RptRowChangeEventHandler DG_Rented_Asset_Details_RptRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddMr_Rented_Asset_Details_RptRow(Mr_Rented_Asset_Details_RptRow row) {
+            public void AddDG_Rented_Asset_Details_RptRow(DG_Rented_Asset_Details_RptRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Mr_Rented_Asset_Details_RptRow AddMr_Rented_Asset_Details_RptRow(string RentAssetNo, string RentAsstName, System.DateTime RentDate, string Model, string Brand, string cFloor_Descriptin, string Line_No, decimal CostPerDay) {
-                Mr_Rented_Asset_Details_RptRow rowMr_Rented_Asset_Details_RptRow = ((Mr_Rented_Asset_Details_RptRow)(this.NewRow()));
+            public DG_Rented_Asset_Details_RptRow AddDG_Rented_Asset_Details_RptRow(string RentAssetNo, string RentAsstName, System.DateTime RentDate, string Model, string Brand, string cFloor_Descriptin, string Line_No, decimal CostPerDay) {
+                DG_Rented_Asset_Details_RptRow rowDG_Rented_Asset_Details_RptRow = ((DG_Rented_Asset_Details_RptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         RentAssetNo,
                         RentAsstName,
@@ -2193,15 +2263,15 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
                         cFloor_Descriptin,
                         Line_No,
                         CostPerDay};
-                rowMr_Rented_Asset_Details_RptRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowMr_Rented_Asset_Details_RptRow);
-                return rowMr_Rented_Asset_Details_RptRow;
+                rowDG_Rented_Asset_Details_RptRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDG_Rented_Asset_Details_RptRow);
+                return rowDG_Rented_Asset_Details_RptRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                Mr_Rented_Asset_Details_RptDataTable cln = ((Mr_Rented_Asset_Details_RptDataTable)(base.Clone()));
+                DG_Rented_Asset_Details_RptDataTable cln = ((DG_Rented_Asset_Details_RptDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -2209,7 +2279,7 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new Mr_Rented_Asset_Details_RptDataTable();
+                return new DG_Rented_Asset_Details_RptDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2255,28 +2325,28 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Mr_Rented_Asset_Details_RptRow NewMr_Rented_Asset_Details_RptRow() {
-                return ((Mr_Rented_Asset_Details_RptRow)(this.NewRow()));
+            public DG_Rented_Asset_Details_RptRow NewDG_Rented_Asset_Details_RptRow() {
+                return ((DG_Rented_Asset_Details_RptRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Mr_Rented_Asset_Details_RptRow(builder);
+                return new DG_Rented_Asset_Details_RptRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(Mr_Rented_Asset_Details_RptRow);
+                return typeof(DG_Rented_Asset_Details_RptRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.Mr_Rented_Asset_Details_RptRowChanged != null)) {
-                    this.Mr_Rented_Asset_Details_RptRowChanged(this, new Mr_Rented_Asset_Details_RptRowChangeEvent(((Mr_Rented_Asset_Details_RptRow)(e.Row)), e.Action));
+                if ((this.DG_Rented_Asset_Details_RptRowChanged != null)) {
+                    this.DG_Rented_Asset_Details_RptRowChanged(this, new DG_Rented_Asset_Details_RptRowChangeEvent(((DG_Rented_Asset_Details_RptRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2284,8 +2354,8 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.Mr_Rented_Asset_Details_RptRowChanging != null)) {
-                    this.Mr_Rented_Asset_Details_RptRowChanging(this, new Mr_Rented_Asset_Details_RptRowChangeEvent(((Mr_Rented_Asset_Details_RptRow)(e.Row)), e.Action));
+                if ((this.DG_Rented_Asset_Details_RptRowChanging != null)) {
+                    this.DG_Rented_Asset_Details_RptRowChanging(this, new DG_Rented_Asset_Details_RptRowChangeEvent(((DG_Rented_Asset_Details_RptRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2293,8 +2363,8 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.Mr_Rented_Asset_Details_RptRowDeleted != null)) {
-                    this.Mr_Rented_Asset_Details_RptRowDeleted(this, new Mr_Rented_Asset_Details_RptRowChangeEvent(((Mr_Rented_Asset_Details_RptRow)(e.Row)), e.Action));
+                if ((this.DG_Rented_Asset_Details_RptRowDeleted != null)) {
+                    this.DG_Rented_Asset_Details_RptRowDeleted(this, new DG_Rented_Asset_Details_RptRowChangeEvent(((DG_Rented_Asset_Details_RptRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2302,14 +2372,14 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.Mr_Rented_Asset_Details_RptRowDeleting != null)) {
-                    this.Mr_Rented_Asset_Details_RptRowDeleting(this, new Mr_Rented_Asset_Details_RptRowChangeEvent(((Mr_Rented_Asset_Details_RptRow)(e.Row)), e.Action));
+                if ((this.DG_Rented_Asset_Details_RptRowDeleting != null)) {
+                    this.DG_Rented_Asset_Details_RptRowDeleting(this, new DG_Rented_Asset_Details_RptRowChangeEvent(((DG_Rented_Asset_Details_RptRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveMr_Rented_Asset_Details_RptRow(Mr_Rented_Asset_Details_RptRow row) {
+            public void RemoveDG_Rented_Asset_Details_RptRow(DG_Rented_Asset_Details_RptRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -2336,7 +2406,666 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Mr_Rented_Asset_Details_RptDataTable";
+                attribute2.FixedValue = "DG_Rented_Asset_Details_RptDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class DG_Internal_Fixed_Asset_Transfer_RptDataTable : global::System.Data.TypedTableBase<DG_Internal_Fixed_Asset_Transfer_RptRow> {
+            
+            private global::System.Data.DataColumn columniet_asset_no;
+            
+            private global::System.Data.DataColumn columnMcDesc;
+            
+            private global::System.Data.DataColumn columniet_date;
+            
+            private global::System.Data.DataColumn columnfrom_floor_desc;
+            
+            private global::System.Data.DataColumn columnto_floor_desc;
+            
+            private global::System.Data.DataColumn columnfrom_line_desc;
+            
+            private global::System.Data.DataColumn columnto_line_desc;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DG_Internal_Fixed_Asset_Transfer_RptDataTable() {
+                this.TableName = "DG_Internal_Fixed_Asset_Transfer_Rpt";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal DG_Internal_Fixed_Asset_Transfer_RptDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected DG_Internal_Fixed_Asset_Transfer_RptDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn iet_asset_noColumn {
+                get {
+                    return this.columniet_asset_no;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn McDescColumn {
+                get {
+                    return this.columnMcDesc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn iet_dateColumn {
+                get {
+                    return this.columniet_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn from_floor_descColumn {
+                get {
+                    return this.columnfrom_floor_desc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn to_floor_descColumn {
+                get {
+                    return this.columnto_floor_desc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn from_line_descColumn {
+                get {
+                    return this.columnfrom_line_desc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn to_line_descColumn {
+                get {
+                    return this.columnto_line_desc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DG_Internal_Fixed_Asset_Transfer_RptRow this[int index] {
+                get {
+                    return ((DG_Internal_Fixed_Asset_Transfer_RptRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event DG_Internal_Fixed_Asset_Transfer_RptRowChangeEventHandler DG_Internal_Fixed_Asset_Transfer_RptRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event DG_Internal_Fixed_Asset_Transfer_RptRowChangeEventHandler DG_Internal_Fixed_Asset_Transfer_RptRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event DG_Internal_Fixed_Asset_Transfer_RptRowChangeEventHandler DG_Internal_Fixed_Asset_Transfer_RptRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event DG_Internal_Fixed_Asset_Transfer_RptRowChangeEventHandler DG_Internal_Fixed_Asset_Transfer_RptRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddDG_Internal_Fixed_Asset_Transfer_RptRow(DG_Internal_Fixed_Asset_Transfer_RptRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DG_Internal_Fixed_Asset_Transfer_RptRow AddDG_Internal_Fixed_Asset_Transfer_RptRow(string iet_asset_no, string McDesc, System.DateTime iet_date, string from_floor_desc, string to_floor_desc, string from_line_desc, string to_line_desc) {
+                DG_Internal_Fixed_Asset_Transfer_RptRow rowDG_Internal_Fixed_Asset_Transfer_RptRow = ((DG_Internal_Fixed_Asset_Transfer_RptRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        iet_asset_no,
+                        McDesc,
+                        iet_date,
+                        from_floor_desc,
+                        to_floor_desc,
+                        from_line_desc,
+                        to_line_desc};
+                rowDG_Internal_Fixed_Asset_Transfer_RptRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDG_Internal_Fixed_Asset_Transfer_RptRow);
+                return rowDG_Internal_Fixed_Asset_Transfer_RptRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                DG_Internal_Fixed_Asset_Transfer_RptDataTable cln = ((DG_Internal_Fixed_Asset_Transfer_RptDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new DG_Internal_Fixed_Asset_Transfer_RptDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columniet_asset_no = base.Columns["iet_asset_no"];
+                this.columnMcDesc = base.Columns["McDesc"];
+                this.columniet_date = base.Columns["iet_date"];
+                this.columnfrom_floor_desc = base.Columns["from_floor_desc"];
+                this.columnto_floor_desc = base.Columns["to_floor_desc"];
+                this.columnfrom_line_desc = base.Columns["from_line_desc"];
+                this.columnto_line_desc = base.Columns["to_line_desc"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columniet_asset_no = new global::System.Data.DataColumn("iet_asset_no", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columniet_asset_no);
+                this.columnMcDesc = new global::System.Data.DataColumn("McDesc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMcDesc);
+                this.columniet_date = new global::System.Data.DataColumn("iet_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columniet_date);
+                this.columnfrom_floor_desc = new global::System.Data.DataColumn("from_floor_desc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfrom_floor_desc);
+                this.columnto_floor_desc = new global::System.Data.DataColumn("to_floor_desc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnto_floor_desc);
+                this.columnfrom_line_desc = new global::System.Data.DataColumn("from_line_desc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfrom_line_desc);
+                this.columnto_line_desc = new global::System.Data.DataColumn("to_line_desc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnto_line_desc);
+                this.columniet_asset_no.MaxLength = 20;
+                this.columnMcDesc.MaxLength = 50;
+                this.columnfrom_floor_desc.MaxLength = 20;
+                this.columnto_floor_desc.MaxLength = 20;
+                this.columnfrom_line_desc.MaxLength = 30;
+                this.columnto_line_desc.MaxLength = 30;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DG_Internal_Fixed_Asset_Transfer_RptRow NewDG_Internal_Fixed_Asset_Transfer_RptRow() {
+                return ((DG_Internal_Fixed_Asset_Transfer_RptRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new DG_Internal_Fixed_Asset_Transfer_RptRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(DG_Internal_Fixed_Asset_Transfer_RptRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.DG_Internal_Fixed_Asset_Transfer_RptRowChanged != null)) {
+                    this.DG_Internal_Fixed_Asset_Transfer_RptRowChanged(this, new DG_Internal_Fixed_Asset_Transfer_RptRowChangeEvent(((DG_Internal_Fixed_Asset_Transfer_RptRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.DG_Internal_Fixed_Asset_Transfer_RptRowChanging != null)) {
+                    this.DG_Internal_Fixed_Asset_Transfer_RptRowChanging(this, new DG_Internal_Fixed_Asset_Transfer_RptRowChangeEvent(((DG_Internal_Fixed_Asset_Transfer_RptRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.DG_Internal_Fixed_Asset_Transfer_RptRowDeleted != null)) {
+                    this.DG_Internal_Fixed_Asset_Transfer_RptRowDeleted(this, new DG_Internal_Fixed_Asset_Transfer_RptRowChangeEvent(((DG_Internal_Fixed_Asset_Transfer_RptRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.DG_Internal_Fixed_Asset_Transfer_RptRowDeleting != null)) {
+                    this.DG_Internal_Fixed_Asset_Transfer_RptRowDeleting(this, new DG_Internal_Fixed_Asset_Transfer_RptRowChangeEvent(((DG_Internal_Fixed_Asset_Transfer_RptRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveDG_Internal_Fixed_Asset_Transfer_RptRow(DG_Internal_Fixed_Asset_Transfer_RptRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                AssetDataSet ds = new AssetDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "DG_Internal_Fixed_Asset_Transfer_RptDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class DG_External_Fixed_Asset_Transfer_RptDataTable : global::System.Data.TypedTableBase<DG_External_Fixed_Asset_Transfer_RptRow> {
+            
+            private global::System.Data.DataColumn columniet_asset_no;
+            
+            private global::System.Data.DataColumn columnMcDesc;
+            
+            private global::System.Data.DataColumn columniet_date;
+            
+            private global::System.Data.DataColumn columnfrom_com_desc;
+            
+            private global::System.Data.DataColumn columnto_com_desc;
+            
+            private global::System.Data.DataColumn columniet_remarks;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DG_External_Fixed_Asset_Transfer_RptDataTable() {
+                this.TableName = "DG_External_Fixed_Asset_Transfer_Rpt";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal DG_External_Fixed_Asset_Transfer_RptDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected DG_External_Fixed_Asset_Transfer_RptDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn iet_asset_noColumn {
+                get {
+                    return this.columniet_asset_no;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn McDescColumn {
+                get {
+                    return this.columnMcDesc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn iet_dateColumn {
+                get {
+                    return this.columniet_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn from_com_descColumn {
+                get {
+                    return this.columnfrom_com_desc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn to_com_descColumn {
+                get {
+                    return this.columnto_com_desc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn iet_remarksColumn {
+                get {
+                    return this.columniet_remarks;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DG_External_Fixed_Asset_Transfer_RptRow this[int index] {
+                get {
+                    return ((DG_External_Fixed_Asset_Transfer_RptRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event DG_External_Fixed_Asset_Transfer_RptRowChangeEventHandler DG_External_Fixed_Asset_Transfer_RptRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event DG_External_Fixed_Asset_Transfer_RptRowChangeEventHandler DG_External_Fixed_Asset_Transfer_RptRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event DG_External_Fixed_Asset_Transfer_RptRowChangeEventHandler DG_External_Fixed_Asset_Transfer_RptRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event DG_External_Fixed_Asset_Transfer_RptRowChangeEventHandler DG_External_Fixed_Asset_Transfer_RptRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddDG_External_Fixed_Asset_Transfer_RptRow(DG_External_Fixed_Asset_Transfer_RptRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DG_External_Fixed_Asset_Transfer_RptRow AddDG_External_Fixed_Asset_Transfer_RptRow(string iet_asset_no, string McDesc, System.DateTime iet_date, string from_com_desc, string to_com_desc, string iet_remarks) {
+                DG_External_Fixed_Asset_Transfer_RptRow rowDG_External_Fixed_Asset_Transfer_RptRow = ((DG_External_Fixed_Asset_Transfer_RptRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        iet_asset_no,
+                        McDesc,
+                        iet_date,
+                        from_com_desc,
+                        to_com_desc,
+                        iet_remarks};
+                rowDG_External_Fixed_Asset_Transfer_RptRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDG_External_Fixed_Asset_Transfer_RptRow);
+                return rowDG_External_Fixed_Asset_Transfer_RptRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                DG_External_Fixed_Asset_Transfer_RptDataTable cln = ((DG_External_Fixed_Asset_Transfer_RptDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new DG_External_Fixed_Asset_Transfer_RptDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columniet_asset_no = base.Columns["iet_asset_no"];
+                this.columnMcDesc = base.Columns["McDesc"];
+                this.columniet_date = base.Columns["iet_date"];
+                this.columnfrom_com_desc = base.Columns["from_com_desc"];
+                this.columnto_com_desc = base.Columns["to_com_desc"];
+                this.columniet_remarks = base.Columns["iet_remarks"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columniet_asset_no = new global::System.Data.DataColumn("iet_asset_no", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columniet_asset_no);
+                this.columnMcDesc = new global::System.Data.DataColumn("McDesc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMcDesc);
+                this.columniet_date = new global::System.Data.DataColumn("iet_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columniet_date);
+                this.columnfrom_com_desc = new global::System.Data.DataColumn("from_com_desc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfrom_com_desc);
+                this.columnto_com_desc = new global::System.Data.DataColumn("to_com_desc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnto_com_desc);
+                this.columniet_remarks = new global::System.Data.DataColumn("iet_remarks", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columniet_remarks);
+                this.columniet_asset_no.MaxLength = 20;
+                this.columnMcDesc.MaxLength = 50;
+                this.columnfrom_com_desc.MaxLength = 200;
+                this.columnto_com_desc.MaxLength = 200;
+                this.columniet_remarks.MaxLength = 250;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DG_External_Fixed_Asset_Transfer_RptRow NewDG_External_Fixed_Asset_Transfer_RptRow() {
+                return ((DG_External_Fixed_Asset_Transfer_RptRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new DG_External_Fixed_Asset_Transfer_RptRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(DG_External_Fixed_Asset_Transfer_RptRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.DG_External_Fixed_Asset_Transfer_RptRowChanged != null)) {
+                    this.DG_External_Fixed_Asset_Transfer_RptRowChanged(this, new DG_External_Fixed_Asset_Transfer_RptRowChangeEvent(((DG_External_Fixed_Asset_Transfer_RptRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.DG_External_Fixed_Asset_Transfer_RptRowChanging != null)) {
+                    this.DG_External_Fixed_Asset_Transfer_RptRowChanging(this, new DG_External_Fixed_Asset_Transfer_RptRowChangeEvent(((DG_External_Fixed_Asset_Transfer_RptRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.DG_External_Fixed_Asset_Transfer_RptRowDeleted != null)) {
+                    this.DG_External_Fixed_Asset_Transfer_RptRowDeleted(this, new DG_External_Fixed_Asset_Transfer_RptRowChangeEvent(((DG_External_Fixed_Asset_Transfer_RptRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.DG_External_Fixed_Asset_Transfer_RptRowDeleting != null)) {
+                    this.DG_External_Fixed_Asset_Transfer_RptRowDeleting(this, new DG_External_Fixed_Asset_Transfer_RptRowChangeEvent(((DG_External_Fixed_Asset_Transfer_RptRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveDG_External_Fixed_Asset_Transfer_RptRow(DG_External_Fixed_Asset_Transfer_RptRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                AssetDataSet ds = new AssetDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "DG_External_Fixed_Asset_Transfer_RptDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3637,25 +4366,25 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class Mr_Rented_Asset_Details_RptRow : global::System.Data.DataRow {
+        public partial class DG_Rented_Asset_Details_RptRow : global::System.Data.DataRow {
             
-            private Mr_Rented_Asset_Details_RptDataTable tableMr_Rented_Asset_Details_Rpt;
+            private DG_Rented_Asset_Details_RptDataTable tableDG_Rented_Asset_Details_Rpt;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal Mr_Rented_Asset_Details_RptRow(global::System.Data.DataRowBuilder rb) : 
+            internal DG_Rented_Asset_Details_RptRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableMr_Rented_Asset_Details_Rpt = ((Mr_Rented_Asset_Details_RptDataTable)(this.Table));
+                this.tableDG_Rented_Asset_Details_Rpt = ((DG_Rented_Asset_Details_RptDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string RentAssetNo {
                 get {
-                    return ((string)(this[this.tableMr_Rented_Asset_Details_Rpt.RentAssetNoColumn]));
+                    return ((string)(this[this.tableDG_Rented_Asset_Details_Rpt.RentAssetNoColumn]));
                 }
                 set {
-                    this[this.tableMr_Rented_Asset_Details_Rpt.RentAssetNoColumn] = value;
+                    this[this.tableDG_Rented_Asset_Details_Rpt.RentAssetNoColumn] = value;
                 }
             }
             
@@ -3664,15 +4393,15 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             public string RentAsstName {
                 get {
                     try {
-                        return ((string)(this[this.tableMr_Rented_Asset_Details_Rpt.RentAsstNameColumn]));
+                        return ((string)(this[this.tableDG_Rented_Asset_Details_Rpt.RentAsstNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RentAsstName\' in table \'Mr_Rented_Asset_Details_Rpt\' is DBN" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'RentAsstName\' in table \'DG_Rented_Asset_Details_Rpt\' is DBN" +
                                 "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableMr_Rented_Asset_Details_Rpt.RentAsstNameColumn] = value;
+                    this[this.tableDG_Rented_Asset_Details_Rpt.RentAsstNameColumn] = value;
                 }
             }
             
@@ -3681,15 +4410,15 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             public System.DateTime RentDate {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableMr_Rented_Asset_Details_Rpt.RentDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableDG_Rented_Asset_Details_Rpt.RentDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RentDate\' in table \'Mr_Rented_Asset_Details_Rpt\' is DBNull." +
+                        throw new global::System.Data.StrongTypingException("The value for column \'RentDate\' in table \'DG_Rented_Asset_Details_Rpt\' is DBNull." +
                                 "", e);
                     }
                 }
                 set {
-                    this[this.tableMr_Rented_Asset_Details_Rpt.RentDateColumn] = value;
+                    this[this.tableDG_Rented_Asset_Details_Rpt.RentDateColumn] = value;
                 }
             }
             
@@ -3698,14 +4427,14 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             public string Model {
                 get {
                     try {
-                        return ((string)(this[this.tableMr_Rented_Asset_Details_Rpt.ModelColumn]));
+                        return ((string)(this[this.tableDG_Rented_Asset_Details_Rpt.ModelColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Model\' in table \'Mr_Rented_Asset_Details_Rpt\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Model\' in table \'DG_Rented_Asset_Details_Rpt\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMr_Rented_Asset_Details_Rpt.ModelColumn] = value;
+                    this[this.tableDG_Rented_Asset_Details_Rpt.ModelColumn] = value;
                 }
             }
             
@@ -3714,14 +4443,14 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             public string Brand {
                 get {
                     try {
-                        return ((string)(this[this.tableMr_Rented_Asset_Details_Rpt.BrandColumn]));
+                        return ((string)(this[this.tableDG_Rented_Asset_Details_Rpt.BrandColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Brand\' in table \'Mr_Rented_Asset_Details_Rpt\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Brand\' in table \'DG_Rented_Asset_Details_Rpt\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMr_Rented_Asset_Details_Rpt.BrandColumn] = value;
+                    this[this.tableDG_Rented_Asset_Details_Rpt.BrandColumn] = value;
                 }
             }
             
@@ -3730,15 +4459,15 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             public string cFloor_Descriptin {
                 get {
                     try {
-                        return ((string)(this[this.tableMr_Rented_Asset_Details_Rpt.cFloor_DescriptinColumn]));
+                        return ((string)(this[this.tableDG_Rented_Asset_Details_Rpt.cFloor_DescriptinColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cFloor_Descriptin\' in table \'Mr_Rented_Asset_Details_Rpt\' i" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'cFloor_Descriptin\' in table \'DG_Rented_Asset_Details_Rpt\' i" +
                                 "s DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMr_Rented_Asset_Details_Rpt.cFloor_DescriptinColumn] = value;
+                    this[this.tableDG_Rented_Asset_Details_Rpt.cFloor_DescriptinColumn] = value;
                 }
             }
             
@@ -3747,14 +4476,14 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             public string Line_No {
                 get {
                     try {
-                        return ((string)(this[this.tableMr_Rented_Asset_Details_Rpt.Line_NoColumn]));
+                        return ((string)(this[this.tableDG_Rented_Asset_Details_Rpt.Line_NoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Line_No\' in table \'Mr_Rented_Asset_Details_Rpt\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Line_No\' in table \'DG_Rented_Asset_Details_Rpt\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMr_Rented_Asset_Details_Rpt.Line_NoColumn] = value;
+                    this[this.tableDG_Rented_Asset_Details_Rpt.Line_NoColumn] = value;
                 }
             }
             
@@ -3763,100 +4492,507 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
             public decimal CostPerDay {
                 get {
                     try {
-                        return ((decimal)(this[this.tableMr_Rented_Asset_Details_Rpt.CostPerDayColumn]));
+                        return ((decimal)(this[this.tableDG_Rented_Asset_Details_Rpt.CostPerDayColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CostPerDay\' in table \'Mr_Rented_Asset_Details_Rpt\' is DBNul" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'CostPerDay\' in table \'DG_Rented_Asset_Details_Rpt\' is DBNul" +
                                 "l.", e);
                     }
                 }
                 set {
-                    this[this.tableMr_Rented_Asset_Details_Rpt.CostPerDayColumn] = value;
+                    this[this.tableDG_Rented_Asset_Details_Rpt.CostPerDayColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsRentAsstNameNull() {
-                return this.IsNull(this.tableMr_Rented_Asset_Details_Rpt.RentAsstNameColumn);
+                return this.IsNull(this.tableDG_Rented_Asset_Details_Rpt.RentAsstNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetRentAsstNameNull() {
-                this[this.tableMr_Rented_Asset_Details_Rpt.RentAsstNameColumn] = global::System.Convert.DBNull;
+                this[this.tableDG_Rented_Asset_Details_Rpt.RentAsstNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsRentDateNull() {
-                return this.IsNull(this.tableMr_Rented_Asset_Details_Rpt.RentDateColumn);
+                return this.IsNull(this.tableDG_Rented_Asset_Details_Rpt.RentDateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetRentDateNull() {
-                this[this.tableMr_Rented_Asset_Details_Rpt.RentDateColumn] = global::System.Convert.DBNull;
+                this[this.tableDG_Rented_Asset_Details_Rpt.RentDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsModelNull() {
-                return this.IsNull(this.tableMr_Rented_Asset_Details_Rpt.ModelColumn);
+                return this.IsNull(this.tableDG_Rented_Asset_Details_Rpt.ModelColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetModelNull() {
-                this[this.tableMr_Rented_Asset_Details_Rpt.ModelColumn] = global::System.Convert.DBNull;
+                this[this.tableDG_Rented_Asset_Details_Rpt.ModelColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsBrandNull() {
-                return this.IsNull(this.tableMr_Rented_Asset_Details_Rpt.BrandColumn);
+                return this.IsNull(this.tableDG_Rented_Asset_Details_Rpt.BrandColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetBrandNull() {
-                this[this.tableMr_Rented_Asset_Details_Rpt.BrandColumn] = global::System.Convert.DBNull;
+                this[this.tableDG_Rented_Asset_Details_Rpt.BrandColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IscFloor_DescriptinNull() {
-                return this.IsNull(this.tableMr_Rented_Asset_Details_Rpt.cFloor_DescriptinColumn);
+                return this.IsNull(this.tableDG_Rented_Asset_Details_Rpt.cFloor_DescriptinColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetcFloor_DescriptinNull() {
-                this[this.tableMr_Rented_Asset_Details_Rpt.cFloor_DescriptinColumn] = global::System.Convert.DBNull;
+                this[this.tableDG_Rented_Asset_Details_Rpt.cFloor_DescriptinColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsLine_NoNull() {
-                return this.IsNull(this.tableMr_Rented_Asset_Details_Rpt.Line_NoColumn);
+                return this.IsNull(this.tableDG_Rented_Asset_Details_Rpt.Line_NoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetLine_NoNull() {
-                this[this.tableMr_Rented_Asset_Details_Rpt.Line_NoColumn] = global::System.Convert.DBNull;
+                this[this.tableDG_Rented_Asset_Details_Rpt.Line_NoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsCostPerDayNull() {
-                return this.IsNull(this.tableMr_Rented_Asset_Details_Rpt.CostPerDayColumn);
+                return this.IsNull(this.tableDG_Rented_Asset_Details_Rpt.CostPerDayColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetCostPerDayNull() {
-                this[this.tableMr_Rented_Asset_Details_Rpt.CostPerDayColumn] = global::System.Convert.DBNull;
+                this[this.tableDG_Rented_Asset_Details_Rpt.CostPerDayColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class DG_Internal_Fixed_Asset_Transfer_RptRow : global::System.Data.DataRow {
+            
+            private DG_Internal_Fixed_Asset_Transfer_RptDataTable tableDG_Internal_Fixed_Asset_Transfer_Rpt;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal DG_Internal_Fixed_Asset_Transfer_RptRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDG_Internal_Fixed_Asset_Transfer_Rpt = ((DG_Internal_Fixed_Asset_Transfer_RptDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string iet_asset_no {
+                get {
+                    try {
+                        return ((string)(this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.iet_asset_noColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'iet_asset_no\' in table \'DG_Internal_Fixed_Asset_Transfer_Rp" +
+                                "t\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.iet_asset_noColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string McDesc {
+                get {
+                    try {
+                        return ((string)(this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.McDescColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'McDesc\' in table \'DG_Internal_Fixed_Asset_Transfer_Rpt\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.McDescColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime iet_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.iet_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'iet_date\' in table \'DG_Internal_Fixed_Asset_Transfer_Rpt\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.iet_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string from_floor_desc {
+                get {
+                    try {
+                        return ((string)(this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.from_floor_descColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'from_floor_desc\' in table \'DG_Internal_Fixed_Asset_Transfer" +
+                                "_Rpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.from_floor_descColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string to_floor_desc {
+                get {
+                    try {
+                        return ((string)(this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.to_floor_descColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'to_floor_desc\' in table \'DG_Internal_Fixed_Asset_Transfer_R" +
+                                "pt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.to_floor_descColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string from_line_desc {
+                get {
+                    try {
+                        return ((string)(this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.from_line_descColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'from_line_desc\' in table \'DG_Internal_Fixed_Asset_Transfer_" +
+                                "Rpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.from_line_descColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string to_line_desc {
+                get {
+                    try {
+                        return ((string)(this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.to_line_descColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'to_line_desc\' in table \'DG_Internal_Fixed_Asset_Transfer_Rp" +
+                                "t\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.to_line_descColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isiet_asset_noNull() {
+                return this.IsNull(this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.iet_asset_noColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setiet_asset_noNull() {
+                this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.iet_asset_noColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMcDescNull() {
+                return this.IsNull(this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.McDescColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMcDescNull() {
+                this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.McDescColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isiet_dateNull() {
+                return this.IsNull(this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.iet_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setiet_dateNull() {
+                this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.iet_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isfrom_floor_descNull() {
+                return this.IsNull(this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.from_floor_descColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setfrom_floor_descNull() {
+                this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.from_floor_descColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isto_floor_descNull() {
+                return this.IsNull(this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.to_floor_descColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setto_floor_descNull() {
+                this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.to_floor_descColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isfrom_line_descNull() {
+                return this.IsNull(this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.from_line_descColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setfrom_line_descNull() {
+                this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.from_line_descColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isto_line_descNull() {
+                return this.IsNull(this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.to_line_descColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setto_line_descNull() {
+                this[this.tableDG_Internal_Fixed_Asset_Transfer_Rpt.to_line_descColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class DG_External_Fixed_Asset_Transfer_RptRow : global::System.Data.DataRow {
+            
+            private DG_External_Fixed_Asset_Transfer_RptDataTable tableDG_External_Fixed_Asset_Transfer_Rpt;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal DG_External_Fixed_Asset_Transfer_RptRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDG_External_Fixed_Asset_Transfer_Rpt = ((DG_External_Fixed_Asset_Transfer_RptDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string iet_asset_no {
+                get {
+                    try {
+                        return ((string)(this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.iet_asset_noColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'iet_asset_no\' in table \'DG_External_Fixed_Asset_Transfer_Rp" +
+                                "t\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.iet_asset_noColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string McDesc {
+                get {
+                    try {
+                        return ((string)(this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.McDescColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'McDesc\' in table \'DG_External_Fixed_Asset_Transfer_Rpt\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.McDescColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime iet_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.iet_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'iet_date\' in table \'DG_External_Fixed_Asset_Transfer_Rpt\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.iet_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string from_com_desc {
+                get {
+                    try {
+                        return ((string)(this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.from_com_descColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'from_com_desc\' in table \'DG_External_Fixed_Asset_Transfer_R" +
+                                "pt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.from_com_descColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string to_com_desc {
+                get {
+                    try {
+                        return ((string)(this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.to_com_descColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'to_com_desc\' in table \'DG_External_Fixed_Asset_Transfer_Rpt" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.to_com_descColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string iet_remarks {
+                get {
+                    try {
+                        return ((string)(this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.iet_remarksColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'iet_remarks\' in table \'DG_External_Fixed_Asset_Transfer_Rpt" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.iet_remarksColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isiet_asset_noNull() {
+                return this.IsNull(this.tableDG_External_Fixed_Asset_Transfer_Rpt.iet_asset_noColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setiet_asset_noNull() {
+                this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.iet_asset_noColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMcDescNull() {
+                return this.IsNull(this.tableDG_External_Fixed_Asset_Transfer_Rpt.McDescColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMcDescNull() {
+                this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.McDescColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isiet_dateNull() {
+                return this.IsNull(this.tableDG_External_Fixed_Asset_Transfer_Rpt.iet_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setiet_dateNull() {
+                this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.iet_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isfrom_com_descNull() {
+                return this.IsNull(this.tableDG_External_Fixed_Asset_Transfer_Rpt.from_com_descColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setfrom_com_descNull() {
+                this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.from_com_descColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isto_com_descNull() {
+                return this.IsNull(this.tableDG_External_Fixed_Asset_Transfer_Rpt.to_com_descColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setto_com_descNull() {
+                this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.to_com_descColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isiet_remarksNull() {
+                return this.IsNull(this.tableDG_External_Fixed_Asset_Transfer_Rpt.iet_remarksColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setiet_remarksNull() {
+                this[this.tableDG_External_Fixed_Asset_Transfer_Rpt.iet_remarksColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4000,22 +5136,90 @@ namespace PMS_API.wwwroot.Report.Report Dataset {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class Mr_Rented_Asset_Details_RptRowChangeEvent : global::System.EventArgs {
+        public class DG_Rented_Asset_Details_RptRowChangeEvent : global::System.EventArgs {
             
-            private Mr_Rented_Asset_Details_RptRow eventRow;
+            private DG_Rented_Asset_Details_RptRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Mr_Rented_Asset_Details_RptRowChangeEvent(Mr_Rented_Asset_Details_RptRow row, global::System.Data.DataRowAction action) {
+            public DG_Rented_Asset_Details_RptRowChangeEvent(DG_Rented_Asset_Details_RptRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Mr_Rented_Asset_Details_RptRow Row {
+            public DG_Rented_Asset_Details_RptRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class DG_Internal_Fixed_Asset_Transfer_RptRowChangeEvent : global::System.EventArgs {
+            
+            private DG_Internal_Fixed_Asset_Transfer_RptRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DG_Internal_Fixed_Asset_Transfer_RptRowChangeEvent(DG_Internal_Fixed_Asset_Transfer_RptRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DG_Internal_Fixed_Asset_Transfer_RptRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class DG_External_Fixed_Asset_Transfer_RptRowChangeEvent : global::System.EventArgs {
+            
+            private DG_External_Fixed_Asset_Transfer_RptRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DG_External_Fixed_Asset_Transfer_RptRowChangeEvent(DG_External_Fixed_Asset_Transfer_RptRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DG_External_Fixed_Asset_Transfer_RptRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -4810,7 +6014,7 @@ namespace PMS_API.wwwroot.Report.Report Dataset.AssetDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Mr_Rented_Asset_Details_RptTableAdapter : global::System.ComponentModel.Component {
+    public partial class DG_Rented_Asset_Details_RptTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -4824,7 +6028,7 @@ namespace PMS_API.wwwroot.Report.Report Dataset.AssetDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public Mr_Rented_Asset_Details_RptTableAdapter() {
+        public DG_Rented_Asset_Details_RptTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -4921,7 +6125,7 @@ namespace PMS_API.wwwroot.Report.Report Dataset.AssetDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Mr_Rented_Asset_Details_Rpt";
+            tableMapping.DataSetTable = "DG_Rented_Asset_Details_Rpt";
             tableMapping.ColumnMappings.Add("RentAssetNo", "RentAssetNo");
             tableMapping.ColumnMappings.Add("RentAsstName", "RentAsstName");
             tableMapping.ColumnMappings.Add("RentDate", "RentDate");
@@ -4947,7 +6151,7 @@ namespace PMS_API.wwwroot.Report.Report Dataset.AssetDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.Mr_Rented_Asset_Details_Rpt";
+            this._commandCollection[0].CommandText = "dbo.DG_Rented_Asset_Details_Rpt";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CompID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4957,7 +6161,7 @@ namespace PMS_API.wwwroot.Report.Report Dataset.AssetDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(AssetDataSet.Mr_Rented_Asset_Details_RptDataTable dataTable, global::System.Nullable<int> CompID) {
+        public virtual int Fill(AssetDataSet.DG_Rented_Asset_Details_RptDataTable dataTable, global::System.Nullable<int> CompID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((CompID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(CompID.Value));
@@ -4976,7 +6180,7 @@ namespace PMS_API.wwwroot.Report.Report Dataset.AssetDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual AssetDataSet.Mr_Rented_Asset_Details_RptDataTable GetData(global::System.Nullable<int> CompID) {
+        public virtual AssetDataSet.DG_Rented_Asset_Details_RptDataTable GetData(global::System.Nullable<int> CompID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((CompID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(CompID.Value));
@@ -4984,7 +6188,395 @@ namespace PMS_API.wwwroot.Report.Report Dataset.AssetDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            AssetDataSet.Mr_Rented_Asset_Details_RptDataTable dataTable = new AssetDataSet.Mr_Rented_Asset_Details_RptDataTable();
+            AssetDataSet.DG_Rented_Asset_Details_RptDataTable dataTable = new AssetDataSet.DG_Rented_Asset_Details_RptDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class DG_Internal_Fixed_Asset_Transfer_RptTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public DG_Internal_Fixed_Asset_Transfer_RptTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "DG_Internal_Fixed_Asset_Transfer_Rpt";
+            tableMapping.ColumnMappings.Add("iet_asset_no", "iet_asset_no");
+            tableMapping.ColumnMappings.Add("McDesc", "McDesc");
+            tableMapping.ColumnMappings.Add("iet_date", "iet_date");
+            tableMapping.ColumnMappings.Add("from_floor_desc", "from_floor_desc");
+            tableMapping.ColumnMappings.Add("to_floor_desc", "to_floor_desc");
+            tableMapping.ColumnMappings.Add("from_line_desc", "from_line_desc");
+            tableMapping.ColumnMappings.Add("to_line_desc", "to_line_desc");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = "Data Source=192.168.100.250;Initial Catalog=Mr_Asset_Info;Persist Security Info=T" +
+                "rue;User ID=sa;Password=dg@INFO";
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.DG_Internal_Fixed_Asset_Transfer_Rpt";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CompID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(AssetDataSet.DG_Internal_Fixed_Asset_Transfer_RptDataTable dataTable, global::System.Nullable<int> CompID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((CompID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(CompID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual AssetDataSet.DG_Internal_Fixed_Asset_Transfer_RptDataTable GetData(global::System.Nullable<int> CompID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((CompID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(CompID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            AssetDataSet.DG_Internal_Fixed_Asset_Transfer_RptDataTable dataTable = new AssetDataSet.DG_Internal_Fixed_Asset_Transfer_RptDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class DG_External_Fixed_Asset_Transfer_RptTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public DG_External_Fixed_Asset_Transfer_RptTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "DG_External_Fixed_Asset_Transfer_Rpt";
+            tableMapping.ColumnMappings.Add("iet_asset_no", "iet_asset_no");
+            tableMapping.ColumnMappings.Add("McDesc", "McDesc");
+            tableMapping.ColumnMappings.Add("iet_date", "iet_date");
+            tableMapping.ColumnMappings.Add("from_com_desc", "from_com_desc");
+            tableMapping.ColumnMappings.Add("to_com_desc", "to_com_desc");
+            tableMapping.ColumnMappings.Add("iet_remarks", "iet_remarks");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = "Data Source=192.168.100.250;Initial Catalog=Mr_Asset_Info;Persist Security Info=T" +
+                "rue;User ID=sa;Password=dg@INFO";
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.DG_External_Fixed_Asset_Transfer_Rpt";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comp_from_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comp_to_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(AssetDataSet.DG_External_Fixed_Asset_Transfer_RptDataTable dataTable, global::System.Nullable<int> Comp_from_ID, global::System.Nullable<int> Comp_to_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Comp_from_ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Comp_from_ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Comp_to_ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(Comp_to_ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual AssetDataSet.DG_External_Fixed_Asset_Transfer_RptDataTable GetData(global::System.Nullable<int> Comp_from_ID, global::System.Nullable<int> Comp_to_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Comp_from_ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Comp_from_ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Comp_to_ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(Comp_to_ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            AssetDataSet.DG_External_Fixed_Asset_Transfer_RptDataTable dataTable = new AssetDataSet.DG_External_Fixed_Asset_Transfer_RptDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

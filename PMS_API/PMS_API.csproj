@@ -9,6 +9,8 @@
   <ItemGroup>
     <Content Remove="wwwroot\Report\Asset_Report\AssetManagementReport.rdlc" />
     <Content Remove="wwwroot\Report\Asset_Report\AssetSummaryReport.rdlc" />
+    <Content Remove="wwwroot\Report\Asset_Report\ExternalFixedAssetTransferReport.rdlc" />
+    <Content Remove="wwwroot\Report\Asset_Report\InternalFixedAssetTransferReport.rdlc" />
     <Content Remove="wwwroot\Report\Asset_Report\RentedAssetDetailsReport.rdlc" />
     <Content Remove="wwwroot\Report\Report Dataset\AssetDataSet.xsc" />
     <Content Remove="wwwroot\Report\Report Dataset\AssetDataSet.xsd" />
@@ -20,6 +22,8 @@
     <EmbeddedResource Include="wwwroot\Report\Asset_Report\AssetDetailsSummary.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Asset_Report\AssetManagementReport.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Asset_Report\AssetSummaryReport.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Asset_Report\ExternalFixedAssetTransferReport.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Asset_Report\InternalFixedAssetTransferReport.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Asset_Report\RentedAssetDetailsReport.rdlc" />
   </ItemGroup>
   <ItemGroup>

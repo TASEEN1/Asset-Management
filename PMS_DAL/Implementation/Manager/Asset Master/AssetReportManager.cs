@@ -30,6 +30,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             _SpecFoInventory = new SqlConnection(Dg_Getway.SpecFoInventory);
         }
 
+        //2 no report - taseen did- asset information details - sp M a master list info report
         public byte[] AssetDetailsSummary(string reportType, int comID, string UserName)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
@@ -120,7 +121,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
             return reportBytes;
         }
-        //8 no report - Asset Summary Report - Mr_Rented_Asset_Details_Rpt
+        //9 no report - Rented asset details Report - DG_Rented_Asset_Details_Rpt
         public byte[] RentedAssetDetailsReport(string reportType, int comID, string UserName)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
@@ -129,7 +130,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
             var tbldata = new DataTable[]
             {
-                _SqlCommon.get_InformationDataTable("Mr_Rented_Asset_Details_Rpt '" + comID + "'", _dg_Asst_Mgt),
+                _SqlCommon.get_InformationDataTable("DG_Rented_Asset_Details_Rpt '" + comID + "'", _dg_Asst_Mgt),
                 //_SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Wise_Report '"+styleID+"'", _dg_pms_conn),
                 //_SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Line_Wise_Report '"+styleID+"'", _dg_pms_conn),
                 //     _SqlCommon.get_InformationDataTable("Mr_Cut_Fabrics_Closing_Rpt '"+styleID+"'", _dg_pms_conn),
@@ -151,6 +152,69 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             return reportBytes;
         }
 
+        //6 no report - internal fixed asset transfer Report - DG_Internal_Fixed_Asset_Transfer_Rpt
+        public byte[] InternalFixedAssetTransferReport(string reportType, int comID, string UserName)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            var tbldata = new DataTable[]
+            {
+                _SqlCommon.get_InformationDataTable("DG_Internal_Fixed_Asset_Transfer_Rpt '" + comID + "'", _dg_Asst_Mgt),
+                //_SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Wise_Report '"+styleID+"'", _dg_pms_conn),
+                //_SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Line_Wise_Report '"+styleID+"'", _dg_pms_conn),
+                //     _SqlCommon.get_InformationDataTable("Mr_Cut_Fabrics_Closing_Rpt '"+styleID+"'", _dg_pms_conn),
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Asset_Report\\InternalFixedAssetTransferReport.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title", "Internal Fixed Asset Transfer Report- Factory: " + ComName + ""),
+            new ReportParameter("PrintUser", "" + UserName + "")
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
+        //7 no report - external fixed asset transfer Report - DG_External_Fixed_Asset_Transfer_Rpt
+        public byte[] ExternalFixedAssetTransferReport(string reportType, int fromComId, int toComId, string UserName)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + fromComId + "'", _specfo_conn);
+            DataTable dt2 = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + toComId + "'", _specfo_conn);
+
+            string FromComName = dt.Rows[0]["cCmpName"].ToString();
+            string ToComName = dt2.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            var tbldata = new DataTable[]
+            {
+                _SqlCommon.get_InformationDataTable("DG_External_Fixed_Asset_Transfer_Rpt " + fromComId +  ","  + toComId  , _dg_Asst_Mgt),
+                //_SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Wise_Report '"+styleID+"'", _dg_pms_conn),
+                //_SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Line_Wise_Report '"+styleID+"'", _dg_pms_conn),
+                //     _SqlCommon.get_InformationDataTable("Mr_Cut_Fabrics_Closing_Rpt '"+styleID+"'", _dg_pms_conn),
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Asset_Report\\ExternalFixedAssetTransferReport.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",FromComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title", "External Fixed Asset Transfer Report - From Factory: " + FromComName + "; To Factory: " + ToComName + ""),
+            new ReportParameter("PrintUser", "" + UserName + "")
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
 
         //Common Report Code
         private byte[] GenerateReport(DataTable dataTable, string datasetName, string rdlcFilePath, string reportType, ReportParameterCollection reportParameters = null)

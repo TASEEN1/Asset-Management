@@ -48,6 +48,21 @@ namespace PMS_API.Controllers
             return File(data, MediaTypeNames.Application.Octet, (reportType));
             //return File(data, MediaTypeNames.Application.Octet, "PDF");
         }
+        [HttpGet]
+        public async Task<IActionResult> InternalFixedAssetTransferReport(string reportType, int comID, string UserName)
+        {
+            var data = _globalMaster.asset_ReportManager.InternalFixedAssetTransferReport(reportType, comID, UserName);
+            return File(data, MediaTypeNames.Application.Octet, (reportType));
+            //return File(data, MediaTypeNames.Application.Octet, "PDF");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ExternalFixedAssetTransferReport(string reportType, int fromComId, int toComId, string UserName)
+        {
+            var data = _globalMaster.asset_ReportManager.ExternalFixedAssetTransferReport(reportType, fromComId, toComId, UserName);
+            return File(data, MediaTypeNames.Application.Octet, (reportType));
+            //return File(data, MediaTypeNames.Application.Octet, "PDF");
+        }
 
     }
 }
