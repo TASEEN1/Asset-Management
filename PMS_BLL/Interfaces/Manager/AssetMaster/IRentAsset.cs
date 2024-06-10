@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PMS_BLL.Interfaces.Manager.AssetMaster
 {
-    public interface IRent_Asset
+    public interface IRentAsset
     {
         Task<DataTable>GetCURRENT_HOLDER();
         Task<DataTable> GetBind_Floor(int comID);

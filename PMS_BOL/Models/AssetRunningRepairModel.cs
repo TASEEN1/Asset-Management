@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMS_BOL.Models
 {
-    public class Asset_Running_RepairModel
+    public class AssetRunningRepairModel
     {
         public string assetno { get; set; }
 

@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Report\Asset_Repair_ReportDatails.rdlc" />
     <Content Remove="wwwroot\Report\Asset_report\Asset Details.rdlc" />
+    <Content Remove="wwwroot\Report\Asset_report\AssetDetailsMaster_Rpt.rdlc" />
     <Content Remove="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
     <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.Designer.cs" />
     <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xsc" />
@@ -33,6 +35,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="wwwroot\Report\Asset_report\AssetDetailsMaster_Rpt.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Asset_report\Asset_Repair_ReportDatails.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Asset_report\Asset Details.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
   </ItemGroup>
@@ -55,6 +59,15 @@
     <Content Update="wwwroot\Report\Cutting_Report\CuttingDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CuttingDataSet.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Update="wwwroot\Report\ReportDataSet\AssetDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AssetDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Update="wwwroot\Report\ReportDataSet\AssetDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AssetDataSet.Designer.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

@@ -26,10 +26,10 @@ namespace PMS_DAL.Implementation
             cuttingmanager = new CuttingManager(_sqlCommon);
             cuttingreportmanager = new CuttingReportManager(_sqlCommon, _webHostEnvironment);
             assetmastermanager = new AssetMasterManager(_sqlCommon);
-            rent_Asset = new Rent_Asset_Manager(_sqlCommon);
+            rent_Asset = new RentAssetManager(_sqlCommon);
             rentedAssetReturnManager = new RentedAssetReturnManager(_sqlCommon);
-            asset_TransferManager = new Asset_TransferManager(_sqlCommon);
-            asset_Running_Repair = new Asset_Running_RepairManager(_sqlCommon);
+            asset_TransferManager = new AssetTransferManager(_sqlCommon);
+            asset_Running_Repair = new AssetRunningRepairManager(_sqlCommon);
             schedule_Maintenance = new scheduleMaintenanceManager(_sqlCommon);
             asset_ReportManager = new AssetReportManager(_sqlCommon, _webHostEnvironment);
 
@@ -42,14 +42,14 @@ namespace PMS_DAL.Implementation
         public ICuttingManager cuttingmanager { get; private set; }
         public ICuttingReportManager cuttingreportmanager { get; private set; }
         public IAssetMasterManager assetmastermanager { get; private set; }
-        public IRent_Asset rent_Asset { get; private set; }
+        public IRentAsset rent_Asset { get; private set; }
         public IRentedAssetReturnManager rentedAssetReturnManager { get; private set; }
 
-        public IAsset_TransferManager asset_TransferManager { get; private set; }
+        public IAssetTransferManager asset_TransferManager { get; private set; }
 
 
 
-        public IAsset_Running_Repair asset_Running_Repair { get; private set; }
+        public IAssetRunningRepair asset_Running_Repair { get; private set; }
 
         public Ischedule_Maintenance schedule_Maintenance { get; private set; }
 

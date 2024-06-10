@@ -22,6 +22,8 @@ namespace PMS_BLL.Interfaces.Manager.Asset_Master
         Task<bool> ForApproval_Asset_Return(List<AssetForApprove> App);
         Task<bool> Asset_ReturnCancel(List<AssetReturnCancel> App);
 
+        Task<String> PutReturnAdd(List<RentAssetAdd> put_return_add);
+        Task<DataTable>GetApproval(int comID);
 
 
 

@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace PMS_DAL.Implementation.Manager.Asset_Master
 {
-    public class Rent_Asset_Manager: IRent_Asset
+    public class RentAssetManager: IRentAsset
     {
         private readonly Dg_SqlCommon _SqlCommon;
         private readonly SqlConnection _specfo_conn;
@@ -14,7 +14,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
         private readonly SqlConnection _SpecFoInventory;
 
 
-        public Rent_Asset_Manager(Dg_SqlCommon sqlCommon)
+        public RentAssetManager(Dg_SqlCommon sqlCommon)
         {
             _SqlCommon = sqlCommon;
             _specfo_conn = new SqlConnection(Dg_Getway.SpecFoCon);

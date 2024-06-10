@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace PMS_BLL.Interfaces.Manager.AssetMaster
 {
-    public interface IAsset_Running_Repair
+    public interface IAssetRunningRepair
     {
         Task<DataTable> GetAssetNo();
         Task<DataTable> GetAsset_Master_List(string AsstNo);
-        Task<string> Machine_Running_Repairsave(List<Asset_Running_RepairModel> App);
+        Task<string> Machine_Running_Repairsave(List<AssetRunningRepairModel> App);
         Task<DataTable> GetMachineRunningRepair_View();
     }
 }

@@ -38,7 +38,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             return data;
         }
 
-        public async Task<string> ScheduleMaintenanceSave(List<Schedule_MaintenanceModel> App)
+        public async Task<string> ScheduleMaintenanceSave(List<ScheduleMaintenanceModel> App)
         {
             string message = string.Empty;
             await _dg_Asst_Mgt.OpenAsync();
@@ -46,7 +46,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
 
             try
             {
-                foreach (Schedule_MaintenanceModel asset in App)
+                foreach (ScheduleMaintenanceModel asset in App)
                 {
                     SqlCommand cmd = new SqlCommand("Mr_Schedule_Maintenance_Save", _dg_Asst_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;

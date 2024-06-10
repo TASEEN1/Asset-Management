@@ -12,4 +12,9 @@ namespace PMS_BOL.Models
         public DateTime ReturnDate { get; set; }
         public string ReturnUser { get; set; }
     }
+
+    public class RentAssetAdd
+    {
+        public string RentAssetNo { get; set; }
+    }
 }

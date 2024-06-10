@@ -13,7 +13,7 @@ namespace PMS_BLL.Interfaces.Manager.AssetMaster
 
         Task<DataTable> GetAssetNo();
         Task<DataTable> GetAsset_Master_List(string AsstNo);
-        Task<string> ScheduleMaintenanceSave(List<Schedule_MaintenanceModel> App);
+        Task<string> ScheduleMaintenanceSave(List<ScheduleMaintenanceModel> App);
         Task<string> SM_service_Typesave(List<SMServiceTypeSave_Model> app);
 
     }

@@ -12,14 +12,14 @@ using System.Threading.Tasks;
 namespace PMS_DAL.Implementation.Manager.Asset_Master
 {
 
-    public class Asset_Running_RepairManager: IAsset_Running_Repair
+    public class AssetRunningRepairManager: IAssetRunningRepair
     {
         private readonly Dg_SqlCommon _SqlCommon;
         private readonly SqlConnection _specfo_conn;
         private readonly SqlConnection _dg_Asst_Mgt;
         private readonly SqlConnection _specFo_inventory;
 
-        public Asset_Running_RepairManager(Dg_SqlCommon sqlCommon)
+        public AssetRunningRepairManager(Dg_SqlCommon sqlCommon)
         {
             _SqlCommon = sqlCommon;
             _specfo_conn = new SqlConnection(Dg_Getway.SpecFoCon);
@@ -38,7 +38,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Master_List_Select '" + AsstNo + "'", _dg_Asst_Mgt);
             return data;
         }
-        public async Task<string> Machine_Running_Repairsave(List<Asset_Running_RepairModel> App)
+        public async Task<string> Machine_Running_Repairsave(List<AssetRunningRepairModel> App)
         {
             string message = string.Empty;
             await _dg_Asst_Mgt.OpenAsync();
@@ -46,7 +46,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
 
             try
             {
-                foreach (Asset_Running_RepairModel asset in App)
+                foreach (AssetRunningRepairModel asset in App)
                 {
                     SqlCommand cmd = new SqlCommand("Mr_Machine_Running_Repair_Save", _dg_Asst_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;

@@ -12,10 +12,10 @@ namespace PMS_BLL.Interfaces
         ICuttingManager cuttingmanager { get; }
         ICuttingReportManager cuttingreportmanager { get; }
         IAssetMasterManager assetmastermanager { get; }
-        IRent_Asset rent_Asset { get; }
+        IRentAsset rent_Asset { get; }
         IRentedAssetReturnManager rentedAssetReturnManager { get; }
-        IAsset_TransferManager asset_TransferManager { get; }
-        IAsset_Running_Repair asset_Running_Repair { get; }
+        IAssetTransferManager asset_TransferManager { get; }
+        IAssetRunningRepair asset_Running_Repair { get; }
         Ischedule_Maintenance schedule_Maintenance { get; }
         IAssetReportManager asset_ReportManager { get; }
 

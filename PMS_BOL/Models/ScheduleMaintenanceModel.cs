@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMS_BOL.Models
 {
-    public  class Schedule_MaintenanceModel
+    public  class ScheduleMaintenanceModel
     {
         public string assetno { get; set; }
         public DateTime nextservicedate { get; set; }

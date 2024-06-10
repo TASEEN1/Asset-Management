@@ -259,6 +259,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
 
             
         }
+
         public async Task<DataTable> Mr_Asset_Master_( string AsstNo)
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Master_List_Select '"+ AsstNo + "'", _dg_Asst_Mgt);

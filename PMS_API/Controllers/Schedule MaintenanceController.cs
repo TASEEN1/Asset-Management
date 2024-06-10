@@ -30,7 +30,7 @@ namespace PMS_API.Controllers
             return Ok(data);
         }
         [HttpPost]
-        public async Task<IActionResult> ScheduleMaintenanceSave(List<Schedule_MaintenanceModel> App)
+        public async Task<IActionResult> ScheduleMaintenanceSave(List<ScheduleMaintenanceModel> App)
         {
             var data = await _globalMaster.schedule_Maintenance.ScheduleMaintenanceSave(App);
             return Ok(new { message = data });

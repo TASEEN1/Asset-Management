@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace PMS_DAL.Implementation.Manager.Asset_Master
 {
-    public class Asset_TransferManager : IAsset_TransferManager
+    public class AssetTransferManager : IAssetTransferManager
     {
 
         private readonly Dg_SqlCommon _SqlCommon;
@@ -24,7 +24,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
         private readonly SqlConnection _dg_Asst_Mgt;
         private readonly SqlConnection _specFo_inventory;
 
-        public Asset_TransferManager(Dg_SqlCommon sqlCommon)
+        public AssetTransferManager(Dg_SqlCommon sqlCommon)
         {
             _SqlCommon = sqlCommon;
             _specfo_conn = new SqlConnection(Dg_Getway.SpecFoCon);

@@ -30,7 +30,7 @@ namespace PMS_API.Controllers
             return Ok(data);
         }
         [HttpPost]
-        public async Task<IActionResult> Machine_Running_Repairsave(List<Asset_Running_RepairModel> App)
+        public async Task<IActionResult> Machine_Running_Repairsave(List<AssetRunningRepairModel> App)
         {
             var data = await _globalMaster.asset_Running_Repair.Machine_Running_Repairsave(App);
             return Ok(new { message = data });

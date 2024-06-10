@@ -90,6 +90,19 @@ namespace PMS_API.Controllers
             return Ok(new { message = data });
         }
 
+        [HttpPut]
+        public async Task<IActionResult> PutReturnAdd(List<RentAssetAdd> put_return_add)
+        {
+            var data = await _globalMaster.rentedAssetReturnManager.PutReturnAdd(put_return_add);
+            return Ok(new { message = data });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetApproval( int comID)
+        {
+            var data = await _globalMaster.rentedAssetReturnManager.GetApproval(comID);
+            return Ok(data);
+        }
 
 
 

@@ -46,6 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssetDetailsMasterDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssetDetailsMasterDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Asset_Details_Repair.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Asset_Details_Repair.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Asset_DtailsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -64,7 +74,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AssetDetailsMaster_Rpt.rdlc" />
     <EmbeddedResource Include="AssetDetailsSummary.rdlc" />
+    <EmbeddedResource Include="Asset_Repair_ReportDatails.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +87,28 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Asset Details.rdlc" />
+    <None Include="AssetDetailsMasterDataSet.xsc">
+      <DependentUpon>AssetDetailsMasterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AssetDetailsMasterDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AssetDetailsMasterDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AssetDetailsMasterDataSet.xss">
+      <DependentUpon>AssetDetailsMasterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Asset_Details_Repair.xsc">
+      <DependentUpon>Asset_Details_Repair.xsd</DependentUpon>
+    </None>
+    <None Include="Asset_Details_Repair.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Asset_Details_Repair.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Asset_Details_Repair.xss">
+      <DependentUpon>Asset_Details_Repair.xsd</DependentUpon>
+    </None>
     <None Include="Asset_DtailsDataSet.xsc">
       <DependentUpon>Asset_DtailsDataSet.xsd</DependentUpon>
     </None>
