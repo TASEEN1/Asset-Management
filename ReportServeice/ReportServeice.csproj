@@ -87,6 +87,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Asset Details.rdlc" />
+    <EmbeddedResource Include="ScheduledMaintenance Report.rdlc" />
     <None Include="AssetDetailsMasterDataSet.xsc">
       <DependentUpon>AssetDetailsMasterDataSet.xsd</DependentUpon>
     </None>

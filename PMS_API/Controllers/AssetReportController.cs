@@ -101,6 +101,15 @@ namespace PMS_API.Controllers
            
         }
 
+        [HttpGet]
+        public async Task<IActionResult> ScheduledMaintenanceReport(string reportType, int comID, string UserName)
+        {
+            ReportFileExt reportFileExt = new ReportFileExt();
+            var data = _globalMaster.asset_ReportManager.ScheduledMaintenanceReport(reportType, comID, UserName);
+            return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
+
+        }
+
 
     }
 

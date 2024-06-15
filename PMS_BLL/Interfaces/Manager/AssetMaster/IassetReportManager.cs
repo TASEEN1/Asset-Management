@@ -18,6 +18,9 @@ namespace PMS_BLL.Interfaces.Manager.AssetMaster
         public byte[] RentedAssetDetailsReport(string reportType, int comID, string UserName);
         public byte[] InternalFixedAssetTransferReport(string reportType, int comID, string UserName);
         public byte[] ExternalFixedAssetTransferReport(string reportType, int fromComId, int toComId, string UserName);
+        public byte[] ScheduledMaintenanceReport(string reportType, int comID, string UserName);
+
+
 
 
 

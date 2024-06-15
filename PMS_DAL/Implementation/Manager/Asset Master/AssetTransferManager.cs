@@ -187,7 +187,8 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
                     await _dg_Asst_Mgt.OpenAsync();
                     SqlCommand cmd = new SqlCommand("Mr_Internal_Asset_For_Approval", _dg_Asst_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@RefNo", Apps.RefNo);
+                    //cmd.Parameters.AddWithValue("@RefNo", Apps.RefNo);
+                    cmd.Parameters.AddWithValue("@AssetNo", Apps.AssetNo);
                     cmd.Parameters.AddWithValue("@Appby", Apps.Approval_by);
 
                     await cmd.ExecuteNonQueryAsync();

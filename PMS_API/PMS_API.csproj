@@ -11,6 +11,7 @@
     <Content Remove="wwwroot\Report\Asset_report\Asset Details.rdlc" />
     <Content Remove="wwwroot\Report\Asset_report\AssetDetailsMaster_Rpt.rdlc" />
     <Content Remove="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
+    <Content Remove="wwwroot\Report\Asset_report\ScheduledMaintenance Report.rdlc" />
     <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.Designer.cs" />
     <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xsc" />
     <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xsd" />
@@ -39,6 +40,7 @@
     <EmbeddedResource Include="wwwroot\Report\Asset_report\Asset_Repair_ReportDatails.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Asset_report\Asset Details.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Asset_report\ScheduledMaintenance Report.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CoreApiResponse" Version="1.0.1" />

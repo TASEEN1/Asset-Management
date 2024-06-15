@@ -16,7 +16,12 @@ namespace PMS_BOL.Models
 
         public string InputUser { get; set; }
 
+        
+
 
     }
-    
+
+
+   
+
 }

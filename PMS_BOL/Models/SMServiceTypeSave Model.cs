@@ -8,16 +8,16 @@ namespace PMS_BOL.Models
 {
     public class SMServiceTypeSave_Model
     {
-       
-            public string assetno { get; set; }
-            public int ServiceID { get; set; }
-            public DateTime ReadyDate { get; set; }
-            public string InputUser { get; set; }
+
+        public string assetno { get; set; }
+        public int ServiceID { get; set; }
+        public DateTime ReadyDate { get; set; }
+        public string InputUser { get; set; }
 
 
 
 
 
-        
+
     }
 }

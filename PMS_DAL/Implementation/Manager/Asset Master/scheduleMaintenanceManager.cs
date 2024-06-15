@@ -1,5 +1,6 @@
 ﻿using PMS_BLL.Interfaces.Manager.AssetMaster;
 using PMS_BLL.Utility;
+using PMS_BOL.Functions;
 using PMS_BOL.Models;
 using System;
 using System.Collections.Generic;
@@ -38,80 +39,168 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             return data;
         }
 
-        public async Task<string> ScheduleMaintenanceSave(List<ScheduleMaintenanceModel> App)
+        public async Task<DataTable> GetServiceDescription()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("Select  ser_service_type from Mr_Service_type ", _dg_Asst_Mgt);
+            return data;
+        }
+
+        //public async Task<string> ScheduleMaintenanceSave(List<ScheduleMaintenanceModel> App)
+        //{
+        //    string message = string.Empty;
+        //    await _dg_Asst_Mgt.OpenAsync();
+
+
+        //    try
+        //    {
+        //        foreach (ScheduleMaintenanceModel asset in App)
+        //        {
+        //            SqlCommand cmd = new SqlCommand("Mr_Schedule_Maintenance_Save", _dg_Asst_Mgt);
+        //            cmd.CommandType = CommandType.StoredProcedure;
+        //            cmd.Parameters.AddWithValue("@assetno", asset.assetno);
+        //            cmd.Parameters.AddWithValue("@nextservicedate", DateTime.Now);
+        //            cmd.Parameters.AddWithValue("@ItemReplaced", asset.itemreplace);
+        //            cmd.Parameters.AddWithValue("@readydate", DateTime.Now);
+        //            cmd.Parameters.AddWithValue("@doneby", asset.doneby);
+        //            cmd.Parameters.AddWithValue("@InputUser", asset.InputUser);
+        //            cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+        //            cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+        //            await cmd.ExecuteNonQueryAsync();
+        //            message = (string)cmd.Parameters["@ERROR"].Value;
+        //        }
+
+
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ex.ToString();
+        //    }
+        //    finally
+        //    {
+        //        _dg_Asst_Mgt.Close();
+        //    }
+        //    return message;
+        //}
+
+
+        //public async Task<string> SM_service_Typesave(List<SMServiceTypeSave_Model> app)
+        //{
+        //    string message = string.Empty;
+        //    await _dg_Asst_Mgt.OpenAsync();
+
+
+        //    try
+        //    {
+        //        foreach (SMServiceTypeSave_Model asset in app)
+        //        {
+        //            SqlCommand cmd = new SqlCommand("Mr_SM_Service_Type_Save", _dg_Asst_Mgt);
+        //            cmd.CommandType = CommandType.StoredProcedure;
+        //            cmd.Parameters.AddWithValue("@AssetNo", asset.assetno);
+        //            cmd.Parameters.AddWithValue("@ServiceID", asset.ServiceID);
+        //            cmd.Parameters.AddWithValue("@ReadyDate", DateTime.Now);
+        //            cmd.Parameters.AddWithValue("@InputUser", asset.InputUser);
+        //            //cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+        //            //cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+        //            await cmd.ExecuteNonQueryAsync();
+        //            //message = (string)cmd.Parameters["@ERROR"].Value;
+        //        }
+
+
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ex.ToString();
+        //    }
+        //    finally
+        //    {
+        //        _dg_Asst_Mgt.Close();
+        //    }
+        //    return message;
+        //}
+
+
+        public async Task<string> ScheduleMaintenanceSave(MaintenanceSaveRequest maintenanceSaveRequest)
         {
             string message = string.Empty;
             await _dg_Asst_Mgt.OpenAsync();
+            int insert1 = 0;
+            int insert2 =0;
 
+            SqlTransaction transaction = _dg_Asst_Mgt.BeginTransaction();
 
             try
             {
-                foreach (ScheduleMaintenanceModel asset in App)
+                foreach (var asset in maintenanceSaveRequest.ScheduleMaintenanceModels)
                 {
-                    SqlCommand cmd = new SqlCommand("Mr_Schedule_Maintenance_Save", _dg_Asst_Mgt);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@assetno", asset.assetno);
-                    cmd.Parameters.AddWithValue("@nextservicedate", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@ItemReplaced", asset.itemreplace);
-                    cmd.Parameters.AddWithValue("@readydate", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@doneby", asset.doneby);
-                    cmd.Parameters.AddWithValue("@InputUser", asset.InputUser);
-                    cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
-                    cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
-                    await cmd.ExecuteNonQueryAsync();
-                    message = (string)cmd.Parameters["@ERROR"].Value;
+                    using (SqlCommand cmd = new SqlCommand("Mr_Schedule_Maintenance_Save", _dg_Asst_Mgt, transaction))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@assetno", asset.assetno);
+                        cmd.Parameters.AddWithValue("@nextservicedate", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@ItemReplaced", asset.itemreplace);
+                        cmd.Parameters.AddWithValue("@readydate", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@doneby", asset.doneby);
+                        cmd.Parameters.AddWithValue("@InputUser", asset.InputUser);
+                        cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500).Direction = ParameterDirection.Output;
+
+                         insert1 = await cmd.ExecuteNonQueryAsync();
+                        string error = (string)cmd.Parameters["@ERROR"].Value;
+                        if (!string.IsNullOrEmpty(error))
+                        {
+                            message += "Schedule Maintenance : " + error + Environment.NewLine;
+                        }
+                        //if (insert < 1)
+                        //{
+                        //    transaction.Rollback();
+                        //}
+                    }
                 }
 
+                foreach (var asset in maintenanceSaveRequest.SMServiceTypeSaveModels)
+                {
+                    using (SqlCommand cmd = new SqlCommand("Mr_SM_Service_Type_Save", _dg_Asst_Mgt, transaction))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@AssetNo", asset.assetno);
+                        cmd.Parameters.AddWithValue("@ServiceID", asset.ServiceID);
+                        cmd.Parameters.AddWithValue("@ReadyDate", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@InputUser", asset.InputUser);
 
+                        insert2 = await cmd.ExecuteNonQueryAsync();
 
+                       
+
+                    }
+                }
+                if(insert1 < 1 && insert2 <1)
+                {
+                    transaction.Rollback();
+                }
+                else
+                {
+                    transaction.Commit();
+                }
+                
             }
             catch (Exception ex)
             {
-                ex.ToString();
+                transaction.Rollback();
+                message = "Transaction failed and rolled back: " + ex.Message;
+               
             }
             finally
             {
-                _dg_Asst_Mgt.Close();
+                await _dg_Asst_Mgt.CloseAsync();
             }
+
             return message;
         }
 
 
-        public async Task<string> SM_service_Typesave(List<SMServiceTypeSave_Model> app)
-        {
-            string message = string.Empty;
-            await _dg_Asst_Mgt.OpenAsync();
 
 
-            try
-            {
-                foreach (SMServiceTypeSave_Model asset in app)
-                {
-                    SqlCommand cmd = new SqlCommand("Mr_SM_Service_Type_Save", _dg_Asst_Mgt);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@AssetNo", asset.assetno);
-                    cmd.Parameters.AddWithValue("@ServiceID", asset.ServiceID);
-                    cmd.Parameters.AddWithValue("@ReadyDate", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@InputUser", asset.InputUser);
-                    //cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
-                    //cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
-                    await cmd.ExecuteNonQueryAsync();
-                    //message = (string)cmd.Parameters["@ERROR"].Value;
-                }
-
-
-
-            }
-            catch (Exception ex)
-            {
-                ex.ToString();
-            }
-            finally
-            {
-                _dg_Asst_Mgt.Close();
-            }
-            return message;
-        }
 
 
     }
