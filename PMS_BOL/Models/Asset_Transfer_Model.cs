@@ -22,22 +22,24 @@ namespace PMS_BOL.Models
         public string Status { get; set; }
         public string Remarks { get; set; }
         public string InputUser { get; set; }
+       
 
-      
+
+
 
 
     }
 
     public class Asset_Internal_Transfer_Approval
     {
-        public string AssetNo { get; set; }
+        public int RefNo { get; set; }
         public string Approval_by { get; set; }
 
     }
 
     public class Asset_External_Transfer_Approval
     {
-        public string AssetNo { get; set; }
+        public int RefNo { get; set; }
 
         public string Approval_by { get; set; }
 

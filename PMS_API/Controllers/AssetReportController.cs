@@ -21,7 +21,7 @@ namespace PMS_API.Controllers
         
 
         [HttpGet]
-        public async Task<IActionResult> AssetDetailsSummary(string reportType, int comID,  string UserName)
+        public async Task<IActionResult> AssetDetailsSummary(string reportType, int comID, string UserName )
       
 
         {

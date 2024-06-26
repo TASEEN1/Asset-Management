@@ -114,6 +114,14 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
         {
             string message = string.Empty;
             await _dg_Asst_Mgt.OpenAsync();
+            SqlCommand cmd1 = new SqlCommand();
+            cmd1.CommandType = CommandType.Text;
+            cmd1.CommandText = "SELECT MAX(ReturnRefNo)+1 FROM Mr_Asset_Rent";
+            cmd1.Connection = _dg_Asst_Mgt;
+            SqlDataReader dr = cmd1.ExecuteReader();
+            dr.Read();
+            int d = dr.GetInt32(0);
+            dr.Close();
 
 
             try
@@ -140,6 +148,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
                     cmd.Parameters.AddWithValue("@Currency", asset.Currency);
                     cmd.Parameters.AddWithValue("@TotalDays", asset.TotalDays);
                     cmd.Parameters.AddWithValue("@InputUser", asset.InputUser);
+                    cmd.Parameters.AddWithValue("@ReturnRefNo", d);
                     cmd.Parameters.AddWithValue("@Brand  ", asset.Brand);
 
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);

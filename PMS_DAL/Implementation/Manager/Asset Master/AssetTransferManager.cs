@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
@@ -68,6 +69,15 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
         {
             string message = string.Empty;
             await _dg_Asst_Mgt.OpenAsync();
+            SqlCommand cmd1 = new SqlCommand();
+            cmd1.CommandType = CommandType.Text;
+            cmd1.CommandText = "SELECT MAX(iet_ref_no)+1 FROM Mr_Internal_External_Transfer";
+            cmd1.Connection = _dg_Asst_Mgt;
+            SqlDataReader dr = cmd1.ExecuteReader();
+            dr.Read();
+            int d = dr.GetInt32(0);
+            dr.Close();
+           
 
 
             try
@@ -87,6 +97,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
                     cmd.Parameters.AddWithValue("@Status", "IN");
                     cmd.Parameters.AddWithValue("@Remarks", Apps.Remarks);
                     cmd.Parameters.AddWithValue("@InputUser", Apps.InputUser);
+                    cmd.Parameters.AddWithValue("@iet_ref_no",d );
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -120,6 +131,14 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
         {
             string message = string.Empty;
             await _dg_Asst_Mgt.OpenAsync();
+            SqlCommand cmd1 = new SqlCommand();
+            cmd1.CommandType = CommandType.Text;
+            cmd1.CommandText = "SELECT MAX(iet_ref_no)+1 FROM Mr_Internal_External_Transfer";
+            cmd1.Connection = _dg_Asst_Mgt;
+            SqlDataReader dr = cmd1.ExecuteReader();
+            dr.Read();
+            int d = dr.GetInt32(0);
+            dr.Close();
 
 
             try
@@ -139,6 +158,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
                     cmd.Parameters.AddWithValue("@Status", "Ex");
                     cmd.Parameters.AddWithValue("@Remarks", Apps.Remarks);
                     cmd.Parameters.AddWithValue("@InputUser", Apps.InputUser);
+                    cmd.Parameters.AddWithValue("@iet_ref_no", d);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -187,8 +207,8 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
                     await _dg_Asst_Mgt.OpenAsync();
                     SqlCommand cmd = new SqlCommand("Mr_Internal_Asset_For_Approval", _dg_Asst_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    //cmd.Parameters.AddWithValue("@RefNo", Apps.RefNo);
-                    cmd.Parameters.AddWithValue("@AssetNo", Apps.AssetNo);
+                    cmd.Parameters.AddWithValue("@RefNo", Apps.RefNo);
+                    //cmd.Parameters.AddWithValue("@AssetNo", Apps.AssetNo);
                     cmd.Parameters.AddWithValue("@Appby", Apps.Approval_by);
 
                     await cmd.ExecuteNonQueryAsync();
@@ -216,10 +236,10 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
                 foreach(Asset_External_Transfer_Approval Apps in App)
                 {
                     await _dg_Asst_Mgt.OpenAsync();
-                    SqlCommand cmd = new SqlCommand("Mr_External_Asset_For_Approval", _dg_Asst_Mgt);
+                    SqlCommand cmd = new SqlCommand("Mr_Extarnal_Asset_For_Approval", _dg_Asst_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@AssetNo", Apps.AssetNo);
+                    cmd.Parameters.AddWithValue("@RefNo", Apps.RefNo);
                     cmd.Parameters.AddWithValue("@Appby", Apps.Approval_by);
                     await cmd.ExecuteNonQueryAsync();
                     await _dg_Asst_Mgt.CloseAsync();

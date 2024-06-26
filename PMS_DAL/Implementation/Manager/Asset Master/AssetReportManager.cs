@@ -40,6 +40,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             {
                  //_SqlCommon.get_InformationDataTable("Mr_Asset_Details_Summary_Rpt '"+ AsstCat + "','"+status+"','"+floor+"','"+line+"'",_dg_Asst_Mgt),
                  _SqlCommon.get_InformationDataTable("Mr_Asset_Details_Summary_Rpt '"+ comID + "'",_dg_Asst_Mgt)
+               
 
             };
             var strSetName = new string[]
