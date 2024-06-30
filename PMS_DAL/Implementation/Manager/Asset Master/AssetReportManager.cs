@@ -10,6 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Reporting.NETCore;
 using System.Data;
+using PMS_BOL.Models;
+using System.Drawing;
+using System.Globalization;
 
 namespace PMS_DAL.Implementation.Manager.Asset_Master
 {
@@ -29,6 +32,8 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             _dg_Asst_Mgt = new SqlConnection(Dg_Getway.dg_Asst_Mgt);
             _SpecFoInventory = new SqlConnection(Dg_Getway.SpecFoInventory);
         }
+
+       
 
         public byte[] AssetDetailsSummary(string reportType, int comID,  string UserName)
         {
@@ -119,16 +124,34 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
 
 
         }
-        public byte[] AssetDetailsMaster_Report(string reportType, int comID, string UserName)
+        public byte[] AssetDetailsMaster_Report(string reportType, int comID, string UserName, int? floor, int Line, int status, int AssetCetagory, DateTime FromDate, DateTime ToDate)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
             string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            //int floorMan = floor == null ? null : floor;
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("DG_AssetDetailsMaster_Rpt ");
+            stringBuilder.Append(comID);
+            stringBuilder.Append(", " + (floor != null ? floor : "NULL"));
+            stringBuilder.Append(", " + (Line !=  null  ? Line:"NULL"));
+            stringBuilder.Append(", " + (status != null ? status: "NULL"));
+            stringBuilder.Append(", " + (AssetCetagory  != null ? AssetCetagory : "NULL"));
+            stringBuilder.Append(", '");
+            stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + "', '");
+            stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
+            stringBuilder.Append("' ");
+
+            string stateQu = stringBuilder.ToString();
             var tbldata = new DataTable[]
             {
+             //_SqlCommon.get_InformationDataTable("DG_AssetDetailsMaster_Rpt 40,NULL,98,1,5,'2015-08-15','2025-08-15'",_dg_Asst_Mgt)
+                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Asst_Mgt)
+            //_SqlCommon.get_InformationDataTable("DG_AssetDetailsMaster_Rpt '"+ comID + "','"+floor+"','"+Line+"','"+status+"','"+AssetCetagory+"','"+ DateTime.ParseExact(FromDate.ToString("yyyy-MM-dd"), "yyyy-MM-dd", CultureInfo.InvariantCulture)+ DateTime.ParseExact(ToDate.ToString("yyyy-MM-dd"), "yyyy-MM-dd", CultureInfo.InvariantCulture)+ "'",_dg_Asst_Mgt)
+            //_SqlCommon.get_InformationDataTable("DG_AssetDetailsMaster_Rpt '"+ comID + "','"+floor+"','"+Line+"','"+status+"','"+AssetCetagory+"','"+ DateTime.ParseExact(FromDate.ToString("MM/dd/yyyy HH:mm:ss"), "MM/dd/yyyy HH:mm:ss", CultureInfo.InvariantCulture)+ DateTime.ParseExact(ToDate.ToString("MM/dd/yyyy HH:mm:ss"), "MM/dd/yyyy HH:mm:ss", CultureInfo.InvariantCulture)+ "'",_dg_Asst_Mgt)
+            //string stateQu = "DG_AssetDetailsMaster_Rpt '"+ comID + "', '"+floor != null ? floor.ToString() : "NULL"+"' ,'" + Line + "','" + status + "','" + AssetCetagory + "','" + FromDate.ToString("yyyy-MM-dd") + "','" + ToDate.ToString("yyyy-MM-dd") + "'";
 
-                 _SqlCommon.get_InformationDataTable("DG_AssetDetailsMaster_Rpt '"+ comID + "'",_dg_Asst_Mgt)
 
             };
             var strSetName = new string[]
@@ -403,10 +426,52 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             return reportBytes;
         }
 
-        
+
+        // report parameter save 
+
+        public async Task<string> ReportParameterSave(List<ReportParameterModel> app)
+        {
+            string message = string.Empty;
+            await _dg_Asst_Mgt.OpenAsync();
+            try
+            {
+                foreach (ReportParameterModel Apps in app)
+                {
+                    SqlCommand cmd = new SqlCommand("DG_ReportparameterSave", _dg_Asst_Mgt);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ComFrom ", Apps.ComFrom);
+                    cmd.Parameters.AddWithValue("@ComTo", Apps.ComTo);
+                    cmd.Parameters.AddWithValue("@FromDate", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@ToDate", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@Floor", Apps.Floor);
+                    cmd.Parameters.AddWithValue("@Line", Apps.Line);
+                    cmd.Parameters.AddWithValue("@Status", Apps.Status);
+                    cmd.Parameters.AddWithValue("@Supplier", Apps.Supplire);
+                    cmd.Parameters.AddWithValue("@AssetCategory", Apps.AssetCategory);
+
+                    //cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+                    //cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+                    await cmd.ExecuteNonQueryAsync();
+                    //message = (string)cmd.Parameters["@ERROR"].Value;
+                }
 
 
 
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                _dg_Asst_Mgt.Close();
+            }
+            return message;
+        }
 
     }
+
+
+
 }
+

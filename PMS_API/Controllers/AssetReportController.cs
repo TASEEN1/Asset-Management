@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using PMS_BLL.Interfaces;
 using PMS_BLL.Utility;
 using PMS_BOL.Functions;
+using PMS_BOL.Models;
 using System.Net.Mime;
 
 namespace PMS_API.Controllers
@@ -49,10 +50,10 @@ namespace PMS_API.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> AssetDetailsMaster_Report(string reportType, int ComID, string UserName)
+        public async Task<IActionResult> AssetDetailsMaster_Report(string reportType, int ComID, string UserName, int? floor, int Line, int status, int AssetCetagory, DateTime FromDate, DateTime ToDate)
         {
             ReportFileExt reportFileExt = new ReportFileExt();
-            var data = _globalMaster.asset_ReportManager.AssetDetailsMaster_Report(reportType, ComID, UserName);
+            var data = _globalMaster.asset_ReportManager.AssetDetailsMaster_Report(reportType, ComID, UserName,floor,Line,status,AssetCetagory,FromDate,ToDate);
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
 
         }
@@ -107,6 +108,15 @@ namespace PMS_API.Controllers
             ReportFileExt reportFileExt = new ReportFileExt();
             var data = _globalMaster.asset_ReportManager.ScheduledMaintenanceReport(reportType, comID, UserName);
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
+
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> ReportParameterSave(List<ReportParameterModel> app)
+        {
+            var data= await _globalMaster.asset_ReportManager.ReportParameterSave(app);
+            return Ok(data);
 
         }
 
