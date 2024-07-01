@@ -13,6 +13,10 @@ using System.Data;
 using PMS_BOL.Models;
 using System.Drawing;
 using System.Globalization;
+using Microsoft.EntityFrameworkCore.Query;
+using Microsoft.Reporting.Map.WebForms.BingMaps;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using System.Security.Cryptography;
 
 namespace PMS_DAL.Implementation.Manager.Asset_Master
 {
@@ -35,16 +39,29 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
 
        
 
-        public byte[] AssetDetailsSummary(string reportType, int comID,  string UserName)
+        public byte[] AssetDetailsSummary(string reportType, int comID,  string UserName, int? floor, int? Line, int? status, int? AssetCetagory, DateTime FromDate, DateTime ToDate)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
             string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("Mr_Asset_Details_Summary_Rpt ");
+            stringBuilder.Append(comID);
+            stringBuilder.Append(", " + (floor != null ? floor : "NULL"));
+            stringBuilder.Append(", " + (Line != null ? Line : "NULL"));
+            stringBuilder.Append(", " + (status != null ? status : "NULL"));
+            stringBuilder.Append(", " + (AssetCetagory != null ? AssetCetagory : "NULL"));
+            stringBuilder.Append(", '");
+            stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + "', '");
+            stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
+            stringBuilder.Append("' ");
+
+            string stateQu = stringBuilder.ToString();
             var tbldata = new DataTable[]
             {
                  //_SqlCommon.get_InformationDataTable("Mr_Asset_Details_Summary_Rpt '"+ AsstCat + "','"+status+"','"+floor+"','"+line+"'",_dg_Asst_Mgt),
-                 _SqlCommon.get_InformationDataTable("Mr_Asset_Details_Summary_Rpt '"+ comID + "'",_dg_Asst_Mgt)
+                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Asst_Mgt)
                
 
             };
@@ -66,16 +83,29 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
 
         }
 
-        public byte[] AssetDetailsReport(string reportType, int comID,  string UserName)
+        public byte[] AssetDetailsReport(string reportType, int comID,  string UserName, int? floor, int? Line, int? status, int? AssetCetagory, DateTime FromDate, DateTime ToDate)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
             string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("Mr_Asset_Master_List_Info_Rpt ");
+            stringBuilder.Append(comID);
+            stringBuilder.Append(", " + (floor != null ? floor : "NULL"));
+            stringBuilder.Append(", " + (Line != null ? Line : "NULL"));
+            stringBuilder.Append(", " + (status != null ? status : "NULL"));
+            stringBuilder.Append(", " + (AssetCetagory != null ? AssetCetagory : "NULL"));
+            stringBuilder.Append(", '");
+            stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + "', '");
+            stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
+            stringBuilder.Append("' ");
+
+            string stateQu = stringBuilder.ToString();
+
             var tbldata = new DataTable[]
             {
-                 //_SqlCommon.get_InformationDataTable("Mr_Asset_Details_Summary_Rpt '"+ AsstCat + "','"+status+"','"+floor+"','"+line+"'",_dg_Asst_Mgt),
-                 _SqlCommon.get_InformationDataTable("Mr_Asset_Master_List_Info_Rpt '"+ comID + "'",_dg_Asst_Mgt)
+                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Asst_Mgt)
 
             };
             var strSetName = new string[]
@@ -95,16 +125,28 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
 
 
         }
-        public byte[] AssetDetails_RepairReport(string reportType, int comID, string UserName)
+        public byte[] AssetDetails_RepairReport(string reportType, int comID, string UserName, int? floor , int? Line,int?  status, DateTime FromDate, DateTime ToDate)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
             string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("DG_Asset_Running_Repair_Details_Rpt ");
+            stringBuilder.Append(comID);
+            stringBuilder.Append(", " + (floor != null ? floor : "NULL"));
+            stringBuilder.Append(", " + (Line != null ? Line : "NULL"));
+            stringBuilder.Append(", " + (status != null ? status : "NULL"));
+            //stringBuilder.Append(", " + (AssetCetagory != null ? AssetCetagory : "NULL"));
+            stringBuilder.Append(", '");
+            stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + "', '");
+            stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
+            stringBuilder.Append("' ");
+            string stateQu = stringBuilder.ToString();
             var tbldata = new DataTable[]
             {
                  
-                 _SqlCommon.get_InformationDataTable("DG_Asset_Running_Repair_Details_Rpt '"+ comID + "'",_dg_Asst_Mgt)
+                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Asst_Mgt)
 
             };
             var strSetName = new string[]
@@ -124,7 +166,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
 
 
         }
-        public byte[] AssetDetailsMaster_Report(string reportType, int comID, string UserName, int? floor, int Line, int status, int AssetCetagory, DateTime FromDate, DateTime ToDate)
+        public byte[] AssetDetailsMaster_Report(string reportType, int comID, string UserName, int? floor, int? Line, int? status, int? AssetCetagory, DateTime FromDate, DateTime ToDate)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
@@ -137,7 +179,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             stringBuilder.Append(", " + (floor != null ? floor : "NULL"));
             stringBuilder.Append(", " + (Line !=  null  ? Line:"NULL"));
             stringBuilder.Append(", " + (status != null ? status: "NULL"));
-            stringBuilder.Append(", " + (AssetCetagory  != null ? AssetCetagory : "NULL"));
+            stringBuilder.Append(", " + (AssetCetagory!= null ? AssetCetagory : "NULL"));
             stringBuilder.Append(", '");
             stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + "', '");
             stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
@@ -173,19 +215,34 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
         }
 
         //1 no report - Asset Management Report - M A Master List Rpt 
-        public byte[] AssetManagementReport(string reportType, int comID, string UserName)
+        public byte[] AssetManagementReport(string reportType, int? ComID, string UserName, int? floor, int? line, int? status, int? AssetCategory, DateTime FromDate, DateTime ToDate)
         {
-            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + ComID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
             string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("Mr_Asset_Master_List_Rpt ");
+            stringBuilder.Append(ComID);
+            stringBuilder.Append(", " + (floor != null ? floor : "NULL"));
+            stringBuilder.Append(", " + (line != null ? line : "NULL"));
+            stringBuilder.Append(", " + (status != null ? status : "NULL"));
+            stringBuilder.Append(", " + (AssetCategory != null ? AssetCategory : "NULL"));
+            stringBuilder.Append(", '" + FromDate.ToString("yyyy-MM-dd") + "'");
+            stringBuilder.Append(", '" + ToDate.ToString("yyyy-MM-dd") + "' ");
+
+
+            string stateQu = stringBuilder.ToString();
+
             var tbldata = new DataTable[]
             {
-                _SqlCommon.get_InformationDataTable("Mr_Asset_Master_List_Rpt '" + comID + "'", _dg_Asst_Mgt),
+                //_SqlCommon.get_InformationDataTable("Mr_Asset_Master_List_Rpt '" + ComID + "'", _dg_Asst_Mgt),
+                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Asst_Mgt)
                 //_SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Wise_Report '"+styleID+"'", _dg_pms_conn),
                 //_SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Line_Wise_Report '"+styleID+"'", _dg_pms_conn),
                 //     _SqlCommon.get_InformationDataTable("Mr_Cut_Fabrics_Closing_Rpt '"+styleID+"'", _dg_pms_conn),
-            };
+            }; 
             var strSetName = new string[]
             {
                 "DataSet1"
@@ -328,16 +385,30 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
             return reportBytes;
         }
 
-        public byte[] ScheduledMaintenanceReport(string reportType, int comID, string UserName)
+        public byte[] ScheduledMaintenanceReport(string reportType, int comID, string UserName, int? floor, int? Line,  DateTime FromDate, DateTime ToDate)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
             string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+
+
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("DG_Scheduled_Maintenance_Rpt ");
+            stringBuilder.Append(comID);
+            stringBuilder.Append(", " + (floor != null ? floor : "NULL"));
+            stringBuilder.Append(", " + (Line != null ? Line : "NULL"));
+            //stringBuilder.Append(", " + (status != null ? status : "NULL"));
+            //stringBuilder.Append(", " + (AssetCategory != null ? AssetCategory : "NULL"));
+            stringBuilder.Append(", '" + FromDate.ToString("yyyy-MM-dd") + "'");
+            stringBuilder.Append(", '" + ToDate.ToString("yyyy-MM-dd") + "' ");
+
+
+            string stateQu = stringBuilder.ToString();
             var tbldata = new DataTable[]
             {
 
-                 _SqlCommon.get_InformationDataTable("DG_Scheduled_Maintenance_Rpt '"+ comID + "'",_dg_Asst_Mgt)
+                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Asst_Mgt)
 
             };
             var strSetName = new string[]

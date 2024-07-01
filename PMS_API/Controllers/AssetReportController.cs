@@ -22,35 +22,35 @@ namespace PMS_API.Controllers
         
 
         [HttpGet]
-        public async Task<IActionResult> AssetDetailsSummary(string reportType, int comID, string UserName )
+        public async Task<IActionResult> AssetDetailsSummary(string reportType, int comID, string UserName, int? floor, int? Line, int? status, int? AssetCetagory, DateTime FromDate, DateTime ToDate)
       
 
         {
-            ReportFileExt reportFileExt = new ReportFileExt();
-            var data =  _globalMaster.asset_ReportManager.AssetDetailsSummary(reportType, comID ,UserName);
+             ReportFileExt reportFileExt = new ReportFileExt();
+             var data =  _globalMaster.asset_ReportManager.AssetDetailsSummary(reportType, comID ,UserName,floor,Line,status,AssetCetagory,FromDate,ToDate);
             return File(data, MediaTypeNames.Application.Octet,(reportFileExt.GetContentType(reportType)));
         }
 
         [HttpGet]
-        public async Task<IActionResult> AssetDetailsReport(string reportType , int ComID , string UserName)
+        public async Task<IActionResult> AssetDetailsReport(string reportType , int ComID , string UserName, int? floor, int? Line, int? status, int? AssetCetagory, DateTime FromDate, DateTime ToDate)
         {
             ReportFileExt reportFileExt = new ReportFileExt();
-            var data = _globalMaster.asset_ReportManager.AssetDetailsReport(reportType, ComID , UserName);
+            var data = _globalMaster.asset_ReportManager.AssetDetailsReport(reportType, ComID , UserName,floor,Line,status,AssetCetagory,FromDate,ToDate);
             return File(data, MediaTypeNames.Application.Octet,(reportFileExt.GetContentType(reportType)));
         }
 
         [HttpGet]
-        public async Task<IActionResult> AssetDetails_RepairReport(string reportType, int ComID, string UserName)
+        public async Task<IActionResult> AssetDetails_RepairReport(string reportType, int ComID, string UserName, int? floor, int? Line, int? status, DateTime FromDate, DateTime ToDate)
         {
             ReportFileExt reportFileExt = new ReportFileExt();
-            var data = _globalMaster.asset_ReportManager.AssetDetails_RepairReport(reportType, ComID, UserName);
+            var data = _globalMaster.asset_ReportManager.AssetDetails_RepairReport(reportType, ComID, UserName,floor,Line,status,FromDate,ToDate);
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
 
         }
 
 
         [HttpGet]
-        public async Task<IActionResult> AssetDetailsMaster_Report(string reportType, int ComID, string UserName, int? floor, int Line, int status, int AssetCetagory, DateTime FromDate, DateTime ToDate)
+        public async Task<IActionResult> AssetDetailsMaster_Report(string reportType, int ComID, string UserName, int? floor, int? Line, int? status, int? AssetCetagory, DateTime FromDate, DateTime ToDate)
         {
             ReportFileExt reportFileExt = new ReportFileExt();
             var data = _globalMaster.asset_ReportManager.AssetDetailsMaster_Report(reportType, ComID, UserName,floor,Line,status,AssetCetagory,FromDate,ToDate);
@@ -58,13 +58,13 @@ namespace PMS_API.Controllers
 
         }
 
-       
 
+        //1 no report
         [HttpGet]
-        public async Task<IActionResult> AssetManagementReport(string reportType, int comID, string UserName)
+        public async Task<IActionResult> AssetManagementReport(string reportType, int? ComID, string UserName, int? floor, int? line, int? status, int? AssetCategory, DateTime FromDate, DateTime ToDate)
         {
             ReportFileExt reportFileExt = new ReportFileExt();
-            var data = _globalMaster.asset_ReportManager.AssetManagementReport(reportType, comID, UserName);
+            var data = _globalMaster.asset_ReportManager.AssetManagementReport(reportType, ComID, UserName, floor, line, status, AssetCategory, FromDate, ToDate);
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
 
@@ -103,10 +103,10 @@ namespace PMS_API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ScheduledMaintenanceReport(string reportType, int comID, string UserName)
+        public async Task<IActionResult> ScheduledMaintenanceReport(string reportType, int comID, string UserName, int? floor, int? Line, DateTime FromDate, DateTime ToDate)
         {
             ReportFileExt reportFileExt = new ReportFileExt();
-            var data = _globalMaster.asset_ReportManager.ScheduledMaintenanceReport(reportType, comID, UserName);
+            var data = _globalMaster.asset_ReportManager.ScheduledMaintenanceReport(reportType, comID, UserName,floor,Line,FromDate,ToDate);
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
 
         }
