@@ -85,10 +85,10 @@ namespace PMS_API.Controllers
             
         }
         [HttpGet]
-        public async Task<IActionResult> InternalFixedAssetTransferReport(string reportType, int comID, string UserName)
+        public async Task<IActionResult> InternalFixedAssetTransferReport(string reportType, string UserName, int? comID, int? Floor, int? Line, int? AssetCetagory, DateTime FromDate, DateTime ToDate)
         {
             ReportFileExt reportFileExt = new ReportFileExt();
-            var data = _globalMaster.asset_ReportManager.InternalFixedAssetTransferReport(reportType, comID, UserName);
+            var data = _globalMaster.asset_ReportManager.InternalFixedAssetTransferReport(reportType, UserName, comID,Floor,Line,AssetCetagory,FromDate,ToDate);
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
            

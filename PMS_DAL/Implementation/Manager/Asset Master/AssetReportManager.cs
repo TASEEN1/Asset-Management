@@ -322,15 +322,31 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
         }
 
         //6 no report - internal fixed asset transfer Report - DG_Internal_Fixed_Asset_Transfer_Rpt
-        public byte[] InternalFixedAssetTransferReport(string reportType, int comID, string UserName)
+        public byte[] InternalFixedAssetTransferReport(string reportType,  string UserName, int? comID, int? Floor, int? Line, int? AssetCetagory, DateTime FromDate, DateTime ToDate)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
             string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("DG_Internal_Fixed_Asset_Transfer_Rpt ");
+            stringBuilder.Append(comID);
+            stringBuilder.Append(", " + (Floor != null ? Floor : "NULL"));
+            stringBuilder.Append(", " + (Line != null ? Line : "NULL"));
+            //stringBuilder.Append(", " + (status != null ? status : "NULL"));
+            stringBuilder.Append(", " + (AssetCetagory != null ? AssetCetagory : "NULL"));
+            stringBuilder.Append(", '" + FromDate.ToString("yyyy-MM-dd") + "'");
+            stringBuilder.Append(", '" + ToDate.ToString("yyyy-MM-dd") + "' ");
+
+
+            string stateQu = stringBuilder.ToString();
+
             var tbldata = new DataTable[]
+
+
+
             {
-                _SqlCommon.get_InformationDataTable("DG_Internal_Fixed_Asset_Transfer_Rpt '" + comID + "'", _dg_Asst_Mgt),
+                _SqlCommon.get_InformationDataTable(stateQu, _dg_Asst_Mgt),
                 //_SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Wise_Report '"+styleID+"'", _dg_pms_conn),
                 //_SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Line_Wise_Report '"+styleID+"'", _dg_pms_conn),
                 //     _SqlCommon.get_InformationDataTable("Mr_Cut_Fabrics_Closing_Rpt '"+styleID+"'", _dg_pms_conn),
