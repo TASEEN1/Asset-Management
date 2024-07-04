@@ -70,7 +70,37 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetCustomer()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id, c_customer_name from dg_customer", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id, c_customer_name, c_att_person, c_att_mobile, c_terms_and_condition from dg_customer", _dg_Oder_Mgt);
+
+            return data;
+        }
+        public async Task<DataTable> GetDia()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select d_id, d_name from dg_dia", _dg_Oder_Mgt);
+
+            return data;
+        }
+        public async Task<DataTable> Getgsm()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select g_id, g_gsm from dg_gsm", _dg_Oder_Mgt);
+
+            return data;
+        }
+        public async Task<DataTable> Getdesign()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select des_id, des_name from dg_design", _dg_Oder_Mgt);
+
+            return data;
+        }
+        public async Task<DataTable> GetBuyerView()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_buyer", _dg_Oder_Mgt);
+
+            return data;
+        }
+        public async Task<DataTable> GetcustomerView()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_customer", _dg_Oder_Mgt);
 
             return data;
         }
@@ -151,7 +181,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_cust_terms_cond", ord.Terms_condition);
                     cmd.Parameters.AddWithValue("@or_order_recv_date",ord.Ord_receive_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_order_deli_date", ord.Ord_delivery_date.ToString("yyyy-MM-dd"));
-                    cmd.Parameters.AddWithValue("@or_remarks", ord.Remarks);
+                    //cmd.Parameters.AddWithValue("@or_remarks", ord.Remarks);
                     cmd.Parameters.AddWithValue("@or_created_by", ord.CreatedBy);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
@@ -189,6 +219,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_cust", ord.Customer);
                     cmd.Parameters.AddWithValue("@or_buyer", ord.Buyer);
                     cmd.Parameters.AddWithValue("@or_style_no", ord.Style_no);
+                    cmd.Parameters.AddWithValue("@remarks", ord.Remarks);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -289,6 +320,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@buyerName", ord.BuyerName);
                     cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
                     cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);
+                    cmd.Parameters.AddWithValue("@attMobile", ord.Attmobile_No);
                     cmd.Parameters.AddWithValue("@buyerAddress", ord.BuyerAddress);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
@@ -326,6 +358,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@customerName", ord.Cus_Name);
                     cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
                     cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);
+                    cmd.Parameters.AddWithValue("@attMobile", ord.Attmobile_No);
                     cmd.Parameters.AddWithValue("@customerAddress", ord.Cus_Address);
                     cmd.Parameters.AddWithValue("@customerTermsnCondition", ord.Cus_Terms_Condition);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
@@ -337,6 +370,96 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
 
 
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                _dg_Oder_Mgt.Close();
+            }
+            return message;
+        }
+        public async Task<string> DiaSave(List<diaSave> app)
+        {
+            string message = string.Empty;
+            await _dg_Oder_Mgt.OpenAsync();
+
+
+            try
+            {
+                foreach (diaSave ord in app)
+                {
+                    SqlCommand cmd = new SqlCommand("dg_dia_save", _dg_Oder_Mgt);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@diaName", ord.DiaName);
+                    cmd.Parameters.AddWithValue("@createdby", ord.createdby);
+                    cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+                    cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+                    await cmd.ExecuteNonQueryAsync();
+                    message = (string)cmd.Parameters["@ERROR"].Value;
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                _dg_Oder_Mgt.Close();
+            }
+            return message;
+        }
+
+        public async Task<string>GsmSave(List<gsmSave> app)
+        {
+            string message = string.Empty;
+            await _dg_Oder_Mgt.OpenAsync();
+            try
+            {
+                foreach (gsmSave ord in app)
+                {
+                    SqlCommand cmd = new SqlCommand("dg_gsm_save", _dg_Oder_Mgt);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@gsmName", ord.GsmName);
+                    cmd.Parameters.AddWithValue("@createdby", ord.createdby);
+                    cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+                    cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+                    await cmd.ExecuteNonQueryAsync();
+                    message = (string)cmd.Parameters["@ERROR"].Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                _dg_Oder_Mgt.Close();
+            }
+            return message;
+        }
+        public async Task<string> DesignSave(List<designSave> app)
+        {
+            string message = string.Empty;
+            await _dg_Oder_Mgt.OpenAsync();
+            try
+            {
+                foreach (designSave ord in app)
+                {
+                    SqlCommand cmd = new SqlCommand("dg_design_save", _dg_Oder_Mgt);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@designName ", ord.designName);
+                    cmd.Parameters.AddWithValue("@createdby", ord.createdby);
+                    cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+                    cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+                    await cmd.ExecuteNonQueryAsync();
+                    message = (string)cmd.Parameters["@ERROR"].Value;
+                }
             }
             catch (Exception ex)
             {

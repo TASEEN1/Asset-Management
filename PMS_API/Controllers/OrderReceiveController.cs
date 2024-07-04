@@ -67,6 +67,38 @@ namespace PMS_API.Controllers
             return Ok(data);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetDia()
+        {
+            var data = await _globalMaster.orderManager.GetDia();
+            return Ok(data);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Getgsm()
+        {
+            var data = await _globalMaster.orderManager.Getgsm();
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Getdesign()
+        {
+            var data = await _globalMaster.orderManager.Getdesign();
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetBuyerView()
+        {
+            var data = await _globalMaster.orderManager.GetBuyerView();
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetcustomerView()
+        {
+            var data = await _globalMaster.orderManager.GetcustomerView();
+            return Ok(data);
+        }
+
 
         [HttpGet]
         public async Task<IActionResult> OrderReceivedAddView(int Customer, int Buyer, string Style_no)
@@ -127,6 +159,28 @@ namespace PMS_API.Controllers
         public async Task<IActionResult> CustomerSave(List<customerSave> app)
         {
             var data = await _globalMaster.orderManager.CustomerSave(app);
+            return Ok(new { message = data });
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DiaSave(List<diaSave> app)
+        {
+            var data = await _globalMaster.orderManager.DiaSave(app);
+            return Ok(new { message = data });
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> GsmSave(List<gsmSave> app)
+        {
+            var data = await _globalMaster.orderManager.GsmSave(app);
+            return Ok(new { message = data });
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> DesignSave(List<designSave> app)
+        {
+            var data = await _globalMaster.orderManager.DesignSave(app);
             return Ok(new { message = data });
 
         }

@@ -30,7 +30,7 @@ namespace PMS_BOL.Models.OrderMgt
         public string Terms_condition { get; set; }
         public DateTime Ord_receive_date { get; set; }
         public DateTime Ord_delivery_date { get; set; }
-        public string Remarks { get; set; }
+        //public string Remarks { get; set; }
         public string CreatedBy { get; set; }
     }
 }

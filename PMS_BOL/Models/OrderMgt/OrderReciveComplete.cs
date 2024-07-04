@@ -11,5 +11,7 @@ namespace PMS_BOL.Models.OrderMgt
         public int Customer { get; set; }
         public int Buyer { get; set; }
         public string Style_no { get; set; }
+        public string Remarks { get; set;}
+
     }
 }

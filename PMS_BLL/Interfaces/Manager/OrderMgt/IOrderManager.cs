@@ -17,6 +17,11 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable> GetProcessType();
         public Task<DataTable> Getbuyer();
         public Task<DataTable>GetCustomer();
+        public Task<DataTable> GetDia();
+        public Task<DataTable> Getgsm();
+        public Task<DataTable> Getdesign();
+        public Task<DataTable> GetBuyerView();
+        public Task<DataTable> GetcustomerView();
 
         public Task<DataTable> OrderReceivedAddView(int Customer, int Buyer, string Style_no);
 
@@ -28,6 +33,11 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<string> ProcessTypeSave(List<ProcessTypeSave> app);
         public Task<string> BuyerSave(List<BuyerSave> app);
         public Task<string> CustomerSave(List<customerSave> app);
+        public Task<string> DiaSave(List<diaSave> app);
+
+        public Task<string> GsmSave(List<gsmSave> app);
+        public Task<string> DesignSave(List<designSave> app);
+
 
 
 

@@ -88,4 +88,7 @@
     </None>
     <None Include="wwwroot\Report\ReportDataSet\AsstDataSet.xss" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\OrderMgt\" />
+  </ItemGroup>
 </Project>
