@@ -15,14 +15,22 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable>GetUnit();
         public Task<DataTable> GetItemDescription();
         public Task<DataTable> GetProcessType();
-        public Task<DataTable> Getbuyer();
+        public Task<DataTable> GetBuyer();
         public Task<DataTable>GetCustomer();
         public Task<DataTable> GetDia();
         public Task<DataTable> Getgsm();
         public Task<DataTable> Getdesign();
         public Task<DataTable> GetBuyerView();
         public Task<DataTable> GetcustomerView();
+        public Task<DataTable>GetcolorView();
+        public Task<DataTable> GetdesignView();
+        public Task<DataTable> GetDiaView();
+        public Task<DataTable> GetgsmView();
+        public Task<DataTable> GetitemView();
 
+        public Task<DataTable> GetprocessTypeview();
+        public Task<DataTable>GetStyleEdit( int custID);
+       
         public Task<DataTable> OrderReceivedAddView(int Customer, int Buyer, string Style_no);
 
         public Task<string> ColorSave(List<ColorSave>app);
@@ -37,6 +45,8 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
 
         public Task<string> GsmSave(List<gsmSave> app);
         public Task<string> DesignSave(List<designSave> app);
+        public Task<string> OrderReceiveDelete(List<orderReceiveDelete> app);
+        public Task<string> OrderReceiveUpdate(List<OrderReceivingAdd> app);
 
 
 

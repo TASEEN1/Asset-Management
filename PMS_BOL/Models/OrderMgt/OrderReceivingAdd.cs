@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace PMS_BOL.Models.OrderMgt
 {
     public class OrderReceivingAdd
-    {
+    { 
+        public int Id { get; set; }
         public int Customer { get; set; }
         public int Buyer { get; set; }
         public string style_no { get; set; }
@@ -30,7 +31,78 @@ namespace PMS_BOL.Models.OrderMgt
         public string Terms_condition { get; set; }
         public DateTime Ord_receive_date { get; set; }
         public DateTime Ord_delivery_date { get; set; }
-        //public string Remarks { get; set; }
+      
         public string CreatedBy { get; set; }
+        public string UpdatedBy { get; set; }
     }
+
+    public class ColorSave
+    {
+        public string ColorName { get; set; }
+        public string createdby { get; set; }
+    }
+
+
+
+    public class ItemDescriptionSave
+    {
+        public string ItemName { get; set; }
+        public string createdby { get; set; }
+    }
+
+    public class ProcessTypeSave
+    {
+        public string processName { get; set; }
+        public string createdby { get; set; }
+    }
+
+    public class BuyerSave
+    {
+        public string BuyerName { get; set; }
+        public string AttPerson { get; set; }
+        public string AttEmail { get; set; }
+        public string Attmobile_No { get; set; }
+        public string BuyerAddress { get; set; }
+        public string createdby { get; set; }
+
+    }
+
+    public class customerSave
+    {
+        public string Cus_Name { get; set; }
+        public string AttPerson { get; set; }
+        public string AttEmail { get; set; }
+        public string Attmobile_No { get; set; }
+
+        public string Cus_Address { get; set; }
+        public string Cus_Terms_Condition { get; set; }
+        public string createdby { get; set; }
+
+    }
+
+    public class diaSave
+    {
+        public string DiaName { get; set; }
+        public string createdby { get; set; }
+    }
+
+    public class gsmSave
+    {
+        public string GsmName { get; set; }
+        public string createdby { get; set; }
+    }
+
+    public class designSave
+    {
+        public string designName { get; set; }
+        public string createdby { get; set; }
+    }
+
+    public class orderReceiveDelete
+    {
+        public int  id { get; set; }
+       
+    }
+
+
 }

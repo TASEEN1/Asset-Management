@@ -54,9 +54,9 @@ namespace PMS_API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Getbuyer()
+        public async Task<IActionResult> GetBuyer()
         {
-            var data = await _globalMaster.orderManager.Getbuyer();
+            var data = await _globalMaster.orderManager.GetBuyer();
             return Ok(data);
         }
 
@@ -99,6 +99,53 @@ namespace PMS_API.Controllers
             return Ok(data);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetcolorView()
+        {
+            var data = await _globalMaster.orderManager.GetcolorView();
+            return Ok(data);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetdesignView()
+        {
+            var data = await _globalMaster.orderManager.GetdesignView();
+            return Ok(data);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetDiaView()
+        {
+            var data = await _globalMaster.orderManager.GetDiaView();
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetgsmView()
+        {
+            var data = await _globalMaster.orderManager.GetgsmView();
+            return Ok(data);
+
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetitemView()
+        {
+            var data = await _globalMaster.orderManager.GetitemView();
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetprocessTypeview()
+        {
+            var data = await _globalMaster.orderManager.GetprocessTypeview();
+            return Ok(data);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetStyleEdit(int custID)
+        {
+            var data = await _globalMaster.orderManager.GetStyleEdit(custID);
+            return Ok(data);
+        }
+       
 
         [HttpGet]
         public async Task<IActionResult> OrderReceivedAddView(int Customer, int Buyer, string Style_no)
@@ -183,7 +230,22 @@ namespace PMS_API.Controllers
             var data = await _globalMaster.orderManager.DesignSave(app);
             return Ok(new { message = data });
 
+           
+        }
+        [HttpDelete]
+        public async Task<IActionResult> OrderReceiveDelete(List<orderReceiveDelete> app)
+        {
+            var data = await _globalMaster.orderManager.OrderReceiveDelete(app);
+            return Ok(new { message = data });
+
         }
 
+        [HttpPut]
+        public async Task<IActionResult> OrderReceiveUpdate(List<OrderReceivingAdd> app)
+        {
+            var data = await _globalMaster.orderManager.OrderReceiveUpdate(app);
+            return Ok(new { message = data });
+
+        }
     }
 }
