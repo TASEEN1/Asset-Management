@@ -9,6 +9,7 @@ namespace PMS_BOL.Models.OrderMgt
     public class OrderReceivingAdd
     { 
         public int Id { get; set; }
+
         public int Customer { get; set; }
         public int Buyer { get; set; }
         public string style_no { get; set; }
@@ -58,17 +59,20 @@ namespace PMS_BOL.Models.OrderMgt
 
     public class BuyerSave
     {
+        public int BuyerID { get; set; }
         public string BuyerName { get; set; }
         public string AttPerson { get; set; }
         public string AttEmail { get; set; }
         public string Attmobile_No { get; set; }
         public string BuyerAddress { get; set; }
         public string createdby { get; set; }
+        public string updatedby { get; set;}
 
     }
 
     public class customerSave
     {
+        public int customerId { get; set; }
         public string Cus_Name { get; set; }
         public string AttPerson { get; set; }
         public string AttEmail { get; set; }
@@ -77,6 +81,7 @@ namespace PMS_BOL.Models.OrderMgt
         public string Cus_Address { get; set; }
         public string Cus_Terms_Condition { get; set; }
         public string createdby { get; set; }
+        public string UpdatedBy { get; set; }
 
     }
 

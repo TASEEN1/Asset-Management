@@ -145,12 +145,26 @@ namespace PMS_API.Controllers
             var data = await _globalMaster.orderManager.GetStyleEdit(custID);
             return Ok(data);
         }
-       
+
+        [HttpGet]
+        public async Task<IActionResult> GetCustomerEdit()
+        {
+            var data = await _globalMaster.orderManager.GetCustomerEdit();
+            return Ok(data);
+        }
+
 
         [HttpGet]
         public async Task<IActionResult> OrderReceivedAddView(int Customer, int Buyer, string Style_no)
         {
             var data = await _globalMaster.orderManager.OrderReceivedAddView(Customer, Buyer, Style_no);
+            return Ok(data);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetOrderReceivedAddEditView(int Customer, int Buyer, string Style_no)
+        {
+            var data = await _globalMaster.orderManager.GetOrderReceivedAddEditView(Customer, Buyer, Style_no);
             return Ok(data);
         }
 
@@ -244,6 +258,37 @@ namespace PMS_API.Controllers
         public async Task<IActionResult> OrderReceiveUpdate(List<OrderReceivingAdd> app)
         {
             var data = await _globalMaster.orderManager.OrderReceiveUpdate(app);
+            return Ok(new { message = data });
+
+        }
+        [HttpDelete]
+        public async Task<IActionResult> CustomerDelete(List<customerSave> app)
+        {
+            var data = await _globalMaster.orderManager.CustomerDelete(app);
+            return Ok(new { message = data });
+
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> CustomerUpdate(List<customerSave> app)
+        {
+            var data = await _globalMaster.orderManager.CustomerUpdate(app);
+            return Ok(new { message = data });
+
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> BuyerDelete(List<BuyerSave> app)
+        {
+            var data = await _globalMaster.orderManager.BuyerDelete(app);
+            return Ok(new { message = data });
+
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> BuyerUpdate(List<BuyerSave> app)
+        {
+            var data = await _globalMaster.orderManager.BuyerUpdate(app);
             return Ok(new { message = data });
 
         }

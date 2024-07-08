@@ -30,8 +30,10 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
 
         public Task<DataTable> GetprocessTypeview();
         public Task<DataTable>GetStyleEdit( int custID);
+        public Task<DataTable> GetCustomerEdit();
        
         public Task<DataTable> OrderReceivedAddView(int Customer, int Buyer, string Style_no);
+        public Task<DataTable> GetOrderReceivedAddEditView(int Customer, int Buyer, string Style_no);
 
         public Task<string> ColorSave(List<ColorSave>app);
         public Task<string>OrderReceivedAdd(List<OrderReceivingAdd> app);
@@ -47,6 +49,13 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<string> DesignSave(List<designSave> app);
         public Task<string> OrderReceiveDelete(List<orderReceiveDelete> app);
         public Task<string> OrderReceiveUpdate(List<OrderReceivingAdd> app);
+
+        public Task<string> CustomerDelete (List<customerSave> app);
+        public Task<string> CustomerUpdate(List<customerSave> app);
+        public Task<string> BuyerDelete(List<BuyerSave> app);
+        public Task<string> BuyerUpdate(List<BuyerSave> app);
+
+
 
 
 
