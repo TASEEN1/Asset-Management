@@ -23,6 +23,7 @@ namespace PMS_BLL.Interfaces
 
         //-------OMS
         IOrderManager orderManager { get; }
+        IOrderReportManager orderReportManager { get; }
 
 
 

@@ -54,6 +54,10 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<string> CustomerUpdate(List<customerSave> app);
         public Task<string> BuyerDelete(List<BuyerSave> app);
         public Task<string> BuyerUpdate(List<BuyerSave> app);
+        public Task<string> OrderReceiveUpdateAdd(List<OrderReceivingAdd> app);
+        public Task<string> OrderReceiveAddOrderUpdate(List<OrderReceivingAdd> app);
+        public Task<string> OrderReceiveAddEditComplete(List<OrderReciveComplete> app);
+
 
 
 

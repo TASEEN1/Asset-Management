@@ -33,12 +33,12 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetPaymentType()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("SELECT PM_NO, Payment_Mode  FROM dbo.Smt_PaymentMode where PM_NO in (25,29)", _specfo_conn);
+            var data = await _SqlCommon.get_InformationDataTableAsync("SELECT pm_id, Payment_Mode  FROM dbo.Smt_PaymentMode where pm_id in (1,2) ", _specfo_conn);
             return data;
         }
         public async Task<DataTable> GetColor()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct c_color_name, c_id from dbo.dg_color", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct c_color_name, c_id as color_id from dbo.dg_color", _dg_Oder_Mgt);
             return data;
         }
 
@@ -67,13 +67,13 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetCustomer()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id, c_customer_name, c_att_person, c_att_mobile,c_att_email, c_terms_and_condition from dg_customer where c_active = 1", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as customer_id, c_customer_name, c_att_person, c_att_mobile,c_att_email, c_terms_and_condition from dg_customer where c_active = 1", _dg_Oder_Mgt);
 
             return data;
         }
         public async Task<DataTable> GetCustomerEdit()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_cust, c_id, c_customer_name, c_att_person, c_att_mobile,c_att_email, c_terms_and_condition " +
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_cust, c_id as customer_id, c_customer_name, c_att_person, c_att_mobile,c_att_email, c_terms_and_condition " +
                 "from dg_order_receiving inner join dg_customer on or_cust = c_id where c_active = 1 and or_com_post_bit = 1 ", _dg_Oder_Mgt);
 
             return data;
@@ -104,14 +104,14 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
         public async Task<DataTable> GetcustomerView()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_customer where c_active = 1", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as customer_id , c_customer_name,c_address,c_att_person, c_att_mobile,c_att_email ,c_terms_and_condition,c_created_by, c_created_date, c_updated_by, c_updated_date from dg_customer where c_active = 1", _dg_Oder_Mgt);
 
             return data;
         }
 
         public async Task<DataTable> GetcolorView()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_color", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as color_id, c_color_name , c_created_by ,c_created_date , c_updated_by , c_updated_date from dg_color", _dg_Oder_Mgt);
 
             return data;
         }
@@ -154,13 +154,13 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
        
         public async Task<DataTable> OrderReceivedAddView(int Customer, int Buyer, string Style_no)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_order_receiving_add_view " + Customer + "," + Buyer + ",'" + Style_no + "'", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_order_receiving_add_order_view " + Customer + "," + Buyer + ",'" + Style_no + "'", _dg_Oder_Mgt);
             return data;
         }
 
         public async Task<DataTable> GetOrderReceivedAddEditView(int Customer, int Buyer, string Style_no)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_order_receiving_add_update_view " + Customer + "," + Buyer + ",'" + Style_no + "'", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_order_receiving_add_edit_order_view " + Customer + "," + Buyer + ",'" + Style_no + "'", _dg_Oder_Mgt);
             return data;
         }
 
@@ -205,7 +205,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             {
                 foreach (OrderReceivingAdd ord in app)
                 {
-                    SqlCommand cmd = new SqlCommand("dg_order_receiving_add", _dg_Oder_Mgt);
+                    SqlCommand cmd = new SqlCommand("dg_order_receiving_add_order_add", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@or_cust", ord.Customer);
                     cmd.Parameters.AddWithValue("@or_buyer", ord.Buyer);
@@ -257,7 +257,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             {
                 foreach (OrderReciveComplete ord in app)
                 {
-                    SqlCommand cmd = new SqlCommand("dg_order_receiving_complete", _dg_Oder_Mgt);
+                    SqlCommand cmd = new SqlCommand("dg_order_receiving_add_order_complete", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@or_cust", ord.Customer);
                     cmd.Parameters.AddWithValue("@or_buyer", ord.Buyer);
@@ -511,7 +511,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             {
                 foreach (orderReceiveDelete ord in app)
                 {
-                    SqlCommand cmd = new SqlCommand("dg_order_receiving_add_detete", _dg_Oder_Mgt);
+                    SqlCommand cmd = new SqlCommand("dg_order_receiving_add_order_detete", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id", ord.id);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
@@ -539,7 +539,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             {
                 foreach (OrderReceivingAdd ord in app)
                 {
-                    SqlCommand cmd = new SqlCommand("dg_order_receiving_add_update", _dg_Oder_Mgt);
+                    SqlCommand cmd = new SqlCommand("dg_order_receiving_add_edit_order_update", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id", ord.Id);
                     cmd.Parameters.AddWithValue("@or_cust", ord.Customer);
@@ -619,7 +619,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     SqlCommand cmd = new SqlCommand("dg_customer_update", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@custId", ord.customerId);
-                    cmd.Parameters.AddWithValue("@customerName", ord.Cus_Name);
+                    //cmd.Parameters.AddWithValue("@customerName", ord.Cus_Name);
                     cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
                     cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);
                     cmd.Parameters.AddWithValue("@attMobile", ord.Attmobile_No);
@@ -656,7 +656,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     SqlCommand cmd = new SqlCommand("dg_buyer_update", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@buyerId", ord.BuyerID);
-                    cmd.Parameters.AddWithValue("@buyerName", ord.BuyerName);
+                    //cmd.Parameters.AddWithValue("@buyerName", ord.BuyerName);
                     cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
                     cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);
                     cmd.Parameters.AddWithValue("@attMobile", ord.Attmobile_No);
@@ -692,6 +692,142 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id ", ord.BuyerID);
                     cmd.Parameters.AddWithValue("@updatedBy", ord.updatedby);
+                    cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+                    cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+                    await cmd.ExecuteNonQueryAsync();
+                    message = (string)cmd.Parameters["@ERROR"].Value;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                _dg_Oder_Mgt.Close();
+            }
+            return message;
+        }
+
+        public async Task<string> OrderReceiveUpdateAdd(List<OrderReceivingAdd> app)
+        {
+            string message = string.Empty;
+            await _dg_Oder_Mgt.OpenAsync();
+
+            try
+            {
+                foreach (OrderReceivingAdd ord in app)
+                {
+                    SqlCommand cmd = new SqlCommand("dg_order_receiving_add_edit_order_add", _dg_Oder_Mgt);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@or_cust", ord.Customer);
+                    cmd.Parameters.AddWithValue("@or_buyer", ord.Buyer);
+                    cmd.Parameters.AddWithValue("@or_style_no", ord.style_no);
+                    cmd.Parameters.AddWithValue("@or_po_no", ord.Po_no);
+                    cmd.Parameters.AddWithValue("@or_ref_no", ord.Ref_no);
+                    cmd.Parameters.AddWithValue("@or_att_name", ord.Att_name);
+                    cmd.Parameters.AddWithValue("@or_att_mobile_no", ord.Att_mobile_no);
+                    cmd.Parameters.AddWithValue("@or_att_email", ord.Att_email);
+                    cmd.Parameters.AddWithValue("@or_item_desc", ord.Item_desc);
+                    cmd.Parameters.AddWithValue("@or_item_color", ord.Item_color);
+                    cmd.Parameters.AddWithValue("@or_design ", ord.Design);
+                    cmd.Parameters.AddWithValue("@or_dia", ord.Dia);
+                    cmd.Parameters.AddWithValue("@or_gsm", ord.Gsm);
+                    cmd.Parameters.AddWithValue("@or_proc_type", ord.proc_type);
+                    cmd.Parameters.AddWithValue("@or_order_qty", ord.Oder_qty);
+                    cmd.Parameters.AddWithValue("@or_unit_price", ord.Unit_price);
+                    cmd.Parameters.AddWithValue("@or_unit", ord.unit);
+                    cmd.Parameters.AddWithValue("@or_total_price", ord.Total_price);
+                    cmd.Parameters.AddWithValue("@or_payment_type", ord.Payment_type);
+                    cmd.Parameters.AddWithValue("@or_cust_terms_cond", ord.Terms_condition);
+                    cmd.Parameters.AddWithValue("@or_order_recv_date", ord.Ord_receive_date.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@or_order_deli_date", ord.Ord_delivery_date.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@or_created_by", ord.CreatedBy);
+                    cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+                    cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+                    await cmd.ExecuteNonQueryAsync();
+                    message = (string)cmd.Parameters["@ERROR"].Value;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                _dg_Oder_Mgt.Close();
+            }
+            return message;
+
+        }
+        public async Task<string> OrderReceiveAddOrderUpdate(List<OrderReceivingAdd> app)
+        {
+            string message = string.Empty;
+            await _dg_Oder_Mgt.OpenAsync();
+
+            try
+            {
+                foreach (OrderReceivingAdd ord in app)
+                {
+                    SqlCommand cmd = new SqlCommand("dg_order_receiving_add_order_update", _dg_Oder_Mgt);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id", ord.Id);
+                    cmd.Parameters.AddWithValue("@or_cust", ord.Customer);
+                    cmd.Parameters.AddWithValue("@or_buyer", ord.Buyer);
+                    cmd.Parameters.AddWithValue("@or_style_no", ord.style_no);
+                    cmd.Parameters.AddWithValue("@or_po_no", ord.Po_no);
+                    cmd.Parameters.AddWithValue("@or_item_desc", ord.Item_desc);
+                    cmd.Parameters.AddWithValue("@or_item_color", ord.Item_color);
+                    cmd.Parameters.AddWithValue("@or_design ", ord.Design);
+                    cmd.Parameters.AddWithValue("@or_dia", ord.Dia);
+                    cmd.Parameters.AddWithValue("@or_gsm", ord.Gsm);
+                    cmd.Parameters.AddWithValue("@or_proc_type", ord.proc_type);
+                    cmd.Parameters.AddWithValue("@or_order_qty", ord.Oder_qty);
+                    cmd.Parameters.AddWithValue("@or_unit_price", ord.Unit_price);
+                    cmd.Parameters.AddWithValue("@or_unit", ord.unit);
+                    cmd.Parameters.AddWithValue("@or_total_price", ord.Total_price);
+                    cmd.Parameters.AddWithValue("@or_payment_type", ord.Payment_type);
+                    cmd.Parameters.AddWithValue("@or_order_recv_date", ord.Ord_receive_date.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@or_order_deli_date", ord.Ord_delivery_date.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@or_updated_by", ord.UpdatedBy);
+                    cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+                    cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+                    await cmd.ExecuteNonQueryAsync();
+                    message = (string)cmd.Parameters["@ERROR"].Value;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                _dg_Oder_Mgt.Close();
+            }
+            return message;
+
+        }
+
+        public async Task<string> OrderReceiveAddEditComplete(List<OrderReciveComplete> app)
+        {
+            string message = string.Empty;
+            await _dg_Oder_Mgt.OpenAsync();
+
+
+            try
+            {
+                foreach (OrderReciveComplete ord in app)
+                {
+                    SqlCommand cmd = new SqlCommand("dg_order_receiving_add_edit_order_complete", _dg_Oder_Mgt);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@or_cust", ord.Customer);
+                    cmd.Parameters.AddWithValue("@or_buyer", ord.Buyer);
+                    cmd.Parameters.AddWithValue("@or_style_no", ord.Style_no);
+                    cmd.Parameters.AddWithValue("@or_ref_no",ord.Ref_No);
+                    cmd.Parameters.AddWithValue("@remarks", ord.Remarks);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();

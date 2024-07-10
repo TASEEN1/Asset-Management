@@ -36,6 +36,7 @@ namespace PMS_DAL.Implementation
 
             //--OMS
             orderManager = new OrderManager(_sqlCommon);
+            orderReportManager = new OrderReportManager (_sqlCommon, _webHostEnvironment);
 
 
 
@@ -57,7 +58,12 @@ namespace PMS_DAL.Implementation
             public Ischedule_Maintenance schedule_Maintenance { get; private set; }
             public IAssetReportManager asset_ReportManager { get; private set; }
 
+        //OMS
             public IOrderManager orderManager { get; private set; }
+
+            public IOrderReportManager orderReportManager { get; private set; }
+
+
 
 
 

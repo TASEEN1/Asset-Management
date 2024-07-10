@@ -9,6 +9,7 @@ namespace PMS_BOL.Models.OrderMgt
     public class OrderReceivingAdd
     { 
         public int Id { get; set; }
+        public int Ref_no { get; set; }
 
         public int Customer { get; set; }
         public int Buyer { get; set; }

@@ -292,5 +292,28 @@ namespace PMS_API.Controllers
             return Ok(new { message = data });
 
         }
+        [HttpPost]
+        public async Task<IActionResult> OrderReceiveUpdateAdd(List<OrderReceivingAdd> app)
+        {
+            var data = await _globalMaster.orderManager.OrderReceiveUpdateAdd(app);
+            return Ok(new { message = data });
+
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> OrderReceiveAddOrderUpdate(List<OrderReceivingAdd> app)
+        {
+            var data = await _globalMaster.orderManager.OrderReceiveAddOrderUpdate(app);
+            return Ok(new { message = data });
+
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> OrderReceiveAddEditComplete(List<OrderReciveComplete> app)
+        {
+            var data = await _globalMaster.orderManager.OrderReceiveAddEditComplete(app);
+            return Ok(new { message = data });
+
+        }
     }
 }
