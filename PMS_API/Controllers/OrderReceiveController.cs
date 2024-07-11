@@ -162,9 +162,9 @@ namespace PMS_API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetOrderReceivedAddEditView(int Customer, int Buyer, string Style_no)
+        public async Task<IActionResult> GetOrderReceivedAddEditView(int Customer, int Buyer, string Style_no, int Ref_no)
         {
-            var data = await _globalMaster.orderManager.GetOrderReceivedAddEditView(Customer, Buyer, Style_no);
+            var data = await _globalMaster.orderManager.GetOrderReceivedAddEditView(Customer, Buyer, Style_no,Ref_no);
             return Ok(data);
         }
 

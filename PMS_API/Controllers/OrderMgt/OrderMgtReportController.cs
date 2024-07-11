@@ -27,5 +27,16 @@ namespace PMS_API.Controllers.OrderMgt
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
 
+
+        [HttpGet]
+        public async Task<IActionResult> ProformaInvoiceReport(int comID, string UserName, string reportType, int? customer, string? style_No, DateTime FromDate, DateTime ToDate)
+
+
+        {
+            ReportFileExt reportFileExt = new ReportFileExt();
+            var data = _globalMaster.orderReportManager.ProformaInvoiceReport(comID, UserName, reportType, customer, style_No, FromDate, ToDate);
+            return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
+        }
+
     }
 }

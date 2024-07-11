@@ -77,6 +77,49 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
 
 
+        public byte[] ProformaInvoiceReport(int comID, string UserName, string reportType, int? customer, string? style_No, DateTime FromDate, DateTime ToDate)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("dg_proforma_invoice_Rpt ");
+            //stringBuilder.Append(comID);
+            stringBuilder.Append(customer != null ? customer : "NULL");
+            stringBuilder.Append(", '" + (style_No != null ? style_No : "NULL"));
+            stringBuilder.Append("', '");
+            stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + "', '");
+            stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
+            stringBuilder.Append("' ");
+
+            string stateQu = stringBuilder.ToString();
+            var tbldata = new DataTable[]
+            {
+
+                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Oder_Mgt)
+            };
+            var strSetName = new string[]
+            {
+                "OrdDataSet"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\Proforma_Invoice.rdlc";
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            //new ReportParameter("Title", "Order Receive Report- Fectory:"  +ComName+""),
+            new ReportParameter("Title", "Proforma Invoice"),
+
+            new ReportParameter("PrintUser",  "" + UserName + "")
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+
+
+        }
+
+
 
         //Common Report Code
         private byte[] GenerateReport(DataTable dataTable, string datasetName, string rdlcFilePath, string reportType, ReportParameterCollection reportParameters = null)

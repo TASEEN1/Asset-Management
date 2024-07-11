@@ -158,9 +158,9 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return data;
         }
 
-        public async Task<DataTable> GetOrderReceivedAddEditView(int Customer, int Buyer, string Style_no)
+        public async Task<DataTable> GetOrderReceivedAddEditView(int Customer, int Buyer, string Style_no, int Ref_no)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_order_receiving_add_edit_order_view " + Customer + "," + Buyer + ",'" + Style_no + "'", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_order_receiving_add_edit_order_view " + Customer + "," + Buyer + ",'" + Style_no +  "'," + Ref_no + "", _dg_Oder_Mgt);
             return data;
         }
 
