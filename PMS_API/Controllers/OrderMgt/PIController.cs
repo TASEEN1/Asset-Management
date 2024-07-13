@@ -44,5 +44,21 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(data);
         }
 
+
+        [HttpGet]
+        public async Task<IActionResult> GetPIAddView(int Customer, string style, int Ref_no)
+        {
+            var data = await _globalMaster.piManager.GetPIAddView(Customer, style, Ref_no);
+            return Ok(data);
+        }
+
+
+        [HttpDelete]
+        public async Task<IActionResult> PIDelete(List<PI_Model> app)
+        {
+            var data = await _globalMaster.piManager.PIDelete(app);
+            return Ok(new { message = data });
+
+        }
     }
 }

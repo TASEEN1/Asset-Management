@@ -49,6 +49,7 @@ namespace PMS_BOL.Models.OrderMgt
     public class ItemDescriptionSave
     {
         public string ItemName { get; set; }
+        public string HSCode { get; set; }
         public string createdby { get; set; }
     }
 

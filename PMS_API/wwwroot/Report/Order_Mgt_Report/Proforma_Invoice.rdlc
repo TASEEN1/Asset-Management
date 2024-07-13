@@ -129,6 +129,14 @@
           <DataField>pi_number</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="id_HS_code">
+          <DataField>id_HS_code</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="or_remarks">
+          <DataField>or_remarks</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>OrdDataSet</rd:DataSetName>
@@ -164,7 +172,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value> Amount</Value>
+                                  <Value> Value</Value>
                                   <Style>
                                     <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -193,6 +201,7 @@
                             <RightBorder>
                               <Color>Black</Color>
                             </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -217,6 +226,7 @@
                                 <TextRun>
                                   <Value>=Fields!or_total_price.Value</Value>
                                   <Style>
+                                    <FontFamily>Calibri</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -243,6 +253,7 @@
                             <RightBorder>
                               <Color>Black</Color>
                             </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -267,6 +278,7 @@
                                 <TextRun>
                                   <Value>=Sum(Fields!or_total_price.Value)</Value>
                                   <Style>
+                                    <FontFamily>Calibri</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>0;(0)</Format>
@@ -283,6 +295,7 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -315,6 +328,7 @@
                               <TextRun>
                                 <Value>SL</Value>
                                 <Style>
+                                  <FontFamily>Calibri</FontFamily>
                                   <FontSize>7pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
@@ -342,6 +356,7 @@
                           <RightBorder>
                             <Color>Black</Color>
                           </RightBorder>
+                          <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -391,6 +406,7 @@
                               <RightBorder>
                                 <Color>Black</Color>
                               </RightBorder>
+                              <VerticalAlign>Middle</VerticalAlign>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -402,16 +418,16 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>0.47917in</Size>
+                            <Size>0.63889in</Size>
                             <CellContents>
-                              <Textbox Name="Textbox123">
+                              <Textbox Name="Textbox129">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>Desing</Value>
+                                        <Value>Order No</Value>
                                         <Style>
                                           <FontSize>7pt</FontSize>
                                           <FontWeight>Bold</FontWeight>
@@ -423,7 +439,7 @@
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>Textbox123</rd:DefaultName>
+                                <rd:DefaultName>Textbox129</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Style>Solid</Style>
@@ -440,6 +456,7 @@
                                   <RightBorder>
                                     <Color>Black</Color>
                                   </RightBorder>
+                                  <VerticalAlign>Middle</VerticalAlign>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -451,16 +468,16 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>0.63889in</Size>
+                                <Size>1.18056in</Size>
                                 <CellContents>
-                                  <Textbox Name="Textbox129">
+                                  <Textbox Name="Textbox11">
                                     <CanGrow>true</CanGrow>
                                     <KeepTogether>true</KeepTogether>
                                     <Paragraphs>
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>Order No</Value>
+                                            <Value>Item Description</Value>
                                             <Style>
                                               <FontSize>7pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
@@ -472,7 +489,7 @@
                                         </Style>
                                       </Paragraph>
                                     </Paragraphs>
-                                    <rd:DefaultName>Textbox129</rd:DefaultName>
+                                    <rd:DefaultName>Textbox11</rd:DefaultName>
                                     <Style>
                                       <Border>
                                         <Style>Solid</Style>
@@ -489,6 +506,7 @@
                                       <RightBorder>
                                         <Color>Black</Color>
                                       </RightBorder>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -500,16 +518,16 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>1.18055in</Size>
+                                    <Size>0.52777in</Size>
                                     <CellContents>
-                                      <Textbox Name="Textbox132">
+                                      <Textbox Name="Textbox135">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Description Of Goods</Value>
+                                                <Value>HS Code</Value>
                                                 <Style>
                                                   <FontSize>7pt</FontSize>
                                                   <FontWeight>Bold</FontWeight>
@@ -521,7 +539,7 @@
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox132</rd:DefaultName>
+                                        <rd:DefaultName>Textbox135</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>Solid</Style>
@@ -538,6 +556,7 @@
                                           <RightBorder>
                                             <Color>Black</Color>
                                           </RightBorder>
+                                          <VerticalAlign>Middle</VerticalAlign>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -549,16 +568,16 @@
                                   <TablixMembers>
                                     <TablixMember>
                                       <TablixHeader>
-                                        <Size>0.52777in</Size>
+                                        <Size>0.43335in</Size>
                                         <CellContents>
-                                          <Textbox Name="Textbox135">
+                                          <Textbox Name="Textbox138">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>HS Code</Value>
+                                                    <Value>GSM</Value>
                                                     <Style>
                                                       <FontSize>7pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -570,7 +589,7 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox135</rd:DefaultName>
+                                            <rd:DefaultName>Textbox138</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -587,6 +606,7 @@
                                               <RightBorder>
                                                 <Color>Black</Color>
                                               </RightBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -598,16 +618,16 @@
                                       <TablixMembers>
                                         <TablixMember>
                                           <TablixHeader>
-                                            <Size>0.54861in</Size>
+                                            <Size>0.36111in</Size>
                                             <CellContents>
-                                              <Textbox Name="Textbox138">
+                                              <Textbox Name="Textbox141">
                                                 <CanGrow>true</CanGrow>
                                                 <KeepTogether>true</KeepTogether>
                                                 <Paragraphs>
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>Weight</Value>
+                                                        <Value>Dia</Value>
                                                         <Style>
                                                           <FontSize>7pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
@@ -619,7 +639,7 @@
                                                     </Style>
                                                   </Paragraph>
                                                 </Paragraphs>
-                                                <rd:DefaultName>Textbox138</rd:DefaultName>
+                                                <rd:DefaultName>Textbox141</rd:DefaultName>
                                                 <Style>
                                                   <Border>
                                                     <Style>Solid</Style>
@@ -636,6 +656,7 @@
                                                   <RightBorder>
                                                     <Color>Black</Color>
                                                   </RightBorder>
+                                                  <VerticalAlign>Middle</VerticalAlign>
                                                   <PaddingLeft>2pt</PaddingLeft>
                                                   <PaddingRight>2pt</PaddingRight>
                                                   <PaddingTop>2pt</PaddingTop>
@@ -647,16 +668,16 @@
                                           <TablixMembers>
                                             <TablixMember>
                                               <TablixHeader>
-                                                <Size>0.36111in</Size>
+                                                <Size>1in</Size>
                                                 <CellContents>
-                                                  <Textbox Name="Textbox141">
+                                                  <Textbox Name="Textbox12">
                                                     <CanGrow>true</CanGrow>
                                                     <KeepTogether>true</KeepTogether>
                                                     <Paragraphs>
                                                       <Paragraph>
                                                         <TextRuns>
                                                           <TextRun>
-                                                            <Value>Width</Value>
+                                                            <Value>Desing</Value>
                                                             <Style>
                                                               <FontSize>7pt</FontSize>
                                                               <FontWeight>Bold</FontWeight>
@@ -668,7 +689,7 @@
                                                         </Style>
                                                       </Paragraph>
                                                     </Paragraphs>
-                                                    <rd:DefaultName>Textbox141</rd:DefaultName>
+                                                    <rd:DefaultName>Textbox12</rd:DefaultName>
                                                     <Style>
                                                       <Border>
                                                         <Style>Solid</Style>
@@ -685,6 +706,7 @@
                                                       <RightBorder>
                                                         <Color>Black</Color>
                                                       </RightBorder>
+                                                      <VerticalAlign>Middle</VerticalAlign>
                                                       <PaddingLeft>2pt</PaddingLeft>
                                                       <PaddingRight>2pt</PaddingRight>
                                                       <PaddingTop>2pt</PaddingTop>
@@ -696,7 +718,7 @@
                                               <TablixMembers>
                                                 <TablixMember>
                                                   <TablixHeader>
-                                                    <Size>1.0625in</Size>
+                                                    <Size>0.69443in</Size>
                                                     <CellContents>
                                                       <Textbox Name="Textbox144">
                                                         <CanGrow>true</CanGrow>
@@ -705,21 +727,7 @@
                                                           <Paragraph>
                                                             <TextRuns>
                                                               <TextRun>
-                                                                <Value>Booking Qty </Value>
-                                                                <Style>
-                                                                  <FontSize>7pt</FontSize>
-                                                                  <FontWeight>Bold</FontWeight>
-                                                                </Style>
-                                                              </TextRun>
-                                                            </TextRuns>
-                                                            <Style>
-                                                              <TextAlign>Center</TextAlign>
-                                                            </Style>
-                                                          </Paragraph>
-                                                          <Paragraph>
-                                                            <TextRuns>
-                                                              <TextRun>
-                                                                <Value>KG/Yds</Value>
+                                                                <Value>Qty</Value>
                                                                 <Style>
                                                                   <FontSize>7pt</FontSize>
                                                                   <FontWeight>Bold</FontWeight>
@@ -748,6 +756,7 @@
                                                           <RightBorder>
                                                             <Color>Black</Color>
                                                           </RightBorder>
+                                                          <VerticalAlign>Middle</VerticalAlign>
                                                           <PaddingLeft>2pt</PaddingLeft>
                                                           <PaddingRight>2pt</PaddingRight>
                                                           <PaddingTop>2pt</PaddingTop>
@@ -797,6 +806,7 @@
                                                               <RightBorder>
                                                                 <Color>Black</Color>
                                                               </RightBorder>
+                                                              <VerticalAlign>Middle</VerticalAlign>
                                                               <PaddingLeft>2pt</PaddingLeft>
                                                               <PaddingRight>2pt</PaddingRight>
                                                               <PaddingTop>2pt</PaddingTop>
@@ -808,7 +818,7 @@
                                                       <TablixMembers>
                                                         <TablixMember>
                                                           <TablixHeader>
-                                                            <Size>0.63889in</Size>
+                                                            <Size>0.60139in</Size>
                                                             <CellContents>
                                                               <Textbox Name="Textbox98">
                                                                 <CanGrow>true</CanGrow>
@@ -817,7 +827,7 @@
                                                                   <Paragraph>
                                                                     <TextRuns>
                                                                       <TextRun>
-                                                                        <Value>or unit price</Value>
+                                                                        <Value>Price</Value>
                                                                         <Style>
                                                                           <FontSize>7pt</FontSize>
                                                                           <FontWeight>Bold</FontWeight>
@@ -846,6 +856,7 @@
                                                                   <RightBorder>
                                                                     <Color>Black</Color>
                                                                   </RightBorder>
+                                                                  <VerticalAlign>Middle</VerticalAlign>
                                                                   <PaddingLeft>2pt</PaddingLeft>
                                                                   <PaddingRight>2pt</PaddingRight>
                                                                   <PaddingTop>2pt</PaddingTop>
@@ -902,6 +913,7 @@
                               <TextRun>
                                 <Value>=RowNumber(Nothing)</Value>
                                 <Style>
+                                  <FontFamily>Calibri</FontFamily>
                                   <FontSize>6pt</FontSize>
                                 </Style>
                               </TextRun>
@@ -928,6 +940,7 @@
                           <RightBorder>
                             <Color>Black</Color>
                           </RightBorder>
+                          <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -950,6 +963,7 @@
                                   <TextRun>
                                     <Value>=Fields!b_buyer_name.Value</Value>
                                     <Style>
+                                      <FontFamily>Calibri</FontFamily>
                                       <FontSize>6pt</FontSize>
                                     </Style>
                                   </TextRun>
@@ -976,6 +990,7 @@
                               <RightBorder>
                                 <Color>Black</Color>
                               </RightBorder>
+                              <VerticalAlign>Middle</VerticalAlign>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -987,17 +1002,18 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>0.47917in</Size>
+                            <Size>0.63889in</Size>
                             <CellContents>
-                              <Textbox Name="des_name1">
+                              <Textbox Name="or_style_no1">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>=Fields!des_name.Value</Value>
+                                        <Value>=Fields!or_style_no.Value</Value>
                                         <Style>
+                                          <FontFamily>Calibri</FontFamily>
                                           <FontSize>6pt</FontSize>
                                         </Style>
                                       </TextRun>
@@ -1007,7 +1023,7 @@
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>des_name1</rd:DefaultName>
+                                <rd:DefaultName>or_style_no1</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Style>Solid</Style>
@@ -1024,6 +1040,7 @@
                                   <RightBorder>
                                     <Color>Black</Color>
                                   </RightBorder>
+                                  <VerticalAlign>Middle</VerticalAlign>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -1035,17 +1052,18 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>0.63889in</Size>
+                                <Size>1.18056in</Size>
                                 <CellContents>
-                                  <Textbox Name="or_style_no1">
+                                  <Textbox Name="id_item_name">
                                     <CanGrow>true</CanGrow>
                                     <KeepTogether>true</KeepTogether>
                                     <Paragraphs>
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>=Fields!or_style_no.Value</Value>
+                                            <Value>=Fields!id_item_name.Value</Value>
                                             <Style>
+                                              <FontFamily>Calibri</FontFamily>
                                               <FontSize>6pt</FontSize>
                                             </Style>
                                           </TextRun>
@@ -1055,7 +1073,7 @@
                                         </Style>
                                       </Paragraph>
                                     </Paragraphs>
-                                    <rd:DefaultName>or_style_no1</rd:DefaultName>
+                                    <rd:DefaultName>id_item_name</rd:DefaultName>
                                     <Style>
                                       <Border>
                                         <Style>Solid</Style>
@@ -1072,6 +1090,7 @@
                                       <RightBorder>
                                         <Color>Black</Color>
                                       </RightBorder>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1083,17 +1102,18 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>1.18055in</Size>
+                                    <Size>0.52777in</Size>
                                     <CellContents>
-                                      <Textbox Name="id_item_name">
+                                      <Textbox Name="id_HS_code">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!id_item_name.Value</Value>
+                                                <Value>=Fields!id_HS_code.Value</Value>
                                                 <Style>
+                                                  <FontFamily>Calibri</FontFamily>
                                                   <FontSize>6pt</FontSize>
                                                 </Style>
                                               </TextRun>
@@ -1103,7 +1123,7 @@
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>id_item_name</rd:DefaultName>
+                                        <rd:DefaultName>id_HS_code</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>Solid</Style>
@@ -1120,6 +1140,7 @@
                                           <RightBorder>
                                             <Color>Black</Color>
                                           </RightBorder>
+                                          <VerticalAlign>Middle</VerticalAlign>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -1131,17 +1152,18 @@
                                   <TablixMembers>
                                     <TablixMember>
                                       <TablixHeader>
-                                        <Size>0.52777in</Size>
+                                        <Size>0.43335in</Size>
                                         <CellContents>
-                                          <Textbox Name="Textbox136">
+                                          <Textbox Name="g_gsm1">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value />
+                                                    <Value>=Fields!g_gsm.Value</Value>
                                                     <Style>
+                                                      <FontFamily>Calibri</FontFamily>
                                                       <FontSize>6pt</FontSize>
                                                     </Style>
                                                   </TextRun>
@@ -1151,7 +1173,7 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox136</rd:DefaultName>
+                                            <rd:DefaultName>g_gsm1</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -1168,6 +1190,7 @@
                                               <RightBorder>
                                                 <Color>Black</Color>
                                               </RightBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -1179,17 +1202,18 @@
                                       <TablixMembers>
                                         <TablixMember>
                                           <TablixHeader>
-                                            <Size>0.54861in</Size>
+                                            <Size>0.36111in</Size>
                                             <CellContents>
-                                              <Textbox Name="g_gsm1">
+                                              <Textbox Name="d_name">
                                                 <CanGrow>true</CanGrow>
                                                 <KeepTogether>true</KeepTogether>
                                                 <Paragraphs>
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>=Fields!g_gsm.Value</Value>
+                                                        <Value>=Fields!d_name.Value</Value>
                                                         <Style>
+                                                          <FontFamily>Calibri</FontFamily>
                                                           <FontSize>6pt</FontSize>
                                                         </Style>
                                                       </TextRun>
@@ -1199,7 +1223,7 @@
                                                     </Style>
                                                   </Paragraph>
                                                 </Paragraphs>
-                                                <rd:DefaultName>g_gsm1</rd:DefaultName>
+                                                <rd:DefaultName>d_name</rd:DefaultName>
                                                 <Style>
                                                   <Border>
                                                     <Style>Solid</Style>
@@ -1216,6 +1240,7 @@
                                                   <RightBorder>
                                                     <Color>Black</Color>
                                                   </RightBorder>
+                                                  <VerticalAlign>Middle</VerticalAlign>
                                                   <PaddingLeft>2pt</PaddingLeft>
                                                   <PaddingRight>2pt</PaddingRight>
                                                   <PaddingTop>2pt</PaddingTop>
@@ -1227,17 +1252,18 @@
                                           <TablixMembers>
                                             <TablixMember>
                                               <TablixHeader>
-                                                <Size>0.36111in</Size>
+                                                <Size>1in</Size>
                                                 <CellContents>
-                                                  <Textbox Name="Textbox142">
+                                                  <Textbox Name="des_name">
                                                     <CanGrow>true</CanGrow>
                                                     <KeepTogether>true</KeepTogether>
                                                     <Paragraphs>
                                                       <Paragraph>
                                                         <TextRuns>
                                                           <TextRun>
-                                                            <Value />
+                                                            <Value>=Fields!des_name.Value</Value>
                                                             <Style>
+                                                              <FontFamily>Calibri</FontFamily>
                                                               <FontSize>6pt</FontSize>
                                                             </Style>
                                                           </TextRun>
@@ -1247,23 +1273,12 @@
                                                         </Style>
                                                       </Paragraph>
                                                     </Paragraphs>
-                                                    <rd:DefaultName>Textbox142</rd:DefaultName>
+                                                    <rd:DefaultName>des_name</rd:DefaultName>
                                                     <Style>
                                                       <Border>
                                                         <Style>Solid</Style>
                                                       </Border>
-                                                      <TopBorder>
-                                                        <Color>Black</Color>
-                                                      </TopBorder>
-                                                      <BottomBorder>
-                                                        <Color>Black</Color>
-                                                      </BottomBorder>
-                                                      <LeftBorder>
-                                                        <Color>Black</Color>
-                                                      </LeftBorder>
-                                                      <RightBorder>
-                                                        <Color>Black</Color>
-                                                      </RightBorder>
+                                                      <VerticalAlign>Middle</VerticalAlign>
                                                       <PaddingLeft>2pt</PaddingLeft>
                                                       <PaddingRight>2pt</PaddingRight>
                                                       <PaddingTop>2pt</PaddingTop>
@@ -1275,7 +1290,7 @@
                                               <TablixMembers>
                                                 <TablixMember>
                                                   <TablixHeader>
-                                                    <Size>1.0625in</Size>
+                                                    <Size>0.69443in</Size>
                                                     <CellContents>
                                                       <Textbox Name="or_order_qty1">
                                                         <CanGrow>true</CanGrow>
@@ -1286,6 +1301,7 @@
                                                               <TextRun>
                                                                 <Value>=Sum(Fields!or_order_qty.Value)</Value>
                                                                 <Style>
+                                                                  <FontFamily>Calibri</FontFamily>
                                                                   <FontSize>6pt</FontSize>
                                                                   <Format>0;(0)</Format>
                                                                 </Style>
@@ -1301,6 +1317,7 @@
                                                           <Border>
                                                             <Style>Solid</Style>
                                                           </Border>
+                                                          <VerticalAlign>Middle</VerticalAlign>
                                                           <PaddingLeft>2pt</PaddingLeft>
                                                           <PaddingRight>2pt</PaddingRight>
                                                           <PaddingTop>2pt</PaddingTop>
@@ -1323,6 +1340,7 @@
                                                                   <TextRun>
                                                                     <Value>=Fields!cUnitDes.Value</Value>
                                                                     <Style>
+                                                                      <FontFamily>Calibri</FontFamily>
                                                                       <FontSize>6pt</FontSize>
                                                                     </Style>
                                                                   </TextRun>
@@ -1349,6 +1367,7 @@
                                                               <RightBorder>
                                                                 <Color>Black</Color>
                                                               </RightBorder>
+                                                              <VerticalAlign>Middle</VerticalAlign>
                                                               <PaddingLeft>2pt</PaddingLeft>
                                                               <PaddingRight>2pt</PaddingRight>
                                                               <PaddingTop>2pt</PaddingTop>
@@ -1360,7 +1379,7 @@
                                                       <TablixMembers>
                                                         <TablixMember>
                                                           <TablixHeader>
-                                                            <Size>0.63889in</Size>
+                                                            <Size>0.60139in</Size>
                                                             <CellContents>
                                                               <Textbox Name="or_unit_price1">
                                                                 <CanGrow>true</CanGrow>
@@ -1371,6 +1390,7 @@
                                                                       <TextRun>
                                                                         <Value>=Fields!or_unit_price.Value</Value>
                                                                         <Style>
+                                                                          <FontFamily>Calibri</FontFamily>
                                                                           <FontSize>6pt</FontSize>
                                                                           <Format>0;(0)</Format>
                                                                         </Style>
@@ -1386,6 +1406,7 @@
                                                                   <Border>
                                                                     <Style>Solid</Style>
                                                                   </Border>
+                                                                  <VerticalAlign>Middle</VerticalAlign>
                                                                   <PaddingLeft>2pt</PaddingLeft>
                                                                   <PaddingRight>2pt</PaddingRight>
                                                                   <PaddingTop>2pt</PaddingTop>
@@ -1422,7 +1443,7 @@
                 </TablixMember>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>4.72916in</Size>
+                    <Size>5.13474in</Size>
                     <CellContents>
                       <Textbox Name="Textbox116">
                         <CanGrow>true</CanGrow>
@@ -1431,15 +1452,16 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Total</Value>
+                                <Value>Total Amount</Value>
                                 <Style>
+                                  <FontFamily>Calibri</FontFamily>
                                   <FontSize>6pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
                             </TextRuns>
                             <Style>
-                              <TextAlign>Right</TextAlign>
+                              <TextAlign>Center</TextAlign>
                             </Style>
                           </Paragraph>
                         </Paragraphs>
@@ -1460,6 +1482,7 @@
                           <RightBorder>
                             <Color>Black</Color>
                           </RightBorder>
+                          <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -1471,7 +1494,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>1.0625in</Size>
+                        <Size>0.69443in</Size>
                         <CellContents>
                           <Textbox Name="Textbox146">
                             <CanGrow>true</CanGrow>
@@ -1482,6 +1505,7 @@
                                   <TextRun>
                                     <Value>=Sum(Fields!or_order_qty.Value)</Value>
                                     <Style>
+                                      <FontFamily>Calibri</FontFamily>
                                       <FontSize>6pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                       <Format>0;(0)</Format>
@@ -1498,6 +1522,7 @@
                               <Border>
                                 <Style>Solid</Style>
                               </Border>
+                              <VerticalAlign>Middle</VerticalAlign>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -1509,7 +1534,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>1.15972in</Size>
+                            <Size>1.12222in</Size>
                             <CellContents>
                               <Textbox Name="Textbox149">
                                 <CanGrow>true</CanGrow>
@@ -1520,6 +1545,7 @@
                                       <TextRun>
                                         <Value />
                                         <Style>
+                                          <FontFamily>Calibri</FontFamily>
                                           <FontSize>6pt</FontSize>
                                         </Style>
                                       </TextRun>
@@ -1546,6 +1572,7 @@
                                   <RightBorder>
                                     <Color>Black</Color>
                                   </RightBorder>
+                                  <VerticalAlign>Middle</VerticalAlign>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -1566,7 +1593,7 @@
             <Top>1.16194in</Top>
             <Left>0.12028in</Left>
             <Height>0.75in</Height>
-            <Width>7.68749in</Width>
+            <Width>7.6875in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1584,6 +1611,7 @@
                       <TextRun>
                         <Value>To,</Value>
                         <Style>
+                          <FontFamily>Calibri</FontFamily>
                           <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
@@ -1595,6 +1623,7 @@
                       <TextRun>
                         <Value>=Fields!c_customer_name.Value</Value>
                         <Style>
+                          <FontFamily>Calibri</FontFamily>
                           <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
@@ -1605,7 +1634,9 @@
                     <TextRuns>
                       <TextRun>
                         <Value>=Fields!c_address.Value</Value>
-                        <Style />
+                        <Style>
+                          <FontFamily>Calibri</FontFamily>
+                        </Style>
                       </TextRun>
                     </TextRuns>
                     <Style />
@@ -1633,8 +1664,9 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>PI No:</Value>
+                        <Value>PI No: </Value>
                         <Style>
+                          <FontFamily>Calibri</FontFamily>
                           <FontSize>8pt</FontSize>
                           <FontWeight>Bold</FontWeight>
                           <Format>dd-MMM-yy</Format>
@@ -1643,8 +1675,9 @@
                       <TextRun>
                         <Value>=Fields!pi_number.Value</Value>
                         <Style>
+                          <FontFamily>Calibri</FontFamily>
                           <FontSize>8pt</FontSize>
-                          <FontWeight>Bold</FontWeight>
+                          <FontWeight>Normal</FontWeight>
                           <Format>dd-MMM-yy</Format>
                         </Style>
                       </TextRun>
@@ -1654,8 +1687,9 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Date:</Value>
+                        <Value>Date: </Value>
                         <Style>
+                          <FontFamily>Calibri</FontFamily>
                           <FontSize>8pt</FontSize>
                           <FontWeight>Bold</FontWeight>
                           <Format>dd-MMM-yy</Format>
@@ -1664,8 +1698,9 @@
                       <TextRun>
                         <Value>=Fields!or_order_recv_date.Value</Value>
                         <Style>
+                          <FontFamily>Calibri</FontFamily>
                           <FontSize>8pt</FontSize>
-                          <FontWeight>Bold</FontWeight>
+                          <FontWeight>Normal</FontWeight>
                           <Format>dd-MMM-yy</Format>
                         </Style>
                       </TextRun>
@@ -1675,8 +1710,9 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Attn:</Value>
+                        <Value>Attention: </Value>
                         <Style>
+                          <FontFamily>Calibri</FontFamily>
                           <FontSize>8pt</FontSize>
                           <FontWeight>Bold</FontWeight>
                           <Format>dd-MMM-yy</Format>
@@ -1685,8 +1721,9 @@
                       <TextRun>
                         <Value>=Fields!c_att_person.Value</Value>
                         <Style>
+                          <FontFamily>Calibri</FontFamily>
                           <FontSize>8pt</FontSize>
-                          <FontWeight>Bold</FontWeight>
+                          <FontWeight>Normal</FontWeight>
                           <Format>dd-MMM-yy</Format>
                         </Style>
                       </TextRun>
@@ -1696,8 +1733,9 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Cell:</Value>
+                        <Value>Mobile No : </Value>
                         <Style>
+                          <FontFamily>Calibri</FontFamily>
                           <FontSize>8pt</FontSize>
                           <FontWeight>Bold</FontWeight>
                           <Format>dd-MMM-yy</Format>
@@ -1706,8 +1744,9 @@
                       <TextRun>
                         <Value>=Fields!c_att_mobile.Value</Value>
                         <Style>
+                          <FontFamily>Calibri</FontFamily>
                           <FontSize>8pt</FontSize>
-                          <FontWeight>Bold</FontWeight>
+                          <FontWeight>Normal</FontWeight>
                           <Format>dd-MMM-yy</Format>
                         </Style>
                       </TextRun>
@@ -1717,8 +1756,9 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Delivery Date:</Value>
+                        <Value>Delivery Date: </Value>
                         <Style>
+                          <FontFamily>Calibri</FontFamily>
                           <FontSize>8pt</FontSize>
                           <FontWeight>Bold</FontWeight>
                           <Format>dd-MMM-yy</Format>
@@ -1727,8 +1767,9 @@
                       <TextRun>
                         <Value>=Fields!or_order_deli_date.Value</Value>
                         <Style>
+                          <FontFamily>Calibri</FontFamily>
                           <FontSize>8pt</FontSize>
-                          <FontWeight>Bold</FontWeight>
+                          <FontWeight>Normal</FontWeight>
                           <Format>dd-MMM-yy</Format>
                         </Style>
                       </TextRun>
@@ -1797,8 +1838,20 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value />
-                    <Style />
+                    <Value>Remarks: </Value>
+                    <Style>
+                      <FontFamily>Calibri</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!or_remarks.Value</Value>
+                    <Style>
+                      <FontFamily>Calibri</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -1807,7 +1860,10 @@
                 <TextRuns>
                   <TextRun>
                     <Value />
-                    <Style />
+                    <Style>
+                      <FontFamily>Calibri</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -1817,6 +1873,7 @@
                   <TextRun>
                     <Value>Terms &amp; Condition:</Value>
                     <Style>
+                      <FontFamily>Calibri</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -1829,6 +1886,7 @@
                   <TextRun>
                     <Value>-----------------------------</Value>
                     <Style>
+                      <FontFamily>Calibri</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -1841,6 +1899,7 @@
                   <TextRun>
                     <Value>=Fields!or_cust_terms_cond.Value</Value>
                     <Style>
+                      <FontFamily>Calibri</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
@@ -1850,10 +1909,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox150</rd:DefaultName>
-            <Top>1.98138in</Top>
+            <Top>2.0125in</Top>
             <Left>0.08278in</Left>
-            <Height>0.95139in</Height>
-            <Width>7.6875in</Width>
+            <Height>1.96528in</Height>
+            <Width>7.72499in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -1865,25 +1924,47 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="Textbox4">
+          <Textbox Name="Textbox32">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Say In Word:</Value>
-                    <Style />
+                    <Value>Say In Word : </Value>
+                    <Style>
+                      <FontFamily>Calibri</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Code.changeToWords(CStr(Fields!or_total_price.Value))</Value>
+                    <Style>
+                      <FontFamily>Calibri</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve">       </Value>
+                    <Style>
+                      <FontFamily>Calibri</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
-            <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>2.03in</Top>
-            <Left>0.14111in</Left>
-            <Height>0.25in</Height>
-            <Width>0.97223in</Width>
+            <rd:DefaultName>Textbox27</rd:DefaultName>
+            <Top>2.1625in</Top>
+            <Left>0.07584in</Left>
+            <Height>0.18056in</Height>
+            <Width>3.63056in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -1896,7 +1977,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>3.22222in</Height>
+        <Height>3.97778in</Height>
         <Style />
       </Body>
       <Width>7.88555in</Width>
@@ -1915,6 +1996,7 @@
                     <TextRun>
                       <Value>=Parameters!Company.Value</Value>
                       <Style>
+                        <FontFamily>Calibri</FontFamily>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -1959,6 +2041,7 @@
                     <TextRun>
                       <Value>=Parameters!Title.Value</Value>
                       <Style>
+                        <FontFamily>Calibri</FontFamily>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -1971,7 +2054,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox30</rd:DefaultName>
               <Top>0.58125in</Top>
-              <Left>0.19347in</Left>
+              <Left>0.14347in</Left>
               <Height>0.2375in</Height>
               <Width>3.38653in</Width>
               <ZIndex>1</ZIndex>
@@ -1993,7 +2076,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.66667in</Height>
+          <Height>0.77153in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2026,8 +2109,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox111</rd:DefaultName>
-              <Top>0.29375in</Top>
-              <Left>0.08278in</Left>
+              <Top>0.41249in</Top>
               <Height>0.25in</Height>
               <Width>2.23056in</Width>
               <Style>
@@ -2050,6 +2132,7 @@
                     <TextRun>
                       <Value>=Globals.PageNumber &amp; " of " &amp; Globals.TotalPages</Value>
                       <Style>
+                        <FontFamily>Calibri</FontFamily>
                         <FontSize>9pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -2061,7 +2144,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox27</rd:DefaultName>
-              <Top>0.30625in</Top>
+              <Top>0.43125in</Top>
               <Left>3.30083in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
@@ -2083,7 +2166,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Print user: </Value>
+                      <Value>                     Print user: </Value>
                       <Style>
                         <FontFamily>Calibri</FontFamily>
                         <FontSize>9pt</FontSize>
@@ -2104,7 +2187,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox111</rd:DefaultName>
-              <Top>0.28749in</Top>
+              <Top>0.41249in</Top>
               <Left>5.82166in</Left>
               <Height>0.24376in</Height>
               <Width>1.98611in</Width>
@@ -2120,6 +2203,151 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
+            <Textbox Name="Textbox121">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Created By</Value>
+                      <Style>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox111</rd:DefaultName>
+              <Top>0.01389in</Top>
+              <Height>0.25in</Height>
+              <Width>1.54721in</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Line Name="Line1">
+              <Top>0.07674in</Top>
+              <Left>0.43972in</Left>
+              <Height>0in</Height>
+              <Width>0.67361in</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="Textbox122">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Checked By</Value>
+                      <Style>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox111</rd:DefaultName>
+              <Top>0.01389in</Top>
+              <Left>2.97862in</Left>
+              <Height>0.25in</Height>
+              <Width>1.54721in</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Line Name="Line2">
+              <Top>0.06979in</Top>
+              <Left>3.32819in</Left>
+              <Height>0in</Height>
+              <Width>0.78472in</Width>
+              <ZIndex>6</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="Textbox124">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Approved By</Value>
+                      <Style>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox111</rd:DefaultName>
+              <Left>6.33834in</Left>
+              <Height>0.25in</Height>
+              <Width>1.54721in</Width>
+              <ZIndex>7</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Line Name="Line3">
+              <Top>0.04583in</Top>
+              <Left>6.73556in</Left>
+              <Height>0in</Height>
+              <Width>0.74305in</Width>
+              <ZIndex>8</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
           </ReportItems>
           <Style>
             <Border>
@@ -2179,42 +2407,26 @@
       </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
-  <Code>Function changeToWords(ByVal number As Decimal) As String
-    If number = 0 Then
-        Return "Zero"
-    End If
-
+  <Code>Public Function changeToWords(ByVal number As String) As String
     Dim unitsMap As String() = {"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"}
     Dim tensMap As String() = {"Zero", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"}
 
-    Dim words As String = ""
-
-    If number &gt;= 1000 Then
-        words &amp;= changeToWords(Math.Floor(number / 1000)) &amp; " Thousand "
-        number = number Mod 1000
+    Dim num As Integer
+    If Not Integer.TryParse(number, num) Then
+        Return "Invalid number"
     End If
 
-    If number &gt;= 100 Then
-        words &amp;= changeToWords(Math.Floor(number / 100)) &amp; " Hundred "
-        number = number Mod 100
+    If num &lt; 20 Then
+        Return unitsMap(num)
+    ElseIf num &lt; 100 Then
+        Return tensMap(num \ 10) &amp; If((num Mod 10 &gt; 0), "-" &amp; unitsMap(num Mod 10), "")
+    ElseIf num &lt; 1000 Then
+        Return unitsMap(num \ 100) &amp; " Hundred" &amp; If((num Mod 100 &gt; 0), " and " &amp; changeToWords((num Mod 100).ToString()), "")
+    ElseIf num &lt; 1000000 Then
+        Return changeToWords((num \ 1000).ToString()) &amp; " Thousand" &amp; If((num Mod 1000 &gt; 0), " " &amp; changeToWords((num Mod 1000).ToString()), "")
+    Else
+        Return "Number too large"
     End If
-
-    If number &gt; 0 Then
-        If words &lt;&gt; "" Then
-            words &amp;= "and "
-        End If
-
-        If number &lt; 20 Then
-            words &amp;= unitsMap(CInt(number))
-        Else
-            words &amp;= tensMap(CInt(Math.Floor(number / 10)))
-            If number Mod 10 &gt; 0 Then
-                words &amp;= "-" &amp; unitsMap(CInt(number Mod 10))
-            End If
-        End If
-    End If
-
-    Return words.Trim()
 End Function</Code>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>ca1d6c65-951b-4caf-b3e4-9b9954603574</rd:ReportID>

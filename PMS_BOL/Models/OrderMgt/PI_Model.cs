@@ -10,6 +10,7 @@ namespace PMS_BOL.Models.OrderMgt
     {
         public int Pi_id { get; set; }
         public int pi_or_id { get; set; }
+        public int payment_Type { get; set; }
         public string Po_No { get; set; }
         public string Style_No { get; set;}
 

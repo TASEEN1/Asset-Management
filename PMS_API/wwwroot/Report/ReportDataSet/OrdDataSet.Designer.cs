@@ -983,6 +983,10 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             private global::System.Data.DataColumn columnpi_number;
             
+            private global::System.Data.DataColumn columnid_HS_code;
+            
+            private global::System.Data.DataColumn columnor_remarks;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public dg_proforma_invoice_RptDataTable() {
@@ -1242,6 +1246,22 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn id_HS_codeColumn {
+                get {
+                    return this.columnid_HS_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn or_remarksColumn {
+                get {
+                    return this.columnor_remarks;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1304,7 +1324,9 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         decimal or_total_price, 
                         string Payment_Mode, 
                         int pm_id, 
-                        string pi_number) {
+                        string pi_number, 
+                        string id_HS_code, 
+                        string or_remarks) {
                 dg_proforma_invoice_RptRow rowdg_proforma_invoice_RptRow = ((dg_proforma_invoice_RptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         or_id,
@@ -1334,7 +1356,9 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         or_total_price,
                         Payment_Mode,
                         pm_id,
-                        pi_number};
+                        pi_number,
+                        id_HS_code,
+                        or_remarks};
                 rowdg_proforma_invoice_RptRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdg_proforma_invoice_RptRow);
                 return rowdg_proforma_invoice_RptRow;
@@ -1385,6 +1409,8 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columnPayment_Mode = base.Columns["Payment_Mode"];
                 this.columnpm_id = base.Columns["pm_id"];
                 this.columnpi_number = base.Columns["pi_number"];
+                this.columnid_HS_code = base.Columns["id_HS_code"];
+                this.columnor_remarks = base.Columns["or_remarks"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1446,6 +1472,10 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 base.Columns.Add(this.columnpm_id);
                 this.columnpi_number = new global::System.Data.DataColumn("pi_number", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpi_number);
+                this.columnid_HS_code = new global::System.Data.DataColumn("id_HS_code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_HS_code);
+                this.columnor_remarks = new global::System.Data.DataColumn("or_remarks", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnor_remarks);
                 this.columnor_id.AllowDBNull = false;
                 this.columnc_customer_name.MaxLength = 50;
                 this.columnc_att_person.MaxLength = 50;
@@ -1469,6 +1499,8 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columnnUnitID.ReadOnly = true;
                 this.columnPayment_Mode.MaxLength = 100;
                 this.columnpi_number.MaxLength = 20;
+                this.columnid_HS_code.MaxLength = 50;
+                this.columnor_remarks.MaxLength = 250;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2662,6 +2694,38 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string id_HS_code {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.id_HS_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_HS_code\' in table \'dg_proforma_invoice_Rpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_proforma_invoice_Rpt.id_HS_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string or_remarks {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.or_remarksColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'or_remarks\' in table \'dg_proforma_invoice_Rpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_proforma_invoice_Rpt.or_remarksColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isor_ref_noNull() {
                 return this.IsNull(this.tabledg_proforma_invoice_Rpt.or_ref_noColumn);
             }
@@ -2946,6 +3010,30 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setpi_numberNull() {
                 this[this.tabledg_proforma_invoice_Rpt.pi_numberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isid_HS_codeNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.id_HS_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setid_HS_codeNull() {
+                this[this.tabledg_proforma_invoice_Rpt.id_HS_codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isor_remarksNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.or_remarksColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setor_remarksNull() {
+                this[this.tabledg_proforma_invoice_Rpt.or_remarksColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3414,6 +3502,8 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.OrdDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Payment_Mode", "Payment_Mode");
             tableMapping.ColumnMappings.Add("pm_id", "pm_id");
             tableMapping.ColumnMappings.Add("pi_number", "pi_number");
+            tableMapping.ColumnMappings.Add("id_HS_code", "id_HS_code");
+            tableMapping.ColumnMappings.Add("or_remarks", "or_remarks");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

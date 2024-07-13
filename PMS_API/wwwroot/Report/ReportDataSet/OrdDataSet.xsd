@@ -98,6 +98,8 @@
               <Mapping SourceColumn="Payment_Mode" DataSetColumn="Payment_Mode" />
               <Mapping SourceColumn="pm_id" DataSetColumn="pm_id" />
               <Mapping SourceColumn="pi_number" DataSetColumn="pi_number" />
+              <Mapping SourceColumn="id_HS_code" DataSetColumn="id_HS_code" />
+              <Mapping SourceColumn="or_remarks" DataSetColumn="or_remarks" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -347,6 +349,20 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_HS_code" msprop:Generator_ColumnPropNameInRow="id_HS_code" msprop:Generator_ColumnPropNameInTable="id_HS_codeColumn" msprop:Generator_ColumnVarNameInTable="columnid_HS_code" msprop:Generator_UserColumnName="id_HS_code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="or_remarks" msprop:Generator_ColumnPropNameInRow="or_remarks" msprop:Generator_ColumnPropNameInTable="or_remarksColumn" msprop:Generator_ColumnVarNameInTable="columnor_remarks" msprop:Generator_UserColumnName="or_remarks" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
