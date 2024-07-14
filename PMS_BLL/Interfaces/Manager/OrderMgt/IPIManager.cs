@@ -10,11 +10,28 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
 {
     public interface IPIManager
     {
-        public Task<String> GeneratePIAdd(List<PI_Model>app);
-        public Task<String> GeneratePI(List<PI_Model> app);
+        public Task<string> GeneratePIAdd(List<PI_Model>app);
+        public Task<string> GeneratePI(List<PI_Model> app);
         public Task<DataTable> GetGeneratePIAddView(int customer, int Buyer, string created_By);
         public Task<string> PIDelete(List<PI_Model>app);
         public Task<DataTable> GetPIAddView(int customer, string style, int Ref_no);
+        public Task<DataTable> GetPiApproval_checkedBy_View(string Created_by);
+        public Task<DataTable> GetPiApproval_approvedBy_view(string Created_by);
+
+        public Task<string> PIRevise(List<PI_Model> app);
+
+        public Task<DataTable> GetPiApproval_ForApprovalView(string Created_by);
+
+        public Task<DataTable> GetPIcustomer();
+        public Task<DataTable> GetPIstyle();
+
+        public Task<string> ApprovedByApprove(List<PI_Model>app);
+        public Task<string> CheckedByApprove(List<PI_Model> app);
+
+
+
+
+
 
     }
 

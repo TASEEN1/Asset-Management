@@ -76,6 +76,7 @@
               <Mapping SourceColumn="c_att_person" DataSetColumn="c_att_person" />
               <Mapping SourceColumn="c_att_mobile" DataSetColumn="c_att_mobile" />
               <Mapping SourceColumn="c_address" DataSetColumn="c_address" />
+              <Mapping SourceColumn="c_terms_and_condition" DataSetColumn="c_terms_and_condition" />
               <Mapping SourceColumn="c_id" DataSetColumn="c_id" />
               <Mapping SourceColumn="b_buyer_name" DataSetColumn="b_buyer_name" />
               <Mapping SourceColumn="b_id" DataSetColumn="b_id" />
@@ -252,6 +253,13 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="c_terms_and_condition" msprop:Generator_ColumnPropNameInRow="c_terms_and_condition" msprop:Generator_ColumnPropNameInTable="c_terms_and_conditionColumn" msprop:Generator_ColumnVarNameInTable="columnc_terms_and_condition" msprop:Generator_UserColumnName="c_terms_and_condition" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="c_id" msprop:Generator_ColumnPropNameInRow="c_id" msprop:Generator_ColumnPropNameInTable="c_idColumn" msprop:Generator_ColumnVarNameInTable="columnc_id" msprop:Generator_UserColumnName="c_id" type="xs:int" />
               <xs:element name="b_buyer_name" msprop:Generator_ColumnPropNameInRow="b_buyer_name" msprop:Generator_ColumnPropNameInTable="b_buyer_nameColumn" msprop:Generator_ColumnVarNameInTable="columnb_buyer_name" msprop:Generator_UserColumnName="b_buyer_name" minOccurs="0">
                 <xs:simpleType>
@@ -322,7 +330,7 @@
               <xs:element name="or_cust_terms_cond" msprop:Generator_ColumnPropNameInRow="or_cust_terms_cond" msprop:Generator_ColumnPropNameInTable="or_cust_terms_condColumn" msprop:Generator_ColumnVarNameInTable="columnor_cust_terms_cond" msprop:Generator_UserColumnName="or_cust_terms_cond" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="2000" />
+                    <xs:maxLength value="2500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

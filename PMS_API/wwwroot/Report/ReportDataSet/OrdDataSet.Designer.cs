@@ -939,6 +939,8 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             private global::System.Data.DataColumn columnc_address;
             
+            private global::System.Data.DataColumn columnc_terms_and_condition;
+            
             private global::System.Data.DataColumn columnc_id;
             
             private global::System.Data.DataColumn columnb_buyer_name;
@@ -1065,6 +1067,14 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             public global::System.Data.DataColumn c_addressColumn {
                 get {
                     return this.columnc_address;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn c_terms_and_conditionColumn {
+                get {
+                    return this.columnc_terms_and_condition;
                 }
             }
             
@@ -1304,6 +1314,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         string c_att_person, 
                         string c_att_mobile, 
                         string c_address, 
+                        string c_terms_and_condition, 
                         int c_id, 
                         string b_buyer_name, 
                         int b_id, 
@@ -1335,6 +1346,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         c_att_person,
                         c_att_mobile,
                         c_address,
+                        c_terms_and_condition,
                         c_id,
                         b_buyer_name,
                         b_id,
@@ -1387,6 +1399,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columnc_att_person = base.Columns["c_att_person"];
                 this.columnc_att_mobile = base.Columns["c_att_mobile"];
                 this.columnc_address = base.Columns["c_address"];
+                this.columnc_terms_and_condition = base.Columns["c_terms_and_condition"];
                 this.columnc_id = base.Columns["c_id"];
                 this.columnb_buyer_name = base.Columns["b_buyer_name"];
                 this.columnb_id = base.Columns["b_id"];
@@ -1428,6 +1441,8 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 base.Columns.Add(this.columnc_att_mobile);
                 this.columnc_address = new global::System.Data.DataColumn("c_address", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnc_address);
+                this.columnc_terms_and_condition = new global::System.Data.DataColumn("c_terms_and_condition", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnc_terms_and_condition);
                 this.columnc_id = new global::System.Data.DataColumn("c_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnc_id);
                 this.columnb_buyer_name = new global::System.Data.DataColumn("b_buyer_name", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1481,6 +1496,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columnc_att_person.MaxLength = 50;
                 this.columnc_att_mobile.MaxLength = 50;
                 this.columnc_address.MaxLength = 100;
+                this.columnc_terms_and_condition.MaxLength = 2000;
                 this.columnc_id.AllowDBNull = false;
                 this.columnb_buyer_name.MaxLength = 50;
                 this.columnb_id.AllowDBNull = false;
@@ -1492,7 +1508,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columng_gsm.MaxLength = 10;
                 this.columndes_name.MaxLength = 100;
                 this.columnit_process_name.MaxLength = 100;
-                this.columnor_cust_terms_cond.MaxLength = 2000;
+                this.columnor_cust_terms_cond.MaxLength = 2500;
                 this.columncUnitDes.MaxLength = 15;
                 this.columnnUnitID.AutoIncrement = true;
                 this.columnnUnitID.AllowDBNull = false;
@@ -2346,6 +2362,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string c_terms_and_condition {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.c_terms_and_conditionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'c_terms_and_condition\' in table \'dg_proforma_invoice_Rpt\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_proforma_invoice_Rpt.c_terms_and_conditionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int c_id {
                 get {
                     return ((int)(this[this.tabledg_proforma_invoice_Rpt.c_idColumn]));
@@ -2782,6 +2815,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setc_addressNull() {
                 this[this.tabledg_proforma_invoice_Rpt.c_addressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isc_terms_and_conditionNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.c_terms_and_conditionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setc_terms_and_conditionNull() {
+                this[this.tabledg_proforma_invoice_Rpt.c_terms_and_conditionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3480,6 +3525,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.OrdDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("c_att_person", "c_att_person");
             tableMapping.ColumnMappings.Add("c_att_mobile", "c_att_mobile");
             tableMapping.ColumnMappings.Add("c_address", "c_address");
+            tableMapping.ColumnMappings.Add("c_terms_and_condition", "c_terms_and_condition");
             tableMapping.ColumnMappings.Add("c_id", "c_id");
             tableMapping.ColumnMappings.Add("b_buyer_name", "b_buyer_name");
             tableMapping.ColumnMappings.Add("b_id", "b_id");

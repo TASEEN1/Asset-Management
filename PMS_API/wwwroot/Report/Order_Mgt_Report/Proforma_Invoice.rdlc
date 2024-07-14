@@ -41,6 +41,10 @@
           <DataField>c_address</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="c_terms_and_condition">
+          <DataField>c_terms_and_condition</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="c_id">
           <DataField>c_id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -1897,7 +1901,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Fields!or_cust_terms_cond.Value</Value>
+                    <Value>=Fields!c_terms_and_condition.Value</Value>
                     <Style>
                       <FontFamily>Calibri</FontFamily>
                       <FontSize>8pt</FontSize>

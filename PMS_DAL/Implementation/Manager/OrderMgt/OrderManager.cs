@@ -49,7 +49,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
         public async Task<DataTable> GetItemDescription()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select id_id, id_item_name from dg_item_description", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select id_id, id_item_name,id_HS_code from dg_item_description", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetProcessType()
