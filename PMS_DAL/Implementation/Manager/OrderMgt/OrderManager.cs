@@ -74,7 +74,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         public async Task<DataTable> GetCustomerEdit()
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_cust, c_id as customer_id, c_customer_name, c_att_person, c_att_mobile,c_att_email, c_terms_and_condition " +
-                "from dg_order_receiving inner join dg_customer on or_cust = c_id where c_active = 1 and or_com_post_bit = 1 ", _dg_Oder_Mgt);
+                "from dg_order_receiving inner join dg_customer on or_cust = c_id where c_active = 1 and or_com_post_bit = 1 and or_pi_add_bit = 0 ", _dg_Oder_Mgt);
 
             return data;
         }
@@ -147,7 +147,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetStyleEdit(int custID)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no, or_style_no from dg_order_receiving where or_cust = '" + custID +"'", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no, or_style_no from dg_order_receiving where  or_com_post_bit = 1 and or_pi_add_bit = 0 and or_cust = '" + custID +"'", _dg_Oder_Mgt);
             return data;
         }
 
@@ -161,6 +161,22 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         public async Task<DataTable> GetOrderReceivedAddEditView(int Customer, int Buyer, string Style_no, int Ref_no)
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("dg_order_receiving_add_edit_order_view " + Customer + "," + Buyer + ",'" + Style_no +  "'," + Ref_no + "", _dg_Oder_Mgt);
+            return data;
+        }
+
+
+        //------------------------------------------------------------------------------REPORT----------------------------------------------------------------------------------------------------------------------
+
+        public async Task<DataTable> GetReport_Customer()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_cust, c_customer_name FROM dbo.dg_order_receiving inner join dg_customer on or_cust = dg_customer.c_id where or_com_post_bit=1", _dg_Oder_Mgt);
+            return data;
+        }
+
+
+        public async Task<DataTable> GetReport_Style(int custID)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync(" select distinct or_style_no,or_ref_no FROM  dbo.dg_order_receiving inner join dg_customer on or_cust = dg_customer.c_id where or_com_post_bit=1 and or_cust = '" + custID + "'", _dg_Oder_Mgt);
             return data;
         }
 
@@ -224,7 +240,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_unit_price", ord.Unit_price);
                     cmd.Parameters.AddWithValue("@or_unit", ord.unit);
                     cmd.Parameters.AddWithValue("@or_total_price", ord.Total_price);
-                    cmd.Parameters.AddWithValue("@or_payment_type", ord.Payment_type);
+                    cmd.Parameters.AddWithValue("@or_item_HS_code", ord.Hs_code);
                     cmd.Parameters.AddWithValue("@or_cust_terms_cond", ord.Terms_condition);
                     cmd.Parameters.AddWithValue("@or_order_recv_date",ord.Ord_receive_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_order_deli_date", ord.Ord_delivery_date.ToString("yyyy-MM-dd"));
@@ -531,7 +547,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             }
             return message;
         }
-        public async Task<string> OrderReceiveUpdate(List<OrderReceivingAdd> app)
+        public async Task<string> OrderReceiveEditUpdate(List<OrderReceivingAdd> app)
         {
             string message = string.Empty;
             await _dg_Oder_Mgt.OpenAsync();
@@ -557,7 +573,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_unit_price", ord.Unit_price);
                     cmd.Parameters.AddWithValue("@or_unit", ord.unit);
                     cmd.Parameters.AddWithValue("@or_total_price", ord.Total_price);
-                    cmd.Parameters.AddWithValue("@or_payment_type", ord.Payment_type);
+                    cmd.Parameters.AddWithValue("@or_item_HS_code", ord.Hs_code);
                     cmd.Parameters.AddWithValue("@or_order_recv_date", ord.Ord_receive_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_order_deli_date", ord.Ord_delivery_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_updated_by", ord.UpdatedBy);
@@ -711,7 +727,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return message;
         }
 
-        public async Task<string> OrderReceiveUpdateAdd(List<OrderReceivingAdd> app)
+        public async Task<string> OrderReceiveEditAdd(List<OrderReceivingAdd> app)
         {
             string message = string.Empty;
             await _dg_Oder_Mgt.OpenAsync();
@@ -740,7 +756,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_unit_price", ord.Unit_price);
                     cmd.Parameters.AddWithValue("@or_unit", ord.unit);
                     cmd.Parameters.AddWithValue("@or_total_price", ord.Total_price);
-                    cmd.Parameters.AddWithValue("@or_payment_type", ord.Payment_type);
+                    cmd.Parameters.AddWithValue("@or_item_HS_code", ord.Hs_code);
                     cmd.Parameters.AddWithValue("@or_cust_terms_cond", ord.Terms_condition);
                     cmd.Parameters.AddWithValue("@or_order_recv_date", ord.Ord_receive_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_order_deli_date", ord.Ord_delivery_date.ToString("yyyy-MM-dd"));
@@ -780,6 +796,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_style_no", ord.style_no);
                     cmd.Parameters.AddWithValue("@or_po_no", ord.Po_no);
                     cmd.Parameters.AddWithValue("@or_item_desc", ord.Item_desc);
+                    cmd.Parameters.AddWithValue("@or_item_HS_code", ord.Hs_code);
                     cmd.Parameters.AddWithValue("@or_item_color", ord.Item_color);
                     cmd.Parameters.AddWithValue("@or_design ", ord.Design);
                     cmd.Parameters.AddWithValue("@or_dia", ord.Dia);
@@ -789,7 +806,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_unit_price", ord.Unit_price);
                     cmd.Parameters.AddWithValue("@or_unit", ord.unit);
                     cmd.Parameters.AddWithValue("@or_total_price", ord.Total_price);
-                    cmd.Parameters.AddWithValue("@or_payment_type", ord.Payment_type);
+                    //cmd.Parameters.AddWithValue("@or_item_HS_code", ord.Hs_code);
                     cmd.Parameters.AddWithValue("@or_order_recv_date", ord.Ord_receive_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_order_deli_date", ord.Ord_delivery_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_updated_by", ord.UpdatedBy);

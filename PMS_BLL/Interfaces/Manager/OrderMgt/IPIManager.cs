@@ -17,6 +17,8 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable> GetPIAddView(int customer, string style, int Ref_no);
         public Task<DataTable> GetPiApproval_checkedBy_View(string Created_by);
         public Task<DataTable> GetPiApproval_approvedBy_view(string Created_by);
+        public Task<DataTable> GetPiApproval_revise_view(string Created_by);
+
 
         public Task<string> PIRevise(List<PI_Model> app);
 

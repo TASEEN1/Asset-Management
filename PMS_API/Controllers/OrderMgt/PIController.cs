@@ -52,6 +52,12 @@ namespace PMS_API.Controllers.OrderMgt
             var data = await _globalMaster.piManager.GetPiApproval_ForApprovalView(Created_by);
             return Ok(data);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetPiApproval_revise_view(string Created_by)
+        {
+            var data = await _globalMaster.piManager.GetPiApproval_revise_view(Created_by);
+            return Ok(data);
+        }
 
         [HttpGet]
         public async Task<IActionResult> GetPIcustomer()

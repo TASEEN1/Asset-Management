@@ -255,9 +255,9 @@ namespace PMS_API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> OrderReceiveUpdate(List<OrderReceivingAdd> app)
+        public async Task<IActionResult> OrderReceiveEditUpdate(List<OrderReceivingAdd> app)
         {
-            var data = await _globalMaster.orderManager.OrderReceiveUpdate(app);
+            var data = await _globalMaster.orderManager.OrderReceiveEditUpdate(app);
             return Ok(new { message = data });
 
         }
@@ -293,9 +293,9 @@ namespace PMS_API.Controllers
 
         }
         [HttpPost]
-        public async Task<IActionResult> OrderReceiveUpdateAdd(List<OrderReceivingAdd> app)
+        public async Task<IActionResult> OrderReceiveEditAdd(List<OrderReceivingAdd> app)
         {
-            var data = await _globalMaster.orderManager.OrderReceiveUpdateAdd(app);
+            var data = await _globalMaster.orderManager.OrderReceiveEditAdd(app);
             return Ok(new { message = data });
 
         }
@@ -315,5 +315,25 @@ namespace PMS_API.Controllers
             return Ok(new { message = data });
 
         }
+
+
+
+        //-----------------Report---------------------------
+
+        [HttpGet]
+        public async Task<IActionResult> GetReport_Customer()
+        {
+            var data = await _globalMaster.orderManager.GetReport_Customer();
+            return Ok(data);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetReport_Style(int custID)
+        {
+            var data = await _globalMaster.orderManager.GetReport_Style( custID);
+            return Ok(data);
+        }
+
+
     }
 }

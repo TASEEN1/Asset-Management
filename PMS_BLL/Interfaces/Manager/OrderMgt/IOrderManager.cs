@@ -48,15 +48,21 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<string> GsmSave(List<gsmSave> app);
         public Task<string> DesignSave(List<designSave> app);
         public Task<string> OrderReceiveDelete(List<orderReceiveDelete> app);
-        public Task<string> OrderReceiveUpdate(List<OrderReceivingAdd> app);
+        public Task<string> OrderReceiveEditUpdate(List<OrderReceivingAdd> app);
 
         public Task<string> CustomerDelete (List<customerSave> app);
         public Task<string> CustomerUpdate(List<customerSave> app);
         public Task<string> BuyerDelete(List<BuyerSave> app);
         public Task<string> BuyerUpdate(List<BuyerSave> app);
-        public Task<string> OrderReceiveUpdateAdd(List<OrderReceivingAdd> app);
+        public Task<string> OrderReceiveEditAdd(List<OrderReceivingAdd> app);
         public Task<string> OrderReceiveAddOrderUpdate(List<OrderReceivingAdd> app);
         public Task<string> OrderReceiveAddEditComplete(List<OrderReciveComplete> app);
+
+        //----------------------------Report-----------------------------
+        public Task<DataTable> GetReport_Customer();
+        public Task<DataTable> GetReport_Style( int custID);
+
+
 
 
 

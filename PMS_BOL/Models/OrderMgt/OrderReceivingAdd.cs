@@ -33,6 +33,7 @@ namespace PMS_BOL.Models.OrderMgt
         public string Terms_condition { get; set; }
         public DateTime Ord_receive_date { get; set; }
         public DateTime Ord_delivery_date { get; set; }
+        public string Hs_code { get; set; }
       
         public string CreatedBy { get; set; }
         public string UpdatedBy { get; set; }
