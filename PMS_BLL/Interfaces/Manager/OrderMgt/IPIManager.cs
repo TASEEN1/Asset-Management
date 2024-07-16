@@ -25,7 +25,7 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable> GetPiApproval_ForApprovalView(string Created_by);
 
         public Task<DataTable> GetPIcustomer();
-        public Task<DataTable> GetPIstyle();
+        public Task<DataTable> GetPIstyle( int custId);
 
         public Task<string> ApprovedByApprove(List<PI_Model>app);
         public Task<string> CheckedByApprove(List<PI_Model> app);

@@ -106,7 +106,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetPIAddView(int Customer, string style, int Ref_no)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_before_add_view " + Customer + "," + style + ",'" + Ref_no + "'", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_before_add_view " + Customer + ", '" + style + "', " + Ref_no , _dg_Oder_Mgt);
             return data;
         }
 
@@ -124,7 +124,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetPiApproval_ForApprovalView(string Created_by)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_forApproval_view " + Created_by + "", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_forApproval_view "  + Created_by + "", _dg_Oder_Mgt);
             return data;
         }
 
@@ -139,9 +139,9 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return data;
         }
 
-        public async Task<DataTable> GetPIstyle()
+        public async Task<DataTable> GetPIstyle(int custId)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_style_no, or_ref_no from dg_order_receiving where or_com_post_bit = 1 and or_pi_add_bit = 0 and or_pi_revise_bit = 0", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_style_no, or_ref_no from dg_order_receiving where or_com_post_bit = 1 and or_pi_add_bit = 0 and or_pi_revise_bit = 0 and or_cust = " +  custId, _dg_Oder_Mgt);
             return data;
         }
 

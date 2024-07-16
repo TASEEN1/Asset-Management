@@ -67,9 +67,9 @@ namespace PMS_API.Controllers.OrderMgt
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetPIstyle()
+        public async Task<IActionResult> GetPIstyle(int custId)
         {
-            var data = await _globalMaster.piManager.GetPIstyle();
+            var data = await _globalMaster.piManager.GetPIstyle( custId);
             return Ok(data);
         }
 
