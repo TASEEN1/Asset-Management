@@ -78,7 +78,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
 
 
-        public byte[] ProformaInvoiceReport(int comID, string UserName, string reportType, int? customer, string? style_No, DateTime FromDate, DateTime ToDate)
+        public byte[] ProformaInvoiceReport(int comID, string UserName, string reportType, int? customer, string? style_No)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
@@ -90,9 +90,9 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             stringBuilder.Append(customer != null ? customer : "NULL");
             stringBuilder.Append(", '" + (style_No != null ? style_No : "NULL"));
             //stringBuilder.Append(", '" + (or_ref_no != null ? or_ref_no : "NULL"));
-            stringBuilder.Append("', '");
-            stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + "', '");
-            stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
+            //stringBuilder.Append("', '");
+            //stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + "', '");
+            //stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
             stringBuilder.Append("' ");
 
             string stateQu = stringBuilder.ToString();

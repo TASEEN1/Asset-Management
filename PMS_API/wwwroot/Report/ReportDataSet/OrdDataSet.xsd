@@ -101,6 +101,8 @@
               <Mapping SourceColumn="pi_number" DataSetColumn="pi_number" />
               <Mapping SourceColumn="id_HS_code" DataSetColumn="id_HS_code" />
               <Mapping SourceColumn="or_remarks" DataSetColumn="or_remarks" />
+              <Mapping SourceColumn="pi_created_date" DataSetColumn="pi_created_date" />
+              <Mapping SourceColumn="pi_revised_no" DataSetColumn="pi_revised_no" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -374,6 +376,8 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="pi_created_date" msprop:Generator_ColumnPropNameInRow="pi_created_date" msprop:Generator_ColumnPropNameInTable="pi_created_dateColumn" msprop:Generator_ColumnVarNameInTable="columnpi_created_date" msprop:Generator_UserColumnName="pi_created_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="pi_revised_no" msprop:Generator_ColumnPropNameInRow="pi_revised_no" msprop:Generator_ColumnPropNameInTable="pi_revised_noColumn" msprop:Generator_ColumnVarNameInTable="columnpi_revised_no" msprop:Generator_UserColumnName="pi_revised_no" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

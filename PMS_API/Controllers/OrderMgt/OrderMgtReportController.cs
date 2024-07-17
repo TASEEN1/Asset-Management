@@ -29,12 +29,12 @@ namespace PMS_API.Controllers.OrderMgt
 
 
         [HttpGet]
-        public async Task<IActionResult> ProformaInvoiceReport(int comID, string UserName, string reportType, int? customer, string? style_No, DateTime FromDate, DateTime ToDate)
+        public async Task<IActionResult> ProformaInvoiceReport(int comID, string UserName, string reportType, int? customer, string? style_No)
 
 
         {
             ReportFileExt reportFileExt = new ReportFileExt();
-            var data = _globalMaster.orderReportManager.ProformaInvoiceReport(comID, UserName, reportType, customer, style_No,  FromDate, ToDate);
+            var data = _globalMaster.orderReportManager.ProformaInvoiceReport(comID, UserName, reportType, customer, style_No);
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
 

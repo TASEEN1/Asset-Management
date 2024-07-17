@@ -141,6 +141,14 @@
           <DataField>or_remarks</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="pi_created_date">
+          <DataField>pi_created_date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="pi_revised_no">
+          <DataField>pi_revised_no</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>OrdDataSet</rd:DataSetName>
@@ -1795,7 +1803,7 @@
                         </Style>
                       </TextRun>
                       <TextRun>
-                        <Value>=Fields!pi_number.Value</Value>
+                        <Value>=IIF(Fields!pi_revised_no.Value = 0, Fields!pi_number.Value, Fields!pi_number.Value &amp; "R" &amp; Fields!pi_revised_no.Value)</Value>
                         <Style>
                           <FontFamily>Calibri</FontFamily>
                           <FontSize>8pt</FontSize>
@@ -2031,7 +2039,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox150</rd:DefaultName>
-            <Top>2.0198in</Top>
+            <Top>2.03439in</Top>
             <Left>0.07584in</Left>
             <Height>1.96528in</Height>
             <Width>7.72499in</Width>
@@ -2099,7 +2107,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>3.98508in</Height>
+        <Height>3.99967in</Height>
         <Style />
       </Body>
       <Width>7.89806in</Width>
@@ -2443,6 +2451,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox111</rd:DefaultName>
+              <Top>0in</Top>
               <Left>6.33834in</Left>
               <Height>0.25in</Height>
               <Width>1.54721in</Width>

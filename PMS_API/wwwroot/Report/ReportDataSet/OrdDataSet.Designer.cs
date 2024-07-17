@@ -989,6 +989,10 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             private global::System.Data.DataColumn columnor_remarks;
             
+            private global::System.Data.DataColumn columnpi_created_date;
+            
+            private global::System.Data.DataColumn columnpi_revised_no;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public dg_proforma_invoice_RptDataTable() {
@@ -1272,6 +1276,22 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn pi_created_dateColumn {
+                get {
+                    return this.columnpi_created_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn pi_revised_noColumn {
+                get {
+                    return this.columnpi_revised_no;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1337,7 +1357,9 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         int pm_id, 
                         string pi_number, 
                         string id_HS_code, 
-                        string or_remarks) {
+                        string or_remarks, 
+                        System.DateTime pi_created_date, 
+                        int pi_revised_no) {
                 dg_proforma_invoice_RptRow rowdg_proforma_invoice_RptRow = ((dg_proforma_invoice_RptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         or_id,
@@ -1370,7 +1392,9 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         pm_id,
                         pi_number,
                         id_HS_code,
-                        or_remarks};
+                        or_remarks,
+                        pi_created_date,
+                        pi_revised_no};
                 rowdg_proforma_invoice_RptRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdg_proforma_invoice_RptRow);
                 return rowdg_proforma_invoice_RptRow;
@@ -1424,6 +1448,8 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columnpi_number = base.Columns["pi_number"];
                 this.columnid_HS_code = base.Columns["id_HS_code"];
                 this.columnor_remarks = base.Columns["or_remarks"];
+                this.columnpi_created_date = base.Columns["pi_created_date"];
+                this.columnpi_revised_no = base.Columns["pi_revised_no"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1491,6 +1517,10 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 base.Columns.Add(this.columnid_HS_code);
                 this.columnor_remarks = new global::System.Data.DataColumn("or_remarks", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnor_remarks);
+                this.columnpi_created_date = new global::System.Data.DataColumn("pi_created_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpi_created_date);
+                this.columnpi_revised_no = new global::System.Data.DataColumn("pi_revised_no", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpi_revised_no);
                 this.columnor_id.AllowDBNull = false;
                 this.columnc_customer_name.MaxLength = 50;
                 this.columnc_att_person.MaxLength = 50;
@@ -2759,6 +2789,40 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime pi_created_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabledg_proforma_invoice_Rpt.pi_created_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pi_created_date\' in table \'dg_proforma_invoice_Rpt\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_proforma_invoice_Rpt.pi_created_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int pi_revised_no {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_proforma_invoice_Rpt.pi_revised_noColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pi_revised_no\' in table \'dg_proforma_invoice_Rpt\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_proforma_invoice_Rpt.pi_revised_noColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isor_ref_noNull() {
                 return this.IsNull(this.tabledg_proforma_invoice_Rpt.or_ref_noColumn);
             }
@@ -3079,6 +3143,30 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setor_remarksNull() {
                 this[this.tabledg_proforma_invoice_Rpt.or_remarksColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Ispi_created_dateNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.pi_created_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setpi_created_dateNull() {
+                this[this.tabledg_proforma_invoice_Rpt.pi_created_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Ispi_revised_noNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.pi_revised_noColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setpi_revised_noNull() {
+                this[this.tabledg_proforma_invoice_Rpt.pi_revised_noColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3550,6 +3638,8 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.OrdDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("pi_number", "pi_number");
             tableMapping.ColumnMappings.Add("id_HS_code", "id_HS_code");
             tableMapping.ColumnMappings.Add("or_remarks", "or_remarks");
+            tableMapping.ColumnMappings.Add("pi_created_date", "pi_created_date");
+            tableMapping.ColumnMappings.Add("pi_revised_no", "pi_revised_no");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
