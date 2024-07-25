@@ -37,6 +37,11 @@ namespace PMS_BOL.Models.OrderMgt
       
         public string CreatedBy { get; set; }
         public string UpdatedBy { get; set; }
+        public decimal or_order_net_weight { get; set; }
+        public decimal or_order_gross_weight { get; set; }
+        public int or_payment_currency { get; set; }
+
+
     }
 
     public class ColorSave

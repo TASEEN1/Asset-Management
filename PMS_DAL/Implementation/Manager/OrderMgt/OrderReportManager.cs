@@ -78,7 +78,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
 
 
-        public byte[] ProformaInvoiceReport(int comID, string UserName, string reportType, int? customer, string? style_No)
+        public byte[] ProformaInvoiceReport(int comID, string UserName, string reportType, int? pi_issued_ref_no, string? pi_number)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
@@ -87,8 +87,8 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append("dg_proforma_invoice_Rpt ");
             //stringBuilder.Append(comID);
-            stringBuilder.Append(customer != null ? customer : "NULL");
-            stringBuilder.Append(", '" + (style_No != null ? style_No : "NULL"));
+            stringBuilder.Append(pi_issued_ref_no != null ? pi_issued_ref_no : "NULL");
+            stringBuilder.Append(", '" + (pi_number != null ? pi_number : "NULL"));
             //stringBuilder.Append(", '" + (or_ref_no != null ? or_ref_no : "NULL"));
             //stringBuilder.Append("', '");
             //stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + "', '");
@@ -120,6 +120,46 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
 
         }
+
+        //public byte[] ProformaInvoiceReport(int comID, string UserName, string reportType, int? pi_issued_ref_no, string? pi_number)
+        //{
+        //    DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+        //    string ComName = dt.Rows[0]["cCmpName"].ToString();
+        //    string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+        //    string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+        //    DataTable dt2 = _SqlCommon.get_InformationDataTable("select cUserFullname, signtr from SpecFo.dbo.Smt_Users where cUserName = (select pi_checkedBy_user from dg_pi_issued where pi_issued_ref_no ='" + pi_issued_ref_no + "'", _dg_Oder_Mgt);
+        //    string UserSignPath1 = dt.Rows[0]["UserSignPath1"].ToString();
+        //    StringBuilder stringBuilder = new StringBuilder();
+        //    stringBuilder.Append("dg_proforma_invoice_Rpt ");
+        //    stringBuilder.Append(pi_issued_ref_no != null ? pi_issued_ref_no : "NULL");
+        //    stringBuilder.Append(", '" + (pi_number != null ? pi_number : "NULL"));
+        //    stringBuilder.Append("' ");
+
+        //    string stateQu = stringBuilder.ToString();
+        //    var tbldata = new DataTable[]
+        //    {
+
+        //         _SqlCommon.get_InformationDataTable(stateQu,_dg_Oder_Mgt)
+        //    };
+        //    var strSetName = new string[]
+        //    {
+        //        "OrdDataSet"
+        //    };
+        //    string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\Proforma_Invoice.rdlc";
+        //    string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign").AbsoluteUri;
+        //    ReportParameterCollection reportParameters = new ReportParameterCollection
+        //    {
+        //    new ReportParameter("Company",ComName),
+        //    new ReportParameter("Add1", cAdd1),
+        //    new ReportParameter("Title", "Proforma Invoice"),
+        //    new ReportParameter("UserSignPath1",UserSignPath1),
+        //    new ReportParameter("PrintUser",  "" + UserName + "")
+        //    };
+        //    byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+        //    return reportBytes;
+
+
+        //}
 
 
 

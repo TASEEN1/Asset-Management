@@ -144,7 +144,11 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_style_no, or_ref_no from dg_order_receiving where or_com_post_bit = 1 and or_pi_add_bit = 0 and or_pi_revise_bit = 0 and or_cust = " +  custId, _dg_Oder_Mgt);
             return data;
         }
-
+        public async Task<DataTable> GetPI_Number()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_number, pi_issued_ref_no from dg_pi_issued", _dg_Oder_Mgt);
+            return data;
+        }
 
         public async Task<string> PIDelete(List<PI_Model> app)
         {
@@ -218,6 +222,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     SqlCommand cmd = new SqlCommand("dg_generate_pi_approval_approvedBy_approve", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@pi_issued_ref_no", ord.Ref_no);
+                    cmd.Parameters.AddWithValue("@pi_approvedBy_user", ord.pi_approvedBy_user);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -248,6 +253,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     SqlCommand cmd = new SqlCommand("dg_generate_pi_approval_checkedBy_approve", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@pi_issued_ref_no", ord.Ref_no);
+                    cmd.Parameters.AddWithValue("@pi_checkedBy_user", ord.pi_checkedBy_user);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();

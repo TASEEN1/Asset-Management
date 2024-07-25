@@ -143,6 +143,11 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_item_type", _dg_Oder_Mgt);
             return data;
         }
+        public async Task<DataTable> Getpayment_currency()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select cCurID, cCurdes from SpecFo_Inventory.dbo.Smt_CurencyType where cCurID in (1,4)", _dg_Oder_Mgt);
+            return data;
+        }
 
 
         public async Task<DataTable> GetStyleEdit(int custID)
@@ -245,6 +250,10 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_order_recv_date",ord.Ord_receive_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_order_deli_date", ord.Ord_delivery_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_created_by", ord.CreatedBy);
+                    cmd.Parameters.AddWithValue("@or_order_net_weight", ord.or_order_net_weight);
+                    cmd.Parameters.AddWithValue("@or_order_gross_weight", ord.or_order_gross_weight);
+                    cmd.Parameters.AddWithValue("@or_payment_currency", ord.or_payment_currency);
+
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -577,6 +586,9 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_order_recv_date", ord.Ord_receive_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_order_deli_date", ord.Ord_delivery_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_updated_by", ord.UpdatedBy);
+                    cmd.Parameters.AddWithValue("@or_order_net_weight", ord.or_order_net_weight);
+                    cmd.Parameters.AddWithValue("@or_order_gross_weight", ord.or_order_gross_weight);
+                    cmd.Parameters.AddWithValue("@or_payment_currency", ord.or_payment_currency);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -761,6 +773,9 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_order_recv_date", ord.Ord_receive_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_order_deli_date", ord.Ord_delivery_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_created_by", ord.CreatedBy);
+                    cmd.Parameters.AddWithValue("@or_order_net_weight", ord.or_order_net_weight);
+                    cmd.Parameters.AddWithValue("@or_order_gross_weight", ord.or_order_gross_weight);
+                    cmd.Parameters.AddWithValue("@or_payment_currency", ord.or_payment_currency);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -810,6 +825,9 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_order_recv_date", ord.Ord_receive_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_order_deli_date", ord.Ord_delivery_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_updated_by", ord.UpdatedBy);
+                    cmd.Parameters.AddWithValue("@or_order_net_weight", ord.or_order_net_weight);
+                    cmd.Parameters.AddWithValue("@or_order_gross_weight", ord.or_order_gross_weight);
+                    cmd.Parameters.AddWithValue("@or_payment_currency", ord.or_payment_currency);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();

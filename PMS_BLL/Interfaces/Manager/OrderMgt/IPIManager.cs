@@ -30,6 +30,8 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<string> ApprovedByApprove(List<PI_Model>app);
         public Task<string> CheckedByApprove(List<PI_Model> app);
 
+        public Task<DataTable> GetPI_Number();
+
 
 
 

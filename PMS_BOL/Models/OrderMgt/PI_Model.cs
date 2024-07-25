@@ -17,6 +17,8 @@ namespace PMS_BOL.Models.OrderMgt
 
         public int Ref_no { get; set; }
         public string Created_by { get; set; }
+        public string pi_checkedBy_user { get; set; }
+        public string pi_approvedBy_user { get; set; }
 
 
     }

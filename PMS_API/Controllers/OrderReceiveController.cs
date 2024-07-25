@@ -153,6 +153,13 @@ namespace PMS_API.Controllers
             return Ok(data);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Getpayment_currency()
+        {
+            var data = await _globalMaster.orderManager.Getpayment_currency();
+            return Ok(data);
+        }
+
 
         [HttpGet]
         public async Task<IActionResult> OrderReceivedAddView(int Customer, int Buyer, string Style_no)

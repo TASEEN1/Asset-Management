@@ -31,6 +31,7 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable> GetprocessTypeview();
         public Task<DataTable>GetStyleEdit( int custID);
         public Task<DataTable> GetCustomerEdit();
+        public Task<DataTable> Getpayment_currency();
        
         public Task<DataTable> OrderReceivedAddView(int Customer, int Buyer, string Style_no);
         public Task<DataTable> GetOrderReceivedAddEditView(int Customer, int Buyer, string Style_no, int Ref_no);
