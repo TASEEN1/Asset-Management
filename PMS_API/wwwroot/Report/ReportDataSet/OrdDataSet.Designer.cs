@@ -993,6 +993,24 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             private global::System.Data.DataColumn columnpi_revised_no;
             
+            private global::System.Data.DataColumn columnor_order_net_weight;
+            
+            private global::System.Data.DataColumn columnor_order_gross_weight;
+            
+            private global::System.Data.DataColumn columnpi_approvedBy_user;
+            
+            private global::System.Data.DataColumn columnpi_checkedBy_user;
+            
+            private global::System.Data.DataColumn columnpi_created_by;
+            
+            private global::System.Data.DataColumn columnsigntr;
+            
+            private global::System.Data.DataColumn columnsigntr1;
+            
+            private global::System.Data.DataColumn columncUserFullname;
+            
+            private global::System.Data.DataColumn columncUserFullname1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public dg_proforma_invoice_RptDataTable() {
@@ -1292,6 +1310,78 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn or_order_net_weightColumn {
+                get {
+                    return this.columnor_order_net_weight;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn or_order_gross_weightColumn {
+                get {
+                    return this.columnor_order_gross_weight;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn pi_approvedBy_userColumn {
+                get {
+                    return this.columnpi_approvedBy_user;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn pi_checkedBy_userColumn {
+                get {
+                    return this.columnpi_checkedBy_user;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn pi_created_byColumn {
+                get {
+                    return this.columnpi_created_by;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn signtrColumn {
+                get {
+                    return this.columnsigntr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn signtr1Column {
+                get {
+                    return this.columnsigntr1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn cUserFullnameColumn {
+                get {
+                    return this.columncUserFullname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn cUserFullname1Column {
+                get {
+                    return this.columncUserFullname1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1359,7 +1449,16 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         string id_HS_code, 
                         string or_remarks, 
                         System.DateTime pi_created_date, 
-                        int pi_revised_no) {
+                        int pi_revised_no, 
+                        decimal or_order_net_weight, 
+                        decimal or_order_gross_weight, 
+                        string pi_approvedBy_user, 
+                        string pi_checkedBy_user, 
+                        string pi_created_by, 
+                        string signtr, 
+                        string signtr1, 
+                        string cUserFullname, 
+                        string cUserFullname1) {
                 dg_proforma_invoice_RptRow rowdg_proforma_invoice_RptRow = ((dg_proforma_invoice_RptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         or_id,
@@ -1394,7 +1493,16 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         id_HS_code,
                         or_remarks,
                         pi_created_date,
-                        pi_revised_no};
+                        pi_revised_no,
+                        or_order_net_weight,
+                        or_order_gross_weight,
+                        pi_approvedBy_user,
+                        pi_checkedBy_user,
+                        pi_created_by,
+                        signtr,
+                        signtr1,
+                        cUserFullname,
+                        cUserFullname1};
                 rowdg_proforma_invoice_RptRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdg_proforma_invoice_RptRow);
                 return rowdg_proforma_invoice_RptRow;
@@ -1450,6 +1558,15 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columnor_remarks = base.Columns["or_remarks"];
                 this.columnpi_created_date = base.Columns["pi_created_date"];
                 this.columnpi_revised_no = base.Columns["pi_revised_no"];
+                this.columnor_order_net_weight = base.Columns["or_order_net_weight"];
+                this.columnor_order_gross_weight = base.Columns["or_order_gross_weight"];
+                this.columnpi_approvedBy_user = base.Columns["pi_approvedBy_user"];
+                this.columnpi_checkedBy_user = base.Columns["pi_checkedBy_user"];
+                this.columnpi_created_by = base.Columns["pi_created_by"];
+                this.columnsigntr = base.Columns["signtr"];
+                this.columnsigntr1 = base.Columns["signtr1"];
+                this.columncUserFullname = base.Columns["cUserFullname"];
+                this.columncUserFullname1 = base.Columns["cUserFullname1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1521,6 +1638,24 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 base.Columns.Add(this.columnpi_created_date);
                 this.columnpi_revised_no = new global::System.Data.DataColumn("pi_revised_no", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpi_revised_no);
+                this.columnor_order_net_weight = new global::System.Data.DataColumn("or_order_net_weight", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnor_order_net_weight);
+                this.columnor_order_gross_weight = new global::System.Data.DataColumn("or_order_gross_weight", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnor_order_gross_weight);
+                this.columnpi_approvedBy_user = new global::System.Data.DataColumn("pi_approvedBy_user", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpi_approvedBy_user);
+                this.columnpi_checkedBy_user = new global::System.Data.DataColumn("pi_checkedBy_user", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpi_checkedBy_user);
+                this.columnpi_created_by = new global::System.Data.DataColumn("pi_created_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpi_created_by);
+                this.columnsigntr = new global::System.Data.DataColumn("signtr", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsigntr);
+                this.columnsigntr1 = new global::System.Data.DataColumn("signtr1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsigntr1);
+                this.columncUserFullname = new global::System.Data.DataColumn("cUserFullname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncUserFullname);
+                this.columncUserFullname1 = new global::System.Data.DataColumn("cUserFullname1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncUserFullname1);
                 this.columnor_id.AllowDBNull = false;
                 this.columnc_customer_name.MaxLength = 50;
                 this.columnc_att_person.MaxLength = 50;
@@ -1547,6 +1682,13 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columnpi_number.MaxLength = 20;
                 this.columnid_HS_code.MaxLength = 50;
                 this.columnor_remarks.MaxLength = 250;
+                this.columnpi_approvedBy_user.MaxLength = 50;
+                this.columnpi_checkedBy_user.MaxLength = 50;
+                this.columnpi_created_by.MaxLength = 50;
+                this.columnsigntr.MaxLength = 50;
+                this.columnsigntr1.MaxLength = 50;
+                this.columncUserFullname.MaxLength = 80;
+                this.columncUserFullname1.MaxLength = 80;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2823,6 +2965,157 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal or_order_net_weight {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledg_proforma_invoice_Rpt.or_order_net_weightColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'or_order_net_weight\' in table \'dg_proforma_invoice_Rpt\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_proforma_invoice_Rpt.or_order_net_weightColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal or_order_gross_weight {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledg_proforma_invoice_Rpt.or_order_gross_weightColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'or_order_gross_weight\' in table \'dg_proforma_invoice_Rpt\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_proforma_invoice_Rpt.or_order_gross_weightColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string pi_approvedBy_user {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.pi_approvedBy_userColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pi_approvedBy_user\' in table \'dg_proforma_invoice_Rpt\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_proforma_invoice_Rpt.pi_approvedBy_userColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string pi_checkedBy_user {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.pi_checkedBy_userColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pi_checkedBy_user\' in table \'dg_proforma_invoice_Rpt\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_proforma_invoice_Rpt.pi_checkedBy_userColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string pi_created_by {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.pi_created_byColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pi_created_by\' in table \'dg_proforma_invoice_Rpt\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_proforma_invoice_Rpt.pi_created_byColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string signtr {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.signtrColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'signtr\' in table \'dg_proforma_invoice_Rpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_proforma_invoice_Rpt.signtrColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string signtr1 {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.signtr1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'signtr1\' in table \'dg_proforma_invoice_Rpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_proforma_invoice_Rpt.signtr1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string cUserFullname {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.cUserFullnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cUserFullname\' in table \'dg_proforma_invoice_Rpt\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_proforma_invoice_Rpt.cUserFullnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string cUserFullname1 {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.cUserFullname1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cUserFullname1\' in table \'dg_proforma_invoice_Rpt\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_proforma_invoice_Rpt.cUserFullname1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isor_ref_noNull() {
                 return this.IsNull(this.tabledg_proforma_invoice_Rpt.or_ref_noColumn);
             }
@@ -3167,6 +3460,114 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setpi_revised_noNull() {
                 this[this.tabledg_proforma_invoice_Rpt.pi_revised_noColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isor_order_net_weightNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.or_order_net_weightColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setor_order_net_weightNull() {
+                this[this.tabledg_proforma_invoice_Rpt.or_order_net_weightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isor_order_gross_weightNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.or_order_gross_weightColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setor_order_gross_weightNull() {
+                this[this.tabledg_proforma_invoice_Rpt.or_order_gross_weightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Ispi_approvedBy_userNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.pi_approvedBy_userColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setpi_approvedBy_userNull() {
+                this[this.tabledg_proforma_invoice_Rpt.pi_approvedBy_userColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Ispi_checkedBy_userNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.pi_checkedBy_userColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setpi_checkedBy_userNull() {
+                this[this.tabledg_proforma_invoice_Rpt.pi_checkedBy_userColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Ispi_created_byNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.pi_created_byColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setpi_created_byNull() {
+                this[this.tabledg_proforma_invoice_Rpt.pi_created_byColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IssigntrNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.signtrColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetsigntrNull() {
+                this[this.tabledg_proforma_invoice_Rpt.signtrColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Issigntr1Null() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.signtr1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setsigntr1Null() {
+                this[this.tabledg_proforma_invoice_Rpt.signtr1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscUserFullnameNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.cUserFullnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcUserFullnameNull() {
+                this[this.tabledg_proforma_invoice_Rpt.cUserFullnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscUserFullname1Null() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.cUserFullname1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcUserFullname1Null() {
+                this[this.tabledg_proforma_invoice_Rpt.cUserFullname1Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -3640,6 +4041,15 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.OrdDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("or_remarks", "or_remarks");
             tableMapping.ColumnMappings.Add("pi_created_date", "pi_created_date");
             tableMapping.ColumnMappings.Add("pi_revised_no", "pi_revised_no");
+            tableMapping.ColumnMappings.Add("or_order_net_weight", "or_order_net_weight");
+            tableMapping.ColumnMappings.Add("or_order_gross_weight", "or_order_gross_weight");
+            tableMapping.ColumnMappings.Add("pi_approvedBy_user", "pi_approvedBy_user");
+            tableMapping.ColumnMappings.Add("pi_checkedBy_user", "pi_checkedBy_user");
+            tableMapping.ColumnMappings.Add("pi_created_by", "pi_created_by");
+            tableMapping.ColumnMappings.Add("signtr", "signtr");
+            tableMapping.ColumnMappings.Add("signtr1", "signtr1");
+            tableMapping.ColumnMappings.Add("cUserFullname", "cUserFullname");
+            tableMapping.ColumnMappings.Add("cUserFullname1", "cUserFullname1");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -3660,41 +4070,27 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.OrdDataSetTableAdapters {
             this._commandCollection[0].CommandText = "dbo.dg_proforma_invoice_Rpt";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cust", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@style_no", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FromDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ToDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pi_issued_ref_no", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pi_number", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(OrdDataSet.dg_proforma_invoice_RptDataTable dataTable, global::System.Nullable<int> cust, string style_no, global::System.Nullable<global::System.DateTime> FromDate, global::System.Nullable<global::System.DateTime> ToDate) {
+        public virtual int Fill(OrdDataSet.dg_proforma_invoice_RptDataTable dataTable, global::System.Nullable<int> pi_issued_ref_no, string pi_number) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((cust.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(cust.Value));
+            if ((pi_issued_ref_no.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(pi_issued_ref_no.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((style_no == null)) {
+            if ((pi_number == null)) {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(style_no));
-            }
-            if ((FromDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(FromDate.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((ToDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[4].Value = ((System.DateTime)(ToDate.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pi_number));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3707,31 +4103,19 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.OrdDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual OrdDataSet.dg_proforma_invoice_RptDataTable GetData(global::System.Nullable<int> cust, string style_no, global::System.Nullable<global::System.DateTime> FromDate, global::System.Nullable<global::System.DateTime> ToDate) {
+        public virtual OrdDataSet.dg_proforma_invoice_RptDataTable GetData(global::System.Nullable<int> pi_issued_ref_no, string pi_number) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((cust.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(cust.Value));
+            if ((pi_issued_ref_no.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(pi_issued_ref_no.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((style_no == null)) {
+            if ((pi_number == null)) {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(style_no));
-            }
-            if ((FromDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(FromDate.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((ToDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[4].Value = ((System.DateTime)(ToDate.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pi_number));
             }
             OrdDataSet.dg_proforma_invoice_RptDataTable dataTable = new OrdDataSet.dg_proforma_invoice_RptDataTable();
             this.Adapter.Fill(dataTable);

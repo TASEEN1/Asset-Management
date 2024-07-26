@@ -42,10 +42,8 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append("dg_order_receiving_Rpt ");
-            //stringBuilder.Append(comID);
             stringBuilder.Append(customer != null ? customer: "NULL");
             stringBuilder.Append(", '" + (style_No != null ? style_No : "NULL"));
-            //stringBuilder.Append(", '" + (or_ref_no != null ? or_ref_no : "NULL"));
             stringBuilder.Append("', '");
             stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + "', '");
             stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
@@ -66,9 +64,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             {
             new ReportParameter("Company",ComName),
             new ReportParameter("Add1", cAdd1),
-            //new ReportParameter("Title", "Order Receive Report- Fectory:"  +ComName+""),
             new ReportParameter("Title", "Order Receive Report"),
-
             new ReportParameter("PrintUser",  "" + UserName + "")
             };
             byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
@@ -86,13 +82,8 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append("dg_proforma_invoice_Rpt ");
-            //stringBuilder.Append(comID);
             stringBuilder.Append(pi_issued_ref_no != null ? pi_issued_ref_no : "NULL");
             stringBuilder.Append(", '" + (pi_number != null ? pi_number : "NULL"));
-            //stringBuilder.Append(", '" + (or_ref_no != null ? or_ref_no : "NULL"));
-            //stringBuilder.Append("', '");
-            //stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + "', '");
-            //stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
             stringBuilder.Append("' ");
 
             string stateQu = stringBuilder.ToString();
@@ -106,13 +97,14 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 "OrdDataSet"
             };
             string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\Proforma_Invoice.rdlc";
+            string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+
             ReportParameterCollection reportParameters = new ReportParameterCollection
             {
             new ReportParameter("Company",ComName),
             new ReportParameter("Add1", cAdd1),
-            //new ReportParameter("Title", "Order Receive Report- Fectory:"  +ComName+""),
+            new ReportParameter("UserSignPath",imgERP),
             new ReportParameter("Title", "Proforma Invoice"),
-
             new ReportParameter("PrintUser",  "" + UserName + "")
             };
             byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
@@ -120,6 +112,8 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
 
         }
+
+        //---------------------------------------------- TEST Code---------------------------------------------
 
         //public byte[] ProformaInvoiceReport(int comID, string UserName, string reportType, int? pi_issued_ref_no, string? pi_number)
         //{

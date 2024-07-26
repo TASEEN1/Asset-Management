@@ -170,7 +170,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
 
 
-        //------------------------------------------------------------------------------REPORT----------------------------------------------------------------------------------------------------------------------
+        //Report Get :
 
         public async Task<DataTable> GetReport_Customer()
         {
@@ -184,7 +184,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync(" select distinct or_style_no,or_ref_no FROM  dbo.dg_order_receiving inner join dg_customer on or_cust = dg_customer.c_id where or_com_post_bit=1 and or_cust = '" + custID + "'", _dg_Oder_Mgt);
             return data;
         }
-
+        //----------------------//---------
 
         public async Task<string> ColorSave(List<ColorSave> app)
         {
@@ -821,7 +821,6 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_unit_price", ord.Unit_price);
                     cmd.Parameters.AddWithValue("@or_unit", ord.unit);
                     cmd.Parameters.AddWithValue("@or_total_price", ord.Total_price);
-                    //cmd.Parameters.AddWithValue("@or_item_HS_code", ord.Hs_code);
                     cmd.Parameters.AddWithValue("@or_order_recv_date", ord.Ord_receive_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_order_deli_date", ord.Ord_delivery_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_updated_by", ord.UpdatedBy);

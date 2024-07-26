@@ -19,6 +19,7 @@ namespace PMS_BOL.Models.OrderMgt
         public string Created_by { get; set; }
         public string pi_checkedBy_user { get; set; }
         public string pi_approvedBy_user { get; set; }
+        public string or_cust_terms_cond { get; set; }
 
 
     }

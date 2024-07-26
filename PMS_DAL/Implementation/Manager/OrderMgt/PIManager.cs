@@ -31,6 +31,59 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         }
 
+
+        public async Task<DataTable> GetGeneratePIAddView(int Customer, int Buyer, string created_By)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_add_view " + Customer + "," + Buyer + ",'" + created_By + "'", _dg_Oder_Mgt);
+            return data;
+        }
+
+        public async Task<DataTable> GetPIAddView(int Customer, string style, int Ref_no)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_before_add_view " + Customer + ", '" + style + "', " + Ref_no, _dg_Oder_Mgt);
+            return data;
+        }
+
+        public async Task<DataTable> GetPiApproval_checkedBy_View(string Created_by)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_checkedBy_view " + Created_by + "", _dg_Oder_Mgt);
+            return data;
+        }
+
+        public async Task<DataTable> GetPiApproval_approvedBy_view(string Created_by)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_approvedBy_view " + Created_by + "", _dg_Oder_Mgt);
+            return data;
+        }
+
+        public async Task<DataTable> GetPiApproval_ForApprovalView(string Created_by)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_forApproval_view " + Created_by + "", _dg_Oder_Mgt);
+            return data;
+        }
+
+        public async Task<DataTable> GetPiApproval_revise_view(string Created_by)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_revise_view " + Created_by + "", _dg_Oder_Mgt);
+            return data;
+        }
+        public async Task<DataTable> GetPIcustomer()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_cust, c_customer_name from dg_order_receiving inner join dg_customer on or_cust = c_id where or_com_post_bit = 1 and or_pi_add_bit = 0 and or_pi_revise_bit = 0", _dg_Oder_Mgt);
+            return data;
+        }
+
+        public async Task<DataTable> GetPIstyle(int custId)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_style_no, or_ref_no from dg_order_receiving where or_com_post_bit = 1 and or_pi_add_bit = 0 and or_pi_revise_bit = 0 and or_cust = " + custId, _dg_Oder_Mgt);
+            return data;
+        }
+        public async Task<DataTable> GetPI_Number()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_number, pi_issued_ref_no from dg_pi_issued", _dg_Oder_Mgt);
+            return data;
+        }
+
         public async Task<string> GeneratePIAdd(List<PI_Model> app)
         {
             string message = string.Empty;
@@ -79,6 +132,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@pi_id", ord.Pi_id);
                     cmd.Parameters.AddWithValue("@pi_or_id", ord.pi_or_id);
                     cmd.Parameters.AddWithValue("@paymentType", ord.payment_Type);
+                    cmd.Parameters.AddWithValue("@or_cust_terms_cond",ord.or_cust_terms_cond);
                     cmd.Parameters.AddWithValue("@pi_created_by", ord.Created_by);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
@@ -98,57 +152,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return message;
         }
 
-        public async Task<DataTable> GetGeneratePIAddView(int Customer, int Buyer, string created_By)
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_add_view " + Customer + "," + Buyer + ",'" + created_By + "'", _dg_Oder_Mgt);
-            return data;
-        }
-
-        public async Task<DataTable> GetPIAddView(int Customer, string style, int Ref_no)
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_before_add_view " + Customer + ", '" + style + "', " + Ref_no , _dg_Oder_Mgt);
-            return data;
-        }
-
-        public async Task<DataTable> GetPiApproval_checkedBy_View(string  Created_by)
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_checkedBy_view " + Created_by + "", _dg_Oder_Mgt);
-            return data;
-        }
-
-        public async Task<DataTable> GetPiApproval_approvedBy_view(string Created_by)
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_approvedBy_view " + Created_by + "", _dg_Oder_Mgt);
-            return data;
-        }
-
-        public async Task<DataTable> GetPiApproval_ForApprovalView(string Created_by)
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_forApproval_view "  + Created_by + "", _dg_Oder_Mgt);
-            return data;
-        }
-
-        public async Task<DataTable> GetPiApproval_revise_view(string Created_by)
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_revise_view " + Created_by + "", _dg_Oder_Mgt);
-            return data;
-        }
-        public async Task<DataTable> GetPIcustomer()
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_cust, c_customer_name from dg_order_receiving inner join dg_customer on or_cust = c_id where or_com_post_bit = 1 and or_pi_add_bit = 0 and or_pi_revise_bit = 0", _dg_Oder_Mgt);
-            return data;
-        }
-
-        public async Task<DataTable> GetPIstyle(int custId)
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_style_no, or_ref_no from dg_order_receiving where or_com_post_bit = 1 and or_pi_add_bit = 0 and or_pi_revise_bit = 0 and or_cust = " +  custId, _dg_Oder_Mgt);
-            return data;
-        }
-        public async Task<DataTable> GetPI_Number()
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_number, pi_issued_ref_no from dg_pi_issued", _dg_Oder_Mgt);
-            return data;
-        }
+       
 
         public async Task<string> PIDelete(List<PI_Model> app)
         {
