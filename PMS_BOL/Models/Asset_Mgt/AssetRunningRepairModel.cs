@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMS_BOL.Models
+namespace PMS_BOL.Models.Asset_Mgt
 {
     public class AssetRunningRepairModel
     {
@@ -20,7 +20,7 @@ namespace PMS_BOL.Models
 
         public string itemreplace { get; set; }
 
-        public decimal  faultreporttime { get; set; }
+        public decimal faultreporttime { get; set; }
 
         public decimal downtime { get; set; }
 

@@ -20,6 +20,9 @@ namespace PMS_BOL.Models.OrderMgt
         public string pi_checkedBy_user { get; set; }
         public string pi_approvedBy_user { get; set; }
         public string or_cust_terms_cond { get; set; }
+        //public DateTime pi_checkedBy_date { get; set; }
+        //public DateTime pi_approvedBy_date { get; set; }
+
 
 
     }

@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PMS_BLL.Interfaces;
-using PMS_BOL.Models;
+using PMS_BOL.Models.Asset_Mgt;
 
-namespace PMS_API.Controllers
+namespace PMS_API.Controllers.Asset_mgt
 {
     [Route("api/[controller]/[Action]")]
     [ApiController]
@@ -26,7 +26,7 @@ namespace PMS_API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetDepartment( int comID)
+        public async Task<IActionResult> GetDepartment(int comID)
         {
             var data = await _globalMaster.assetmastermanager.GetDepartment(comID);
             return Ok(data);
@@ -34,9 +34,9 @@ namespace PMS_API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetSection(int comID , int DeptID)
+        public async Task<IActionResult> GetSection(int comID, int DeptID)
         {
-            var data = await _globalMaster.assetmastermanager.GetSection(comID , DeptID);
+            var data = await _globalMaster.assetmastermanager.GetSection(comID, DeptID);
 
             return Ok(data);
 
@@ -52,7 +52,7 @@ namespace PMS_API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetLine(int comID , int floorID)
+        public async Task<IActionResult> GetLine(int comID, int floorID)
         {
             var data = await _globalMaster.assetmastermanager.GetLine(comID, floorID);
 
@@ -61,7 +61,7 @@ namespace PMS_API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult>GetAssetCategory()
+        public async Task<IActionResult> GetAssetCategory()
         {
             var data = await _globalMaster.assetmastermanager.GetAssetCategory();
 
@@ -139,21 +139,21 @@ namespace PMS_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult>SaveAsset(List<Asset_Master_Save> Asst)
+        public async Task<IActionResult> SaveAsset(List<Asset_Master_Save> Asst)
         {
             var data = await _globalMaster.assetmastermanager.SaveAsset(Asst);
             return Ok(new { message = data });
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateAssetInfo(List< Asset_Master_Save > asset_update_put)
+        public async Task<IActionResult> UpdateAssetInfo(List<Asset_Master_Save> asset_update_put)
         {
             var data = await _globalMaster.assetmastermanager.UpdateAssetInfo(asset_update_put);
             return Ok(new { message = data });
         }
 
         [HttpGet]
-        public async Task<IActionResult> Mr_Asset_Master_( string AsstNo)
+        public async Task<IActionResult> Mr_Asset_Master_(string AsstNo)
         {
             var data = await _globalMaster.assetmastermanager.Mr_Asset_Master_(AsstNo);
             return Ok(data);

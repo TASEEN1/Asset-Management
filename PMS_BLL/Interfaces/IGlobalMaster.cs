@@ -25,6 +25,7 @@ namespace PMS_BLL.Interfaces
         IOrderManager orderManager { get; }
         IOrderReportManager orderReportManager { get; }
         IPIManager piManager { get; }
+        IworkOrderManager workOrderManager { get; }
 
 
 

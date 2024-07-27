@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PMS_BLL.Interfaces;
-using PMS_BOL.Models;
+using PMS_BOL.Models.Asset_Mgt;
 
-namespace PMS_API.Controllers
+namespace PMS_API.Controllers.Asset_mgt
 {
     [Route("api/[controller]/[Action]")]
     [ApiController]
@@ -19,7 +19,7 @@ namespace PMS_API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAssetNo()
         {
-            var data= await _globalMaster.asset_Running_Repair.GetAssetNo();
+            var data = await _globalMaster.asset_Running_Repair.GetAssetNo();
             return Ok(data);
         }
 

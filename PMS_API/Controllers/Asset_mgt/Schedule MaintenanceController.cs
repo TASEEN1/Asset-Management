@@ -4,7 +4,7 @@ using PMS_BLL.Interfaces;
 using PMS_BOL.Functions;
 using PMS_BOL.Models;
 
-namespace PMS_API.Controllers
+namespace PMS_API.Controllers.Asset_mgt
 {
     [Route("api/[controller]/[Action]")]
     [ApiController]
@@ -16,7 +16,7 @@ namespace PMS_API.Controllers
         {
             _globalMaster = globalMaster;
         }
-       
+
 
         [HttpGet]
         public async Task<IActionResult> GetAssetNo()
@@ -45,7 +45,7 @@ namespace PMS_API.Controllers
         {
             var data = await _globalMaster.schedule_Maintenance.ScheduleMaintenanceSave(maintenanceSaveRequest);
             return Ok(new { message = data });
-        }  
+        }
 
 
         //[HttpPost]

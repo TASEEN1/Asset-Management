@@ -38,6 +38,7 @@ namespace PMS_DAL.Implementation
             orderManager = new OrderManager(_sqlCommon);
             piManager = new PIManager(_sqlCommon);
             orderReportManager = new OrderReportManager (_sqlCommon, _webHostEnvironment);
+            workOrderManager = new WorkOrderManager(_sqlCommon);
 
 
 
@@ -61,10 +62,10 @@ namespace PMS_DAL.Implementation
 
         //OMS
             public IOrderManager orderManager { get; private set; }
-
             public IOrderReportManager orderReportManager { get; private set; }
 
             public IPIManager piManager { get; private set; }
+            public IworkOrderManager workOrderManager { get; private set; }
 
 
 

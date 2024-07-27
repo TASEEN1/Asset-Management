@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using PMS_BLL.Interfaces;
 using PMS_BOL.Models.OrderMgt;
 
-namespace PMS_API.Controllers
+namespace PMS_API.Controllers.OrderMgt
 {
     [Route("api/[controller]/[Action]")]
     [ApiController]
@@ -171,7 +171,7 @@ namespace PMS_API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetOrderReceivedAddEditView(int Customer, int Buyer, string Style_no, int Ref_no)
         {
-            var data = await _globalMaster.orderManager.GetOrderReceivedAddEditView(Customer, Buyer, Style_no,Ref_no);
+            var data = await _globalMaster.orderManager.GetOrderReceivedAddEditView(Customer, Buyer, Style_no, Ref_no);
             return Ok(data);
         }
 
@@ -251,7 +251,7 @@ namespace PMS_API.Controllers
             var data = await _globalMaster.orderManager.DesignSave(app);
             return Ok(new { message = data });
 
-           
+
         }
         [HttpDelete]
         public async Task<IActionResult> OrderReceiveDelete(List<orderReceiveDelete> app)
@@ -337,7 +337,7 @@ namespace PMS_API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetReport_Style(int custID)
         {
-            var data = await _globalMaster.orderManager.GetReport_Style( custID);
+            var data = await _globalMaster.orderManager.GetReport_Style(custID);
             return Ok(data);
         }
 

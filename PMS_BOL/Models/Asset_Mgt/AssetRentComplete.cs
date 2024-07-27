@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMS_BOL.Models
+namespace PMS_BOL.Models.Asset_Mgt
 {
     public class AssetRentComplete
     {

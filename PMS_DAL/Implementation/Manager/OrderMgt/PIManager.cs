@@ -15,11 +15,11 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
     {
 
 
-        private readonly Dg_SqlCommon _SqlCommon;
-        private readonly SqlConnection _specfo_conn;
-        private readonly SqlConnection _dg_Asst_Mgt;
-        private readonly SqlConnection _SpecFoInventory;
-        private readonly SqlConnection _dg_Oder_Mgt;
+            private readonly Dg_SqlCommon _SqlCommon;
+            private readonly SqlConnection _specfo_conn;
+            private readonly SqlConnection _dg_Asst_Mgt;
+            private readonly SqlConnection _SpecFoInventory;
+            private readonly SqlConnection _dg_Oder_Mgt;
 
         public PIManager(Dg_SqlCommon sqlCommon)
         {
@@ -69,7 +69,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
         public async Task<DataTable> GetPIcustomer()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_cust, c_customer_name from dg_order_receiving inner join dg_customer on or_cust = c_id where or_com_post_bit = 1 and or_pi_add_bit = 0 and or_pi_revise_bit = 0", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_cust, c_customer_name from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_com_post_bit = 1 and or_pi_add_bit = 0 and or_pi_revise_bit = 0", _dg_Oder_Mgt);
             return data;
         }
 

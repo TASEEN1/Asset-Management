@@ -1,7 +1,7 @@
 ﻿using PMS_BLL.Interfaces.Manager.Asset_Master;
 using PMS_BLL.Interfaces.Manager.AssetMaster;
 using PMS_BLL.Utility;
-using PMS_BOL.Models;
+using PMS_BOL.Models.Asset_Mgt;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;

@@ -10,13 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Reporting.NETCore;
 using System.Data;
-using PMS_BOL.Models;
 using System.Drawing;
 using System.Globalization;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.Reporting.Map.WebForms.BingMaps;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using System.Security.Cryptography;
+using PMS_BOL.Models.Asset_Mgt;
 
 namespace PMS_DAL.Implementation.Manager.Asset_Master
 {
