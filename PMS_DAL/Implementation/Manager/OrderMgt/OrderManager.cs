@@ -157,9 +157,9 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
 
        
-        public async Task<DataTable> OrderReceivedAddView(int Customer, int Buyer, string Style_no)
+        public async Task<DataTable> OrderReceivedAddView(string sessionUser)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_order_receiving_add_order_view " + Customer + "," + Buyer + ",'" + Style_no + "'", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_order_receiving_add_order_view " + sessionUser + "", _dg_Oder_Mgt);
             return data;
         }
 
@@ -237,23 +237,23 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_att_email", ord.Att_email);
                     cmd.Parameters.AddWithValue("@or_item_desc", ord.Item_desc);
                     cmd.Parameters.AddWithValue("@or_item_color", ord.Item_color);
-                    cmd.Parameters.AddWithValue("@or_design ", ord.Design);
+                    //cmd.Parameters.AddWithValue("@or_design ", ord.Design);
                     cmd.Parameters.AddWithValue("@or_dia", ord.Dia);
                     cmd.Parameters.AddWithValue("@or_gsm", ord.Gsm);
-                    cmd.Parameters.AddWithValue("@or_proc_type", ord.proc_type);
+                    //cmd.Parameters.AddWithValue("@or_proc_type", ord.proc_type);
                     cmd.Parameters.AddWithValue("@or_order_qty", ord.Oder_qty);
                     cmd.Parameters.AddWithValue("@or_unit_price", ord.Unit_price);
                     cmd.Parameters.AddWithValue("@or_unit", ord.unit);
                     cmd.Parameters.AddWithValue("@or_total_price", ord.Total_price);
                     cmd.Parameters.AddWithValue("@or_item_HS_code", ord.Hs_code);
-                    cmd.Parameters.AddWithValue("@or_cust_terms_cond", ord.Terms_condition);
+                    //cmd.Parameters.AddWithValue("@or_cust_terms_cond", ord.Terms_condition);
                     cmd.Parameters.AddWithValue("@or_order_recv_date",ord.Ord_receive_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_order_deli_date", ord.Ord_delivery_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_created_by", ord.CreatedBy);
                     cmd.Parameters.AddWithValue("@or_order_net_weight", ord.or_order_net_weight);
                     cmd.Parameters.AddWithValue("@or_order_gross_weight", ord.or_order_gross_weight);
                     cmd.Parameters.AddWithValue("@or_payment_currency", ord.or_payment_currency);
-
+                    cmd.Parameters.AddWithValue("@or_item_name", ord.item_Name);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -284,10 +284,10 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_order_receiving_add_order_complete", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@or_cust", ord.Customer);
-                    cmd.Parameters.AddWithValue("@or_buyer", ord.Buyer);
-                    cmd.Parameters.AddWithValue("@or_style_no", ord.Style_no);
-                    cmd.Parameters.AddWithValue("@remarks", ord.Remarks);
+                    cmd.Parameters.AddWithValue("@or_created_by",ord.or_created_by);
+                    //cmd.Parameters.AddWithValue("@or_buyer", ord.Buyer);
+                    //cmd.Parameters.AddWithValue("@or_style_no", ord.Style_no);
+                    //cmd.Parameters.AddWithValue("@remarks", ord.Remarks);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();

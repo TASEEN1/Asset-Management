@@ -133,6 +133,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@pi_or_id", ord.pi_or_id);
                     cmd.Parameters.AddWithValue("@paymentType", ord.payment_Type);
                     cmd.Parameters.AddWithValue("@or_cust_terms_cond",ord.or_cust_terms_cond);
+                    cmd.Parameters.AddWithValue("@pi_payment_type", ord.payment_Type);
                     cmd.Parameters.AddWithValue("@pi_created_by", ord.Created_by);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;

@@ -33,7 +33,7 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable> GetCustomerEdit();
         public Task<DataTable> Getpayment_currency();
        
-        public Task<DataTable> OrderReceivedAddView(int Customer, int Buyer, string Style_no);
+        public Task<DataTable> OrderReceivedAddView(string sessionUser);
         public Task<DataTable> GetOrderReceivedAddEditView(int Customer, int Buyer, string Style_no, int Ref_no);
 
         public Task<string> ColorSave(List<ColorSave>app);

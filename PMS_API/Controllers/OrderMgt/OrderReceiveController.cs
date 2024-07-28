@@ -162,9 +162,9 @@ namespace PMS_API.Controllers.OrderMgt
 
 
         [HttpGet]
-        public async Task<IActionResult> OrderReceivedAddView(int Customer, int Buyer, string Style_no)
+        public async Task<IActionResult> OrderReceivedAddView(string sessionUser)
         {
-            var data = await _globalMaster.orderManager.OrderReceivedAddView(Customer, Buyer, Style_no);
+            var data = await _globalMaster.orderManager.OrderReceivedAddView(sessionUser);
             return Ok(data);
         }
 

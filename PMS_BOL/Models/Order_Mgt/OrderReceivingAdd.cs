@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace PMS_BOL.Models.OrderMgt
 {
     public class OrderReceivingAdd
-    { 
+    {
         public int Id { get; set; }
         public int Ref_no { get; set; }
 
@@ -18,7 +18,7 @@ namespace PMS_BOL.Models.OrderMgt
         public string Att_name { get; set; }
         public string Att_mobile_no { get; set; }
         public string Att_email { get; set; }
-        public int Item_desc { get; set; }
+        public string Item_desc { get; set; }
         public int Item_color { get; set; }
         public int Design { get; set; }
         public int Dia { get; set; }
@@ -34,12 +34,14 @@ namespace PMS_BOL.Models.OrderMgt
         public DateTime Ord_receive_date { get; set; }
         public DateTime Ord_delivery_date { get; set; }
         public string Hs_code { get; set; }
-      
+
         public string CreatedBy { get; set; }
         public string UpdatedBy { get; set; }
         public decimal or_order_net_weight { get; set; }
         public decimal or_order_gross_weight { get; set; }
         public int or_payment_currency { get; set; }
+        public int item_Name {get;set;}
+
 
 
     }
