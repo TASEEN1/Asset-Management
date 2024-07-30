@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PMS_BLL.Interfaces;
+using PMS_BOL.Functions;
 using PMS_BOL.Models.OrderMgt;
 
 namespace PMS_API.Controllers.OrderMgt
@@ -134,21 +135,36 @@ namespace PMS_API.Controllers.OrderMgt
         //WORK Order
 
         [HttpPost]
-        public async Task<IActionResult> Work_Order_Other_Attributes_Save(List<workOrder_Model> app)
+        public async Task<IActionResult> Work_Order_Save(WorkorderSaveRequest workorderSaveRequest)
         {
-            var data = await _globalMaster.workOrderManager.Work_Order_Other_Attributes_Save(app);
+            var data = await _globalMaster.workOrderManager.Work_Order_Save(workorderSaveRequest);
             return Ok(new { message = data });
 
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Work_Order_Padding_Type_Save(List<workOrder_Model> app)
+        [HttpPut]
+        public async Task<IActionResult> Work_Order_Update(WorkorderUpdateRequest workorderUpdateRequest)
         {
-            var data = await _globalMaster.workOrderManager.Work_Order_Padding_Type_Save(app);
+            var data = await _globalMaster.workOrderManager.Work_Order_Update(workorderUpdateRequest);
             return Ok(new { message = data });
 
         }
 
+        [HttpGet]
+        public async Task<IActionResult> work_order_completedOrderReceiving_view(int Ref_no)
+
+        {
+            var data = await _globalMaster.workOrderManager.work_order_completedOrderReceiving_view(Ref_no);
+            return Ok(data);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> work_order_afterBothSaveSP_save_view(int Ref_no)
+
+        {
+            var data = await _globalMaster.workOrderManager.work_order_afterBothSaveSP_save_view(Ref_no);
+            return Ok(data);
+        }
 
 
 

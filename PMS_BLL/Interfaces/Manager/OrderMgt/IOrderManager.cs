@@ -13,8 +13,8 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable> GetPaymentType();
         public Task<DataTable> GetColor();
         public Task<DataTable>GetUnit();
-        public Task<DataTable> GetItemDescription();
-        public Task<DataTable> GetProcessType();
+        public Task<DataTable> GetItemName();
+
         public Task<DataTable> GetBuyer();
         public Task<DataTable>GetCustomer();
         public Task<DataTable> GetDia();
@@ -26,13 +26,15 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable> GetdesignView();
         public Task<DataTable> GetDiaView();
         public Task<DataTable> GetgsmView();
-        public Task<DataTable> GetitemView();
+        //public Task<DataTable> GetitemView();
 
-        public Task<DataTable> GetprocessTypeview();
+        //public Task<DataTable> GetprocessTypeview();
         public Task<DataTable>GetStyleEdit( int custID);
         public Task<DataTable> GetCustomerEdit();
         public Task<DataTable> Getpayment_currency();
-       
+        public Task<DataTable> GetRefNoFromOrderReceiving();
+
+
         public Task<DataTable> OrderReceivedAddView(string sessionUser);
         public Task<DataTable> GetOrderReceivedAddEditView(int Customer, int Buyer, string Style_no, int Ref_no);
 
@@ -40,7 +42,7 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<string>OrderReceivedAdd(List<OrderReceivingAdd> app);
 
         public Task<string> OrderReceivedComplete(List<OrderReciveComplete> app);
-        public Task<string> ItemDescriptionSave(List<ItemDescriptionSave> app);
+        public Task<string> ItemNameSave(List<ItemDescriptionSave> app);
         public Task<string> ProcessTypeSave(List<ProcessTypeSave> app);
         public Task<string> BuyerSave(List<BuyerSave> app);
         public Task<string> CustomerSave(List<customerSave> app);

@@ -83,6 +83,11 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_number, pi_issued_ref_no from dg_pi_issued", _dg_Oder_Mgt);
             return data;
         }
+        public async Task<DataTable> GetPI_ProcessType()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id, pt_process_name from dg_dimtbl_process_type", _dg_Oder_Mgt);
+            return data;
+        }
 
         public async Task<string> GeneratePIAdd(List<PI_Model> app)
         {
@@ -131,10 +136,11 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@pi_id", ord.Pi_id);
                     cmd.Parameters.AddWithValue("@pi_or_id", ord.pi_or_id);
-                    cmd.Parameters.AddWithValue("@paymentType", ord.payment_Type);
-                    cmd.Parameters.AddWithValue("@or_cust_terms_cond",ord.or_cust_terms_cond);
                     cmd.Parameters.AddWithValue("@pi_payment_type", ord.payment_Type);
+                    cmd.Parameters.AddWithValue("@pi_cust_terms_cond", ord.or_cust_terms_cond);
+                    //cmd.Parameters.AddWithValue("@pi_payment_type", ord.payment_Type);
                     cmd.Parameters.AddWithValue("@pi_created_by", ord.Created_by);
+                    cmd.Parameters.AddWithValue("@pi_proc_type", ord.pi_proc_type);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();

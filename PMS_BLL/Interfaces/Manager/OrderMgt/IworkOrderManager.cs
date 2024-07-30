@@ -1,7 +1,9 @@
-﻿using PMS_BOL.Models.OrderMgt;
+﻿using PMS_BOL.Functions;
+using PMS_BOL.Models.OrderMgt;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,9 +35,17 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable> GetQuilting_Fabric_Composition();
 
 
-        //work_Order
-        public Task<string> Work_Order_Other_Attributes_Save(List<workOrder_Model> app);
-        public Task<string> Work_Order_Padding_Type_Save(List<workOrder_Model> app);
+        //work_Order//
+        public Task<string> Work_Order_Save(WorkorderSaveRequest workorderSaveRequest);
+        public Task<string> Work_Order_Update(WorkorderUpdateRequest WorkorderUpdateRequest);
+
+        public Task<DataTable> work_order_completedOrderReceiving_view(int Ref_no);
+        public Task<DataTable> work_order_afterBothSaveSP_save_view(int Ref_no);
+
+
+
+
+
 
 
 

@@ -40,18 +40,13 @@ namespace PMS_API.Controllers.OrderMgt
 
 
         [HttpGet]
-        public async Task<IActionResult> GetItemDescription()
+        public async Task<IActionResult> GetItemName()
         {
-            var data = await _globalMaster.orderManager.GetItemDescription();
+            var data = await _globalMaster.orderManager.GetItemName();
             return Ok(data);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetProcessType()
-        {
-            var data = await _globalMaster.orderManager.GetProcessType();
-            return Ok(data);
-        }
+      
 
         [HttpGet]
         public async Task<IActionResult> GetBuyer()
@@ -126,18 +121,18 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(data);
 
         }
-        [HttpGet]
-        public async Task<IActionResult> GetitemView()
-        {
-            var data = await _globalMaster.orderManager.GetitemView();
-            return Ok(data);
-        }
-        [HttpGet]
-        public async Task<IActionResult> GetprocessTypeview()
-        {
-            var data = await _globalMaster.orderManager.GetprocessTypeview();
-            return Ok(data);
-        }
+        //[HttpGet]
+        //public async Task<IActionResult> GetitemView()
+        //{
+        //    var data = await _globalMaster.orderManager.GetitemView();
+        //    return Ok(data);
+        //}
+        //[HttpGet]
+        //public async Task<IActionResult> GetprocessTypeview()
+        //{
+        //    var data = await _globalMaster.orderManager.GetprocessTypeview();
+        //    return Ok(data);
+        //}
 
         [HttpGet]
         public async Task<IActionResult> GetStyleEdit(int custID)
@@ -165,6 +160,12 @@ namespace PMS_API.Controllers.OrderMgt
         public async Task<IActionResult> OrderReceivedAddView(string sessionUser)
         {
             var data = await _globalMaster.orderManager.OrderReceivedAddView(sessionUser);
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetRefNoFromOrderReceiving()
+        {
+            var data = await _globalMaster.orderManager.GetRefNoFromOrderReceiving();
             return Ok(data);
         }
 
@@ -201,9 +202,9 @@ namespace PMS_API.Controllers.OrderMgt
         }
 
         [HttpPost]
-        public async Task<IActionResult> ItemDescriptionSave(List<ItemDescriptionSave> app)
+        public async Task<IActionResult> ItemNameSave(List<ItemDescriptionSave> app)
         {
-            var data = await _globalMaster.orderManager.ItemDescriptionSave(app);
+            var data = await _globalMaster.orderManager.ItemNameSave(app);
             return Ok(new { message = data });
 
         }
@@ -325,7 +326,7 @@ namespace PMS_API.Controllers.OrderMgt
 
 
 
-        //-----------------Report---------------------------
+        //-----------------Report_GETAPI------------
 
         [HttpGet]
         public async Task<IActionResult> GetReport_Customer()

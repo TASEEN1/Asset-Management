@@ -157,18 +157,30 @@
         }
 
 
-        
-        public static string dg_Oder_Mgt 
+
+        public static string dg_Oder_Mgt
         {
-           
+
             get
             {
-                if(_dg_Oder_Mgt == null)
+                if (_dg_Oder_Mgt == null)
                 {
                     _dg_Oder_Mgt = String.Format("Data Source=192.168.100.250;Initial Catalog=dg_OMS;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
                 }
                 return _dg_Oder_Mgt;
             }
         }
+        //public static string dg_Oder_Mgt
+        //{
+
+        //    get
+        //    {
+        //        if (_dg_Oder_Mgt == null)
+        //        {
+        //            _dg_Oder_Mgt = String.Format("Data Source=.;Initial Catalog=dg_OMS;Persist Security Info=true; User ID=sa; Password=taseen;TrustServerCertificate=True");
+        //        }
+        //        return _dg_Oder_Mgt;
+        //    }
+        //}
     }
 }

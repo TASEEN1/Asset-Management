@@ -251,7 +251,7 @@ namespace PMS_DAL.Implementation.Manager.Cutting
             {
                 _SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Wise_Report '"+styleID+"'", _dg_pms_conn),
                 _SqlCommon.get_InformationDataTable("Mr_Cutting_Closing_Style_Line_Wise_Report '"+styleID+"'", _dg_pms_conn),
-                     _SqlCommon.get_InformationDataTable("Mr_Cut_Fabrics_Closing_Rpt '"+styleID+"'", _dg_pms_conn),
+                _SqlCommon.get_InformationDataTable("Mr_Cut_Fabrics_Closing_Rpt '"+styleID+"'", _dg_pms_conn),
             };
             var strSetName = new string[]
             {

@@ -21,6 +21,9 @@ namespace PMS_BOL.Models.OrderMgt
         public string pi_approvedBy_user { get; set; }
         public string or_cust_terms_cond { get; set; }
         public int pi_payment_type { get; set; }
+
+        public int pi_proc_type { get; set; }
+
         //public DateTime pi_checkedBy_date { get; set; }
         //public DateTime pi_approvedBy_date { get; set; }
 

@@ -12,6 +12,7 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
     {
         public Task<string> GeneratePIAdd(List<PI_Model>app);
         public Task<string> GeneratePI(List<PI_Model> app);
+        public Task<DataTable> GetPI_ProcessType();
         public Task<DataTable> GetGeneratePIAddView(int customer, int Buyer, string created_By);
         public Task<string> PIDelete(List<PI_Model>app);
         public Task<DataTable> GetPIAddView(int customer, string style, int Ref_no);

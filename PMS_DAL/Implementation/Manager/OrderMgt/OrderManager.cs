@@ -47,16 +47,12 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync("select distinct cUnitDes , nUnitID from Smt_Unit", _SpecFoInventory);
             return data;
         }
-        public async Task<DataTable> GetItemDescription()
+        public async Task<DataTable> GetItemName()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select id_id, id_item_name,id_HS_code from dg_dimtbl_item_description", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_item_name", _dg_Oder_Mgt);
             return data;
         }
-        public async Task<DataTable> GetProcessType()
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select it_id, it_process_name from dg_dimtbl_process_type", _dg_Oder_Mgt);
-            return data;
-        }
+      
 
         public async Task<DataTable> GetBuyer()
         {
@@ -133,16 +129,16 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_gsm", _dg_Oder_Mgt);
             return data;
         }
-        public async Task<DataTable> GetitemView()
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_item_description", _dg_Oder_Mgt);
-            return data;
-        }
-        public async Task<DataTable> GetprocessTypeview()
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_process_type", _dg_Oder_Mgt);
-            return data;
-        }
+        //public async Task<DataTable> GetitemView()
+        //{
+        //    var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_item_description", _dg_Oder_Mgt);
+        //    return data;
+        //}
+        //public async Task<DataTable> GetprocessTypeview()
+        //{
+        //    var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_process_type", _dg_Oder_Mgt);
+        //    return data;
+        //}
         public async Task<DataTable> Getpayment_currency()
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("select cCurID, cCurdes from SpecFo_Inventory.dbo.Smt_CurencyType where cCurID in (1,4)", _dg_Oder_Mgt);
@@ -166,6 +162,12 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         public async Task<DataTable> GetOrderReceivedAddEditView(int Customer, int Buyer, string Style_no, int Ref_no)
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("dg_order_receiving_add_edit_order_view " + Customer + "," + Buyer + ",'" + Style_no +  "'," + Ref_no + "", _dg_Oder_Mgt);
+            return data;
+        }
+
+        public async Task<DataTable> GetRefNoFromOrderReceiving()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no from dg_order_receiving where or_ref_no not in (0) order by or_ref_no desc", _dg_Oder_Mgt);
             return data;
         }
 
@@ -305,7 +307,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             }
             return message;
         }
-        public async Task<string> ItemDescriptionSave(List<ItemDescriptionSave> app)
+        public async Task<string> ItemNameSave(List<ItemDescriptionSave> app)
         {
             string message = string.Empty;
             await _dg_Oder_Mgt.OpenAsync();
@@ -315,7 +317,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             {
                 foreach (ItemDescriptionSave ord in app)
                 {
-                    SqlCommand cmd = new SqlCommand("dg_dimtbl_item_description_save", _dg_Oder_Mgt);
+                    SqlCommand cmd = new SqlCommand("dg_dimtbl_item_name_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@itemName", ord.ItemName);
                     cmd.Parameters.AddWithValue("@HSCode", ord.HSCode);

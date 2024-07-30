@@ -67,6 +67,12 @@ namespace PMS_API.Controllers.OrderMgt
         }
 
         [HttpGet]
+        public async Task<IActionResult> GetPI_ProcessType()
+        {
+            var data = await _globalMaster.piManager.GetPI_ProcessType();
+            return Ok(data);
+        }
+        [HttpGet]
         public async Task<IActionResult> GetPI_Number()
         {
             var data = await _globalMaster.piManager.GetPI_Number();
