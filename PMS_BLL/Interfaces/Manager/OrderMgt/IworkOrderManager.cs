@@ -41,6 +41,7 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
 
         public Task<DataTable> work_order_completedOrderReceiving_view(int Ref_no);
         public Task<DataTable> work_order_afterBothSaveSP_save_view(int Ref_no);
+        public Task<DataTable> GetpaddingtypeUpdateSelect(int Ref_no);
 
 
 

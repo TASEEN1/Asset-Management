@@ -188,8 +188,8 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     using (SqlCommand cmd = new SqlCommand("dg_work_order_padding_type_save", _dg_Oder_Mgt, transaction))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@wopt_or_ref_no[]", ord.wopt_or_ref_no);
-                        cmd.Parameters.AddWithValue("@wopt_padding_type[]", ord.wopt_padding_type);
+                        cmd.Parameters.AddWithValue("@wopt_or_ref_no", ord.wopt_or_ref_no);
+                        cmd.Parameters.AddWithValue("@wopt_padding_type", ord.wopt_padding_type);
                         insert2 = await cmd.ExecuteNonQueryAsync();
 
 
@@ -304,11 +304,23 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync("dg_work_order_completedOrderReceiving_view " + Ref_no , _dg_Oder_Mgt);
             return data;
         }
+
         public async Task<DataTable> work_order_afterBothSaveSP_save_view(int Ref_no)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_work_order_afterBothSaveSP_save_view "  + Ref_no , _dg_Oder_Mgt);
+
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_work_order_afterBothSaveSP_save_view " + Ref_no, _dg_Oder_Mgt);
+          
             return data;
         }
+        public async Task<DataTable> GetpaddingtypeUpdateSelect(int Ref_no)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select wopt_padding_type, dg_dimtbl_padding_type.pt_padding_type from dg_wo_padding_type inner join dg_dimtbl_padding_type on wopt_padding_type = pt_id where wopt_or_ref_no = " + Ref_no, _dg_Oder_Mgt);
+            return data;
+        }
+
+
+
+
 
 
     }

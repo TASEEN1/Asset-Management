@@ -165,6 +165,14 @@ namespace PMS_API.Controllers.OrderMgt
             var data = await _globalMaster.workOrderManager.work_order_afterBothSaveSP_save_view(Ref_no);
             return Ok(data);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetpaddingtypeUpdateSelect(int Ref_no)
+
+        {
+            var data = await _globalMaster.workOrderManager.GetpaddingtypeUpdateSelect(Ref_no);
+            return Ok(data);
+        }
+
 
 
 

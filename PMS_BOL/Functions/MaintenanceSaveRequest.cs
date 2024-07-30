@@ -2,6 +2,7 @@
 using PMS_BOL.Models.OrderMgt;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,5 +28,10 @@ namespace PMS_BOL.Functions
         
     }
 
-    
+    public class WorkOrderResult
+    {
+        public DataTable Data { get; set; }
+        public DataSet Data1 { get; set; }
+    }
+
 }
