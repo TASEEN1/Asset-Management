@@ -18,17 +18,17 @@ namespace PMS_API.Controllers.OrderMgt
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetGeneratePIAddView(int Customer, int Buyer, string created_By)
+        public async Task<IActionResult> GetGeneratePIAddView( string created_By)
         {
-            var data = await _globalMaster.piManager.GetGeneratePIAddView(Customer, Buyer,created_By);
+            var data = await _globalMaster.piManager.GetGeneratePIAddView(created_By);
             return Ok(data);
         }
 
 
         [HttpGet]
-        public async Task<IActionResult> GetPIAddView(int Customer, string style, int Ref_no)
+        public async Task<IActionResult> GetPIAddView( int Ref_no)
         {
-            var data = await _globalMaster.piManager.GetPIAddView(Customer, style, Ref_no);
+            var data = await _globalMaster.piManager.GetPIAddView( Ref_no);
             return Ok(data);
         }
 
@@ -85,7 +85,14 @@ namespace PMS_API.Controllers.OrderMgt
             var data = await _globalMaster.piManager.GetPIstyle( custId);
             return Ok(data);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetBookingRefForPiGenerate()
+        {
+            var data = await _globalMaster.piManager.GetBookingRefForPiGenerate();
+            return Ok(data);
+        }
 
+       
 
         [HttpDelete]
         public async Task<IActionResult> PIDelete(List<PI_Model> app)

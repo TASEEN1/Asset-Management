@@ -49,8 +49,16 @@
           <DataField>or_po_no</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="id_item_name">
-          <DataField>id_item_name</DataField>
+        <Field Name="in_item_name">
+          <DataField>in_item_name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="in_id">
+          <DataField>in_id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="or_item_desc">
+          <DataField>or_item_desc</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="c_color_name">
@@ -65,14 +73,6 @@
           <DataField>g_gsm</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="des_name">
-          <DataField>des_name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="it_process_name">
-          <DataField>it_process_name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="or_order_recv_date">
           <DataField>or_order_recv_date</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
@@ -80,10 +80,6 @@
         <Field Name="or_order_deli_date">
           <DataField>or_order_deli_date</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="or_cust_terms_cond">
-          <DataField>or_cust_terms_cond</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="or_order_qty">
           <DataField>or_order_qty</DataField>
@@ -417,7 +413,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.88473in</Width>
+                  <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.60568in</Width>
@@ -426,7 +422,7 @@
                   <Width>0.37363in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.91735in</Width>
+                  <Width>0.80902in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.67918in</Width>
@@ -453,14 +449,14 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox10">
+                        <Textbox Name="Textbox7">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Item Description</Value>
+                                  <Value>Item Desc</Value>
                                   <Style>
                                     <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -472,7 +468,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox10</rd:DefaultName>
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -563,7 +559,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Order Description</Value>
+                                  <Value>Item Name</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>8pt</FontSize>
@@ -832,17 +828,17 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="id_item_name1">
+                        <Textbox Name="or_item_desc">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!id_item_name.Value</Value>
+                                  <Value>=Fields!or_item_desc.Value</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -851,7 +847,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>id_item_name1</rd:DefaultName>
+                          <rd:DefaultName>or_item_desc</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -888,7 +884,7 @@
                                   <Value>=Fields!or_item_HS_code.Value</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -934,7 +930,7 @@
                                   <Value>=Fields!g_gsm.Value</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -970,17 +966,17 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="des_name1">
+                        <Textbox Name="in_item_name">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!des_name.Value</Value>
+                                  <Value>=Fields!in_item_name.Value</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -989,7 +985,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>des_name1</rd:DefaultName>
+                          <rd:DefaultName>in_item_name</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1026,7 +1022,7 @@
                                   <Value>=Fields!or_order_qty.Value</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>5pt</FontSize>
                                     <Format>0;(0)</Format>
                                   </Style>
                                 </TextRun>
@@ -1061,7 +1057,7 @@
                                   <Value>=Fields!or_order_net_weight.Value</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1095,7 +1091,7 @@
                                   <Value>=Fields!or_order_gross_weight.Value</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1129,7 +1125,7 @@
                                   <Value>=Fields!cUnitDes.Value</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1175,7 +1171,7 @@
                                   <Value>=Fields!or_unit_price.Value</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1221,7 +1217,7 @@
                                   <Value>=Fields!or_total_price.Value</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1262,7 +1258,7 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox35">
+                        <Textbox Name="Textbox13">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -1281,7 +1277,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox35</rd:DefaultName>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1642,7 +1638,7 @@
                                 <Value>=RowNumber(Nothing)</Value>
                                 <Style>
                                   <FontFamily>Calibri</FontFamily>
-                                  <FontSize>7pt</FontSize>
+                                  <FontSize>5pt</FontSize>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -1691,7 +1687,7 @@
                                     <Value>=Fields!or_po_no.Value</Value>
                                     <Style>
                                       <FontFamily>Calibri</FontFamily>
-                                      <FontSize>7pt</FontSize>
+                                      <FontSize>5pt</FontSize>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -1817,7 +1813,7 @@
             <Top>1.14722in</Top>
             <Left>0.10639in</Left>
             <Height>0.75in</Height>
-            <Width>8.22222in</Width>
+            <Width>8.22916in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>

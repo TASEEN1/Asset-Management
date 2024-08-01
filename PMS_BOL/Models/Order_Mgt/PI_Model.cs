@@ -11,7 +11,6 @@ namespace PMS_BOL.Models.OrderMgt
         public int Pi_id { get; set; }
         public int or_id { get; set; }
         public int pi_or_id { get; set; }
-        public int payment_Type { get; set; }
         public string Po_No { get; set; }
         public string Style_No { get; set;}
 
@@ -23,6 +22,7 @@ namespace PMS_BOL.Models.OrderMgt
         public int pi_payment_type { get; set; }
 
         public int pi_proc_type { get; set; }
+        public int pi_or_ref_no { get; set; }
 
         //public DateTime pi_checkedBy_date { get; set; }
         //public DateTime pi_approvedBy_date { get; set; }

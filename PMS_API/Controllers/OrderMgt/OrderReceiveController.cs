@@ -45,8 +45,14 @@ namespace PMS_API.Controllers.OrderMgt
             var data = await _globalMaster.orderManager.GetItemName();
             return Ok(data);
         }
+        [HttpGet]
+        public async Task<IActionResult> ItemNameGet()
+        {
+            var data = await _globalMaster.orderManager.ItemNameGet();
+            return Ok(data);
+        }
 
-      
+
 
         [HttpGet]
         public async Task<IActionResult> GetBuyer()

@@ -9,9 +9,12 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
 {
     public interface IOrderReportManager
     {
-        public byte[] OrderReceivedReport(int comID, string UserName, string reportType, int? customer, string? style_No, DateTime FromDate, DateTime ToDate);
+        public byte[] OrderReceivedReport(int comID, string UserName, string reportType, int? Ref_NO, DateTime FromDate, DateTime ToDate);
         public byte[] ProformaInvoiceReport(int comID, string UserName, string reportType, int? pi_issued_ref_no, string? pi_number);
-        
+        public byte[] WorkOrderReport(int comID, string UserName, string reportType, int Rrf_No );
+
+
+
 
 
 

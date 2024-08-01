@@ -28,10 +28,6 @@ namespace PMS_BOL.Functions
         
     }
 
-    public class WorkOrderResult
-    {
-        public DataTable Data { get; set; }
-        public DataSet Data1 { get; set; }
-    }
+  
 
 }

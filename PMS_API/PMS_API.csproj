@@ -14,6 +14,7 @@
     <Content Remove="wwwroot\Report\Asset_report\ScheduledMaintenance Report.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\OrderWiseRpt.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\Proforma_Invoice.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\work_order_Rpt.rdlc" />
     <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.Designer.cs" />
     <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xsc" />
     <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xsd" />
@@ -26,6 +27,18 @@
     <Content Remove="wwwroot\Report\ReportDataSet\OrdDataSet.xsc" />
     <Content Remove="wwwroot\Report\ReportDataSet\OrdDataSet.xsd" />
     <Content Remove="wwwroot\Report\ReportDataSet\OrdDataSet.xss" />
+    <Content Remove="wwwroot\Report\ReportDataSet\padding_type_DataSet.Designer.cs" />
+    <Content Remove="wwwroot\Report\ReportDataSet\padding_type_DataSet.xsc" />
+    <Content Remove="wwwroot\Report\ReportDataSet\padding_type_DataSet.xsd" />
+    <Content Remove="wwwroot\Report\ReportDataSet\padding_type_DataSet.xss" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.Designer.cs" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.xsc" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.xsd" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.xss" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Work_order_DataSet.Designer.cs" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Work_order_DataSet.xsc" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Work_order_DataSet.xsd" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Work_order_DataSet.xss" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +57,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>OrdDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="wwwroot\Report\ReportDataSet\padding_type_DataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>padding_type_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Work_order_Complete_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wwwroot\Report\ReportDataSet\Work_order_DataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Work_order_DataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -54,6 +82,7 @@
     <EmbeddedResource Include="wwwroot\Report\Asset_report\ScheduledMaintenance Report.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\OrderWiseRpt.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\Proforma_Invoice.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\work_order_Rpt.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CoreApiResponse" Version="1.0.1" />
@@ -107,5 +136,26 @@
       <Generator>MSDataSetGenerator</Generator>
     </None>
     <None Include="wwwroot\Report\ReportDataSet\OrdDataSet.xss" />
+    <None Include="wwwroot\Report\ReportDataSet\padding_type_DataSet.xsc" />
+    <None Include="wwwroot\Report\ReportDataSet\padding_type_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>padding_type_DataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\Report\ReportDataSet\padding_type_DataSet.xss" />
+    <None Include="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.xsc" />
+    <None Include="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>Work_order_Complete_DataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.xss" />
+    <None Include="wwwroot\Report\ReportDataSet\Work_order_DataSet.xsc" />
+    <None Include="wwwroot\Report\ReportDataSet\Work_order_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>Work_order_DataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\Report\ReportDataSet\Work_order_DataSet.xss" />
   </ItemGroup>
 </Project>

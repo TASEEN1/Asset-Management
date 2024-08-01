@@ -65,8 +65,12 @@
           <DataField>or_po_no</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="id_item_name">
-          <DataField>id_item_name</DataField>
+        <Field Name="in_item_name">
+          <DataField>in_item_name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="or_item_desc">
+          <DataField>or_item_desc</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="c_color_name">
@@ -81,12 +85,12 @@
           <DataField>g_gsm</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="des_name">
-          <DataField>des_name</DataField>
+        <Field Name="qdn_quilting_design_name">
+          <DataField>qdn_quilting_design_name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="it_process_name">
-          <DataField>it_process_name</DataField>
+        <Field Name="pt_process_name">
+          <DataField>pt_process_name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="or_order_recv_date">
@@ -97,8 +101,8 @@
           <DataField>or_order_deli_date</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="or_cust_terms_cond">
-          <DataField>or_cust_terms_cond</DataField>
+        <Field Name="pi_cust_terms_cond">
+          <DataField>pi_cust_terms_cond</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="or_order_qty">
@@ -133,12 +137,12 @@
           <DataField>pi_number</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="id_HS_code">
-          <DataField>id_HS_code</DataField>
+        <Field Name="in_HS_code">
+          <DataField>in_HS_code</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="or_remarks">
-          <DataField>or_remarks</DataField>
+        <Field Name="wo_remarks">
+          <DataField>wo_remarks</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="pi_created_date">
@@ -1464,17 +1468,17 @@
                                       <TablixHeader>
                                         <Size>1.2897in</Size>
                                         <CellContents>
-                                          <Textbox Name="id_item_name">
+                                          <Textbox Name="or_item_desc">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!id_item_name.Value</Value>
+                                                    <Value>=Fields!or_item_desc.Value</Value>
                                                     <Style>
                                                       <FontFamily>Calibri</FontFamily>
-                                                      <FontSize>6pt</FontSize>
+                                                      <FontSize>5pt</FontSize>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -1483,7 +1487,7 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>id_item_name</rd:DefaultName>
+                                            <rd:DefaultName>or_item_desc</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -1514,14 +1518,14 @@
                                           <TablixHeader>
                                             <Size>0.52632in</Size>
                                             <CellContents>
-                                              <Textbox Name="id_HS_code">
+                                              <Textbox Name="in_HS_code">
                                                 <CanGrow>true</CanGrow>
                                                 <KeepTogether>true</KeepTogether>
                                                 <Paragraphs>
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>=Fields!id_HS_code.Value</Value>
+                                                        <Value>=Fields!in_HS_code.Value</Value>
                                                         <Style>
                                                           <FontFamily>Calibri</FontFamily>
                                                           <FontSize>6pt</FontSize>
@@ -1533,7 +1537,7 @@
                                                     </Style>
                                                   </Paragraph>
                                                 </Paragraphs>
-                                                <rd:DefaultName>id_HS_code</rd:DefaultName>
+                                                <rd:DefaultName>in_HS_code</rd:DefaultName>
                                                 <Style>
                                                   <Border>
                                                     <Style>Solid</Style>
@@ -1664,14 +1668,14 @@
                                                       <TablixHeader>
                                                         <Size>0.41619in</Size>
                                                         <CellContents>
-                                                          <Textbox Name="des_name">
+                                                          <Textbox Name="qdn_quilting_design_name">
                                                             <CanGrow>true</CanGrow>
                                                             <KeepTogether>true</KeepTogether>
                                                             <Paragraphs>
                                                               <Paragraph>
                                                                 <TextRuns>
                                                                   <TextRun>
-                                                                    <Value>=Fields!des_name.Value</Value>
+                                                                    <Value>=First(Fields!qdn_quilting_design_name.Value, "OrdDataSet")</Value>
                                                                     <Style>
                                                                       <FontFamily>Calibri</FontFamily>
                                                                       <FontSize>6pt</FontSize>
@@ -1683,7 +1687,7 @@
                                                                 </Style>
                                                               </Paragraph>
                                                             </Paragraphs>
-                                                            <rd:DefaultName>des_name</rd:DefaultName>
+                                                            <rd:DefaultName>qdn_quilting_design_name</rd:DefaultName>
                                                             <Style>
                                                               <Border>
                                                                 <Style>Solid</Style>
@@ -2354,10 +2358,10 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=Fields!or_remarks.Value</Value>
+                    <Value>=Fields!wo_remarks.Value</Value>
                     <Style>
                       <FontFamily>Calibri</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>6pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
                   </TextRun>
@@ -2405,7 +2409,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Fields!c_terms_and_condition.Value</Value>
+                    <Value>=Fields!pi_cust_terms_cond.Value</Value>
                     <Style>
                       <FontFamily>Calibri</FontFamily>
                       <FontSize>8pt</FontSize>
@@ -2521,7 +2525,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
-            <Top>2.12083in</Top>
+            <Top>2.10833in</Top>
             <Left>0.16334in</Left>
             <Height>0.15973in</Height>
             <Width>3.63056in</Width>

@@ -31,40 +31,40 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         }
 
-
-        public async Task<DataTable> GetGeneratePIAddView(int Customer, int Buyer, string created_By)
+        //pi add er poree
+        public async Task<DataTable> GetGeneratePIAddView( string created_By)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_add_view " + Customer + "," + Buyer + ",'" + created_By + "'", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_add_view '" + created_By + "'", _dg_Oder_Mgt);
             return data;
         }
-
-        public async Task<DataTable> GetPIAddView(int Customer, string style, int Ref_no)
+        //pi add er agee
+        public async Task<DataTable> GetPIAddView( int Ref_no)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_before_add_view " + Customer + ", '" + style + "', " + Ref_no, _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_before_add_view  " + Ref_no, _dg_Oder_Mgt);
             return data;
         }
 
         public async Task<DataTable> GetPiApproval_checkedBy_View(string Created_by)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_checkedBy_view " + Created_by + "", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_checkedBy_view '" + Created_by + "'", _dg_Oder_Mgt);
             return data;
         }
 
         public async Task<DataTable> GetPiApproval_approvedBy_view(string Created_by)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_approvedBy_view " + Created_by + "", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_approvedBy_view '" + Created_by + "'", _dg_Oder_Mgt);
             return data;
         }
 
         public async Task<DataTable> GetPiApproval_ForApprovalView(string Created_by)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_forApproval_view " + Created_by + "", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_forApproval_view '" + Created_by + "'", _dg_Oder_Mgt);
             return data;
         }
 
         public async Task<DataTable> GetPiApproval_revise_view(string Created_by)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_revise_view " + Created_by + "", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_revise_view '" + Created_by + "'", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetPIcustomer()
@@ -100,10 +100,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_generate_pi_add", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@or_id", ord.or_id);
-                    cmd.Parameters.AddWithValue("@or_po_no", ord.Po_No);
-                    cmd.Parameters.AddWithValue("@or_style_no", ord.Style_No);
-                    cmd.Parameters.AddWithValue("@or_ref_no", ord.Ref_no);
+                    cmd.Parameters.AddWithValue("@or_ref_no", ord.pi_or_ref_no);
                     cmd.Parameters.AddWithValue("@pi_created_by", ord.Created_by);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
@@ -134,13 +131,11 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_generate_pi_generate", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@pi_id", ord.Pi_id);
-                    cmd.Parameters.AddWithValue("@pi_or_id", ord.pi_or_id);
-                    cmd.Parameters.AddWithValue("@pi_payment_type", ord.payment_Type);
+                    cmd.Parameters.AddWithValue("@pi_payment_type", ord.pi_payment_type);
                     cmd.Parameters.AddWithValue("@pi_cust_terms_cond", ord.or_cust_terms_cond);
-                    //cmd.Parameters.AddWithValue("@pi_payment_type", ord.payment_Type);
-                    cmd.Parameters.AddWithValue("@pi_created_by", ord.Created_by);
                     cmd.Parameters.AddWithValue("@pi_proc_type", ord.pi_proc_type);
+                    cmd.Parameters.AddWithValue("@pi_created_by", ord.Created_by);
+
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -172,7 +167,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_generate_pi_add_delete_single", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@piID", ord.Pi_id);
+                    cmd.Parameters.AddWithValue("@pi_or_ref_no", ord.pi_or_ref_no);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -282,6 +277,14 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             }
             return message;
         }
+
+        public async Task<DataTable> GetBookingRefForPiGenerate()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no, c_id as customer_id, c_customer_name, c_terms_and_condition from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_com_post_bit =1 and or_pi_add_bit = 0", _dg_Oder_Mgt);
+            return data;
+        }
+       
+
 
 
     }

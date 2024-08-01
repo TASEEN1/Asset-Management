@@ -167,7 +167,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                         cmd.Parameters.AddWithValue("@wo_quilting_fabric_name", ord.wo_quilting_fabric_name);
                         cmd.Parameters.AddWithValue("@wo_quilting_fabric_composition", ord.wo_quilting_fabric_composition);
                         cmd.Parameters.AddWithValue("@wo_test_name", ord.wo_test_name);
-                        cmd.Parameters.AddWithValue("@wo_created_by", ord.wo_created_by);
+                        cmd.Parameters.AddWithValue("@wo_inserted_by", ord.wo_created_by);
                         cmd.Parameters.Add("@error", SqlDbType.Char, 500);
                         cmd.Parameters["@error"].Direction = ParameterDirection.Output;
 
@@ -243,7 +243,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
                 foreach(var ord in workorderUpdateRequest.workOrder_Models)
                 {
-                    SqlCommand cmd = new SqlCommand("dg_work_order_other_attributes_update", _dg_Oder_Mgt);
+                    SqlCommand cmd = new SqlCommand("dg_work_order_other_attributes_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@wo_or_ref_no", ord.wo_or_ref_no);
                     cmd.Parameters.AddWithValue("@wo_remarks", ord.wo_remarks);
@@ -264,7 +264,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@wo_quilting_fabric_name", ord.wo_quilting_fabric_name);
                     cmd.Parameters.AddWithValue("@wo_quilting_fabric_composition", ord.wo_quilting_fabric_composition);
                     cmd.Parameters.AddWithValue("@wo_test_name", ord.wo_test_name);
-                    cmd.Parameters.AddWithValue("@wo_updated_by", ord.wo_updated_by);
+                    cmd.Parameters.AddWithValue("@wo_inserted_by", ord.wo_updated_by);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();

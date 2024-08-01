@@ -330,7 +330,11 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             private global::System.Data.DataColumn columnor_po_no;
             
-            private global::System.Data.DataColumn columnid_item_name;
+            private global::System.Data.DataColumn columnin_item_name;
+            
+            private global::System.Data.DataColumn columnin_id;
+            
+            private global::System.Data.DataColumn columnor_item_desc;
             
             private global::System.Data.DataColumn columnc_color_name;
             
@@ -338,15 +342,9 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             private global::System.Data.DataColumn columng_gsm;
             
-            private global::System.Data.DataColumn columndes_name;
-            
-            private global::System.Data.DataColumn columnit_process_name;
-            
             private global::System.Data.DataColumn columnor_order_recv_date;
             
             private global::System.Data.DataColumn columnor_order_deli_date;
-            
-            private global::System.Data.DataColumn columnor_cust_terms_cond;
             
             private global::System.Data.DataColumn columnor_order_qty;
             
@@ -463,9 +461,25 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn id_item_nameColumn {
+            public global::System.Data.DataColumn in_item_nameColumn {
                 get {
-                    return this.columnid_item_name;
+                    return this.columnin_item_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn in_idColumn {
+                get {
+                    return this.columnin_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn or_item_descColumn {
+                get {
+                    return this.columnor_item_desc;
                 }
             }
             
@@ -495,22 +509,6 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn des_nameColumn {
-                get {
-                    return this.columndes_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn it_process_nameColumn {
-                get {
-                    return this.columnit_process_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn or_order_recv_dateColumn {
                 get {
                     return this.columnor_order_recv_date;
@@ -522,14 +520,6 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             public global::System.Data.DataColumn or_order_deli_dateColumn {
                 get {
                     return this.columnor_order_deli_date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn or_cust_terms_condColumn {
-                get {
-                    return this.columnor_cust_terms_cond;
                 }
             }
             
@@ -643,15 +633,14 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         int b_id, 
                         string or_style_no, 
                         string or_po_no, 
-                        string id_item_name, 
+                        string in_item_name, 
+                        int in_id, 
+                        string or_item_desc, 
                         string c_color_name, 
                         string d_name, 
                         string g_gsm, 
-                        string des_name, 
-                        string it_process_name, 
                         System.DateTime or_order_recv_date, 
                         System.DateTime or_order_deli_date, 
-                        string or_cust_terms_cond, 
                         decimal or_order_qty, 
                         string cUnitDes, 
                         decimal or_unit_price, 
@@ -669,15 +658,14 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         b_id,
                         or_style_no,
                         or_po_no,
-                        id_item_name,
+                        in_item_name,
+                        in_id,
+                        or_item_desc,
                         c_color_name,
                         d_name,
                         g_gsm,
-                        des_name,
-                        it_process_name,
                         or_order_recv_date,
                         or_order_deli_date,
-                        or_cust_terms_cond,
                         or_order_qty,
                         cUnitDes,
                         null,
@@ -716,15 +704,14 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columnb_id = base.Columns["b_id"];
                 this.columnor_style_no = base.Columns["or_style_no"];
                 this.columnor_po_no = base.Columns["or_po_no"];
-                this.columnid_item_name = base.Columns["id_item_name"];
+                this.columnin_item_name = base.Columns["in_item_name"];
+                this.columnin_id = base.Columns["in_id"];
+                this.columnor_item_desc = base.Columns["or_item_desc"];
                 this.columnc_color_name = base.Columns["c_color_name"];
                 this.columnd_name = base.Columns["d_name"];
                 this.columng_gsm = base.Columns["g_gsm"];
-                this.columndes_name = base.Columns["des_name"];
-                this.columnit_process_name = base.Columns["it_process_name"];
                 this.columnor_order_recv_date = base.Columns["or_order_recv_date"];
                 this.columnor_order_deli_date = base.Columns["or_order_deli_date"];
-                this.columnor_cust_terms_cond = base.Columns["or_cust_terms_cond"];
                 this.columnor_order_qty = base.Columns["or_order_qty"];
                 this.columncUnitDes = base.Columns["cUnitDes"];
                 this.columnnUnitID = base.Columns["nUnitID"];
@@ -754,24 +741,22 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 base.Columns.Add(this.columnor_style_no);
                 this.columnor_po_no = new global::System.Data.DataColumn("or_po_no", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnor_po_no);
-                this.columnid_item_name = new global::System.Data.DataColumn("id_item_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_item_name);
+                this.columnin_item_name = new global::System.Data.DataColumn("in_item_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnin_item_name);
+                this.columnin_id = new global::System.Data.DataColumn("in_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnin_id);
+                this.columnor_item_desc = new global::System.Data.DataColumn("or_item_desc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnor_item_desc);
                 this.columnc_color_name = new global::System.Data.DataColumn("c_color_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnc_color_name);
                 this.columnd_name = new global::System.Data.DataColumn("d_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnd_name);
                 this.columng_gsm = new global::System.Data.DataColumn("g_gsm", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columng_gsm);
-                this.columndes_name = new global::System.Data.DataColumn("des_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndes_name);
-                this.columnit_process_name = new global::System.Data.DataColumn("it_process_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnit_process_name);
                 this.columnor_order_recv_date = new global::System.Data.DataColumn("or_order_recv_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnor_order_recv_date);
                 this.columnor_order_deli_date = new global::System.Data.DataColumn("or_order_deli_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnor_order_deli_date);
-                this.columnor_cust_terms_cond = new global::System.Data.DataColumn("or_cust_terms_cond", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnor_cust_terms_cond);
                 this.columnor_order_qty = new global::System.Data.DataColumn("or_order_qty", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnor_order_qty);
                 this.columncUnitDes = new global::System.Data.DataColumn("cUnitDes", typeof(string), null, global::System.Data.MappingType.Element);
@@ -795,13 +780,12 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columnb_id.AllowDBNull = false;
                 this.columnor_style_no.MaxLength = 30;
                 this.columnor_po_no.MaxLength = 30;
-                this.columnid_item_name.MaxLength = 200;
+                this.columnin_item_name.MaxLength = 200;
+                this.columnin_id.AllowDBNull = false;
+                this.columnor_item_desc.MaxLength = 500;
                 this.columnc_color_name.MaxLength = 50;
                 this.columnd_name.MaxLength = 10;
                 this.columng_gsm.MaxLength = 10;
-                this.columndes_name.MaxLength = 100;
-                this.columnit_process_name.MaxLength = 100;
-                this.columnor_cust_terms_cond.MaxLength = 2500;
                 this.columncUnitDes.MaxLength = 15;
                 this.columnnUnitID.AutoIncrement = true;
                 this.columnnUnitID.AllowDBNull = false;
@@ -964,7 +948,9 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             private global::System.Data.DataColumn columnor_po_no;
             
-            private global::System.Data.DataColumn columnid_item_name;
+            private global::System.Data.DataColumn columnin_item_name;
+            
+            private global::System.Data.DataColumn columnor_item_desc;
             
             private global::System.Data.DataColumn columnc_color_name;
             
@@ -972,15 +958,15 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             private global::System.Data.DataColumn columng_gsm;
             
-            private global::System.Data.DataColumn columndes_name;
+            private global::System.Data.DataColumn columnqdn_quilting_design_name;
             
-            private global::System.Data.DataColumn columnit_process_name;
+            private global::System.Data.DataColumn columnpt_process_name;
             
             private global::System.Data.DataColumn columnor_order_recv_date;
             
             private global::System.Data.DataColumn columnor_order_deli_date;
             
-            private global::System.Data.DataColumn columnor_cust_terms_cond;
+            private global::System.Data.DataColumn columnpi_cust_terms_cond;
             
             private global::System.Data.DataColumn columnor_order_qty;
             
@@ -998,9 +984,9 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             private global::System.Data.DataColumn columnpi_number;
             
-            private global::System.Data.DataColumn columnid_HS_code;
+            private global::System.Data.DataColumn columnin_HS_code;
             
-            private global::System.Data.DataColumn columnor_remarks;
+            private global::System.Data.DataColumn columnwo_remarks;
             
             private global::System.Data.DataColumn columnpi_created_date;
             
@@ -1161,9 +1147,17 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn id_item_nameColumn {
+            public global::System.Data.DataColumn in_item_nameColumn {
                 get {
-                    return this.columnid_item_name;
+                    return this.columnin_item_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn or_item_descColumn {
+                get {
+                    return this.columnor_item_desc;
                 }
             }
             
@@ -1193,17 +1187,17 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn des_nameColumn {
+            public global::System.Data.DataColumn qdn_quilting_design_nameColumn {
                 get {
-                    return this.columndes_name;
+                    return this.columnqdn_quilting_design_name;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn it_process_nameColumn {
+            public global::System.Data.DataColumn pt_process_nameColumn {
                 get {
-                    return this.columnit_process_name;
+                    return this.columnpt_process_name;
                 }
             }
             
@@ -1225,9 +1219,9 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn or_cust_terms_condColumn {
+            public global::System.Data.DataColumn pi_cust_terms_condColumn {
                 get {
-                    return this.columnor_cust_terms_cond;
+                    return this.columnpi_cust_terms_cond;
                 }
             }
             
@@ -1297,17 +1291,17 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn id_HS_codeColumn {
+            public global::System.Data.DataColumn in_HS_codeColumn {
                 get {
-                    return this.columnid_HS_code;
+                    return this.columnin_HS_code;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn or_remarksColumn {
+            public global::System.Data.DataColumn wo_remarksColumn {
                 get {
-                    return this.columnor_remarks;
+                    return this.columnwo_remarks;
                 }
             }
             
@@ -1473,15 +1467,16 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         int b_id, 
                         string or_style_no, 
                         string or_po_no, 
-                        string id_item_name, 
+                        string in_item_name, 
+                        string or_item_desc, 
                         string c_color_name, 
                         string d_name, 
                         string g_gsm, 
-                        string des_name, 
-                        string it_process_name, 
+                        string qdn_quilting_design_name, 
+                        string pt_process_name, 
                         System.DateTime or_order_recv_date, 
                         System.DateTime or_order_deli_date, 
-                        string or_cust_terms_cond, 
+                        string pi_cust_terms_cond, 
                         decimal or_order_qty, 
                         string cUnitDes, 
                         decimal or_unit_price, 
@@ -1489,8 +1484,8 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         string Payment_Mode, 
                         int pm_id, 
                         string pi_number, 
-                        string id_HS_code, 
-                        string or_remarks, 
+                        string in_HS_code, 
+                        string wo_remarks, 
                         System.DateTime pi_created_date, 
                         int pi_revised_no, 
                         decimal or_order_net_weight, 
@@ -1519,15 +1514,16 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         b_id,
                         or_style_no,
                         or_po_no,
-                        id_item_name,
+                        in_item_name,
+                        or_item_desc,
                         c_color_name,
                         d_name,
                         g_gsm,
-                        des_name,
-                        it_process_name,
+                        qdn_quilting_design_name,
+                        pt_process_name,
                         or_order_recv_date,
                         or_order_deli_date,
-                        or_cust_terms_cond,
+                        pi_cust_terms_cond,
                         or_order_qty,
                         cUnitDes,
                         null,
@@ -1536,8 +1532,8 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         Payment_Mode,
                         pm_id,
                         pi_number,
-                        id_HS_code,
-                        or_remarks,
+                        in_HS_code,
+                        wo_remarks,
                         pi_created_date,
                         pi_revised_no,
                         or_order_net_weight,
@@ -1586,15 +1582,16 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columnb_id = base.Columns["b_id"];
                 this.columnor_style_no = base.Columns["or_style_no"];
                 this.columnor_po_no = base.Columns["or_po_no"];
-                this.columnid_item_name = base.Columns["id_item_name"];
+                this.columnin_item_name = base.Columns["in_item_name"];
+                this.columnor_item_desc = base.Columns["or_item_desc"];
                 this.columnc_color_name = base.Columns["c_color_name"];
                 this.columnd_name = base.Columns["d_name"];
                 this.columng_gsm = base.Columns["g_gsm"];
-                this.columndes_name = base.Columns["des_name"];
-                this.columnit_process_name = base.Columns["it_process_name"];
+                this.columnqdn_quilting_design_name = base.Columns["qdn_quilting_design_name"];
+                this.columnpt_process_name = base.Columns["pt_process_name"];
                 this.columnor_order_recv_date = base.Columns["or_order_recv_date"];
                 this.columnor_order_deli_date = base.Columns["or_order_deli_date"];
-                this.columnor_cust_terms_cond = base.Columns["or_cust_terms_cond"];
+                this.columnpi_cust_terms_cond = base.Columns["pi_cust_terms_cond"];
                 this.columnor_order_qty = base.Columns["or_order_qty"];
                 this.columncUnitDes = base.Columns["cUnitDes"];
                 this.columnnUnitID = base.Columns["nUnitID"];
@@ -1603,8 +1600,8 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columnPayment_Mode = base.Columns["Payment_Mode"];
                 this.columnpm_id = base.Columns["pm_id"];
                 this.columnpi_number = base.Columns["pi_number"];
-                this.columnid_HS_code = base.Columns["id_HS_code"];
-                this.columnor_remarks = base.Columns["or_remarks"];
+                this.columnin_HS_code = base.Columns["in_HS_code"];
+                this.columnwo_remarks = base.Columns["wo_remarks"];
                 this.columnpi_created_date = base.Columns["pi_created_date"];
                 this.columnpi_revised_no = base.Columns["pi_revised_no"];
                 this.columnor_order_net_weight = base.Columns["or_order_net_weight"];
@@ -1648,24 +1645,26 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 base.Columns.Add(this.columnor_style_no);
                 this.columnor_po_no = new global::System.Data.DataColumn("or_po_no", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnor_po_no);
-                this.columnid_item_name = new global::System.Data.DataColumn("id_item_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_item_name);
+                this.columnin_item_name = new global::System.Data.DataColumn("in_item_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnin_item_name);
+                this.columnor_item_desc = new global::System.Data.DataColumn("or_item_desc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnor_item_desc);
                 this.columnc_color_name = new global::System.Data.DataColumn("c_color_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnc_color_name);
                 this.columnd_name = new global::System.Data.DataColumn("d_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnd_name);
                 this.columng_gsm = new global::System.Data.DataColumn("g_gsm", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columng_gsm);
-                this.columndes_name = new global::System.Data.DataColumn("des_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndes_name);
-                this.columnit_process_name = new global::System.Data.DataColumn("it_process_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnit_process_name);
+                this.columnqdn_quilting_design_name = new global::System.Data.DataColumn("qdn_quilting_design_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnqdn_quilting_design_name);
+                this.columnpt_process_name = new global::System.Data.DataColumn("pt_process_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpt_process_name);
                 this.columnor_order_recv_date = new global::System.Data.DataColumn("or_order_recv_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnor_order_recv_date);
                 this.columnor_order_deli_date = new global::System.Data.DataColumn("or_order_deli_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnor_order_deli_date);
-                this.columnor_cust_terms_cond = new global::System.Data.DataColumn("or_cust_terms_cond", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnor_cust_terms_cond);
+                this.columnpi_cust_terms_cond = new global::System.Data.DataColumn("pi_cust_terms_cond", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpi_cust_terms_cond);
                 this.columnor_order_qty = new global::System.Data.DataColumn("or_order_qty", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnor_order_qty);
                 this.columncUnitDes = new global::System.Data.DataColumn("cUnitDes", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1682,10 +1681,10 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 base.Columns.Add(this.columnpm_id);
                 this.columnpi_number = new global::System.Data.DataColumn("pi_number", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpi_number);
-                this.columnid_HS_code = new global::System.Data.DataColumn("id_HS_code", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_HS_code);
-                this.columnor_remarks = new global::System.Data.DataColumn("or_remarks", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnor_remarks);
+                this.columnin_HS_code = new global::System.Data.DataColumn("in_HS_code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnin_HS_code);
+                this.columnwo_remarks = new global::System.Data.DataColumn("wo_remarks", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_remarks);
                 this.columnpi_created_date = new global::System.Data.DataColumn("pi_created_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpi_created_date);
                 this.columnpi_revised_no = new global::System.Data.DataColumn("pi_revised_no", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1725,21 +1724,22 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columnb_id.AllowDBNull = false;
                 this.columnor_style_no.MaxLength = 30;
                 this.columnor_po_no.MaxLength = 30;
-                this.columnid_item_name.MaxLength = 200;
+                this.columnin_item_name.MaxLength = 200;
+                this.columnor_item_desc.MaxLength = 500;
                 this.columnc_color_name.MaxLength = 50;
                 this.columnd_name.MaxLength = 10;
                 this.columng_gsm.MaxLength = 10;
-                this.columndes_name.MaxLength = 100;
-                this.columnit_process_name.MaxLength = 100;
-                this.columnor_cust_terms_cond.MaxLength = 2500;
+                this.columnqdn_quilting_design_name.MaxLength = 30;
+                this.columnpt_process_name.MaxLength = 100;
+                this.columnpi_cust_terms_cond.MaxLength = 2500;
                 this.columncUnitDes.MaxLength = 15;
                 this.columnnUnitID.AutoIncrement = true;
                 this.columnnUnitID.AllowDBNull = false;
                 this.columnnUnitID.ReadOnly = true;
                 this.columnPayment_Mode.MaxLength = 100;
                 this.columnpi_number.MaxLength = 20;
-                this.columnid_HS_code.MaxLength = 50;
-                this.columnor_remarks.MaxLength = 250;
+                this.columnin_HS_code.MaxLength = 50;
+                this.columnwo_remarks.MaxLength = 1000;
                 this.columnpi_approvedBy_user.MaxLength = 50;
                 this.columnpi_checkedBy_user.MaxLength = 50;
                 this.columnpi_created_by.MaxLength = 50;
@@ -2003,17 +2003,44 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string id_item_name {
+            public string in_item_name {
                 get {
                     try {
-                        return ((string)(this[this.tabledg_order_receiving_Rpt.id_item_nameColumn]));
+                        return ((string)(this[this.tabledg_order_receiving_Rpt.in_item_nameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'id_item_name\' in table \'dg_order_receiving_Rpt\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'in_item_name\' in table \'dg_order_receiving_Rpt\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledg_order_receiving_Rpt.id_item_nameColumn] = value;
+                    this[this.tabledg_order_receiving_Rpt.in_item_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int in_id {
+                get {
+                    return ((int)(this[this.tabledg_order_receiving_Rpt.in_idColumn]));
+                }
+                set {
+                    this[this.tabledg_order_receiving_Rpt.in_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string or_item_desc {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_order_receiving_Rpt.or_item_descColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'or_item_desc\' in table \'dg_order_receiving_Rpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_order_receiving_Rpt.or_item_descColumn] = value;
                 }
             }
             
@@ -2067,39 +2094,6 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string des_name {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_order_receiving_Rpt.des_nameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'des_name\' in table \'dg_order_receiving_Rpt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_order_receiving_Rpt.des_nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string it_process_name {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_order_receiving_Rpt.it_process_nameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'it_process_name\' in table \'dg_order_receiving_Rpt\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_order_receiving_Rpt.it_process_nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime or_order_recv_date {
                 get {
                     try {
@@ -2129,23 +2123,6 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 }
                 set {
                     this[this.tabledg_order_receiving_Rpt.or_order_deli_dateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string or_cust_terms_cond {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_order_receiving_Rpt.or_cust_terms_condColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'or_cust_terms_cond\' in table \'dg_order_receiving_Rpt\' is DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_order_receiving_Rpt.or_cust_terms_condColumn] = value;
                 }
             }
             
@@ -2339,14 +2316,26 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isid_item_nameNull() {
-                return this.IsNull(this.tabledg_order_receiving_Rpt.id_item_nameColumn);
+            public bool Isin_item_nameNull() {
+                return this.IsNull(this.tabledg_order_receiving_Rpt.in_item_nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setid_item_nameNull() {
-                this[this.tabledg_order_receiving_Rpt.id_item_nameColumn] = global::System.Convert.DBNull;
+            public void Setin_item_nameNull() {
+                this[this.tabledg_order_receiving_Rpt.in_item_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isor_item_descNull() {
+                return this.IsNull(this.tabledg_order_receiving_Rpt.or_item_descColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setor_item_descNull() {
+                this[this.tabledg_order_receiving_Rpt.or_item_descColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2387,30 +2376,6 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isdes_nameNull() {
-                return this.IsNull(this.tabledg_order_receiving_Rpt.des_nameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setdes_nameNull() {
-                this[this.tabledg_order_receiving_Rpt.des_nameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isit_process_nameNull() {
-                return this.IsNull(this.tabledg_order_receiving_Rpt.it_process_nameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setit_process_nameNull() {
-                this[this.tabledg_order_receiving_Rpt.it_process_nameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isor_order_recv_dateNull() {
                 return this.IsNull(this.tabledg_order_receiving_Rpt.or_order_recv_dateColumn);
             }
@@ -2431,18 +2396,6 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setor_order_deli_dateNull() {
                 this[this.tabledg_order_receiving_Rpt.or_order_deli_dateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isor_cust_terms_condNull() {
-                return this.IsNull(this.tabledg_order_receiving_Rpt.or_cust_terms_condColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setor_cust_terms_condNull() {
-                this[this.tabledg_order_receiving_Rpt.or_cust_terms_condColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2728,18 +2681,35 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string id_item_name {
+            public string in_item_name {
                 get {
                     try {
-                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.id_item_nameColumn]));
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.in_item_nameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'id_item_name\' in table \'dg_proforma_invoice_Rpt\' is DBNull." +
+                        throw new global::System.Data.StrongTypingException("The value for column \'in_item_name\' in table \'dg_proforma_invoice_Rpt\' is DBNull." +
                                 "", e);
                     }
                 }
                 set {
-                    this[this.tabledg_proforma_invoice_Rpt.id_item_nameColumn] = value;
+                    this[this.tabledg_proforma_invoice_Rpt.in_item_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string or_item_desc {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.or_item_descColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'or_item_desc\' in table \'dg_proforma_invoice_Rpt\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_proforma_invoice_Rpt.or_item_descColumn] = value;
                 }
             }
             
@@ -2794,34 +2764,35 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string des_name {
+            public string qdn_quilting_design_name {
                 get {
                     try {
-                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.des_nameColumn]));
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.qdn_quilting_design_nameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'des_name\' in table \'dg_proforma_invoice_Rpt\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'qdn_quilting_design_name\' in table \'dg_proforma_invoice_Rpt" +
+                                "\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledg_proforma_invoice_Rpt.des_nameColumn] = value;
+                    this[this.tabledg_proforma_invoice_Rpt.qdn_quilting_design_nameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string it_process_name {
+            public string pt_process_name {
                 get {
                     try {
-                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.it_process_nameColumn]));
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.pt_process_nameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'it_process_name\' in table \'dg_proforma_invoice_Rpt\' is DBNu" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'pt_process_name\' in table \'dg_proforma_invoice_Rpt\' is DBNu" +
                                 "ll.", e);
                     }
                 }
                 set {
-                    this[this.tabledg_proforma_invoice_Rpt.it_process_nameColumn] = value;
+                    this[this.tabledg_proforma_invoice_Rpt.pt_process_nameColumn] = value;
                 }
             }
             
@@ -2861,18 +2832,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string or_cust_terms_cond {
+            public string pi_cust_terms_cond {
                 get {
                     try {
-                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.or_cust_terms_condColumn]));
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.pi_cust_terms_condColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'or_cust_terms_cond\' in table \'dg_proforma_invoice_Rpt\' is D" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'pi_cust_terms_cond\' in table \'dg_proforma_invoice_Rpt\' is D" +
                                 "BNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledg_proforma_invoice_Rpt.or_cust_terms_condColumn] = value;
+                    this[this.tabledg_proforma_invoice_Rpt.pi_cust_terms_condColumn] = value;
                 }
             }
             
@@ -3005,33 +2976,33 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string id_HS_code {
+            public string in_HS_code {
                 get {
                     try {
-                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.id_HS_codeColumn]));
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.in_HS_codeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'id_HS_code\' in table \'dg_proforma_invoice_Rpt\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'in_HS_code\' in table \'dg_proforma_invoice_Rpt\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledg_proforma_invoice_Rpt.id_HS_codeColumn] = value;
+                    this[this.tabledg_proforma_invoice_Rpt.in_HS_codeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string or_remarks {
+            public string wo_remarks {
                 get {
                     try {
-                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.or_remarksColumn]));
+                        return ((string)(this[this.tabledg_proforma_invoice_Rpt.wo_remarksColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'or_remarks\' in table \'dg_proforma_invoice_Rpt\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_remarks\' in table \'dg_proforma_invoice_Rpt\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledg_proforma_invoice_Rpt.or_remarksColumn] = value;
+                    this[this.tabledg_proforma_invoice_Rpt.wo_remarksColumn] = value;
                 }
             }
             
@@ -3381,14 +3352,26 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isid_item_nameNull() {
-                return this.IsNull(this.tabledg_proforma_invoice_Rpt.id_item_nameColumn);
+            public bool Isin_item_nameNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.in_item_nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setid_item_nameNull() {
-                this[this.tabledg_proforma_invoice_Rpt.id_item_nameColumn] = global::System.Convert.DBNull;
+            public void Setin_item_nameNull() {
+                this[this.tabledg_proforma_invoice_Rpt.in_item_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isor_item_descNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.or_item_descColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setor_item_descNull() {
+                this[this.tabledg_proforma_invoice_Rpt.or_item_descColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3429,26 +3412,26 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isdes_nameNull() {
-                return this.IsNull(this.tabledg_proforma_invoice_Rpt.des_nameColumn);
+            public bool Isqdn_quilting_design_nameNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.qdn_quilting_design_nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setdes_nameNull() {
-                this[this.tabledg_proforma_invoice_Rpt.des_nameColumn] = global::System.Convert.DBNull;
+            public void Setqdn_quilting_design_nameNull() {
+                this[this.tabledg_proforma_invoice_Rpt.qdn_quilting_design_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isit_process_nameNull() {
-                return this.IsNull(this.tabledg_proforma_invoice_Rpt.it_process_nameColumn);
+            public bool Ispt_process_nameNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.pt_process_nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setit_process_nameNull() {
-                this[this.tabledg_proforma_invoice_Rpt.it_process_nameColumn] = global::System.Convert.DBNull;
+            public void Setpt_process_nameNull() {
+                this[this.tabledg_proforma_invoice_Rpt.pt_process_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3477,14 +3460,14 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isor_cust_terms_condNull() {
-                return this.IsNull(this.tabledg_proforma_invoice_Rpt.or_cust_terms_condColumn);
+            public bool Ispi_cust_terms_condNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.pi_cust_terms_condColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setor_cust_terms_condNull() {
-                this[this.tabledg_proforma_invoice_Rpt.or_cust_terms_condColumn] = global::System.Convert.DBNull;
+            public void Setpi_cust_terms_condNull() {
+                this[this.tabledg_proforma_invoice_Rpt.pi_cust_terms_condColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3573,26 +3556,26 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isid_HS_codeNull() {
-                return this.IsNull(this.tabledg_proforma_invoice_Rpt.id_HS_codeColumn);
+            public bool Isin_HS_codeNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.in_HS_codeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setid_HS_codeNull() {
-                this[this.tabledg_proforma_invoice_Rpt.id_HS_codeColumn] = global::System.Convert.DBNull;
+            public void Setin_HS_codeNull() {
+                this[this.tabledg_proforma_invoice_Rpt.in_HS_codeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isor_remarksNull() {
-                return this.IsNull(this.tabledg_proforma_invoice_Rpt.or_remarksColumn);
+            public bool Iswo_remarksNull() {
+                return this.IsNull(this.tabledg_proforma_invoice_Rpt.wo_remarksColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setor_remarksNull() {
-                this[this.tabledg_proforma_invoice_Rpt.or_remarksColumn] = global::System.Convert.DBNull;
+            public void Setwo_remarksNull() {
+                this[this.tabledg_proforma_invoice_Rpt.wo_remarksColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3965,15 +3948,14 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.OrdDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("b_id", "b_id");
             tableMapping.ColumnMappings.Add("or_style_no", "or_style_no");
             tableMapping.ColumnMappings.Add("or_po_no", "or_po_no");
-            tableMapping.ColumnMappings.Add("id_item_name", "id_item_name");
+            tableMapping.ColumnMappings.Add("in_item_name", "in_item_name");
+            tableMapping.ColumnMappings.Add("in_id", "in_id");
+            tableMapping.ColumnMappings.Add("or_item_desc", "or_item_desc");
             tableMapping.ColumnMappings.Add("c_color_name", "c_color_name");
             tableMapping.ColumnMappings.Add("d_name", "d_name");
             tableMapping.ColumnMappings.Add("g_gsm", "g_gsm");
-            tableMapping.ColumnMappings.Add("des_name", "des_name");
-            tableMapping.ColumnMappings.Add("it_process_name", "it_process_name");
             tableMapping.ColumnMappings.Add("or_order_recv_date", "or_order_recv_date");
             tableMapping.ColumnMappings.Add("or_order_deli_date", "or_order_deli_date");
-            tableMapping.ColumnMappings.Add("or_cust_terms_cond", "or_cust_terms_cond");
             tableMapping.ColumnMappings.Add("or_order_qty", "or_order_qty");
             tableMapping.ColumnMappings.Add("cUnitDes", "cUnitDes");
             tableMapping.ColumnMappings.Add("nUnitID", "nUnitID");
@@ -4002,8 +3984,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.OrdDataSetTableAdapters {
             this._commandCollection[0].CommandText = "dbo.dg_order_receiving_Rpt";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cust", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@style_no", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@or_ref_no", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FromDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ToDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -4012,31 +3993,25 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.OrdDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(OrdDataSet.dg_order_receiving_RptDataTable dataTable, global::System.Nullable<int> cust, string style_no, global::System.Nullable<global::System.DateTime> FromDate, global::System.Nullable<global::System.DateTime> ToDate) {
+        public virtual int Fill(OrdDataSet.dg_order_receiving_RptDataTable dataTable, global::System.Nullable<int> or_ref_no, global::System.Nullable<global::System.DateTime> FromDate, global::System.Nullable<global::System.DateTime> ToDate) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((cust.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(cust.Value));
+            if ((or_ref_no.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(or_ref_no.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((style_no == null)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((FromDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(FromDate.Value));
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(style_no));
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((FromDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(FromDate.Value));
+            if ((ToDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(ToDate.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((ToDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[4].Value = ((System.DateTime)(ToDate.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4049,31 +4024,25 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.OrdDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual OrdDataSet.dg_order_receiving_RptDataTable GetData(global::System.Nullable<int> cust, string style_no, global::System.Nullable<global::System.DateTime> FromDate, global::System.Nullable<global::System.DateTime> ToDate) {
+        public virtual OrdDataSet.dg_order_receiving_RptDataTable GetData(global::System.Nullable<int> or_ref_no, global::System.Nullable<global::System.DateTime> FromDate, global::System.Nullable<global::System.DateTime> ToDate) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((cust.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(cust.Value));
+            if ((or_ref_no.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(or_ref_no.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((style_no == null)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((FromDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(FromDate.Value));
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(style_no));
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((FromDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(FromDate.Value));
+            if ((ToDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(ToDate.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((ToDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[4].Value = ((System.DateTime)(ToDate.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             OrdDataSet.dg_order_receiving_RptDataTable dataTable = new OrdDataSet.dg_order_receiving_RptDataTable();
             this.Adapter.Fill(dataTable);
@@ -4214,15 +4183,16 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.OrdDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("b_id", "b_id");
             tableMapping.ColumnMappings.Add("or_style_no", "or_style_no");
             tableMapping.ColumnMappings.Add("or_po_no", "or_po_no");
-            tableMapping.ColumnMappings.Add("id_item_name", "id_item_name");
+            tableMapping.ColumnMappings.Add("in_item_name", "in_item_name");
+            tableMapping.ColumnMappings.Add("or_item_desc", "or_item_desc");
             tableMapping.ColumnMappings.Add("c_color_name", "c_color_name");
             tableMapping.ColumnMappings.Add("d_name", "d_name");
             tableMapping.ColumnMappings.Add("g_gsm", "g_gsm");
-            tableMapping.ColumnMappings.Add("des_name", "des_name");
-            tableMapping.ColumnMappings.Add("it_process_name", "it_process_name");
+            tableMapping.ColumnMappings.Add("qdn_quilting_design_name", "qdn_quilting_design_name");
+            tableMapping.ColumnMappings.Add("pt_process_name", "pt_process_name");
             tableMapping.ColumnMappings.Add("or_order_recv_date", "or_order_recv_date");
             tableMapping.ColumnMappings.Add("or_order_deli_date", "or_order_deli_date");
-            tableMapping.ColumnMappings.Add("or_cust_terms_cond", "or_cust_terms_cond");
+            tableMapping.ColumnMappings.Add("pi_cust_terms_cond", "pi_cust_terms_cond");
             tableMapping.ColumnMappings.Add("or_order_qty", "or_order_qty");
             tableMapping.ColumnMappings.Add("cUnitDes", "cUnitDes");
             tableMapping.ColumnMappings.Add("nUnitID", "nUnitID");
@@ -4231,8 +4201,8 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.OrdDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Payment_Mode", "Payment_Mode");
             tableMapping.ColumnMappings.Add("pm_id", "pm_id");
             tableMapping.ColumnMappings.Add("pi_number", "pi_number");
-            tableMapping.ColumnMappings.Add("id_HS_code", "id_HS_code");
-            tableMapping.ColumnMappings.Add("or_remarks", "or_remarks");
+            tableMapping.ColumnMappings.Add("in_HS_code", "in_HS_code");
+            tableMapping.ColumnMappings.Add("wo_remarks", "wo_remarks");
             tableMapping.ColumnMappings.Add("pi_created_date", "pi_created_date");
             tableMapping.ColumnMappings.Add("pi_revised_no", "pi_revised_no");
             tableMapping.ColumnMappings.Add("or_order_net_weight", "or_order_net_weight");
