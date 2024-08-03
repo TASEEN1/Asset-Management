@@ -127,18 +127,7 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(data);
 
         }
-        //[HttpGet]
-        //public async Task<IActionResult> GetitemView()
-        //{
-        //    var data = await _globalMaster.orderManager.GetitemView();
-        //    return Ok(data);
-        //}
-        //[HttpGet]
-        //public async Task<IActionResult> GetprocessTypeview()
-        //{
-        //    var data = await _globalMaster.orderManager.GetprocessTypeview();
-        //    return Ok(data);
-        //}
+       
 
         [HttpGet]
         public async Task<IActionResult> GetStyleEdit(int custID)
@@ -174,11 +163,17 @@ namespace PMS_API.Controllers.OrderMgt
             var data = await _globalMaster.orderManager.GetRefNoFromOrderReceiving();
             return Ok(data);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetRefNoFromAddEditOrderReceiving()
+        {
+            var data = await _globalMaster.orderManager.GetRefNoFromAddEditOrderReceiving();
+            return Ok(data);
+        }
 
         [HttpGet]
-        public async Task<IActionResult> GetOrderReceivedAddEditView(int Customer, int Buyer, string Style_no, int Ref_no)
+        public async Task<IActionResult> GetOrderReceivedAddEditView( int Ref_no)
         {
-            var data = await _globalMaster.orderManager.GetOrderReceivedAddEditView(Customer, Buyer, Style_no, Ref_no);
+            var data = await _globalMaster.orderManager.GetOrderReceivedAddEditView(Ref_no);
             return Ok(data);
         }
 

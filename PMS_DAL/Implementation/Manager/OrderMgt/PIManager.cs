@@ -197,7 +197,8 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_generate_pi_approval_revise", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@pi_issued_ref_no", ord.Ref_no);
+                    cmd.Parameters.AddWithValue("@pi_ref_no", ord.Ref_no);
+                    cmd.Parameters.AddWithValue("@rpi_revised_by", ord.rpi_revised_by);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -280,7 +281,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetBookingRefForPiGenerate()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no, c_id as customer_id, c_customer_name, c_terms_and_condition from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_com_post_bit =1 and or_pi_add_bit = 0", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no, c_id as customer_id, c_customer_name, c_terms_and_condition from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_com_post_bit =1 and or_pi_add_bit = 0 order by or_ref_no desc", _dg_Oder_Mgt);
             return data;
         }
        

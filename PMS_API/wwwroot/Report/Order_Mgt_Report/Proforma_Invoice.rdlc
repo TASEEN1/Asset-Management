@@ -238,7 +238,7 @@
                                 <TextRun>
                                   <Value> Value</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -291,7 +291,7 @@
                                   <Value>=Fields!or_total_price.Value</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -393,7 +393,7 @@
                                 <Value>SL</Value>
                                 <Style>
                                   <FontFamily>Calibri</FontFamily>
-                                  <FontSize>7pt</FontSize>
+                                  <FontSize>6pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
@@ -443,7 +443,7 @@
                                   <TextRun>
                                     <Value>Buyer</Value>
                                     <Style>
-                                      <FontSize>7pt</FontSize>
+                                      <FontSize>6pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                     </Style>
                                   </TextRun>
@@ -493,7 +493,7 @@
                                       <TextRun>
                                         <Value>Order No</Value>
                                         <Style>
-                                          <FontSize>7pt</FontSize>
+                                          <FontSize>6pt</FontSize>
                                           <FontWeight>Bold</FontWeight>
                                         </Style>
                                       </TextRun>
@@ -543,7 +543,7 @@
                                           <TextRun>
                                             <Value>PO</Value>
                                             <Style>
-                                              <FontSize>7pt</FontSize>
+                                              <FontSize>6pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                             </Style>
                                           </TextRun>
@@ -593,7 +593,7 @@
                                               <TextRun>
                                                 <Value>Payment</Value>
                                                 <Style>
-                                                  <FontSize>7pt</FontSize>
+                                                  <FontSize>6pt</FontSize>
                                                   <FontWeight>Bold</FontWeight>
                                                 </Style>
                                               </TextRun>
@@ -607,7 +607,7 @@
                                               <TextRun>
                                                 <Value>type</Value>
                                                 <Style>
-                                                  <FontSize>7pt</FontSize>
+                                                  <FontSize>6pt</FontSize>
                                                   <FontWeight>Bold</FontWeight>
                                                 </Style>
                                               </TextRun>
@@ -657,7 +657,7 @@
                                                   <TextRun>
                                                     <Value>Item Description</Value>
                                                     <Style>
-                                                      <FontSize>7pt</FontSize>
+                                                      <FontSize>6pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -707,7 +707,7 @@
                                                       <TextRun>
                                                         <Value>HS Code</Value>
                                                         <Style>
-                                                          <FontSize>7pt</FontSize>
+                                                          <FontSize>6pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
@@ -757,7 +757,7 @@
                                                           <TextRun>
                                                             <Value>GSM</Value>
                                                             <Style>
-                                                              <FontSize>7pt</FontSize>
+                                                              <FontSize>6pt</FontSize>
                                                               <FontWeight>Bold</FontWeight>
                                                             </Style>
                                                           </TextRun>
@@ -807,7 +807,7 @@
                                                               <TextRun>
                                                                 <Value>Dia</Value>
                                                                 <Style>
-                                                                  <FontSize>7pt</FontSize>
+                                                                  <FontSize>6pt</FontSize>
                                                                   <FontWeight>Bold</FontWeight>
                                                                 </Style>
                                                               </TextRun>
@@ -857,7 +857,7 @@
                                                                   <TextRun>
                                                                     <Value>Desing</Value>
                                                                     <Style>
-                                                                      <FontSize>7pt</FontSize>
+                                                                      <FontSize>6pt</FontSize>
                                                                       <FontWeight>Bold</FontWeight>
                                                                     </Style>
                                                                   </TextRun>
@@ -907,7 +907,7 @@
                                                                       <TextRun>
                                                                         <Value>Qty</Value>
                                                                         <Style>
-                                                                          <FontSize>7pt</FontSize>
+                                                                          <FontSize>6pt</FontSize>
                                                                           <FontWeight>Bold</FontWeight>
                                                                         </Style>
                                                                       </TextRun>
@@ -957,7 +957,7 @@
                                                                           <TextRun>
                                                                             <Value>Net</Value>
                                                                             <Style>
-                                                                              <FontSize>7pt</FontSize>
+                                                                              <FontSize>6pt</FontSize>
                                                                               <FontWeight>Bold</FontWeight>
                                                                             </Style>
                                                                           </TextRun>
@@ -971,7 +971,7 @@
                                                                           <TextRun>
                                                                             <Value>weight</Value>
                                                                             <Style>
-                                                                              <FontSize>7pt</FontSize>
+                                                                              <FontSize>6pt</FontSize>
                                                                               <FontWeight>Bold</FontWeight>
                                                                             </Style>
                                                                           </TextRun>
@@ -1021,7 +1021,7 @@
                                                                               <TextRun>
                                                                                 <Value>Gross</Value>
                                                                                 <Style>
-                                                                                  <FontSize>7pt</FontSize>
+                                                                                  <FontSize>6pt</FontSize>
                                                                                   <FontWeight>Bold</FontWeight>
                                                                                 </Style>
                                                                               </TextRun>
@@ -1035,7 +1035,7 @@
                                                                               <TextRun>
                                                                                 <Value>weight</Value>
                                                                                 <Style>
-                                                                                  <FontSize>7pt</FontSize>
+                                                                                  <FontSize>6pt</FontSize>
                                                                                   <FontWeight>Bold</FontWeight>
                                                                                 </Style>
                                                                               </TextRun>
@@ -1085,7 +1085,7 @@
                                                                                   <TextRun>
                                                                                     <Value>Unit</Value>
                                                                                     <Style>
-                                                                                      <FontSize>7pt</FontSize>
+                                                                                      <FontSize>6pt</FontSize>
                                                                                       <FontWeight>Bold</FontWeight>
                                                                                     </Style>
                                                                                   </TextRun>
@@ -1135,7 +1135,7 @@
                                                                                       <TextRun>
                                                                                         <Value>Price</Value>
                                                                                         <Style>
-                                                                                          <FontSize>7pt</FontSize>
+                                                                                          <FontSize>6pt</FontSize>
                                                                                           <FontWeight>Bold</FontWeight>
                                                                                         </Style>
                                                                                       </TextRun>
@@ -1228,7 +1228,7 @@
                                 <Value>=RowNumber(Nothing)</Value>
                                 <Style>
                                   <FontFamily>Calibri</FontFamily>
-                                  <FontSize>6pt</FontSize>
+                                  <FontSize>5pt</FontSize>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -1278,7 +1278,7 @@
                                     <Value>=Fields!b_buyer_name.Value</Value>
                                     <Style>
                                       <FontFamily>Calibri</FontFamily>
-                                      <FontSize>6pt</FontSize>
+                                      <FontSize>5pt</FontSize>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -1328,7 +1328,7 @@
                                         <Value>=Fields!or_style_no.Value</Value>
                                         <Style>
                                           <FontFamily>Calibri</FontFamily>
-                                          <FontSize>6pt</FontSize>
+                                          <FontSize>5pt</FontSize>
                                         </Style>
                                       </TextRun>
                                     </TextRuns>
@@ -1378,7 +1378,7 @@
                                             <Value>=Fields!or_po_no.Value</Value>
                                             <Style>
                                               <FontFamily>Calibri</FontFamily>
-                                              <FontSize>6pt</FontSize>
+                                              <FontSize>5pt</FontSize>
                                             </Style>
                                           </TextRun>
                                         </TextRuns>
@@ -1428,7 +1428,7 @@
                                                 <Value>=Fields!Payment_Mode.Value</Value>
                                                 <Style>
                                                   <FontFamily>Calibri</FontFamily>
-                                                  <FontSize>6pt</FontSize>
+                                                  <FontSize>5pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -1528,7 +1528,7 @@
                                                         <Value>=Fields!in_HS_code.Value</Value>
                                                         <Style>
                                                           <FontFamily>Calibri</FontFamily>
-                                                          <FontSize>6pt</FontSize>
+                                                          <FontSize>5pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -1578,7 +1578,7 @@
                                                             <Value>=Fields!g_gsm.Value</Value>
                                                             <Style>
                                                               <FontFamily>Calibri</FontFamily>
-                                                              <FontSize>6pt</FontSize>
+                                                              <FontSize>5pt</FontSize>
                                                             </Style>
                                                           </TextRun>
                                                         </TextRuns>
@@ -1628,7 +1628,7 @@
                                                                 <Value>=Fields!d_name.Value</Value>
                                                                 <Style>
                                                                   <FontFamily>Calibri</FontFamily>
-                                                                  <FontSize>6pt</FontSize>
+                                                                  <FontSize>5pt</FontSize>
                                                                 </Style>
                                                               </TextRun>
                                                             </TextRuns>
@@ -1678,7 +1678,7 @@
                                                                     <Value>=First(Fields!qdn_quilting_design_name.Value, "OrdDataSet")</Value>
                                                                     <Style>
                                                                       <FontFamily>Calibri</FontFamily>
-                                                                      <FontSize>6pt</FontSize>
+                                                                      <FontSize>5pt</FontSize>
                                                                     </Style>
                                                                   </TextRun>
                                                                 </TextRuns>
@@ -1716,7 +1716,7 @@
                                                                         <Value>=Sum(Fields!or_order_qty.Value)</Value>
                                                                         <Style>
                                                                           <FontFamily>Calibri</FontFamily>
-                                                                          <FontSize>6pt</FontSize>
+                                                                          <FontSize>5pt</FontSize>
                                                                           <Format>0;(0)</Format>
                                                                         </Style>
                                                                       </TextRun>
@@ -1755,7 +1755,7 @@
                                                                             <Value>=Sum(Fields!or_order_net_weight.Value)</Value>
                                                                             <Style>
                                                                               <FontFamily>Calibri</FontFamily>
-                                                                              <FontSize>6pt</FontSize>
+                                                                              <FontSize>5pt</FontSize>
                                                                               <Format>0;(0)</Format>
                                                                             </Style>
                                                                           </TextRun>
@@ -1794,7 +1794,7 @@
                                                                                 <Value>=Sum(Fields!or_order_gross_weight.Value)</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Calibri</FontFamily>
-                                                                                  <FontSize>6pt</FontSize>
+                                                                                  <FontSize>5pt</FontSize>
                                                                                   <Format>0;(0)</Format>
                                                                                 </Style>
                                                                               </TextRun>
@@ -1845,7 +1845,7 @@
                                                                                     <Value>=Fields!cUnitDes.Value</Value>
                                                                                     <Style>
                                                                                       <FontFamily>Calibri</FontFamily>
-                                                                                      <FontSize>6pt</FontSize>
+                                                                                      <FontSize>5pt</FontSize>
                                                                                     </Style>
                                                                                   </TextRun>
                                                                                 </TextRuns>
@@ -1895,8 +1895,8 @@
                                                                                         <Value>=Fields!or_unit_price.Value</Value>
                                                                                         <Style>
                                                                                           <FontFamily>Calibri</FontFamily>
-                                                                                          <FontSize>6pt</FontSize>
-                                                                                          <Format>0;(0)</Format>
+                                                                                          <FontSize>5pt</FontSize>
+                                                                                          <Format>0.00;(0.00)</Format>
                                                                                         </Style>
                                                                                       </TextRun>
                                                                                     </TextRuns>
@@ -2353,7 +2353,7 @@
                     <Value>Remarks: </Value>
                     <Style>
                       <FontFamily>Calibri</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>7pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -2361,7 +2361,7 @@
                     <Value>=Fields!wo_remarks.Value</Value>
                     <Style>
                       <FontFamily>Calibri</FontFamily>
-                      <FontSize>6pt</FontSize>
+                      <FontSize>7pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
                   </TextRun>
@@ -2374,7 +2374,7 @@
                     <Value />
                     <Style>
                       <FontFamily>Calibri</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>7pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -2386,7 +2386,7 @@
                     <Value>Terms &amp; Condition:</Value>
                     <Style>
                       <FontFamily>Calibri</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>7pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -2399,7 +2399,7 @@
                     <Value>-----------------------------</Value>
                     <Style>
                       <FontFamily>Calibri</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>7pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -2412,7 +2412,7 @@
                     <Value>=Fields!pi_cust_terms_cond.Value</Value>
                     <Style>
                       <FontFamily>Calibri</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>7pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
                   </TextRun>
@@ -2425,7 +2425,7 @@
                     <Value />
                     <Style>
                       <FontFamily>Calibri</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>7pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
                   </TextRun>
@@ -2438,7 +2438,7 @@
                     <Value />
                     <Style>
                       <FontFamily>Calibri</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>7pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
                   </TextRun>
@@ -2451,7 +2451,7 @@
                     <Value />
                     <Style>
                       <FontFamily>Calibri</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>7pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
                   </TextRun>
@@ -2464,7 +2464,7 @@
                     <Value />
                     <Style>
                       <FontFamily>Calibri</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>7pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
                   </TextRun>
@@ -2498,7 +2498,7 @@
                     <Value>Say In Word : </Value>
                     <Style>
                       <FontFamily>Calibri</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>6pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -2506,7 +2506,7 @@
                     <Value>=Code.changeToWords(CStr(Fields!or_total_price.Value))</Value>
                     <Style>
                       <FontFamily>Calibri</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>6pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -2525,9 +2525,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
-            <Top>2.10833in</Top>
+            <Top>2.07916in</Top>
             <Left>0.16334in</Left>
-            <Height>0.15973in</Height>
+            <Height>0.18751in</Height>
             <Width>3.63056in</Width>
             <ZIndex>3</ZIndex>
             <Style>
@@ -2549,7 +2549,6 @@
         <PageHeader>
           <Height>1.05556in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Textbox Name="Textbox1">
               <CanGrow>true</CanGrow>
@@ -2665,7 +2664,6 @@
         </PageHeader>
         <PageFooter>
           <Height>1.09166in</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Textbox Name="Textbox119">

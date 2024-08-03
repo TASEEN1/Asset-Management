@@ -26,17 +26,15 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable> GetdesignView();
         public Task<DataTable> GetDiaView();
         public Task<DataTable> GetgsmView();
-        //public Task<DataTable> GetitemView();
-
-        //public Task<DataTable> GetprocessTypeview();
         public Task<DataTable>GetStyleEdit( int custID);
         public Task<DataTable> GetCustomerEdit();
         public Task<DataTable> Getpayment_currency();
         public Task<DataTable> GetRefNoFromOrderReceiving();
+        public Task<DataTable> GetRefNoFromAddEditOrderReceiving();
         public Task<DataTable> ItemNameGet();
 
         public Task<DataTable> OrderReceivedAddView(string sessionUser);
-        public Task<DataTable> GetOrderReceivedAddEditView(int Customer, int Buyer, string Style_no, int Ref_no);
+        public Task<DataTable> GetOrderReceivedAddEditView( int Ref_no);
 
         public Task<string> ColorSave(List<ColorSave>app);
         public Task<string>OrderReceivedAdd(List<OrderReceivingAdd> app);
