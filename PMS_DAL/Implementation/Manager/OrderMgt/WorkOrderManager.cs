@@ -6,7 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -134,21 +136,23 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         public async Task<string> Work_Order_Save(WorkorderSaveRequest workorderSaveRequest)
         {
             string message = string.Empty;
-            await _dg_Oder_Mgt.OpenAsync();
-            int insert1 = 0;
-            int insert2 = 0;
-            SqlTransaction transaction = _dg_Oder_Mgt.BeginTransaction();
-
 
             try
             {
+
+                DataTable workOrderSL = _SqlCommon.get_InformationDataTable("select COALESCE(MAX(wo_workOrderSL),0)+1 as SL from dg_work_order", _dg_Oder_Mgt);
+                int wo_workOrderSL = int.Parse(workOrderSL.Rows[0]["SL"].ToString());
+
+                await _dg_Oder_Mgt.OpenAsync();
                 foreach (var ord in workorderSaveRequest.workOrder_Models)
                 {
-                    using (SqlCommand cmd = new SqlCommand("dg_work_order_other_attributes_save", _dg_Oder_Mgt, transaction))
+                    using (SqlCommand cmd = new SqlCommand("dg_work_order_other_attributes_save", _dg_Oder_Mgt))
                     {
 
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@wo_or_ref_no", ord.wo_or_ref_no);
+                        cmd.Parameters.AddWithValue("@wo_or_id", ord.wo_or_id);
+                        cmd.Parameters.AddWithValue("@wo_workOrderSL", wo_workOrderSL);
                         cmd.Parameters.AddWithValue("@wo_remarks", ord.wo_remarks);
                         cmd.Parameters.AddWithValue("@wo_thickness", ord.wo_thickness);
                         cmd.Parameters.AddWithValue("@wo_wash_status", ord.wo_wash_status);
@@ -168,51 +172,40 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                         cmd.Parameters.AddWithValue("@wo_quilting_fabric_composition", ord.wo_quilting_fabric_composition);
                         cmd.Parameters.AddWithValue("@wo_test_name", ord.wo_test_name);
                         cmd.Parameters.AddWithValue("@wo_inserted_by", ord.wo_created_by);
-                        cmd.Parameters.Add("@error", SqlDbType.Char, 500);
-                        cmd.Parameters["@error"].Direction = ParameterDirection.Output;
+                        cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+                        cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+                        await cmd.ExecuteNonQueryAsync();
+                        message = (string)cmd.Parameters["@ERROR"].Value;
 
-                        insert1 = await cmd.ExecuteNonQueryAsync();
-                        
 
-                        
-                        string error = (string)cmd.Parameters["@error"].Value;
-                        if (!string.IsNullOrEmpty(error))
-                        {
-                            message += " Work Order: " + error + Environment.NewLine;
-                        }
+
                     }
-                }
 
+                }
                 foreach (var ord in workorderSaveRequest.paddingTypes)
                 {
-                    using (SqlCommand cmd = new SqlCommand("dg_work_order_padding_type_save", _dg_Oder_Mgt, transaction))
+                    using (SqlCommand cmd2 = new SqlCommand("dg_work_order_padding_type_save", _dg_Oder_Mgt))
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@wopt_or_ref_no", ord.wopt_or_ref_no);
-                        cmd.Parameters.AddWithValue("@wopt_padding_type", ord.wopt_padding_type);
-                        insert2 = await cmd.ExecuteNonQueryAsync();
+                        cmd2.CommandType = CommandType.StoredProcedure;
+                        cmd2.Parameters.AddWithValue("@wopt_or_ref_no",ord.wopt_or_ref_no);
+                        cmd2.Parameters.AddWithValue("@wopt_wo_workOrderSL", wo_workOrderSL);
+                        cmd2.Parameters.AddWithValue("@wopt_or_id",ord.wopt_or_id);
+                        cmd2.Parameters.AddWithValue("@wopt_padding_type",ord.wopt_padding_type);
+                        await cmd2.ExecuteNonQueryAsync();
 
 
 
                     }
                 }
-                if (insert1 < 1 && insert2 < 1)
-                {
-                    transaction.Rollback();
 
-                }
-                else
-                {
-                    transaction.Commit();
-                }
 
             }
             catch (Exception ex)
             {
                 ex.ToString();
-                transaction.Rollback();
-                message = "Transaction failed and rolled back: " + ex.Message;
+
             }
+
             finally
             {
                 _dg_Oder_Mgt.Close();
@@ -220,6 +213,10 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
             return message;
         }
+
+
+
+
 
 
 
@@ -234,6 +231,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     SqlCommand cmd = new SqlCommand("dg_work_order_forUpdate_delete", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@wo_or_ref_no", ord.wo_or_ref_no);
+                    cmd.Parameters.AddWithValue("@wo_or_id", ord.wo_or_id);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -246,6 +244,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     SqlCommand cmd = new SqlCommand("dg_work_order_other_attributes_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@wo_or_ref_no", ord.wo_or_ref_no);
+                    cmd.Parameters.AddWithValue("@wo_or_id", ord.wo_or_id);
                     cmd.Parameters.AddWithValue("@wo_remarks", ord.wo_remarks);
                     cmd.Parameters.AddWithValue("@wo_thickness", ord.wo_thickness);
                     cmd.Parameters.AddWithValue("@wo_wash_status", ord.wo_wash_status);
@@ -279,6 +278,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     SqlCommand cmd = new SqlCommand("dg_work_order_padding_type_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@wopt_or_ref_no", ord.wopt_or_ref_no);
+                    cmd.Parameters.AddWithValue("@wopt_or_id", ord.wopt_or_id);
                     cmd.Parameters.AddWithValue("@wopt_padding_type", ord.wopt_padding_type);
                     await cmd.ExecuteNonQueryAsync();
 
@@ -297,7 +297,6 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return message;
         }
 
-   
 
         public async Task<DataTable> work_order_completedOrderReceiving_view(int Ref_no)
         {

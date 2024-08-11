@@ -18,6 +18,7 @@ namespace PMS_BOL.Functions
     public class WorkorderSaveRequest
     {
         public List<workOrder_Model> workOrder_Models { get; set; }
+
         public List<PaddingType> paddingTypes { get; set; }
     }
     public class WorkorderUpdateRequest

@@ -8,9 +8,12 @@ namespace PMS_BOL.Models.OrderMgt
 {
     public class workOrder_Model
     {
+ 
+
         //Work_Order_Other_Attributes_Save
-      
+
         public int wo_or_ref_no { get; set; }
+        public int wo_or_id { get; set; }
         public string wo_remarks { get; set; }
         public int wo_thickness { get; set; }
         public int wo_wash_status { get; set; }
@@ -31,8 +34,10 @@ namespace PMS_BOL.Models.OrderMgt
         public string wo_test_name { get; set; }
         public string wo_created_by { get; set; }
         public string wo_updated_by { get; set; }
+        public int wo_workOrderSL { get; set; }
 
-      
+
+
 
 
     }
@@ -41,12 +46,15 @@ namespace PMS_BOL.Models.OrderMgt
     public class PaddingType    {
      
         public int wopt_or_ref_no { get; set; }
+        public int wopt_or_id { get; set; }
         public int wopt_padding_type { get; set; }
+        public int wo_workOrderSL { get; set; }
 
     }
     public class Work_Order_Update_Delete
     {
-        public int @wo_or_ref_no;
+        public int wo_or_ref_no { get;set; }
+        public int wo_or_id { get;set; }
     }
 }
 

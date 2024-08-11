@@ -19,20 +19,17 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable> GetPiApproval_checkedBy_View(string Created_by);
         public Task<DataTable> GetPiApproval_approvedBy_view(string Created_by);
         public Task<DataTable> GetPiApproval_revise_view(string Created_by);
-
-
         public Task<string> PIRevise(List<PI_Model> app);
-
         public Task<DataTable> GetPiApproval_ForApprovalView(string Created_by);
-
-        public Task<DataTable> GetPIcustomer();
-        public Task<DataTable> GetPIstyle( int custId);
-
+        //public Task<DataTable> GetPIcustomer();
+        //public Task<DataTable> GetPIstyle( int custId);
         public Task<string> ApprovedByApprove(List<PI_Model>app);
-        public Task<string> CheckedByApprove(List<PI_Model> app);
-
+        public Task<string> CheckedByApprove(List<PI_Model>app);
         public Task<DataTable> GetPI_Number();
         public Task<DataTable> GetBookingRefForPiGenerate();
+        public Task<DataTable> GetPI_CustomerTermsAndCondition(int Ref_No);
+
+
 
   
 

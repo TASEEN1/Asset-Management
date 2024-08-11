@@ -59,12 +59,12 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(data);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetPIcustomer()
-        {
-            var data = await _globalMaster.piManager.GetPIcustomer();
-            return Ok(data);
-        }
+        //[HttpGet]
+        //public async Task<IActionResult> GetPIcustomer()
+        //{
+        //    var data = await _globalMaster.piManager.GetPIcustomer();
+        //    return Ok(data);
+        //}
 
         [HttpGet]
         public async Task<IActionResult> GetPI_ProcessType()
@@ -79,20 +79,25 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(data);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetPIstyle(int custId)
-        {
-            var data = await _globalMaster.piManager.GetPIstyle( custId);
-            return Ok(data);
-        }
+        //[HttpGet]
+        //public async Task<IActionResult> GetPIstyle(int custId)
+        //{
+        //    var data = await _globalMaster.piManager.GetPIstyle( custId);
+        //    return Ok(data);
+        //}
         [HttpGet]
         public async Task<IActionResult> GetBookingRefForPiGenerate()
         {
             var data = await _globalMaster.piManager.GetBookingRefForPiGenerate();
             return Ok(data);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetPI_CustomerTermsAndCondition(int Ref_No)
+        {
+            var data = await _globalMaster.piManager.GetPI_CustomerTermsAndCondition(Ref_No);
+            return Ok(data);
+        }
 
-       
 
         [HttpDelete]
         public async Task<IActionResult> PIDelete(List<PI_Model> app)
@@ -101,7 +106,6 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(new { message = data });
 
         }
-
 
         [HttpPut]
         public async Task<IActionResult> PIRevise(List<PI_Model> app)
@@ -116,7 +120,6 @@ namespace PMS_API.Controllers.OrderMgt
         {
             var data = await _globalMaster.piManager.GeneratePIAdd(app);
             return Ok(new { message = data });
-
         }
 
         [HttpPut]
@@ -124,7 +127,6 @@ namespace PMS_API.Controllers.OrderMgt
         {
             var data = await _globalMaster.piManager.GeneratePI(app);
             return Ok(new { message = data });
-
         }
 
         [HttpPut]
@@ -132,7 +134,6 @@ namespace PMS_API.Controllers.OrderMgt
         {
             var data = await _globalMaster.piManager.ApprovedByApprove(app);
             return Ok(new { message = data });
-
         }
 
         [HttpPut]
@@ -140,7 +141,6 @@ namespace PMS_API.Controllers.OrderMgt
         {
             var data = await _globalMaster.piManager.CheckedByApprove(app);
             return Ok(new { message = data });
-
         }
     }
 }

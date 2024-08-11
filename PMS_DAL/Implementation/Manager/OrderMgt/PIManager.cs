@@ -67,17 +67,17 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_revise_view '" + Created_by + "'", _dg_Oder_Mgt);
             return data;
         }
-        public async Task<DataTable> GetPIcustomer()
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_cust, c_customer_name from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_com_post_bit = 1 and or_pi_add_bit = 0 and or_pi_revise_bit = 0", _dg_Oder_Mgt);
-            return data;
-        }
+        //public async Task<DataTable> GetPIcustomer()
+        //{
+        //    var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_cust, c_customer_name from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_com_post_bit = 1 and or_pi_add_bit = 0 and or_pi_revise_bit = 0", _dg_Oder_Mgt);
+        //    return data;
+        //}
 
-        public async Task<DataTable> GetPIstyle(int custId)
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_style_no, or_ref_no from dg_order_receiving where or_com_post_bit = 1 and or_pi_add_bit = 0 and or_pi_revise_bit = 0 and or_cust = " + custId, _dg_Oder_Mgt);
-            return data;
-        }
+        //public async Task<DataTable> GetPIstyle(int custId)
+        //{
+        //    var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_style_no, or_ref_no from dg_order_receiving where or_com_post_bit = 1 and or_pi_add_bit = 0 and or_pi_revise_bit = 0 and or_cust = " + custId, _dg_Oder_Mgt);
+        //    return data;
+        //}
         public async Task<DataTable> GetPI_Number()
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_number, pi_issued_ref_no from dg_pi_issued", _dg_Oder_Mgt);
@@ -135,7 +135,6 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@pi_cust_terms_cond", ord.or_cust_terms_cond);
                     cmd.Parameters.AddWithValue("@pi_proc_type", ord.pi_proc_type);
                     cmd.Parameters.AddWithValue("@pi_created_by", ord.Created_by);
-
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -281,10 +280,17 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetBookingRefForPiGenerate()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no, c_id as customer_id, c_customer_name, c_terms_and_condition from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_com_post_bit =1 and or_pi_add_bit = 0 order by or_ref_no desc", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no from dg_order_receiving where or_com_post_bit =1 and or_pi_add_bit = 0 order by or_ref_no desc", _dg_Oder_Mgt);
             return data;
         }
-       
+
+        public async Task<DataTable> GetPI_CustomerTermsAndCondition(int Ref_No)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct c_id as customer_id, c_customer_name, c_terms_and_condition from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_ref_no = " + Ref_No, _dg_Oder_Mgt);
+            return data;
+        }
+
+
 
 
 
