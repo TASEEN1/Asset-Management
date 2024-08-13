@@ -41,6 +41,7 @@ namespace PMS_BOL.Models.OrderMgt
         public decimal or_order_gross_weight { get; set; }
         public int or_payment_currency { get; set; }
         public int item_Name {get;set;}
+        public int or_proc_type_forItem { get; set; }
 
 
 

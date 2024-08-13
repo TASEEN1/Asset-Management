@@ -143,7 +143,40 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return reportBytes;
         }
 
-       
+        public byte[] WorkOrderReportFormate(int comID, string UserName, string reportType, int Rrf_No, int customerId)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            var tbldata = new DataTable[]
+            {
+                _SqlCommon.get_InformationDataTable("dg_report_work_order_Rpt '"+customerId+"','"+ Rrf_No + "'", _dg_Oder_Mgt),
+
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\WorkOrderFormate.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title", "Work Order Formate"),
+            new ReportParameter("PrintUser", "" + UserName + "")
+
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
+
+
+
+
+
+
 
 
 

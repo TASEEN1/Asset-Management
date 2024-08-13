@@ -166,10 +166,17 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(data);
         }
         [HttpGet]
-        public async Task<IActionResult> GetpaddingtypeUpdateSelect(int Ref_no)
+        public async Task<IActionResult> GetpaddingtypeUpdateSelect(int Wo_or_ID)
 
         {
-            var data = await _globalMaster.workOrderManager.GetpaddingtypeUpdateSelect(Ref_no);
+            var data = await _globalMaster.workOrderManager.GetpaddingtypeUpdateSelect(Wo_or_ID);
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetWorkOrderUpdateSelect(int Id)
+
+        {
+            var data = await _globalMaster.workOrderManager.GetWorkOrderUpdateSelect(Id);
             return Ok(data);
         }
 

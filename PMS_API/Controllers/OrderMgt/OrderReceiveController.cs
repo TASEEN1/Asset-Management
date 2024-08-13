@@ -158,15 +158,15 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(data);
         }
         [HttpGet]
-        public async Task<IActionResult> GetRefNoFromOrderReceiving()
+        public async Task<IActionResult> GetRefNoFromOrderReceiving(string username)
         {
-            var data = await _globalMaster.orderManager.GetRefNoFromOrderReceiving();
+            var data = await _globalMaster.orderManager.GetRefNoFromOrderReceiving(username);
             return Ok(data);
         }
         [HttpGet]
-        public async Task<IActionResult> GetRefNoFromAddEditOrderReceiving()
+        public async Task<IActionResult> GetRefNoFromAddEditOrderReceiving(string username)
         {
-            var data = await _globalMaster.orderManager.GetRefNoFromAddEditOrderReceiving();
+            var data = await _globalMaster.orderManager.GetRefNoFromAddEditOrderReceiving(username);
             return Ok(data);
         }
 
@@ -330,9 +330,16 @@ namespace PMS_API.Controllers.OrderMgt
         //-----------------Report_GETAPI------------
 
         [HttpGet]
-        public async Task<IActionResult> GetReport_Customer()
+        public async Task<IActionResult> GetReport_Customer( string username)
         {
-            var data = await _globalMaster.orderManager.GetReport_Customer();
+            var data = await _globalMaster.orderManager.GetReport_Customer(username);
+            return Ok(data);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetReport_RefNo(string username, int customerID)
+        {
+            var data = await _globalMaster.orderManager.GetReport_RefNo(username,customerID);
             return Ok(data);
         }
 

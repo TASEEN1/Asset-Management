@@ -223,9 +223,14 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         public async Task<string> Work_Order_Update(WorkorderUpdateRequest workorderUpdateRequest)
         {
             string message = string.Empty;
-            await _dg_Oder_Mgt.OpenAsync();
+           
             try
             {
+
+                DataTable workOrderSL = _SqlCommon.get_InformationDataTable("select COALESCE(MAX(wo_workOrderSL),0)+1 as SL from dg_work_order", _dg_Oder_Mgt);
+                int wo_workOrderSL = int.Parse(workOrderSL.Rows[0]["SL"].ToString());
+
+                await _dg_Oder_Mgt.OpenAsync();
                 foreach (var ord in workorderUpdateRequest.work_Order_Update_Deletes)
                 {
                     SqlCommand cmd = new SqlCommand("dg_work_order_forUpdate_delete", _dg_Oder_Mgt);
@@ -245,6 +250,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@wo_or_ref_no", ord.wo_or_ref_no);
                     cmd.Parameters.AddWithValue("@wo_or_id", ord.wo_or_id);
+                    cmd.Parameters.AddWithValue("@wo_workOrderSL", wo_workOrderSL);
                     cmd.Parameters.AddWithValue("@wo_remarks", ord.wo_remarks);
                     cmd.Parameters.AddWithValue("@wo_thickness", ord.wo_thickness);
                     cmd.Parameters.AddWithValue("@wo_wash_status", ord.wo_wash_status);
@@ -279,6 +285,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@wopt_or_ref_no", ord.wopt_or_ref_no);
                     cmd.Parameters.AddWithValue("@wopt_or_id", ord.wopt_or_id);
+                    cmd.Parameters.AddWithValue("@wopt_wo_workOrderSL", wo_workOrderSL);
                     cmd.Parameters.AddWithValue("@wopt_padding_type", ord.wopt_padding_type);
                     await cmd.ExecuteNonQueryAsync();
 
@@ -311,9 +318,14 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
           
             return data;
         }
-        public async Task<DataTable> GetpaddingtypeUpdateSelect(int Ref_no)
+        public async Task<DataTable> GetpaddingtypeUpdateSelect(int Wo_or_ID)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select wopt_padding_type, dg_dimtbl_padding_type.pt_padding_type from dg_wo_padding_type inner join dg_dimtbl_padding_type on wopt_padding_type = pt_id where wopt_or_ref_no = " + Ref_no, _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select wopt_padding_type, dg_dimtbl_padding_type.pt_padding_type from dg_wo_padding_type inner join dg_dimtbl_padding_type on wopt_padding_type = pt_id where wopt_or_id = " + Wo_or_ID, _dg_Oder_Mgt);
+            return data;
+        }
+        public async Task<DataTable> GetWorkOrderUpdateSelect(int Id)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_work_order_getworkOrderSL_FromBooking  " + Id, _dg_Oder_Mgt);
             return data;
         }
 

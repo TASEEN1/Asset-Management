@@ -110,6 +110,7 @@
     </Compile>
     <EmbeddedResource Include="Asset Details.rdlc" />
     <EmbeddedResource Include="ScheduledMaintenance Report.rdlc" />
+    <EmbeddedResource Include="WorkOrderFormate2.rdlc" />
     <EmbeddedResource Include="work_order_Rpt.rdlc" />
     <None Include="AssetDetailsMasterDataSet.xsc">
       <DependentUpon>AssetDetailsMasterDataSet.xsd</DependentUpon>

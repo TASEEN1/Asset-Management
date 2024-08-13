@@ -29,8 +29,8 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable>GetStyleEdit( int custID);
         public Task<DataTable> GetCustomerEdit();
         public Task<DataTable> Getpayment_currency();
-        public Task<DataTable> GetRefNoFromOrderReceiving();
-        public Task<DataTable> GetRefNoFromAddEditOrderReceiving();
+        public Task<DataTable> GetRefNoFromOrderReceiving(string username);
+        public Task<DataTable> GetRefNoFromAddEditOrderReceiving(string username);
         public Task<DataTable> ItemNameGet();
 
         public Task<DataTable> OrderReceivedAddView(string sessionUser);
@@ -60,7 +60,8 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<string> OrderReceiveAddEditComplete(List<OrderReciveComplete> app);
 
         //----------------------------Report-----------------------------
-        public Task<DataTable> GetReport_Customer();
+        public Task<DataTable> GetReport_Customer( string username);
+        public Task<DataTable> GetReport_RefNo( string usernmae , int customerID);
         public Task<DataTable> GetReport_Style( int custID);
 
 

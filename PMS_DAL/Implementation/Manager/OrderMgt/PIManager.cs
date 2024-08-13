@@ -286,7 +286,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetPI_CustomerTermsAndCondition(int Ref_No)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct c_id as customer_id, c_customer_name, c_terms_and_condition from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_ref_no = " + Ref_No, _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct c_id as customer_id, c_customer_name, c_terms_and_condition,c_att_person,c_att_mobile,c_att_email from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_ref_no = " + Ref_No, _dg_Oder_Mgt);
             return data;
         }
 

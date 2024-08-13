@@ -14,6 +14,7 @@
     <Content Remove="wwwroot\Report\Asset_report\ScheduledMaintenance Report.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\OrderWiseRpt.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\Proforma_Invoice.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\WorkOrderFormate.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\work_order_Rpt.rdlc" />
     <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.Designer.cs" />
     <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xsc" />
@@ -82,6 +83,7 @@
     <EmbeddedResource Include="wwwroot\Report\Asset_report\ScheduledMaintenance Report.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\OrderWiseRpt.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\Proforma_Invoice.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\WorkOrderFormate.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\work_order_Rpt.rdlc" />
   </ItemGroup>
   <ItemGroup>

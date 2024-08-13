@@ -161,14 +161,14 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return data;
         }
 
-        public async Task<DataTable> GetRefNoFromOrderReceiving()
+        public async Task<DataTable> GetRefNoFromOrderReceiving(string username)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no from dg_order_receiving where or_ref_no not in (0) order by or_ref_no desc", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no from dg_order_receiving where or_ref_no not in (0) and or_created_by = '" + username + "' order by or_ref_no desc", _dg_Oder_Mgt);
             return data;
         }
-        public async Task<DataTable> GetRefNoFromAddEditOrderReceiving()
+        public async Task<DataTable> GetRefNoFromAddEditOrderReceiving(string username)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no, c_id as customer_id, c_customer_name, c_terms_and_condition from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_com_post_bit =1 and or_pi_add_bit = 0 order by or_ref_no desc", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no from dg_order_receiving  where or_com_post_bit =1 and or_pi_add_bit = 0 and or_created_by = '" + username + "' order by or_ref_no desc", _dg_Oder_Mgt);
             return data;
         }
 
@@ -177,9 +177,15 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         //Report Get :
 
-        public async Task<DataTable> GetReport_Customer()
+        public async Task<DataTable> GetReport_Customer( string username)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_cust, c_customer_name FROM dbo.dg_order_receiving inner join dg_dimtbl_customer on or_cust = dg_dimtbl_customer.c_id where or_com_post_bit=1", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_cust, c_customer_name FROM dbo.dg_order_receiving inner join dg_dimtbl_customer on or_cust = dg_dimtbl_customer.c_id where or_com_post_bit=1 and or_created_by = '"+ username+ "' order by c_customer_name", _dg_Oder_Mgt);
+            return data;
+        }
+
+        public async Task<DataTable> GetReport_RefNo(string username , int customerID)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no FROM dbo.dg_order_receiving where or_com_post_bit=1 and or_created_by = '"+ username+"' and or_cust = "+ customerID+ " order by or_ref_no desc", _dg_Oder_Mgt);
             return data;
         }
 
@@ -614,6 +620,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_order_gross_weight", ord.or_order_gross_weight);
                     cmd.Parameters.AddWithValue("@or_payment_currency", ord.or_payment_currency);
                     cmd.Parameters.AddWithValue("@or_item_name", ord.item_Name);
+                    cmd.Parameters.AddWithValue("@or_proc_type_forItem", ord.or_proc_type_forItem);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -668,6 +675,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_order_net_weight", ord.or_order_net_weight);
                     cmd.Parameters.AddWithValue("@or_order_gross_weight", ord.or_order_gross_weight);
                     cmd.Parameters.AddWithValue("@or_payment_currency", ord.or_payment_currency);
+                    cmd.Parameters.AddWithValue("@or_proc_type_forItem", ord.or_proc_type_forItem);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -780,6 +788,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_order_net_weight", ord.or_order_net_weight);
                     cmd.Parameters.AddWithValue("@or_order_gross_weight", ord.or_order_gross_weight);
                     cmd.Parameters.AddWithValue("@or_payment_currency", ord.or_payment_currency);
+                    cmd.Parameters.AddWithValue("@or_proc_type_forItem", ord.or_proc_type_forItem);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -835,6 +844,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_order_net_weight", ord.or_order_net_weight);
                     cmd.Parameters.AddWithValue("@or_order_gross_weight", ord.or_order_gross_weight);
                     cmd.Parameters.AddWithValue("@or_payment_currency", ord.or_payment_currency);
+                    cmd.Parameters.AddWithValue("@or_proc_type_forItem", ord.or_proc_type_forItem);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
