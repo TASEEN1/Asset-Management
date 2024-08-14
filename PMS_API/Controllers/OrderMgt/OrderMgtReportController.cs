@@ -27,18 +27,13 @@ namespace PMS_API.Controllers.OrderMgt
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
 
-
-
-
-
-
         [HttpGet]
-        public async Task<IActionResult> ProformaInvoiceReport(int comID, string UserName, string reportType, int? pi_issued_ref_no, string? pi_number)
+        public async Task<IActionResult> ProformaInvoiceReport(int comID, string UserName, string reportType,  string? pi_number)
 
 
         {
             ReportFileExt reportFileExt = new ReportFileExt();
-            var data = _globalMaster.orderReportManager.ProformaInvoiceReport(comID, UserName, reportType, pi_issued_ref_no, pi_number);
+            var data = _globalMaster.orderReportManager.ProformaInvoiceReport(comID, UserName, reportType, pi_number);
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
 
@@ -53,7 +48,7 @@ namespace PMS_API.Controllers.OrderMgt
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
         [HttpGet]
-        public async Task<IActionResult> WorkOrderReportFormate(int comID, string UserName, string reportType, int Rrf_No, int customerId)
+        public async Task<IActionResult>WorkOrderReportFormate(int comID, string UserName, string reportType, int Rrf_No, int customerId)
 
 
         {

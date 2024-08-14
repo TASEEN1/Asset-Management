@@ -74,7 +74,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
 
 
-        public byte[] ProformaInvoiceReport(int comID, string UserName, string reportType, int? pi_issued_ref_no, string? pi_number)
+        public byte[] ProformaInvoiceReport(int comID, string UserName, string reportType, string? pi_number)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
@@ -82,8 +82,9 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append("dg_proforma_invoice_Rpt ");
-            stringBuilder.Append(pi_issued_ref_no != null ? pi_issued_ref_no : "NULL");
-            stringBuilder.Append(", '" + (pi_number != null ? pi_number : "NULL"));
+            //stringBuilder.Append(pi_issued_ref_no != null ? pi_issued_ref_no : "NULL");
+            //stringBuilder.Append(pi_number != null ? pi_number : "NULL");
+            stringBuilder.Append(" '" + (pi_number != null ? pi_number : "NULL"));
             stringBuilder.Append("' ");
 
             string stateQu = stringBuilder.ToString();
@@ -171,15 +172,6 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
             return reportBytes;
         }
-
-
-
-
-
-
-
-
-
 
         //Common Report Code
         private byte[] GenerateReport(DataTable dataTable, string datasetName, string rdlcFilePath, string reportType, ReportParameterCollection reportParameters = null)
