@@ -2102,7 +2102,7 @@
             <DataSetName>OrdDataSet</DataSetName>
             <Top>0.97306in</Top>
             <Left>0.18097in</Left>
-            <Height>0.63889in</Height>
+            <Height>0.63888in</Height>
             <Width>7.86196in</Width>
             <Style>
               <Border>
@@ -2430,14 +2430,14 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox51">
+                            <Textbox Name="pi_created_date">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=Fields!or_order_recv_date.Value</Value>
+                                      <Value>=Fields!pi_created_date.Value</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
                                         <FontSize>8pt</FontSize>
@@ -2451,7 +2451,7 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox51</rd:DefaultName>
+                              <rd:DefaultName>pi_created_date</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>White</Color>
@@ -2941,9 +2941,10 @@
                     <TablixMember />
                   </TablixMembers>
                 </TablixRowHierarchy>
+                <DataSetName>OrdDataSet</DataSetName>
                 <Top>0.05778in</Top>
                 <Left>6.03163in</Left>
-                <Height>0.75934in</Height>
+                <Height>0.75936in</Height>
                 <Width>1.81783in</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
