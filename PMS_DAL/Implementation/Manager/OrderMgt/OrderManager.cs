@@ -68,7 +68,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetCustomer()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as customer_id, c_customer_name, c_att_person, c_att_mobile,c_att_email from dg_dimtbl_customer where c_active = 1", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as customer_id, c_customer_name, c_att_person, c_att_mobile,c_att_email from dg_dimtbl_customer where c_active = 1 order by c_customer_name", _dg_Oder_Mgt);
 
             return data;
         }
@@ -97,15 +97,17 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
             return data;
         }
+        //Modal View
         public async Task<DataTable> GetBuyerView()
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_buyer where b_active = 1", _dg_Oder_Mgt);
 
             return data;
         }
+      
         public async Task<DataTable> GetcustomerView()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as customer_id , c_customer_name,c_address,c_att_person, c_att_mobile,c_att_email ,c_terms_and_condition,c_created_by, c_created_date, c_updated_by, c_updated_date from dg_dimtbl_customer where c_active = 1", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as dimtbl_customer_id, c_customer_name, c_att_person, c_att_email, c_att_mobile, c_address, c_terms_and_condition, c_created_by, c_active, c_tnc_offerValidity,c_tnc_letterOfCredit, c_tnc_advisingBank, c_tnc_negoBankNPeriod, c_tnc_delivery, c_tnc_deliveryTerms, c_tnc_paymentNInterest, c_tnc_bankCharges, c_tnc_inspection, c_tnc_BTMACertificate, c_tnc_maturity, c_tnc_payment, c_tnc_cashIncentive, c_tnc_BINandVAT, c_tnc_HSCode from dg_dimtbl_customer where c_active = 1", _dg_Oder_Mgt);
 
             return data;
         }
@@ -134,6 +136,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_gsm", _dg_Oder_Mgt);
             return data;
         }
+        //End
        
         public async Task<DataTable> Getpayment_currency()
         {
@@ -163,7 +166,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetRefNoFromOrderReceiving(string username)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no from dg_order_receiving where or_ref_no not in (0) and or_created_by = '" + username + "' order by or_ref_no desc", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no from dg_order_receiving where or_ref_no not in (0) and or_pi_add_bit = 0 and or_created_by = '" + username + "' order by or_ref_no desc", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetRefNoFromAddEditOrderReceiving(string username)
@@ -348,6 +351,21 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@attMobile", ord.Attmobile_No);
                     cmd.Parameters.AddWithValue("@customerAddress", ord.Cus_Address);
                     cmd.Parameters.AddWithValue("@customerTermsnCondition", ord.Cus_Terms_Condition);
+                    cmd.Parameters.AddWithValue("@c_tnc_letterOfCredit", ord.c_tnc_letterOfCredit);
+                    cmd.Parameters.AddWithValue("@c_tnc_advisingBank", ord.c_tnc_advisingBank);
+                    cmd.Parameters.AddWithValue("@c_tnc_negoBankNPeriod ", ord.c_tnc_negoBankNPeriod);
+                    cmd.Parameters.AddWithValue("@c_tnc_delivery", ord.c_tnc_delivery);
+                    cmd.Parameters.AddWithValue("@c_tnc_deliveryTerms", ord.c_tnc_deliveryTerms);
+                    cmd.Parameters.AddWithValue("@c_tnc_paymentNInterest", ord.c_tnc_paymentNInterest);
+                    cmd.Parameters.AddWithValue("@c_tnc_bankCharges", ord.c_tnc_bankCharges);
+                    cmd.Parameters.AddWithValue("@c_tnc_inspection", ord.c_tnc_inspection);
+                    cmd.Parameters.AddWithValue("@c_tnc_BTMACertificate", ord.c_tnc_BTMACertificate);
+                    cmd.Parameters.AddWithValue("@c_tnc_maturity", ord.c_tnc_maturity);
+                    cmd.Parameters.AddWithValue("@c_tnc_payment", ord.c_tnc_payment);
+                    cmd.Parameters.AddWithValue("@c_tnc_cashIncentive ", ord.c_tnc_cashIncentive);
+                    cmd.Parameters.AddWithValue("@c_tnc_BINandVAT ", ord.c_tnc_BINandVAT);
+                    cmd.Parameters.AddWithValue("@c_tnc_HSCode ", ord.c_tnc_HSCode);
+                    cmd.Parameters.AddWithValue("@c_tnc_offerValidity", ord.c_tnc_offerValidity);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
@@ -500,6 +518,21 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@attMobile", ord.Attmobile_No);
                     cmd.Parameters.AddWithValue("@customerAddress", ord.Cus_Address);
                     cmd.Parameters.AddWithValue("@customerTermsnCondition", ord.Cus_Terms_Condition);
+                    cmd.Parameters.AddWithValue("@c_tnc_letterOfCredit", ord.c_tnc_letterOfCredit);
+                    cmd.Parameters.AddWithValue("@c_tnc_advisingBank", ord.c_tnc_advisingBank);
+                    cmd.Parameters.AddWithValue("@c_tnc_negoBankNPeriod ", ord.c_tnc_negoBankNPeriod);
+                    cmd.Parameters.AddWithValue("@c_tnc_delivery", ord.c_tnc_delivery);
+                    cmd.Parameters.AddWithValue("@c_tnc_deliveryTerms", ord.c_tnc_deliveryTerms);
+                    cmd.Parameters.AddWithValue("@c_tnc_paymentNInterest", ord.c_tnc_paymentNInterest);
+                    cmd.Parameters.AddWithValue("@c_tnc_bankCharges", ord.c_tnc_bankCharges);
+                    cmd.Parameters.AddWithValue("@c_tnc_inspection", ord.c_tnc_inspection);
+                    cmd.Parameters.AddWithValue("@c_tnc_BTMACertificate", ord.c_tnc_BTMACertificate);
+                    cmd.Parameters.AddWithValue("@c_tnc_maturity", ord.c_tnc_maturity);
+                    cmd.Parameters.AddWithValue("@c_tnc_payment", ord.c_tnc_payment);
+                    cmd.Parameters.AddWithValue("@c_tnc_cashIncentive ", ord.c_tnc_cashIncentive);
+                    cmd.Parameters.AddWithValue("@c_tnc_BINandVAT ", ord.c_tnc_BINandVAT);
+                    cmd.Parameters.AddWithValue("@c_tnc_HSCode ", ord.c_tnc_HSCode);
+                    cmd.Parameters.AddWithValue("@c_tnc_offerValidity", ord.c_tnc_offerValidity);
                     cmd.Parameters.AddWithValue("@updatedBy", ord.UpdatedBy);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;

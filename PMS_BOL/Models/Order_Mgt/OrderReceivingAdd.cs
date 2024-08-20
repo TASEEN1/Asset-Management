@@ -93,6 +93,28 @@ namespace PMS_BOL.Models.OrderMgt
         public string Cus_Terms_Condition { get; set; }
         public string createdby { get; set; }
         public string UpdatedBy { get; set; }
+        public string c_tnc_offerValidity { get; set; }
+        public string c_tnc_letterOfCredit { get; set; }
+        public string c_tnc_advisingBank { get; set; }
+        public string c_tnc_negoBankNPeriod { get; set; }
+        public string c_tnc_delivery { get ; set; }
+
+        public string c_tnc_deliveryTerms { get; set; }
+        public string c_tnc_paymentNInterest { get; set; }
+        public string c_tnc_bankCharges { get; set; }
+        public string c_tnc_inspection { get; set; }
+        public string c_tnc_BTMACertificate { get; set; }
+        public string c_tnc_maturity { get; set; }
+        public string c_tnc_payment { get; set; }
+        public string c_tnc_cashIncentive { get; set; }
+        public string c_tnc_BINandVAT { get; set; }
+        public string c_tnc_HSCode { get; set; }
+
+
+
+
+
+
 
     }
 

@@ -280,7 +280,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetBookingRefForPiGenerate()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no from dg_order_receiving where or_com_post_bit =1 and or_pi_add_bit = 0 order by or_ref_no desc", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_GetForPiBookingRef", _dg_Oder_Mgt);
             return data;
         }
 
