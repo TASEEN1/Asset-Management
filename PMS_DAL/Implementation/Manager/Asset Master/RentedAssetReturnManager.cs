@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PMS_BLL.Interfaces.Manager.Asset_Master;
 using PMS_BLL.Utility;
-using PMS_BOL.Models;
+using PMS_BOL.Models.Asset_Mgt;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -62,7 +62,8 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
 
         public async Task<string> PutAssetRent(List<AssetRentComplete> put_asset_rent)
         {
-            string message = string.Empty;
+            /*string message = string.Empty*//*;*/
+            string message = "save succecfully";
             await _dg_Asst_Mgt.OpenAsync();
             try
             {
@@ -72,10 +73,10 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
                     cmd.Parameters.AddWithValue("@ReturnRefNo ", modelVar.ReturnRefNo);
                     cmd.Parameters.AddWithValue("@ReturnDate ", modelVar.ReturnDate);
                     cmd.Parameters.AddWithValue("@ReturnUser ", modelVar.ReturnUser);
-                    cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
-                    cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+                    //cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+                    //cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
-                    message = (string)cmd.Parameters["@ERROR"].Value;
+                    //message = (string)cmd.Parameters["@ERROR"].Value;
 
 
 
@@ -98,15 +99,15 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
         return message;
         }
 
-        public async Task<DataTable> ForApproval_AssetReturnView(int comID)
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Return_Approval_View '" + comID + "'", _dg_Asst_Mgt);
-            return data;
+        //public async Task<DataTable> ForApproval_AssetReturnView(int comID)
+        //{
+        //    var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Return_Approval_View '" + comID + "'", _dg_Asst_Mgt);
+        //    return data;
 
 
-        }
+        //}
 
-        // data not get
+      
         public async Task<DataTable> ForApproval_Asset_ReturnView(int comID)
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Return_For_Approval_View '" + comID + "'", _dg_Asst_Mgt);
@@ -173,6 +174,44 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
                 await _dg_Asst_Mgt.CloseAsync();
             }
             return flag;
+        }
+        public async Task<string> PutReturnAdd(List<RentAssetAdd> put_return_add)
+        {
+            //string message = string.Empty;
+            string message = "Saved Successfully";
+            await _dg_Asst_Mgt.OpenAsync();
+            try
+            {
+                foreach (RentAssetAdd modelVar in put_return_add)
+                {
+                    SqlCommand cmd = new SqlCommand("Mr_Asset_Return_Add", _dg_Asst_Mgt);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@AssetNo", modelVar.RentAssetNo);
+                    await cmd.ExecuteNonQueryAsync();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                ex.ToString();
+
+            }
+
+            finally
+            {
+
+                _dg_Asst_Mgt.Close();
+
+            }
+            return message;
+
+        }
+
+        public async Task<DataTable> GetApproval(int comID)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Return_Approval_View '" + comID + "'", _dg_Asst_Mgt);
+            return data;
+
         }
     }
 

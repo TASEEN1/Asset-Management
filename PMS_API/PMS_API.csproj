@@ -5,6 +5,87 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Report\Asset_Repair_ReportDatails.rdlc" />
+    <Content Remove="wwwroot\Report\Asset_report\Asset Details.rdlc" />
+    <Content Remove="wwwroot\Report\Asset_report\AssetDetailsMaster_Rpt.rdlc" />
+    <Content Remove="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
+    <Content Remove="wwwroot\Report\Asset_report\ScheduledMaintenance Report.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\OrderWiseRpt.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\Proforma_Invoice.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\WorkOrderFormate.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\work_order_Rpt.rdlc" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.Designer.cs" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xsc" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xsd" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xss" />
+    <Content Remove="wwwroot\Report\ReportDataSet\AsstDataSet.Designer.cs" />
+    <Content Remove="wwwroot\Report\ReportDataSet\AsstDataSet.xsc" />
+    <Content Remove="wwwroot\Report\ReportDataSet\AsstDataSet.xsd" />
+    <Content Remove="wwwroot\Report\ReportDataSet\AsstDataSet.xss" />
+    <Content Remove="wwwroot\Report\ReportDataSet\OrdDataSet.Designer.cs" />
+    <Content Remove="wwwroot\Report\ReportDataSet\OrdDataSet.xsc" />
+    <Content Remove="wwwroot\Report\ReportDataSet\OrdDataSet.xsd" />
+    <Content Remove="wwwroot\Report\ReportDataSet\OrdDataSet.xss" />
+    <Content Remove="wwwroot\Report\ReportDataSet\padding_type_DataSet.Designer.cs" />
+    <Content Remove="wwwroot\Report\ReportDataSet\padding_type_DataSet.xsc" />
+    <Content Remove="wwwroot\Report\ReportDataSet\padding_type_DataSet.xsd" />
+    <Content Remove="wwwroot\Report\ReportDataSet\padding_type_DataSet.xss" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.Designer.cs" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.xsc" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.xsd" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.xss" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Work_order_DataSet.Designer.cs" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Work_order_DataSet.xsc" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Work_order_DataSet.xsd" />
+    <Content Remove="wwwroot\Report\ReportDataSet\Work_order_DataSet.xss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Asset_DtailsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wwwroot\Report\ReportDataSet\AsstDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AsstDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wwwroot\Report\ReportDataSet\OrdDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>OrdDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wwwroot\Report\ReportDataSet\padding_type_DataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>padding_type_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Work_order_Complete_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wwwroot\Report\ReportDataSet\Work_order_DataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Work_order_DataSet.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\Report\Asset_report\AssetDetailsMaster_Rpt.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Asset_report\Asset_Repair_ReportDatails.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Asset_report\Asset Details.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Asset_report\ScheduledMaintenance Report.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\OrderWiseRpt.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\Proforma_Invoice.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\WorkOrderFormate.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\work_order_Rpt.rdlc" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CoreApiResponse" Version="1.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.21" />
@@ -16,6 +97,67 @@
     <ProjectReference Include="..\PMS_DAL\PMS_DAL.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Content Update="wwwroot\Report\Cutting_Report\CuttingDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CuttingDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Update="wwwroot\Report\Cutting_Report\CuttingDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CuttingDataSet.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Update="wwwroot\Report\ReportDataSet\AssetDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AssetDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Update="wwwroot\Report\ReportDataSet\AssetDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AssetDataSet.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xsc" />
+    <None Include="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>Asset_DtailsDataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\Report\ReportDataSet\Asset_DtailsDataSet.xss" />
+    <None Include="wwwroot\Report\ReportDataSet\AsstDataSet.xsc" />
+    <None Include="wwwroot\Report\ReportDataSet\AsstDataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>AsstDataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\Report\ReportDataSet\AsstDataSet.xss" />
+    <None Include="wwwroot\Report\ReportDataSet\OrdDataSet.xsc" />
+    <None Include="wwwroot\Report\ReportDataSet\OrdDataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>OrdDataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\Report\ReportDataSet\OrdDataSet.xss" />
+    <None Include="wwwroot\Report\ReportDataSet\padding_type_DataSet.xsc" />
+    <None Include="wwwroot\Report\ReportDataSet\padding_type_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>padding_type_DataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\Report\ReportDataSet\padding_type_DataSet.xss" />
+    <None Include="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.xsc" />
+    <None Include="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>Work_order_Complete_DataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.xss" />
+    <None Include="wwwroot\Report\ReportDataSet\Work_order_DataSet.xsc" />
+    <None Include="wwwroot\Report\ReportDataSet\Work_order_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>Work_order_DataSet.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\Report\ReportDataSet\Work_order_DataSet.xss" />
   </ItemGroup>
 </Project>

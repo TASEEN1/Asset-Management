@@ -1,6 +1,6 @@
 ﻿using PMS_BLL.Interfaces.Manager.AssetMaster;
 using PMS_BLL.Utility;
-using PMS_BOL.Models;
+using PMS_BOL.Models.Asset_Mgt;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -259,6 +259,7 @@ namespace PMS_DAL.Implementation.Manager.Asset_Master
 
             
         }
+
         public async Task<DataTable> Mr_Asset_Master_( string AsstNo)
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("Mr_Asset_Master_List_Select '"+ AsstNo + "'", _dg_Asst_Mgt);

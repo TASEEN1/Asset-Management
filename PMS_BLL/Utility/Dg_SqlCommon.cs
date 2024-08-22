@@ -106,9 +106,6 @@ namespace PMS_BLL.Utility
             return dt;
         }
 
-        public Task get_InformationDataTableAsync(object value, SqlConnection dg_Asst_Mgt)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }
