@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace PMS_BOL.Models.OrderMgt
     public class PI_Model
     {
         public int Pi_id { get; set; }
+    
         public int or_id { get; set; }
         public int pi_or_id { get; set; }
         public string Po_No { get; set; }
