@@ -19,14 +19,14 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable>GetCustomer();
         public Task<DataTable> GetDia();
         public Task<DataTable> Getgsm();
-        public Task<DataTable> Getdesign();
+        //public Task<DataTable> Getdesign();
         public Task<DataTable> GetBuyerView();
         public Task<DataTable> GetcustomerView();
         public Task<DataTable>GetcolorView();
-        public Task<DataTable> GetdesignView();
+        //public Task<DataTable> GetdesignView();
         public Task<DataTable> GetDiaView();
         public Task<DataTable> GetgsmView();
-        public Task<DataTable>GetStyleEdit( int custID);
+        //public Task<DataTable>GetStyleEdit( int custID);
         public Task<DataTable> GetCustomerEdit();
         public Task<DataTable> Getpayment_currency();
         public Task<DataTable> GetRefNoFromOrderReceiving(string username);

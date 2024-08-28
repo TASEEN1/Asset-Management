@@ -26,7 +26,7 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<string> ApprovedByApprove(List<PI_Model>app);
         public Task<string> CheckedByApprove(List<PI_Model>app);
         public Task<DataTable> GetPI_Number();
-        public Task<DataTable> GetBookingRefForPiGenerate();
+        public Task<DataTable> GetBookingRefForPiGenerate( int CustomerID);
         public Task<DataTable> GetPI_CustomerTermsAndCondition(int Ref_No);
 
 

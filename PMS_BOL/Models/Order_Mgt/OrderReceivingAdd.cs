@@ -45,6 +45,8 @@ namespace PMS_BOL.Models.OrderMgt
         public int or_payment_currency { get; set; }
         public int item_Name {get;set;}
         public int or_proc_type_forItem { get; set; }
+    
+
 
 
 
@@ -112,6 +114,7 @@ namespace PMS_BOL.Models.OrderMgt
         public string c_tnc_cashIncentive { get; set; }
         public string c_tnc_BINandVAT { get; set; }
         public string c_tnc_HSCode { get; set; }
+        public string c_tnc_concatedFromFE { get; set; }
 
 
 

@@ -34,7 +34,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
 
 
-        public byte[] OrderReceivedReport (int comID , string UserName , string reportType, int? Ref_NO, int customer, DateTime FromDate , DateTime ToDate)
+        public byte[] OrderReceivedReport (int comID , string UserName , string reportType, int? Ref_NO, int customer)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
@@ -44,10 +44,10 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             stringBuilder.Append("dg_order_receiving_Rpt ");
             stringBuilder.Append(Ref_NO != null ? Ref_NO : "NULL");
             stringBuilder.Append(", " + (customer != null ? customer : "NULL"));
-            stringBuilder.Append(" ,'");
-            stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + "', '");
-            stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
-            stringBuilder.Append("' ");
+            //stringBuilder.Append(" ,'");
+            //stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + "', '");
+            //stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
+            //stringBuilder.Append(" ");
 
             string stateQu = stringBuilder.ToString();
             var tbldata = new DataTable[]

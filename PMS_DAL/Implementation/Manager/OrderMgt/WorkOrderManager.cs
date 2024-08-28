@@ -39,33 +39,33 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetPadding_Type()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id as padding_type_id, pt_padding_type from dg_dimtbl_padding_type", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id as padding_type_id, pt_padding_type from dg_dimtbl_padding_type order by pt_padding_type", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetPadding_Thickness()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id as padding_thickness_id, pt_padding_thickness from dg_dimtbl_padding_thickness", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id as padding_thickness_id, pt_padding_thickness from dg_dimtbl_padding_thickness order by pt_padding_thickness", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetPadding_Washstatus()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select ws_id, ws_wash_status from dg_dimtbl_wash_status", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select ws_id, ws_wash_status from dg_dimtbl_wash_status order by ws_wash_status", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetPadding_GarmentsType()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select gt_id, gt_garments_type from dg_dimtbl_garments_type", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select gt_id, gt_garments_type from dg_dimtbl_garments_type order by gt_garments_type", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetPadding_HeatSide()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select hs_id, hs_heat_side from dg_dimtbl_heat_side", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select hs_id, hs_heat_side from dg_dimtbl_heat_side order by hs_heat_side", _dg_Oder_Mgt);
             return data;
         }
 
         public async Task<DataTable> GetPadding_Chemical_Restriction()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select cr_id, cr_chemical_restriction from dg_dimtbl_chemical_restriction", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select cr_id, cr_chemical_restriction from dg_dimtbl_chemical_restriction order by cr_chemical_restriction", _dg_Oder_Mgt);
             return data;
         }
 
@@ -74,59 +74,59 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetQuilting_Type()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select qt_id, qt_quilting_type from dg_dimtbl_quilting_type", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select qt_id, qt_quilting_type from dg_dimtbl_quilting_type order by qt_quilting_type", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetQuilting_MachineType()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select mt_id, mt_machine_type from dg_dimtbl_machine_type", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select mt_id, mt_machine_type from dg_dimtbl_machine_type order by mt_machine_type", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetQuilting_DesignName()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select qdn_id, qdn_quilting_design_name from dg_dimtbl_quilting_design_name", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select qdn_id, qdn_quilting_design_name from dg_dimtbl_quilting_design_name order by qdn_quilting_design_name", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetQuilting_Design_Dimension()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select qdd_id, qdd_quilting_design_dimension from dg_dimtbl_quilting_design_dimension", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select qdd_id, qdd_quilting_design_dimension from dg_dimtbl_quilting_design_dimension order by qdd_quilting_design_dimension", _dg_Oder_Mgt);
             return data;
         }
 
         public async Task<DataTable> GetQuilting_Stitch_PerInch()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select spi_id, spi_stitch_per_inch from dg_dimtbl_stitch_per_inch", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select spi_id, spi_stitch_per_inch from dg_dimtbl_stitch_per_inch order by spi_stitch_per_inch", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetQuilting_FabricSide()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select qfs_id, qfs_quilting_fabric_side from dg_dimtbl_quilting_fabric_side", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select qfs_id, qfs_quilting_fabric_side from dg_dimtbl_quilting_fabric_side order by qfs_quilting_fabric_side", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetQuilting_Lining_Usage()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select lu_id, lu_lining_usage from dg_dimtbl_lining_usage", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select lu_id, lu_lining_usage from dg_dimtbl_lining_usage order by lu_lining_usage", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetQuilting_Yarn_Count()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select yc_id, yc_yarn_count from dg_dimtbl_yarn_count", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select yc_id, yc_yarn_count from dg_dimtbl_yarn_count order by yc_yarn_count", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetQuilting_FabricName()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select qfn_id, qfn_quilting_fabric_name from dg_dimtbl_quilting_fabric_name", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select qfn_id, qfn_quilting_fabric_name from dg_dimtbl_quilting_fabric_name order by qfn_quilting_fabric_name", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetQuilting_FabricType()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select qft_id, qft_quilting_fabric_type from dg_dimtbl_quilting_fabric_type", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select qft_id, qft_quilting_fabric_type from dg_dimtbl_quilting_fabric_type order by qft_quilting_fabric_type", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetQuilting_Fabric_Composition()
         
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select qfc_id, qfc_quilting_fabric_composition from dg_dimtbl_quilting_fabric_composition", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select qfc_id, qfc_quilting_fabric_composition from dg_dimtbl_quilting_fabric_composition order by qfc_quilting_fabric_composition", _dg_Oder_Mgt);
             return data;
         }
 

@@ -25,6 +25,10 @@
           <DataField>or_ref_no</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="or_payment_currency">
+          <DataField>or_payment_currency</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="c_customer_name">
           <DataField>c_customer_name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -233,20 +237,28 @@
           <DataField>pi_created_by</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="signtr">
-          <DataField>signtr</DataField>
+        <Field Name="approved_user_signtr">
+          <DataField>approved_user_signtr</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="signtr1">
-          <DataField>signtr1</DataField>
+        <Field Name="checked_user_signtr">
+          <DataField>checked_user_signtr</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="cUserFullname">
-          <DataField>cUserFullname</DataField>
+        <Field Name="created_user__signtr">
+          <DataField>created_user__signtr</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="cUserFullname1">
-          <DataField>cUserFullname1</DataField>
+        <Field Name="checked_userFullname">
+          <DataField>checked_userFullname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="approved_userFullname">
+          <DataField>approved_userFullname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="created_userFullname">
+          <DataField>created_userFullname</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="pi_approvedBy_date">
@@ -260,6 +272,18 @@
         <Field Name="pi_created_date1">
           <DataField>pi_created_date1</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="cCurCode">
+          <DataField>cCurCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cur_Symbol">
+          <DataField>Cur_Symbol</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cCurdes">
+          <DataField>cCurdes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
@@ -320,12 +344,93 @@
                     </TextRuns>
                     <Style />
                   </Paragraph>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value />
+                        <Style>
+                          <FontFamily>Calibri</FontFamily>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value />
+                        <Style>
+                          <FontFamily>Calibri</FontFamily>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Process Type : </Value>
+                        <Style>
+                          <FontFamily>Calibri</FontFamily>
+                          <FontSize>8pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=Fields!pt_process_name.Value</Value>
+                        <Style>
+                          <FontFamily>Calibri</FontFamily>
+                          <FontSize>8pt</FontSize>
+                          <FontWeight>Normal</FontWeight>
+                          <Format>dd-MMM-yy</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Payment Type : </Value>
+                        <Style>
+                          <FontFamily>Calibri</FontFamily>
+                          <FontSize>8pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=Fields!Payment_Mode.Value</Value>
+                        <Style>
+                          <FontFamily>Calibri</FontFamily>
+                          <FontSize>8pt</FontSize>
+                          <FontWeight>Normal</FontWeight>
+                          <Format>dd-MMM-yy</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value />
+                        <Style>
+                          <FontFamily>Calibri</FontFamily>
+                          <FontSize>8pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox28</rd:DefaultName>
-                <Top>0.05778in</Top>
-                <Left>0.05737in</Left>
-                <Height>0.55972in</Height>
-                <Width>2.9375in</Width>
+                <Top>0.02028in</Top>
+                <Left>0.06612in</Left>
+                <Height>0.8556in</Height>
+                <Width>5.45139in</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -340,13 +445,13 @@
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>0.84699in</Width>
+                      <Width>0.85379in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>0.13519in</Width>
+                      <Width>0.14199in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>0.83565in</Width>
+                      <Width>0.84245in</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
@@ -391,6 +496,7 @@
                                 <RightBorder>
                                   <Color>White</Color>
                                 </RightBorder>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -438,6 +544,7 @@
                                 <RightBorder>
                                   <Color>White</Color>
                                 </RightBorder>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -455,7 +562,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=IIF(Fields!pi_revised_no.Value = 0, Fields!pi_number.Value, Fields!pi_number.Value &amp; "R" &amp; Fields!pi_revised_no.Value)</Value>
+                                      <Value>=First(Fields!pi_number.Value, "OrdDataSet")</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
                                         <FontSize>8pt</FontSize>
@@ -487,6 +594,7 @@
                                 <RightBorder>
                                   <Color>White</Color>
                                 </RightBorder>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -539,6 +647,7 @@
                                 <RightBorder>
                                   <Color>White</Color>
                                 </RightBorder>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -586,6 +695,7 @@
                                 <RightBorder>
                                   <Color>White</Color>
                                 </RightBorder>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -635,6 +745,7 @@
                                 <RightBorder>
                                   <Color>White</Color>
                                 </RightBorder>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -687,6 +798,7 @@
                                 <RightBorder>
                                   <Color>White</Color>
                                 </RightBorder>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -734,6 +846,7 @@
                                 <RightBorder>
                                   <Color>White</Color>
                                 </RightBorder>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -783,6 +896,7 @@
                                 <RightBorder>
                                   <Color>White</Color>
                                 </RightBorder>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -835,6 +949,7 @@
                                 <RightBorder>
                                   <Color>White</Color>
                                 </RightBorder>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -882,6 +997,7 @@
                                 <RightBorder>
                                   <Color>White</Color>
                                 </RightBorder>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -931,6 +1047,7 @@
                                 <RightBorder>
                                   <Color>White</Color>
                                 </RightBorder>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -983,6 +1100,7 @@
                                 <RightBorder>
                                   <Color>White</Color>
                                 </RightBorder>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -1030,6 +1148,7 @@
                                 <RightBorder>
                                   <Color>White</Color>
                                 </RightBorder>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -1079,6 +1198,7 @@
                                 <RightBorder>
                                   <Color>White</Color>
                                 </RightBorder>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -1111,7 +1231,7 @@
                 <Top>0.05778in</Top>
                 <Left>6.03163in</Left>
                 <Height>0.75936in</Height>
-                <Width>1.81783in</Width>
+                <Width>1.83823in</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
@@ -1132,11 +1252,48 @@
                   </RightBorder>
                 </Style>
               </Tablix>
+              <Textbox Name="Title1">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Parameters!Title.Value</Value>
+                        <Style>
+                          <FontFamily>Calibri</FontFamily>
+                          <FontSize>14pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Title1</rd:DefaultName>
+                <Top>0.04084in</Top>
+                <Left>2.50694in</Left>
+                <Height>0.21528in</Height>
+                <Width>2.97778in</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <VerticalAlign>Middle</VerticalAlign>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>0.03972in</Top>
+            <Top>0.02722in</Top>
             <Left>0.19347in</Left>
-            <Height>0.81714in</Height>
+            <Height>0.91436in</Height>
             <Width>7.86987in</Width>
             <Style>
               <Border>
@@ -1206,7 +1363,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox150</rd:DefaultName>
-            <Top>1.98472in</Top>
+            <Top>1.95972in</Top>
             <Left>0.20597in</Left>
             <Height>2.65385in</Height>
             <Width>7.83696in</Width>
@@ -1228,7 +1385,23 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Say In Word :    </Value>
+                    <Value>Say In Word : (</Value>
+                    <Style>
+                      <FontFamily>Calibri</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!cCurCode.Value</Value>
+                    <Style>
+                      <FontFamily>Calibri</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>) </Value>
                     <Style>
                       <FontFamily>Calibri</FontFamily>
                       <FontSize>8pt</FontSize>
@@ -1258,8 +1431,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
-            <Top>1.76944in</Top>
-            <Left>0.19806in</Left>
+            <Top>1.73089in</Top>
+            <Left>0.20597in</Left>
             <Height>0.21528in</Height>
             <Width>6.62101in</Width>
             <ZIndex>2</ZIndex>
@@ -1278,7 +1451,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.25864in</Width>
+                  <Width>0.21697in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.49773in</Width>
@@ -1290,19 +1463,16 @@
                   <Width>0.38359in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.41244in</Width>
+                  <Width>1.26191in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.00641in</Width>
+                  <Width>0.58341in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.47411in</Width>
+                  <Width>0.47824in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.37364in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>0.29028in</Width>
+                  <Width>0.40598in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.39165in</Width>
@@ -1320,10 +1490,10 @@
                   <Width>0.40204in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.62337in</Width>
+                  <Width>0.5896in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.74495in</Width>
+                  <Width>0.71023in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1521,67 +1691,6 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox16">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Payment</Value>
-                                  <Style>
-                                    <FontSize>6pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>type</Value>
-                                  <Style>
-                                    <FontSize>6pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox16</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                            <TopBorder>
-                              <Color>Black</Color>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                            </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox18">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -1589,7 +1698,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Item Description</Value>
+                                  <Value> Description of Goods</Value>
                                   <Style>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1636,7 +1745,22 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Color</Value>
+                                  <Value>GSM/Oz/SQ.YD/SQM</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
                                   <Style>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1683,7 +1807,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>GSM</Value>
+                                  <Value>Width</Value>
                                   <Style>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1730,7 +1854,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Width</Value>
+                                  <Value>Design</Value>
                                   <Style>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1777,7 +1901,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Desing</Value>
+                                  <Value>Color</Value>
                                   <Style>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1960,7 +2084,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>weight(Kg)</Value>
+                                  <Value>weight(kg)</Value>
                                   <Style>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -2054,7 +2178,22 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Price</Value>
+                                  <Value>Unit Price (</Value>
+                                  <Style>
+                                    <FontSize>6pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!Cur_Symbol.Value</Value>
+                                  <Style>
+                                    <FontFamily>calibri</FontFamily>
+                                    <FontSize>5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>)</Value>
                                   <Style>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -2101,8 +2240,26 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Value</Value>
+                                  <Value> Amount (</Value>
                                   <Style>
+                                    <FontSize>6pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!Cur_Symbol.Value</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>)</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>'$'#,0.00;('$'#,0.00)</Format>
@@ -2172,6 +2329,7 @@
                             <RightBorder>
                               <Color>Black</Color>
                             </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2218,6 +2376,7 @@
                             <RightBorder>
                               <Color>Black</Color>
                             </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2264,6 +2423,7 @@
                             <RightBorder>
                               <Color>Black</Color>
                             </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2310,52 +2470,7 @@
                             <RightBorder>
                               <Color>Black</Color>
                             </RightBorder>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Payment_Mode">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Payment_Mode.Value</Value>
-                                  <Style>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>6pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Payment_Mode</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                            <TopBorder>
-                              <Color>Black</Color>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2402,6 +2517,148 @@
                             <RightBorder>
                               <Color>Black</Color>
                             </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="g_gsm1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!g_gsm.Value</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>g_gsm1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="d_name1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!d_name.Value</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>d_name1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="qdn_quilting_design_name1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!qdn_quilting_design_name.Value</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>qdn_quilting_design_name1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2448,144 +2705,7 @@
                             <RightBorder>
                               <Color>Black</Color>
                             </RightBorder>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="g_gsm">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!g_gsm.Value</Value>
-                                  <Style>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>6pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>g_gsm</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                            <TopBorder>
-                              <Color>Black</Color>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                            </RightBorder>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="d_name">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!d_name.Value</Value>
-                                  <Style>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>6pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>d_name</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                            <TopBorder>
-                              <Color>Black</Color>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                            </RightBorder>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="qdn_quilting_design_name">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!qdn_quilting_design_name.Value</Value>
-                                  <Style>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>6pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>qdn_quilting_design_name</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                            <TopBorder>
-                              <Color>Black</Color>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2633,6 +2753,7 @@
                             <RightBorder>
                               <Color>Black</Color>
                             </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2679,6 +2800,7 @@
                             <RightBorder>
                               <Color>Black</Color>
                             </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2725,6 +2847,7 @@
                             <RightBorder>
                               <Color>Black</Color>
                             </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2771,6 +2894,7 @@
                             <RightBorder>
                               <Color>Black</Color>
                             </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2792,7 +2916,35 @@
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>6pt</FontSize>
-                                    <Format>'$'0.00;('$'0.00)</Format>
+                                    <Format>0.00;(0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value> (</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
+                                    <Format>0.00;(0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!Cur_Symbol.Value</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.00;(0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>)</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
+                                    <Format>0.00;(0.00)</Format>
                                     <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                                   </Style>
                                 </TextRun>
@@ -2807,11 +2959,11 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
-                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -2829,7 +2981,35 @@
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>6pt</FontSize>
-                                    <Format>'$'0.00;('$'0.00)</Format>
+                                    <Format>0.00;(0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value> (</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
+                                    <Format>0.00;(0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!Cur_Symbol.Value</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.00;(0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>)</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
+                                    <Format>0.00;(0.00)</Format>
                                     <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                                   </Style>
                                 </TextRun>
@@ -2844,11 +3024,11 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
-                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -2904,10 +3084,9 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <ColSpan>10</ColSpan>
+                        <ColSpan>9</ColSpan>
                       </CellContents>
                     </TablixCell>
-                    <TablixCell />
                     <TablixCell />
                     <TablixCell />
                     <TablixCell />
@@ -3028,7 +3207,35 @@
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>6pt</FontSize>
-                                    <Format>'$'0.00;('$'0.00)</Format>
+                                    <Format>0.00;(0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>(</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
+                                    <Format>0.00;(0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!Cur_Symbol.Value</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.00;(0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>)</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>5pt</FontSize>
+                                    <Format>0.00;(0.00)</Format>
                                     <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                                   </Style>
                                 </TextRun>
@@ -3048,7 +3255,6 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
-                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -3059,7 +3265,6 @@
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
-                <TablixMember />
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
@@ -3091,10 +3296,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>OrdDataSet</DataSetName>
-            <Top>1.19894in</Top>
+            <Top>1.16144in</Top>
             <Left>0.19347in</Left>
             <Height>0.55556in</Height>
-            <Width>7.86987in</Width>
+            <Width>7.93237in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -3109,24 +3314,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Parameters!Title.Value</Value>
+                    <Value>Accessories For 100% Export Oriented Readymade Garments Industries.Ltd.</Value>
                     <Style>
                       <FontFamily>Calibri</FontFamily>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Accessories 100% Export Oriented Readymade garments industries. LTD</Value>
-                    <Style>
-                      <FontFamily>Calibri</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -3137,16 +3328,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Title</rd:DefaultName>
-            <Top>0.87116in</Top>
+            <Top>0.95866in</Top>
             <Left>1.55159in</Left>
-            <Height>0.32778in</Height>
+            <Height>0.17222in</Height>
             <Width>5.14343in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
-              <VerticalAlign>Middle</VerticalAlign>
+              <VerticalAlign>Top</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -3260,7 +3451,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3357,6 +3548,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3458,7 +3650,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3555,6 +3747,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3656,7 +3849,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3753,6 +3946,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3854,7 +4048,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3951,6 +4145,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -4051,7 +4246,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -4147,6 +4342,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -4248,7 +4444,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -4345,6 +4541,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -4445,7 +4642,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -4463,7 +4660,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>:</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>8pt</FontSize>
@@ -4541,6 +4738,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -4641,7 +4839,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -4737,6 +4935,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -4837,7 +5036,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -4933,6 +5132,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5033,7 +5233,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5129,6 +5329,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5229,7 +5430,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5325,6 +5526,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5425,7 +5627,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5521,6 +5723,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5621,7 +5824,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5717,6 +5920,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5817,7 +6021,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -5913,6 +6117,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -6013,7 +6218,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -6109,6 +6314,7 @@
                             <RightBorder>
                               <Color>White</Color>
                             </RightBorder>
+                            <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -6149,7 +6355,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>OrdDataSet</DataSetName>
-            <Top>2.15697in</Top>
+            <Top>2.13197in</Top>
             <Left>0.18671in</Left>
             <Height>2.2038in</Height>
             <Width>7.61477in</Width>
@@ -6174,13 +6380,13 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>4.79966in</Height>
+        <Height>4.71357in</Height>
         <Style />
       </Body>
-      <Width>8.16142in</Width>
+      <Width>8.18919in</Width>
       <Page>
         <PageHeader>
-          <Height>1.5in</Height>
+          <Height>1.53222in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <Style>
             <Border>
@@ -6332,7 +6538,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Fields!cUserFullname.Value</Value>
+                      <Value>=Fields!created_userFullname.Value</Value>
                       <Style>
                         <FontFamily>Calibri</FontFamily>
                         <FontSize>7pt</FontSize>
@@ -6414,7 +6620,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Fields!cUserFullname.Value</Value>
+                      <Value>=Fields!checked_userFullname.Value</Value>
                       <Style>
                         <FontFamily>Calibri</FontFamily>
                         <FontSize>7pt</FontSize>
@@ -6494,7 +6700,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Fields!cUserFullname1.Value</Value>
+                      <Value>=Fields!approved_userFullname.Value</Value>
                       <Style>
                         <FontFamily>Calibri</FontFamily>
                         <FontSize>7pt</FontSize>
@@ -6569,11 +6775,11 @@
             </Line>
             <Image Name="Image2">
               <Source>External</Source>
-              <Value>=Parameters!UserSignPath.Value &amp; First(Fields!pi_approvedBy_user.Value, "OrdDataSet") &amp; ".jpg"</Value>
+              <Value>=Parameters!UserSignPath.Value+First(Fields!approved_user_signtr.Value, "OrdDataSet")</Value>
               <Sizing>FitProportional</Sizing>
-              <Left>6.53556in</Left>
+              <Left>6.26334in</Left>
               <Height>0.26389in</Height>
-              <Width>1.06527in</Width>
+              <Width>1.53814in</Width>
               <ZIndex>9</ZIndex>
               <Style>
                 <Border>
@@ -6583,12 +6789,12 @@
             </Image>
             <Image Name="Image4">
               <Source>External</Source>
-              <Value>=Parameters!UserSignPath.Value &amp; First(Fields!pi_checkedBy_user.Value, "OrdDataSet") &amp; ".jpg"</Value>
+              <Value>=Parameters!UserSignPath.Value+First(Fields!checked_user_signtr.Value, "OrdDataSet")</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.06945in</Top>
-              <Left>3.20083in</Left>
-              <Height>0.23784in</Height>
-              <Width>1.13429in</Width>
+              <Top>0.01389in</Top>
+              <Left>2.97862in</Left>
+              <Height>0.2934in</Height>
+              <Width>1.54721in</Width>
               <ZIndex>10</ZIndex>
               <Style>
                 <Border>
@@ -6598,12 +6804,11 @@
             </Image>
             <Image Name="Image5">
               <Source>External</Source>
-              <Value>=Parameters!UserSignPath.Value &amp; First(Fields!pi_created_by.Value, "OrdDataSet") &amp; ".jpg"</Value>
+              <Value>=Parameters!UserSignPath.Value+First(Fields!created_user__signtr.Value, "OrdDataSet")</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.02778in</Top>
-              <Left>0.36472in</Left>
-              <Height>0.25in</Height>
-              <Width>1.11333in</Width>
+              <Left>0.11171in</Left>
+              <Height>0.27778in</Height>
+              <Width>1.42321in</Width>
               <ZIndex>11</ZIndex>
               <Style>
                 <Border>
