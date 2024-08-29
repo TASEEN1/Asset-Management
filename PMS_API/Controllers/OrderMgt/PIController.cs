@@ -86,9 +86,9 @@ namespace PMS_API.Controllers.OrderMgt
         //    return Ok(data);
         //}
         [HttpGet]
-        public async Task<IActionResult> GetBookingRefForPiGenerate()
+        public async Task<IActionResult> GetBookingRefForPiGenerate(int CustomerID)
         {
-            var data = await _globalMaster.piManager.GetBookingRefForPiGenerate();
+            var data = await _globalMaster.piManager.GetBookingRefForPiGenerate(CustomerID);
             return Ok(data);
         }
         [HttpGet]
@@ -142,5 +142,6 @@ namespace PMS_API.Controllers.OrderMgt
             var data = await _globalMaster.piManager.CheckedByApprove(app);
             return Ok(new { message = data });
         }
+        
     }
 }

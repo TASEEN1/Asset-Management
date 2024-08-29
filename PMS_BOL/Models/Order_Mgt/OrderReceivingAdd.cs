@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace PMS_BOL.Models.OrderMgt
 {
     public class OrderReceivingAdd
     {
+        
         public int Id { get; set; }
         public int Ref_no { get; set; }
 
@@ -23,6 +25,7 @@ namespace PMS_BOL.Models.OrderMgt
         public int Design { get; set; }
         public int Dia { get; set; }
         public int Gsm { get; set; }
+      
         public int proc_type { get; set; }
 
         public decimal Oder_qty { get; set; }
@@ -42,6 +45,8 @@ namespace PMS_BOL.Models.OrderMgt
         public int or_payment_currency { get; set; }
         public int item_Name {get;set;}
         public int or_proc_type_forItem { get; set; }
+    
+
 
 
 
@@ -109,6 +114,7 @@ namespace PMS_BOL.Models.OrderMgt
         public string c_tnc_cashIncentive { get; set; }
         public string c_tnc_BINandVAT { get; set; }
         public string c_tnc_HSCode { get; set; }
+        public string c_tnc_concatedFromFE { get; set; }
 
 
 

@@ -33,35 +33,35 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetPaymentType()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("SELECT pm_id, Payment_Mode  FROM dbo.Smt_PaymentMode where pm_id in (1,2) ", _specfo_conn);
+            var data = await _SqlCommon.get_InformationDataTableAsync("SELECT pm_id, Payment_Mode  FROM dbo.Smt_PaymentMode where pm_id in (1,2) order by Payment_Mode ", _specfo_conn);
             return data;
         }
         public async Task<DataTable> GetColor()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct c_color_name, c_id as color_id from dbo.dg_dimtbl_color", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct c_color_name, c_id as color_id from dbo.dg_dimtbl_color order by c_color_name ", _dg_Oder_Mgt);
             return data;
         }
 
         public async Task<DataTable> GetUnit()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct cUnitDes , nUnitID from Smt_Unit", _SpecFoInventory);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct cUnitDes , nUnitID from Smt_Unit order by cUnitDes ", _SpecFoInventory);
             return data;
         }
         public async Task<DataTable> GetItemName()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_item_name", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_item_name order by in_item_name ", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> ItemNameGet()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select in_id, in_item_name, in_HS_code from dg_dimtbl_item_name", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select in_id, in_item_name, in_HS_code from dg_dimtbl_item_name order by in_item_name", _dg_Oder_Mgt);
             return data;
         }
 
 
         public async Task<DataTable> GetBuyer()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select b_id, b_buyer_name from dg_dimtbl_buyer where b_active = 1", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select b_id, b_buyer_name from dg_dimtbl_buyer where b_active = 1 order by b_buyer_name ", _dg_Oder_Mgt);
 
             return data;
         }
@@ -75,81 +75,81 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         public async Task<DataTable> GetCustomerEdit()
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_cust, c_id as customer_id, c_customer_name, c_att_person, c_att_mobile,c_att_email, c_terms_and_condition " +
-                "from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where c_active = 1 and or_com_post_bit = 1 and or_pi_add_bit = 0 ", _dg_Oder_Mgt);
+                "from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where c_active = 1 and or_com_post_bit = 1 and or_pi_add_bit = 0 order by c_customer_name ", _dg_Oder_Mgt);
 
             return data;
         }
     public async Task<DataTable> GetDia()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select d_id, d_name from dg_dimtbl_dia", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select d_id, d_name from dg_dimtbl_dia order by d_name", _dg_Oder_Mgt);
 
             return data;
         }
         public async Task<DataTable> Getgsm()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select g_id,g_gsm from dg_dimtbl_gsm", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select g_id,g_gsm from dg_dimtbl_gsm order by g_gsm", _dg_Oder_Mgt);
 
             return data;
         }
-        public async Task<DataTable> Getdesign()
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select des_id, des_name from dg_dimtbl_design", _dg_Oder_Mgt);
+        //public async Task<DataTable> Getdesign()
+        //{
+        //    var data = await _SqlCommon.get_InformationDataTableAsync("select des_id, des_name from dg_dimtbl_design", _dg_Oder_Mgt);
 
-            return data;
-        }
+        //    return data;
+        //}
         //Modal View
         public async Task<DataTable> GetBuyerView()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_buyer where b_active = 1", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_buyer where b_active = 1 order by b_buyer_name ", _dg_Oder_Mgt);
 
             return data;
         }
       
         public async Task<DataTable> GetcustomerView()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as dimtbl_customer_id, c_customer_name, c_att_person, c_att_email, c_att_mobile, c_address, c_terms_and_condition, c_created_by, c_active, c_tnc_offerValidity,c_tnc_letterOfCredit, c_tnc_advisingBank, c_tnc_negoBankNPeriod, c_tnc_delivery, c_tnc_deliveryTerms, c_tnc_paymentNInterest, c_tnc_bankCharges, c_tnc_inspection, c_tnc_BTMACertificate, c_tnc_maturity, c_tnc_payment, c_tnc_cashIncentive, c_tnc_BINandVAT, c_tnc_HSCode from dg_dimtbl_customer where c_active = 1", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as dimtbl_customer_id, c_customer_name, c_att_person, c_att_email, c_att_mobile, c_address, c_terms_and_condition, c_created_by, c_active, c_tnc_offerValidity,c_tnc_letterOfCredit, c_tnc_advisingBank, c_tnc_negoBankNPeriod, c_tnc_delivery, c_tnc_deliveryTerms, c_tnc_paymentNInterest, c_tnc_bankCharges, c_tnc_inspection, c_tnc_BTMACertificate, c_tnc_maturity, c_tnc_payment, c_tnc_cashIncentive, c_tnc_BINandVAT, c_tnc_HSCode from dg_dimtbl_customer where c_active = 1 order by c_customer_name ", _dg_Oder_Mgt);
 
             return data;
         }
 
         public async Task<DataTable> GetcolorView()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as color_id, c_color_name , c_created_by ,c_created_date , c_updated_by , c_updated_date from dg_dimtbl_color", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as color_id, c_color_name , c_created_by ,c_created_date , c_updated_by , c_updated_date from dg_dimtbl_color order by c_color_name", _dg_Oder_Mgt);
 
             return data;
         }
 
-        public async Task<DataTable> GetdesignView()
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_design", _dg_Oder_Mgt);
+        //public async Task<DataTable> GetdesignView()
+        //{
+        //    var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_design", _dg_Oder_Mgt);
 
-            return data;
-        }
+        //    return data;
+        //}
         public async Task<DataTable> GetDiaView()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_dia", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_dia order by d_name ", _dg_Oder_Mgt);
             return data;
         }
 
         public async Task<DataTable> GetgsmView()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_gsm", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_gsm order by g_gsm ", _dg_Oder_Mgt);
             return data;
         }
         //End
        
         public async Task<DataTable> Getpayment_currency()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select cCurID, cCurdes from SpecFo_Inventory.dbo.Smt_CurencyType where cCurID in (1,4)", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select cCurID, cCurdes from SpecFo_Inventory.dbo.Smt_CurencyType where cCurID in (1,4) order by cCurdes ", _dg_Oder_Mgt);
             return data;
         }
 
 
-        public async Task<DataTable> GetStyleEdit(int custID)
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no, or_style_no from dg_order_receiving where  or_com_post_bit = 1 and or_pi_add_bit = 0 and or_cust = '" + custID +"'", _dg_Oder_Mgt);
-            return data;
-        }
+        //public async Task<DataTable> GetStyleEdit(int custID)
+        //{
+        //    var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no, or_style_no from dg_order_receiving where  or_com_post_bit = 1 and or_pi_add_bit = 0 and or_cust = '" + custID +"'", _dg_Oder_Mgt);
+        //    return data;
+        //}
 
        
         public async Task<DataTable> OrderReceivedAddView(string sessionUser)
@@ -367,6 +367,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@c_tnc_HSCode ", ord.c_tnc_HSCode);
                     cmd.Parameters.AddWithValue("@c_tnc_offerValidity", ord.c_tnc_offerValidity);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
+                    cmd.Parameters.AddWithValue("@c_tnc_concatedFromFE", ord.c_tnc_concatedFromFE);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -533,6 +534,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@c_tnc_BINandVAT ", ord.c_tnc_BINandVAT);
                     cmd.Parameters.AddWithValue("@c_tnc_HSCode ", ord.c_tnc_HSCode);
                     cmd.Parameters.AddWithValue("@c_tnc_offerValidity", ord.c_tnc_offerValidity);
+                    cmd.Parameters.AddWithValue("@c_tnc_concatedFromFE", ord.c_tnc_concatedFromFE);
                     cmd.Parameters.AddWithValue("@updatedBy", ord.UpdatedBy);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;

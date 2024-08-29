@@ -80,7 +80,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         //}
         public async Task<DataTable> GetPI_Number()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_number, pi_issued_ref_no from dg_pi_issued", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_number, pi_issued_ref_no from dg_pi_issued order by pi_issued_ref_no desc", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetPI_ProcessType()
@@ -278,20 +278,39 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return message;
         }
 
-        public async Task<DataTable> GetBookingRefForPiGenerate()
+        public async Task<DataTable> GetBookingRefForPiGenerate(int CustomerID)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_GetForPiBookingRef", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_GetForPiBookingRef " + CustomerID, _dg_Oder_Mgt);
             return data;
         }
+        //public async Task<DataTable> GetBookingRefForPiGenerate(int CustomerID)
+        //{
+        //    string query;
+
+        //    if (CustomerID==0)
+        //    {
+        //        query = "dg_generate_pi_GetForPiBookingRef NULL";
+
+        //    }
+        //    else
+        //    {
+        //        query = $"dg_generate_pi_GetForPiBookingRef {CustomerID}";
+        //    }
+
+        //    var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
+        //    return data;
+        //}
+
+
 
         public async Task<DataTable> GetPI_CustomerTermsAndCondition(int Ref_No)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct c_id as customer_id, c_customer_name, c_terms_and_condition,c_att_person,c_att_mobile,c_att_email from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_ref_no = " + Ref_No, _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct c_id as customer_id, c_customer_name,c_tnc_concatedFromFE,c_att_person,c_att_mobile,c_att_email from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_ref_no = " + Ref_No, _dg_Oder_Mgt);
             return data;
         }
 
 
-
+        
 
 
     }

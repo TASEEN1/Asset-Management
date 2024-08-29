@@ -18,12 +18,12 @@ namespace PMS_API.Controllers.OrderMgt
         }
 
         [HttpGet]
-        public async Task<IActionResult> OrderReceivedReport(int comID, string UserName, string reportType, int? Ref_NO, int customer,  DateTime FromDate, DateTime ToDate)
+        public async Task<IActionResult> OrderReceivedReport(int comID, string UserName, string reportType, int? Ref_NO, int customer)
 
 
         {
             ReportFileExt reportFileExt = new ReportFileExt();
-            var data = _globalMaster.orderReportManager.OrderReceivedReport(comID, UserName, reportType,Ref_NO, customer, FromDate, ToDate);
+            var data = _globalMaster.orderReportManager.OrderReceivedReport(comID, UserName, reportType,Ref_NO, customer);
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
 

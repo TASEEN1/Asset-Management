@@ -81,12 +81,12 @@ namespace PMS_API.Controllers.OrderMgt
             var data = await _globalMaster.orderManager.Getgsm();
             return Ok(data);
         }
-        [HttpGet]
-        public async Task<IActionResult> Getdesign()
-        {
-            var data = await _globalMaster.orderManager.Getdesign();
-            return Ok(data);
-        }
+        //[HttpGet]
+        //public async Task<IActionResult> Getdesign()
+        //{
+        //    var data = await _globalMaster.orderManager.Getdesign();
+        //    return Ok(data);
+        //}
         [HttpGet]
         public async Task<IActionResult> GetBuyerView()
         {
@@ -107,12 +107,12 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(data);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetdesignView()
-        {
-            var data = await _globalMaster.orderManager.GetdesignView();
-            return Ok(data);
-        }
+        //[HttpGet]
+        //public async Task<IActionResult> GetdesignView()
+        //{
+        //    var data = await _globalMaster.orderManager.GetdesignView();
+        //    return Ok(data);
+        //}
 
         [HttpGet]
         public async Task<IActionResult> GetDiaView()
@@ -129,12 +129,12 @@ namespace PMS_API.Controllers.OrderMgt
         }
        
 
-        [HttpGet]
-        public async Task<IActionResult> GetStyleEdit(int custID)
-        {
-            var data = await _globalMaster.orderManager.GetStyleEdit(custID);
-            return Ok(data);
-        }
+        //[HttpGet]
+        //public async Task<IActionResult> GetStyleEdit(int custID)
+        //{
+        //    var data = await _globalMaster.orderManager.GetStyleEdit(custID);
+        //    return Ok(data);
+        //}
 
         [HttpGet]
         public async Task<IActionResult> GetCustomerEdit()
