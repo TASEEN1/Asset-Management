@@ -2373,7 +2373,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.925in</Top>
+            <Top>0.9125in</Top>
             <Left>0.19389in</Left>
             <Height>0.74723in</Height>
             <Width>11.29149in</Width>
@@ -2434,7 +2434,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Buyer : </Value>
+                        <Value>Buyer        : </Value>
                         <Style>
                           <FontFamily>calibri</FontFamily>
                           <FontSize>9pt</FontSize>
@@ -2477,7 +2477,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Received Date : </Value>
+                        <Value>Received Date :  </Value>
                         <Style>
                           <FontFamily>calibri</FontFamily>
                           <FontSize>9pt</FontSize>
@@ -2521,7 +2521,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Delivery Date : </Value>
+                        <Value>Delivery Date   :  </Value>
                         <Style>
                           <FontFamily>calibri</FontFamily>
                           <FontSize>9pt</FontSize>
@@ -2565,7 +2565,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Order RefNo : </Value>
+                        <Value>Order Ref No   :  </Value>
                         <Style>
                           <FontFamily>calibri</FontFamily>
                           <FontSize>9pt</FontSize>
@@ -2603,7 +2603,7 @@
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>0.04167in</Top>
+            <Top>0.01667in</Top>
             <Left>0.19389in</Left>
             <Height>0.84027in</Height>
             <Width>11.29665in</Width>
@@ -2621,7 +2621,7 @@
       <Width>11.62403in</Width>
       <Page>
         <PageHeader>
-          <Height>1.11389in</Height>
+          <Height>1.08611in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2668,6 +2668,7 @@
                       <Value>=Parameters!Add1.Value</Value>
                       <Style>
                         <FontFamily>calibri</FontFamily>
+                        <FontSize>12pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2700,6 +2701,7 @@
                       <Value>=Parameters!Title.Value</Value>
                       <Style>
                         <FontFamily>calibri</FontFamily>
+                        <FontSize>12pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2722,11 +2724,11 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Line Name="Line1">
-              <Top>1.05416in</Top>
-              <Left>0.14389in</Left>
+            <Line Name="Line3">
+              <Top>1.04306in</Top>
+              <Left>0.10385in</Left>
               <Height>0in</Height>
-              <Width>11.34207in</Width>
+              <Width>11.44132in</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>

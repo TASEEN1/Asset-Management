@@ -9,6 +9,7 @@ namespace PMS_BOL.Models.OrderMgt
 {
     public class PI_Model
     {
+        public int ComID { get; set; }
         public int Pi_id { get; set; }
     
         public int or_id { get; set; }

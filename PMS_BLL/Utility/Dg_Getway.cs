@@ -19,7 +19,7 @@
             {
                 if (_dg_pms == null)
                 {
-                    _dg_pms = String.Format("Data Source=192.168.1.42;Initial Catalog=Mr_PMS;Persist Security Info=true; User ID=sa; Password=dg@2022;TrustServerCertificate=True");
+                    _dg_pms = String.Format("Data Source=192.168.100.250;Initial Catalog=Mr_PMS;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
                 }
                 return _dg_pms;
             }
@@ -30,7 +30,7 @@
         //    {
         //        if (_SpecFoCon == null)
         //        {
-        //            _SpecFoCon = String.Format("Data Source=192.168.1.42;Initial Catalog=SpecFo;Persist Security Info=true; User ID=sa; Password=dg@2022;TrustServerCertificate=True");
+        //            _SpecFoCon = String.Format("Data Source=192.168.100.250;Initial Catalog=SpecFo;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
         //        }
         //        return _SpecFoCon;
         //    }
@@ -42,7 +42,7 @@
         //    {
         //        if (_SpecFoInventory == null)
         //        {
-        //            _SpecFoInventory = String.Format("Data Source=192.168.1.42;Initial Catalog=SpecFo_Inventory;Persist Security Info=true; User ID=sa; Password=dg@2022;TrustServerCertificate=True");
+        //            _SpecFoInventory = String.Format("Data Source=192.168.100.250;Initial Catalog=SpecFo_Inventory;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
         //        }
         //        return _SpecFoInventory;
         //    }
@@ -54,7 +54,7 @@
             {
                 if (_Mr_SCM == null)
                 {
-                    _Mr_SCM = String.Format("Data Source=192.168.1.42;Initial Catalog=Mr_SCM;Persist Security Info=true; User ID=sa; Password=dg@2022;TrustServerCertificate=True");
+                    _Mr_SCM = String.Format("Data Source=192.168.100.250;Initial Catalog=Mr_SCM;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
                 }
                 return _Mr_SCM;
             }
@@ -66,7 +66,7 @@
             {
                 if (_dg_barcode == null)
                 {
-                    _dg_barcode = String.Format("Data Source=192.168.1.42;Initial Catalog=Barcoding;Persist Security Info=true; User ID=sa; Password=dg@2022;TrustServerCertificate=True");
+                    _dg_barcode = String.Format("Data Source=192.168.100.250;Initial Catalog=Barcoding;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
                 }
                 return _dg_barcode;
             }
@@ -78,7 +78,7 @@
             {
                 if (_dg_smart_code == null)
                 {
-                    _dg_smart_code = String.Format("Data Source=192.168.1.42;Initial Catalog=Smartcode;Persist Security Info=true; User ID=sa; Password=dg@2022;TrustServerCertificate=True");
+                    _dg_smart_code = String.Format("Data Source=192.168.100.250;Initial Catalog=Smartcode;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
                 }
                 return _dg_smart_code;
             }
@@ -90,7 +90,7 @@
             {
                 if (_dg_gate_pass == null)
                 {
-                    _dg_gate_pass = String.Format("Data Source=192.168.1.42;Initial Catalog=Mr_Gate_Pass_Sys;Persist Security Info=true; User ID=sa; Password=dg@2022;TrustServerCertificate=True");
+                    _dg_gate_pass = String.Format("Data Source=192.168.100.250;Initial Catalog=Mr_Gate_Pass_Sys;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
                 }
                 return _dg_gate_pass;
             }
@@ -102,7 +102,7 @@
             {
                 if (_dg_weaving == null)
                 {
-                    _dg_weaving = String.Format("Data Source=192.168.1.42;Initial Catalog=dg_textile;Persist Security Info=true; User ID=sa; Password=dg@2022;TrustServerCertificate=True");
+                    _dg_weaving = String.Format("Data Source=192.168.100.250;Initial Catalog=dg_textile;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
                 }
                 return _dg_weaving;
             }
@@ -115,7 +115,7 @@
         //    {
         //        if (_dg_Asst_Mgt == null)
         //        {
-        //            _dg_Asst_Mgt = String.Format("Data Source=192.168.1.42;Initial Catalog=Mr_Asset_Info;Persist Security Info=true; User ID=sa; Password=dg@2022;TrustServerCertificate=True");
+        //            _dg_Asst_Mgt = String.Format("Data Source=192.168.100.250;Initial Catalog=Mr_Asset_Info;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
         //        }
         //        return _dg_Asst_Mgt;
         //    }
@@ -158,6 +158,18 @@
 
 
 
+        //public static string dg_Oder_Mgt
+        //{
+
+        //    get
+        //    {
+        //        if (_dg_Oder_Mgt == null)
+        //        {
+        //            _dg_Oder_Mgt = String.Format("Data Source=192.168.100.250;Initial Catalog=dg_OMS;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
+        //        }
+        //        return _dg_Oder_Mgt;
+        //    }
+        //}
         public static string dg_Oder_Mgt
         {
 

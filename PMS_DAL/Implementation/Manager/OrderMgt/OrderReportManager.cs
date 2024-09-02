@@ -165,7 +165,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             {
             new ReportParameter("Company",ComName),
             new ReportParameter("Add1", cAdd1),
-            new ReportParameter("Title", "Work Order Formate"),
+            new ReportParameter("Title", "Attributes From"),
             new ReportParameter("PrintUser", "" + UserName + "")
 
             };
