@@ -150,6 +150,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     {
 
                         cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@wo_insertedBy_compId", ord.ComID);
                         cmd.Parameters.AddWithValue("@wo_or_ref_no", ord.wo_or_ref_no);
                         cmd.Parameters.AddWithValue("@wo_or_id", ord.wo_or_id);
                         cmd.Parameters.AddWithValue("@wo_workOrderSL", wo_workOrderSL);

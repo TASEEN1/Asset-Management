@@ -213,6 +213,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_color_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId",ord.ComID);
                     cmd.Parameters.AddWithValue("@colorName", ord.ColorName);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
@@ -244,6 +245,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_item_name_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@itemName", ord.ItemName);
                     cmd.Parameters.AddWithValue("@HSCode", ord.HSCode);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
@@ -277,6 +279,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_process_type_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@procName", ord.processName);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
@@ -309,6 +312,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_buyer_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@buyerName", ord.BuyerName);
                     cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
                     cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);
@@ -345,6 +349,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_customer_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@customerName", ord.Cus_Name);
                     cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
                     cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);
@@ -397,6 +402,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_dia_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@diaName", ord.DiaName);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
@@ -426,6 +432,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_gsm_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@gsmName", ord.GsmName);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
@@ -454,6 +461,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_design_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@designName ", ord.designName);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
@@ -513,6 +521,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_customer_update", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@updatedBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@custId", ord.customerId);
                     cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
                     cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);
@@ -565,6 +574,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_buyer_update", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@updatedBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@buyerId", ord.BuyerID);
                     cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
                     cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);
@@ -632,6 +642,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_order_receiving_add_order_add", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@or_cust", ord.Customer);
                     cmd.Parameters.AddWithValue("@or_buyer", ord.Buyer);
                     cmd.Parameters.AddWithValue("@or_style_no", ord.style_no);
@@ -802,6 +813,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_order_receiving_add_edit_order_update", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@updatedBy_compId",ord.ComID);
                     cmd.Parameters.AddWithValue("@id", ord.Id);
                     cmd.Parameters.AddWithValue("@or_cust", ord.Customer);
                     cmd.Parameters.AddWithValue("@or_buyer", ord.Buyer);

@@ -54,6 +54,7 @@ namespace PMS_BOL.Models.OrderMgt
 
     public class ColorSave
     {
+        public int ComID { get; set; }
         public string ColorName { get; set; }
         public string createdby { get; set; }
     }
@@ -62,6 +63,7 @@ namespace PMS_BOL.Models.OrderMgt
 
     public class ItemDescriptionSave
     {
+        public int ComID { get; set; }
         public string ItemName { get; set; }
         public string HSCode { get; set; }
         public string createdby { get; set; }
@@ -69,12 +71,14 @@ namespace PMS_BOL.Models.OrderMgt
 
     public class ProcessTypeSave
     {
+        public int ComID { get; set; }
         public string processName { get; set; }
         public string createdby { get; set; }
     }
 
     public class BuyerSave
     {
+        public int ComID { get; set; }
         public int BuyerID { get; set; }
         public string BuyerName { get; set; }
         public string AttPerson { get; set; }
@@ -88,6 +92,7 @@ namespace PMS_BOL.Models.OrderMgt
 
     public class customerSave
     {
+        public int ComID { get; set; }
         public int customerId { get; set; }
         public string Cus_Name { get; set; }
         public string AttPerson { get; set; }
@@ -126,18 +131,22 @@ namespace PMS_BOL.Models.OrderMgt
 
     public class diaSave
     {
+        public int ComID { get; set; }
         public string DiaName { get; set; }
         public string createdby { get; set; }
     }
 
     public class gsmSave
     {
+        public int ComID { get; set; }
         public string GsmName { get; set; }
         public string createdby { get; set; }
     }
 
     public class designSave
+
     {
+        public int ComID { get; set; }
         public string designName { get; set; }
         public string createdby { get; set; }
     }

@@ -27,6 +27,7 @@ namespace PMS_BOL.Models.OrderMgt
         public int pi_proc_type { get; set; }
         public int pi_or_ref_no { get; set; }
         public string rpi_revised_by { get; set; }
+        public string pi_Updated_by { get; set; }
 
         //public DateTime pi_checkedBy_date { get; set; }
         //public DateTime pi_approvedBy_date { get; set; }

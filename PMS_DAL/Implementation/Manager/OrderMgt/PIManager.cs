@@ -100,6 +100,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_generate_pi_add", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@pi_createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@or_ref_no", ord.pi_or_ref_no);
                     cmd.Parameters.AddWithValue("@pi_created_by", ord.Created_by);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
@@ -196,8 +197,9 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_generate_pi_approval_revise", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@pi_updatedBy_compId",ord.ComID);
                     cmd.Parameters.AddWithValue("@pi_ref_no", ord.Ref_no);
-                    cmd.Parameters.AddWithValue("@rpi_revised_by", ord.rpi_revised_by);
+                    cmd.Parameters.AddWithValue("@pi_updated_by", ord.pi_Updated_by);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
@@ -227,6 +229,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_generate_pi_approval_approvedBy_approve", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@pi_approvedByUser_compId",ord.ComID);
                     cmd.Parameters.AddWithValue("@pi_issued_ref_no", ord.Ref_no);
                     cmd.Parameters.AddWithValue("@pi_approvedBy_user", ord.pi_approvedBy_user);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
@@ -258,6 +261,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_generate_pi_approval_checkedBy_approve", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@pi_checkedByUser_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@pi_issued_ref_no", ord.Ref_no);
                     cmd.Parameters.AddWithValue("@pi_checkedBy_user", ord.pi_checkedBy_user);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);

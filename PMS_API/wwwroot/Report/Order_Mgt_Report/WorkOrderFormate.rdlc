@@ -190,6 +190,18 @@
           <DataField>pt_process_name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="cCmpName">
+          <DataField>cCmpName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cAdd1">
+          <DataField>cAdd1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="wo_insertedBy_compId">
+          <DataField>wo_insertedBy_compId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="pt_padding_type">
           <DataField>pt_padding_type</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -2632,7 +2644,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!Company.Value</Value>
+                      <Value>=Fields!cCmpName.Value</Value>
                       <Style>
                         <FontFamily>Calibri</FontFamily>
                         <FontSize>15pt</FontSize>
@@ -2665,7 +2677,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!Add1.Value</Value>
+                      <Value>=Fields!cAdd1.Value</Value>
                       <Style>
                         <FontFamily>calibri</FontFamily>
                         <FontSize>12pt</FontSize>

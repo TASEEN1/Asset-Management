@@ -121,6 +121,14 @@
           <DataField>Cur_Symbol</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="cCmpName">
+          <DataField>cCmpName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cAdd1">
+          <DataField>cAdd1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>OrdDataSet</rd:DataSetName>
@@ -2140,18 +2148,10 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!Company.Value</Value>
+                      <Value>=Fields!cCmpName.Value</Value>
                       <Style>
                         <FontFamily>Calibri</FontFamily>
                         <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value xml:space="preserve">                                                                                                                                                     </Value>
-                      <Style>
-                        <FontFamily>Calibri</FontFamily>
-                        <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -2161,10 +2161,10 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!Add1.Value</Value>
+                      <Value>=Fields!cAdd1.Value</Value>
                       <Style>
                         <FontFamily>Calibri</FontFamily>
-                        <FontSize>9pt</FontSize>
+                        <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
