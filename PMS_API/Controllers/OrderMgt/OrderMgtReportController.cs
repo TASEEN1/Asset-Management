@@ -56,6 +56,15 @@ namespace PMS_API.Controllers.OrderMgt
             var data = _globalMaster.orderReportManager.WorkOrderReportFormate(comID, UserName, reportType, Rrf_No,customerId);
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
+        [HttpGet]
+        public async Task<IActionResult> ProductionSummaryReport(int comID, string UserName, string reportType, DateTime FromDate, DateTime ToDate)
+
+
+        {
+            ReportFileExt reportFileExt = new ReportFileExt();
+            var data = _globalMaster.orderReportManager.ProductionSummaryReport(comID, UserName, reportType, FromDate, ToDate);
+            return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
+        }
 
     }
 }

@@ -16,7 +16,7 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable> GetItemName();
 
         public Task<DataTable> GetBuyer();
-        public Task<DataTable>GetCustomer();
+        public Task<DataTable>GetCustomer( int OrderType_ID);
         public Task<DataTable> GetDia();
         public Task<DataTable> Getgsm();
         //public Task<DataTable> Getdesign();
@@ -35,6 +35,7 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
 
         public Task<DataTable> OrderReceivedAddView(string sessionUser);
         public Task<DataTable> GetOrderReceivedAddEditView( int Ref_no);
+        public Task<DataTable> GetOrderType();
 
         public Task<string> ColorSave(List<ColorSave>app);
         public Task<string>OrderReceivedAdd(List<OrderReceivingAdd> app);

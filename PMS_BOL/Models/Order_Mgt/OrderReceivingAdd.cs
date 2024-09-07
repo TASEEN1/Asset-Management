@@ -45,7 +45,9 @@ namespace PMS_BOL.Models.OrderMgt
         public int or_payment_currency { get; set; }
         public int item_Name {get;set;}
         public int or_proc_type_forItem { get; set; }
-    
+        public int custOrderType { get; set; }
+
+
 
 
 
@@ -93,6 +95,7 @@ namespace PMS_BOL.Models.OrderMgt
     public class customerSave
     {
         public int ComID { get; set; }
+        public int customer_orderType { get; set; }
         public int customerId { get; set; }
         public string Cus_Name { get; set; }
         public string AttPerson { get; set; }

@@ -98,6 +98,7 @@
     <EmbeddedResource Include="AssetDetailsSummary.rdlc" />
     <EmbeddedResource Include="Asset_Repair_ReportDatails.rdlc" />
     <EmbeddedResource Include="OrderWiseRpt.rdlc" />
+    <EmbeddedResource Include="Production_Summary.rdlc" />
     <EmbeddedResource Include="Proforma_Invoice.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
