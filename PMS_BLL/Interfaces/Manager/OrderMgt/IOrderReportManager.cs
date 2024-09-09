@@ -14,6 +14,10 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public byte[] WorkOrderReport(int comID, string UserName, string reportType, int Rrf_No );
         public byte[] WorkOrderReportFormate(int comID, string UserName, string reportType, int Rrf_No,int customerId);
         public byte[] ProductionSummaryReport(int comID, string UserName, string reportType, DateTime FromDate, DateTime ToDate);
+        public byte[] DailyProductionSummaryReport(int comID, string UserName, string reportType, DateTime FromDate, DateTime ToDate);
+
+
+
 
 
 

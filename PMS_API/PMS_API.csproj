@@ -12,6 +12,7 @@
     <Content Remove="wwwroot\Report\Asset_report\AssetDetailsMaster_Rpt.rdlc" />
     <Content Remove="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
     <Content Remove="wwwroot\Report\Asset_report\ScheduledMaintenance Report.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\DailyProductionSummary.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\OrderWiseRpt.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\Production_Summary.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\Proforma_Invoice.rdlc" />
@@ -33,6 +34,10 @@
     <Content Remove="wwwroot\Report\ReportDataSet\padding_type_DataSet.xsc" />
     <Content Remove="wwwroot\Report\ReportDataSet\padding_type_DataSet.xsd" />
     <Content Remove="wwwroot\Report\ReportDataSet\padding_type_DataSet.xss" />
+    <Content Remove="wwwroot\Report\ReportDataSet\test.Designer.cs" />
+    <Content Remove="wwwroot\Report\ReportDataSet\test.xsc" />
+    <Content Remove="wwwroot\Report\ReportDataSet\test.xsd" />
+    <Content Remove="wwwroot\Report\ReportDataSet\test.xss" />
     <Content Remove="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.Designer.cs" />
     <Content Remove="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.xsc" />
     <Content Remove="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.xsd" />
@@ -64,6 +69,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>padding_type_DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="wwwroot\Report\ReportDataSet\test.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>test.xsd</DependentUpon>
+    </Compile>
     <Compile Include="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -82,6 +92,7 @@
     <EmbeddedResource Include="wwwroot\Report\Asset_report\Asset Details.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Asset_report\ScheduledMaintenance Report.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\DailyProductionSummary.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\OrderWiseRpt.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\Production_Summary.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\Proforma_Invoice.rdlc" />
@@ -147,6 +158,13 @@
       <Generator>MSDataSetGenerator</Generator>
     </None>
     <None Include="wwwroot\Report\ReportDataSet\padding_type_DataSet.xss" />
+    <None Include="wwwroot\Report\ReportDataSet\test.xsc" />
+    <None Include="wwwroot\Report\ReportDataSet\test.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>test.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\Report\ReportDataSet\test.xss" />
     <None Include="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.xsc" />
     <None Include="wwwroot\Report\ReportDataSet\Work_order_Complete_DataSet.xsd">
       <SubType>Designer</SubType>

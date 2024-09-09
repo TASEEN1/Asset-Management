@@ -21,6 +21,8 @@
                 {
                     //_dg_pms = String.Format("Data Source=.;Initial Catalog=Mr_PMS;Persist Security Info=true; User ID=sa; Password=taseen;TrustServerCertificate=True");
                     _dg_pms = String.Format("Data Source=192.168.100.250;Initial Catalog=Mr_PMS;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
+                    //_dg_pms = String.Format("Data Source=192.168.1.42;Initial Catalog=Mr_PMS;Persist Security Info=true; User ID=sa; Password=--------;TrustServerCertificate=True");
+
                 }
                 return _dg_pms;
             }
@@ -33,6 +35,8 @@
                 {
                     //_SpecFoCon = String.Format("Data Source=.;Initial Catalog=SpecFo;Persist Security Info=true; User ID=sa; Password=taseen;TrustServerCertificate=True");
                     _SpecFoCon = String.Format("Data Source=192.168.100.250;Initial Catalog=SpecFo;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
+                    //_SpecFoCon = String.Format("Data Source=192.168.1.42;Initial Catalog=SpecFo;Persist Security Info=true; User ID=sa; Password=-------;TrustServerCertificate=True");
+
                 }
                 return _SpecFoCon;
             }
@@ -130,6 +134,8 @@
                 {
                     //_SpecFoInventory = String.Format("Data Source=192.168.100.250;Initial Catalog=SpecFo_Inventory;Persist Security Info=true; User ID=sa; Password=taseen;TrustServerCertificate=True");
                     _SpecFoInventory = String.Format("Data Source=192.168.100.250;Initial Catalog=SpecFo_Inventory;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
+                    //_SpecFoInventory = String.Format("Data Source=192.168.1.42;Initial Catalog=SpecFo_Inventory;Persist Security Info=true; User ID=sa; Password=-------;TrustServerCertificate=True");
+
                 }
                 return _SpecFoInventory;
             }
@@ -147,6 +153,8 @@
                 {
                     //_dg_Oder_Mgt = String.Format("Data Source=.;Initial Catalog=dg_OMS;Persist Security Info=true; User ID=sa; Password=taseen;TrustServerCertificate=True");
                     _dg_Oder_Mgt = String.Format("Data Source=192.168.100.250;Initial Catalog=dg_OMS;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
+                    // _dg_Oder_Mgt = String.Format("Data Source=192.168.1.42;Initial Catalog=dg_OMS;Persist Security Info=true; User ID=sa; Password=--------;TrustServerCertificate=True");
+
                 }
                 return _dg_Oder_Mgt;
             }

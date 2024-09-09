@@ -29,11 +29,52 @@ namespace PMS_API.Controllers.OrderMgt
             var data = await _globalMaster.productionManager.GetShift();
             return Ok(data);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetProductionPadding_RefNo()
+        {
+            var data = await _globalMaster.productionManager.GetProductionPadding_RefNo();
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetProductionQuilting_RefNo()
+        {
+            var data = await _globalMaster.productionManager.GetProductionQuilting_RefNo();
+            return Ok(data);
+        }
+
+        //GET
+        [HttpGet]
+        public async Task<IActionResult> GetPadding_ProductionItemBeforeAdd(int refNO)
+        {
+            var data = await _globalMaster.productionManager.GetPadding_ProductionItemBeforeAdd(refNO);
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetPadding_ProductionItemAfterAdd(int refNO)
+        {
+            var data = await _globalMaster.productionManager.GetPadding_ProductionItemAfterAdd(refNO);
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetQuilting_ProductionItemAfterAdd(int refNO)
+        {
+            var data = await _globalMaster.productionManager.GetQuilting_ProductionItemAfterAdd(refNO);
+            return Ok(data);
+        }
+       
+
         //Modal
         [HttpGet]
         public async Task<IActionResult> GetmachineView()
         {
             var data = await _globalMaster.productionManager.GetmachineView();
+            return Ok(data);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetShiftview()
+        {
+            var data = await _globalMaster.productionManager.GetShiftview();
             return Ok(data);
         }
         [HttpPost]

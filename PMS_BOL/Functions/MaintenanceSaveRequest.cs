@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 
 namespace PMS_BOL.Functions
 {
+    //ASSET
     public class MaintenanceSaveRequest 
     {
         public List<ScheduleMaintenanceModel> ScheduleMaintenanceModels { get; set; }
         public List<SMServiceTypeSave_Model> SMServiceTypeSaveModels { get; set; }
 
     }
+    //OMS
     public class WorkorderSaveRequest
     {
         public List<workOrder_Model> workOrder_Models { get; set; }

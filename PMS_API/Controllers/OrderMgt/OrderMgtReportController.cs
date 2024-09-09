@@ -65,6 +65,15 @@ namespace PMS_API.Controllers.OrderMgt
             var data = _globalMaster.orderReportManager.ProductionSummaryReport(comID, UserName, reportType, FromDate, ToDate);
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
+        [HttpGet]
+        public async Task<IActionResult> DailyProductionSummaryReport(int comID, string UserName, string reportType, DateTime FromDate, DateTime ToDate)
+
+
+        {
+            ReportFileExt reportFileExt = new ReportFileExt();
+            var data = _globalMaster.orderReportManager.DailyProductionSummaryReport(comID, UserName, reportType, FromDate, ToDate);
+            return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
+        }
 
     }
 }
