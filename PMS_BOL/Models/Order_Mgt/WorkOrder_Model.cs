@@ -11,7 +11,7 @@ namespace PMS_BOL.Models.OrderMgt
  
 
         //Work_Order_Other_Attributes_Save
-
+        public int ComID { get; set; }
         public int wo_or_ref_no { get; set; }
         public int wo_or_id { get; set; }
         public string wo_remarks { get; set; }

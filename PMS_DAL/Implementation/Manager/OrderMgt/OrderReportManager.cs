@@ -165,13 +165,75 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             {
             new ReportParameter("Company",ComName),
             new ReportParameter("Add1", cAdd1),
-            new ReportParameter("Title", "Work Order Formate"),
+            new ReportParameter("Title", "Attributes From"),
             new ReportParameter("PrintUser", "" + UserName + "")
 
             };
             byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
             return reportBytes;
         }
+
+
+        public byte[] ProductionSummaryReport(int comID, string UserName, string reportType, DateTime FromDate, DateTime ToDate)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            var tbldata = new DataTable[]
+            {
+                _SqlCommon.get_InformationDataTable("dg_report_production__Rpt '"+FromDate+"','"+ ToDate + "'", _dg_Oder_Mgt),
+                //_SqlCommon.get_InformationDataTable("dg_report_production_Rpt2 '"+FromDate+"','"+ ToDate + "'", _dg_Oder_Mgt),
+
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\Production_Summary.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title", "Production Summary"),
+            new ReportParameter("PrintUser", "" + UserName + "")
+
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
+
+        public byte[] DailyProductionSummaryReport(int comID, string UserName, string reportType, DateTime FromDate, DateTime ToDate)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            var tbldata = new DataTable[]
+            {
+                _SqlCommon.get_InformationDataTable("dg_report_daily_production_Summary__Rpt '"+FromDate+"','"+ ToDate + "'", _dg_Oder_Mgt),
+                //_SqlCommon.get_InformationDataTable("dg_report_production_Rpt2 '"+FromDate+"','"+ ToDate + "'", _dg_Oder_Mgt),
+
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\DailyProductionSummary.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title", " Daily Production Summary"),
+            new ReportParameter("PrintUser", "" + UserName + "")
+
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
+
 
         //Common Report Code
         private byte[] GenerateReport(DataTable dataTable, string datasetName, string rdlcFilePath, string reportType, ReportParameterCollection reportParameters = null)

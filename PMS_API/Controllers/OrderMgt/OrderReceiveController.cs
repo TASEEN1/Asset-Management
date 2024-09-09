@@ -62,9 +62,9 @@ namespace PMS_API.Controllers.OrderMgt
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetCustomer()
+        public async Task<IActionResult> GetCustomer(int OrderType_ID)
         {
-            var data = await _globalMaster.orderManager.GetCustomer();
+            var data = await _globalMaster.orderManager.GetCustomer(OrderType_ID);
             return Ok(data);
         }
 
@@ -147,6 +147,12 @@ namespace PMS_API.Controllers.OrderMgt
         public async Task<IActionResult> Getpayment_currency()
         {
             var data = await _globalMaster.orderManager.Getpayment_currency();
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetOrderType()
+        {
+            var data = await _globalMaster.orderManager.GetOrderType();
             return Ok(data);
         }
 

@@ -66,9 +66,9 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return data;
         }
 
-        public async Task<DataTable> GetCustomer()
+        public async Task<DataTable> GetCustomer(int OrderType_ID)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as customer_id, c_customer_name, c_att_person, c_att_mobile,c_att_email from dg_dimtbl_customer where c_active = 1 order by c_customer_name", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as customer_id, c_customer_orderType, c_customer_name, c_att_person, c_att_mobile,c_att_email from dg_dimtbl_customer where c_active = 1 and c_customer_orderType = '" + OrderType_ID + "' order by c_customer_name", _dg_Oder_Mgt);
 
             return data;
         }
@@ -107,7 +107,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
       
         public async Task<DataTable> GetcustomerView()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as dimtbl_customer_id, c_customer_name, c_att_person, c_att_email, c_att_mobile, c_address, c_terms_and_condition, c_created_by, c_active, c_tnc_offerValidity,c_tnc_letterOfCredit, c_tnc_advisingBank, c_tnc_negoBankNPeriod, c_tnc_delivery, c_tnc_deliveryTerms, c_tnc_paymentNInterest, c_tnc_bankCharges, c_tnc_inspection, c_tnc_BTMACertificate, c_tnc_maturity, c_tnc_payment, c_tnc_cashIncentive, c_tnc_BINandVAT, c_tnc_HSCode from dg_dimtbl_customer where c_active = 1 order by c_customer_name ", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as dimtbl_customer_id, *, ot_order_type from dg_dimtbl_customer inner join dg_dimtbl_order_type on c_customer_orderType = ot_id where c_active = 1 order by c_customer_name", _dg_Oder_Mgt);
 
             return data;
         }
@@ -136,8 +136,13 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_gsm order by g_gsm ", _dg_Oder_Mgt);
             return data;
         }
+        public async Task<DataTable> GetOrderType()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select ot_id, ot_order_type from dg_dimtbl_order_type", _dg_Oder_Mgt);
+            return data;
+        }
         //End
-       
+
         public async Task<DataTable> Getpayment_currency()
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("select cCurID, cCurdes from SpecFo_Inventory.dbo.Smt_CurencyType where cCurID in (1,4) order by cCurdes ", _dg_Oder_Mgt);
@@ -213,6 +218,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_color_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId",ord.ComID);
                     cmd.Parameters.AddWithValue("@colorName", ord.ColorName);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
@@ -244,6 +250,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_item_name_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@itemName", ord.ItemName);
                     cmd.Parameters.AddWithValue("@HSCode", ord.HSCode);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
@@ -277,6 +284,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_process_type_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@procName", ord.processName);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
@@ -309,6 +317,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_buyer_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@buyerName", ord.BuyerName);
                     cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
                     cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);
@@ -345,6 +354,8 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_customer_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
+                    cmd.Parameters.AddWithValue("@customer_orderType",ord.customer_orderType);
                     cmd.Parameters.AddWithValue("@customerName", ord.Cus_Name);
                     cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
                     cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);
@@ -397,6 +408,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_dia_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@diaName", ord.DiaName);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
@@ -426,6 +438,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_gsm_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@gsmName", ord.GsmName);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
@@ -454,6 +467,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_design_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@designName ", ord.designName);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
@@ -513,6 +527,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_customer_update", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@updatedBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@custId", ord.customerId);
                     cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
                     cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);
@@ -565,6 +580,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_buyer_update", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@updatedBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@buyerId", ord.BuyerID);
                     cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
                     cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);
@@ -632,6 +648,8 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_order_receiving_add_order_add", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
+                    cmd.Parameters.AddWithValue("@or_custOrderType",ord.custOrderType);
                     cmd.Parameters.AddWithValue("@or_cust", ord.Customer);
                     cmd.Parameters.AddWithValue("@or_buyer", ord.Buyer);
                     cmd.Parameters.AddWithValue("@or_style_no", ord.style_no);
@@ -802,6 +820,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_order_receiving_add_edit_order_update", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@updatedBy_compId",ord.ComID);
                     cmd.Parameters.AddWithValue("@id", ord.Id);
                     cmd.Parameters.AddWithValue("@or_cust", ord.Customer);
                     cmd.Parameters.AddWithValue("@or_buyer", ord.Buyer);
