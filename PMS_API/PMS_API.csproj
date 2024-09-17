@@ -110,15 +110,6 @@
     <ProjectReference Include="..\PMS_DAL\PMS_DAL.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Content Update="wwwroot\Report\Cutting_Report\CuttingDataSet.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>CuttingDataSet.xsd</DependentUpon>
-    </Content>
-    <Content Update="wwwroot\Report\Cutting_Report\CuttingDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CuttingDataSet.Designer.cs</LastGenOutput>
-    </Content>
     <Content Update="wwwroot\Report\ReportDataSet\AssetDataSet.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

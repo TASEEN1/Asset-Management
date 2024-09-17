@@ -41,27 +41,64 @@ namespace PMS_API.Controllers.OrderMgt
             var data = await _globalMaster.productionManager.GetProductionQuilting_RefNo();
             return Ok(data);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetProductionQuilting_ProcessType(int Ordr_refNO, int Process_ID)
+        {
+            var data = await _globalMaster.productionManager.GetProductionQuilting_ProcessType(Ordr_refNO,Process_ID);
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetProduction_ProcessType()
+        {
+            var data = await _globalMaster.productionManager.GetProduction_ProcessType();
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Get_PI_Number()
+        {
+            var data = await _globalMaster.productionManager.Get_PI_Number();
+            return Ok(data);
+        }
+        //GET Report DROP DOWN
+        [HttpGet]
+        public async Task<IActionResult> Get_ReportProduction_ProcessType()
+        {
+            var data = await _globalMaster.productionManager.Get_ReportProduction_ProcessType();
+            return Ok(data);
+        }
+
 
         //GET
         [HttpGet]
-        public async Task<IActionResult> GetPadding_ProductionItemBeforeAdd(int refNO)
+        public async Task<IActionResult> GetPadding_ProductionItemBeforeAdd(string Pi_Number)
         {
-            var data = await _globalMaster.productionManager.GetPadding_ProductionItemBeforeAdd(refNO);
+            var data = await _globalMaster.productionManager.GetPadding_ProductionItemBeforeAdd(Pi_Number);
+            return Ok(data);
+        }
+        //public async Task<IActionResult> GetPadding_ProductionItemBeforeAdd(string Pi_Number)
+        //{
+        //    var data = await _globalMaster.productionManager.GetPadding_ProductionItemBeforeAdd(Pi_Number);
+        //    return Ok(data);
+        //}
+        [HttpGet]
+        public async Task<IActionResult> GetPadding_ProductionItemAfterAdd(int refNO, string SessionUser)
+        {
+            var data = await _globalMaster.productionManager.GetPadding_ProductionItemAfterAdd(refNO,SessionUser);
             return Ok(data);
         }
         [HttpGet]
-        public async Task<IActionResult> GetPadding_ProductionItemAfterAdd(int refNO)
+        public async Task<IActionResult> GetQuilting_ProductionItemAfterAdd(int refNO, string SessionUser)
         {
-            var data = await _globalMaster.productionManager.GetPadding_ProductionItemAfterAdd(refNO);
+            var data = await _globalMaster.productionManager.GetQuilting_ProductionItemAfterAdd(refNO, SessionUser);
             return Ok(data);
         }
         [HttpGet]
-        public async Task<IActionResult> GetQuilting_ProductionItemAfterAdd(int refNO)
+        public async Task<IActionResult> GetQuilting_ProductionItemBeforeAdd(int refNO)
         {
-            var data = await _globalMaster.productionManager.GetQuilting_ProductionItemAfterAdd(refNO);
+            var data = await _globalMaster.productionManager.GetQuilting_ProductionItemBeforeAdd(refNO);
             return Ok(data);
         }
-       
+
 
         //Modal
         [HttpGet]
@@ -90,10 +127,47 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(new { message = data });
         }
         [HttpPost]
-        public async Task<IActionResult> Production_padding_save(List<ProductionModel> PD)
+        public async Task<IActionResult> ProductionSave(List<ProductionModel> PD)
         {
-            var data = await _globalMaster.productionManager.Production_padding_save(PD);
+            var data = await _globalMaster.productionManager.ProductionSave(PD);
             return Ok(new { message = data });
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> ProductionDelete(List<ProductionModel> PD)
+        {
+            var data = await _globalMaster.productionManager.ProductionDelete(PD);
+            return Ok(new { message = data });
+        }
+        [HttpPut]
+        public async Task<IActionResult> productionComplete(List<ProductionModel> PD)
+        {
+            var data = await _globalMaster.productionManager.productionComplete(PD);
+            return Ok(new { message = data });
+        }
+        //public async Task<IActionResult> productionComplete(List<ProductionModel> PD)
+        ////{
+        ////    try
+        ////    {
+        ////        var data = await _globalMaster.productionManager.productionComplete(PD);
+
+        ////        if (string.IsNullOrEmpty(data))
+        ////        {
+        ////            // Assuming an empty message means success
+        ////            return Ok(new { message = "Production completed successfully" });
+        ////        }
+        ////        else
+        ////        {
+        ////            // If there's an error message from the procedure, return a Bad Request with the message
+        ////            return BadRequest(new { error = data });
+        ////        }
+        ////    }
+        ////    catch (Exception ex)
+        ////    {
+        ////        // Log the exception (you can log it here if needed)
+        ////        return StatusCode(500, new { error = "An unexpected error occurred.", details = ex.Message });
+        ////    }
+        ////}
+
     }
 }

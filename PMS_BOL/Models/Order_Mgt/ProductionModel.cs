@@ -9,17 +9,21 @@ namespace PMS_BOL.Models.Order_Mgt
     public class ProductionModel
     {
         public int ComID { get; set; }
-        public int pp_ID { get; set; }
-        public int production_or_id { get; set; }
-        public int production_or_refno { get; set; }
-        public int ShiftID { get; set; }
+        public int prod_or_id { get; set; }
+        public int prod_or_ref_no { get; set; }
+
+        public int prod_process_id { get; set; }
+        public int prod_shift_id { get; set; }
         public DateTime ProductionDate { get; set; }
         public int MachineID { get; set; }
         public string MachineOperatorName { get; set; }
         public string MachineOperatorID { get; set; }
-        public decimal? production_padding_today_production_entry_qty { get; set; }
-        public decimal? production_quilting_today_production_entry_qty { get; set; }
+        public decimal? prod_today_production { get; set; }
         public string createdby { get; set; }
+        public int prod_ID { get; set; }
+        public string SessionUser { get; set; }
+
+ 
 
 
 

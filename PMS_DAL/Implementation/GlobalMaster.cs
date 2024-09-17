@@ -3,12 +3,10 @@ using PMS_BLL.Interfaces;
 using PMS_BLL.Interfaces.Manager;
 using PMS_BLL.Interfaces.Manager.Asset_Master;
 using PMS_BLL.Interfaces.Manager.AssetMaster;
-using PMS_BLL.Interfaces.Manager.Cutting;
 using PMS_BLL.Interfaces.Manager.OrderMgt;
 using PMS_BLL.Utility;
 using PMS_DAL.Implementation.Manager;
 using PMS_DAL.Implementation.Manager.Asset_Master;
-using PMS_DAL.Implementation.Manager.Cutting;
 using PMS_DAL.Implementation.Manager.OrderMgt;
 
 namespace PMS_DAL.Implementation
@@ -23,8 +21,6 @@ namespace PMS_DAL.Implementation
             _webHostEnvironment = webHostEnvironment;
          //Asset Managment System
             userLogin = new UserLoginManager(_sqlCommon);
-            cuttingmanager = new CuttingManager(_sqlCommon);
-            cuttingreportmanager = new CuttingReportManager(_sqlCommon, _webHostEnvironment);
             assetmastermanager = new AssetMasterManager(_sqlCommon);
             rent_Asset = new RentAssetManager(_sqlCommon);
             rentedAssetReturnManager = new RentedAssetReturnManager(_sqlCommon);
@@ -40,6 +36,8 @@ namespace PMS_DAL.Implementation
             orderReportManager = new OrderReportManager (_sqlCommon, _webHostEnvironment);
             workOrderManager = new WorkOrderManager(_sqlCommon);
             productionManager = new ProductionManager(_sqlCommon);
+            planingManager = new PlaningManager(_sqlCommon);
+
 
 
 
@@ -51,8 +49,6 @@ namespace PMS_DAL.Implementation
         }
         //Asset Managment System
             public IUserLoginManager userLogin { get; private set; }
-            public ICuttingManager cuttingmanager { get; private set; }
-            public ICuttingReportManager cuttingreportmanager { get; private set; }
             public IAssetMasterManager assetmastermanager { get; private set; }
             public IRentAsset rent_Asset { get; private set; }
             public IRentedAssetReturnManager rentedAssetReturnManager { get; private set; }
@@ -68,6 +64,8 @@ namespace PMS_DAL.Implementation
             public IPIManager piManager { get; private set; }
             public IworkOrderManager workOrderManager { get; private set; }
             public IProductionManager productionManager { get; private set; }
+
+            public IPlaningManager planingManager { get; private set; }
 
 
 

@@ -350,9 +350,9 @@ namespace PMS_API.Controllers.OrderMgt
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetReport_Style(int custID)
+        public async Task<IActionResult> GetReport_Style(string usernmae, int custID, int RefNO)
         {
-            var data = await _globalMaster.orderManager.GetReport_Style(custID);
+            var data = await _globalMaster.orderManager.GetReport_Style(usernmae,custID,RefNO);
             return Ok(data);
         }
 

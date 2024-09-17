@@ -66,12 +66,12 @@ namespace PMS_API.Controllers.OrderMgt
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
         [HttpGet]
-        public async Task<IActionResult> DailyProductionSummaryReport(int comID, string UserName, string reportType, DateTime FromDate, DateTime ToDate)
+        public async Task<IActionResult> DailyProductionSummaryReport(int comID, string UserName, string reportType, int processType, DateTime FromDate, DateTime ToDate)
 
 
         {
             ReportFileExt reportFileExt = new ReportFileExt();
-            var data = _globalMaster.orderReportManager.DailyProductionSummaryReport(comID, UserName, reportType, FromDate, ToDate);
+            var data = _globalMaster.orderReportManager.DailyProductionSummaryReport(comID, UserName, reportType,processType, FromDate, ToDate);
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
 

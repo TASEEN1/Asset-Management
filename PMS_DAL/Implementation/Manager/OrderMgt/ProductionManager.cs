@@ -1,4 +1,5 @@
-﻿using PMS_BLL.Interfaces.Manager.OrderMgt;
+﻿using Microsoft.AspNetCore.Http;
+using PMS_BLL.Interfaces.Manager.OrderMgt;
 using PMS_BLL.Utility;
 using PMS_BOL.Models.Order_Mgt;
 using PMS_BOL.Models.OrderMgt;
@@ -52,26 +53,59 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return data;
         }
 
+        public async Task<DataTable> GetProductionQuilting_ProcessType(int Ordr_refNO, int Process_ID)
+        {
+            var query = $"dg_quilting_production_save {Ordr_refNO}, {Process_ID}";
+            var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
+            return data;
+        }
+        public async Task<DataTable> GetProduction_ProcessType()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id, pt_process_name from dg_dimtbl_process_type where pt_id not in (1)", _dg_Oder_Mgt);
+            return data;
+        }
+        public async Task<DataTable> Get_PI_Number()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_number from dg_pi_issued where pi_approvedBy_bit = 1 order by pi_number desc", _dg_Oder_Mgt);
+            return data;
+        }
+        //GET Report DROP DOWN
+        public async Task<DataTable> Get_ReportProduction_ProcessType()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id, pt_process_name from dg_dimtbl_process_type where pt_id not in (3)", _dg_Oder_Mgt);
+            return data;
+        }
+
+
+
 
 
         //GET
-        public async Task<DataTable> GetPadding_ProductionItemBeforeAdd(int refNO)
+        public async Task<DataTable> GetPadding_ProductionItemBeforeAdd(string Pi_Number)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_production_padding_GetItems_BeforeAdd "+ refNO , _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_production_padding_GetItems_BeforeAdd "+ Pi_Number, _dg_Oder_Mgt);
             return data;
         }
-        public async Task<DataTable> GetPadding_ProductionItemAfterAdd(int refNO)
+        public async Task<DataTable> GetPadding_ProductionItemAfterAdd(int refNO, string SessionUser)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_production_padding_GetItems_AfterAdd " + refNO, _dg_Oder_Mgt);
+            var query = $"dg_production_padding_GetItems_AfterAdd {refNO}, '{SessionUser}'";
+            var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
             return data;
         }
-        public async Task<DataTable> GetQuilting_ProductionItemAfterAdd(int refNO)
+        public async Task<DataTable> GetQuilting_ProductionItemAfterAdd(int refNO, string SessionUser)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_production_quilting_GetItems_AfterAdd " + refNO, _dg_Oder_Mgt);
+            var query = $"dg_production_quilting_GetItems_AfterAdd  {refNO}, '{SessionUser}'";
+            var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
+            return data;
+           
+        }
+        public async Task<DataTable> GetQuilting_ProductionItemBeforeAdd(int refNO)
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_production_quilting_GetItems_BeforeAdd " + refNO, _dg_Oder_Mgt);
             return data;
         }
 
-       
+
 
 
         //Modal
@@ -157,53 +191,39 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return message;
         }
         //Main
-        public async Task<string> Production_padding_save(List<ProductionModel> PD)
+        public async Task<string> ProductionSave(List<ProductionModel> PD)
         {
             string message = string.Empty;
             await _dg_Oder_Mgt.OpenAsync();
+           
 
             try
             {
                 foreach (ProductionModel ord in PD)
                 {
-                    SqlCommand cmd = new SqlCommand("dg_production_padding_add", _dg_Oder_Mgt);
+                  
+                    SqlCommand cmd = new SqlCommand("dg_production_add_forBothProc", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
-                    cmd.Parameters.AddWithValue("@pp_id", ord.pp_ID);
-                    cmd.Parameters.AddWithValue("@pp_or_id", ord.production_or_id);
-                    cmd.Parameters.AddWithValue("@pp_or_ref_no", ord.production_or_refno);
-
-                    cmd.Parameters.Add("@pp_padding_today_production_entry_qty", SqlDbType.Decimal);
-                    if (ord.production_padding_today_production_entry_qty.HasValue)
-                    {
-                        cmd.Parameters["@pp_padding_today_production_entry_qty"].Value = ord.production_padding_today_production_entry_qty.Value;
-                    }
-                    else
-                    {
-                        cmd.Parameters["@pp_padding_today_production_entry_qty"].Value = DBNull.Value;
-                    }
-
-                    //cmd.Parameters.AddWithValue("@pp_padding_today_production_entry_qty", ord.production_padding_today_production_entry_qty);
-                    cmd.Parameters.Add("@pp_quilting_today_production_entry_qty", SqlDbType.Decimal);
-                    if (ord.production_quilting_today_production_entry_qty.HasValue)
-                    {
-                        cmd.Parameters["@pp_quilting_today_production_entry_qty"].Value = ord.production_quilting_today_production_entry_qty.Value;
-                    }
-                    else
-                    {
-                        cmd.Parameters["@pp_quilting_today_production_entry_qty"].Value = DBNull.Value;
-                    }
-                    //cmd.Parameters.AddWithValue("@pp_quilting_today_production_entry_qty", ord.production_quilting_today_production_entry_qty);
-                    cmd.Parameters.AddWithValue("@pp_shift_id", ord.ShiftID);
-                    cmd.Parameters.AddWithValue("@pp_production_date", ord.ProductionDate.ToString("yyyy-MM-dd"));
-                    cmd.Parameters.AddWithValue("@pp_machine_id", ord.MachineID);
-                    cmd.Parameters.AddWithValue("@pp_machine_operatorName", ord.MachineOperatorName);
-                    cmd.Parameters.AddWithValue("@pp_machine_operatorId", ord.MachineOperatorID);
+                    cmd.Parameters.AddWithValue("@prod_or_id", ord.prod_or_id);
+                    cmd.Parameters.AddWithValue("@prod_or_ref_no", ord.prod_or_ref_no);
+                    cmd.Parameters.AddWithValue("@prod_process_id", ord.prod_process_id);
+                    cmd.Parameters.AddWithValue("@prod_shift_id", ord.prod_shift_id);
+                    cmd.Parameters.AddWithValue("@prod_production_date", ord.ProductionDate.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@prod_machine_id", ord.MachineID);
+                    cmd.Parameters.AddWithValue("@prod_machine_operatorName", ord.MachineOperatorName);
+                    cmd.Parameters.AddWithValue("@prod_machine_operatorId", ord.MachineOperatorID);
+                    cmd.Parameters.AddWithValue("@prod_today_production", ord.prod_today_production);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();
                     message = (string)cmd.Parameters["@ERROR"].Value;
+
+
+
+
+
 
                 }
             }
@@ -217,7 +237,70 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             }
             return message;
         }
-       
+
+
+
+
+
+        public async Task<string> ProductionDelete(List<ProductionModel> PD)
+        {
+            string message = string.Empty;
+            await _dg_Oder_Mgt.OpenAsync();
+
+            try
+            {
+                foreach (ProductionModel ord in PD)
+                {
+                    SqlCommand cmd = new SqlCommand("dg_production_delete_single", _dg_Oder_Mgt);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@prod_id", ord.prod_ID);
+                    cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+                    cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+                    await cmd.ExecuteNonQueryAsync();
+                    message = (string)cmd.Parameters["@ERROR"].Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                _dg_Oder_Mgt.Close();
+            }
+            return message;
+        }
+
+        public async Task<string> productionComplete(List<ProductionModel> PD)
+        {
+            string message = string.Empty;
+            await _dg_Oder_Mgt.OpenAsync();
+
+            try
+            {
+                foreach (ProductionModel ord in PD)
+                {
+                    SqlCommand cmd = new SqlCommand("dg_production_complete", _dg_Oder_Mgt);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@prod_or_ref_no", ord.prod_or_ref_no);
+                    cmd.Parameters.AddWithValue("@prod_process_id", ord.prod_process_id);
+                    cmd.Parameters.AddWithValue("@sessionUser", ord.SessionUser);
+                    cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+                    cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+                    await cmd.ExecuteNonQueryAsync();
+                    message = (string)cmd.Parameters["@ERROR"].Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                _dg_Oder_Mgt.Close();
+            }
+            return message;
+        }
 
 
     }

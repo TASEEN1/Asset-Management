@@ -204,17 +204,24 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return reportBytes;
         }
 
-        public byte[] DailyProductionSummaryReport(int comID, string UserName, string reportType, DateTime FromDate, DateTime ToDate)
+        public byte[] DailyProductionSummaryReport(int comID, string UserName, string reportType,int processType, DateTime FromDate, DateTime ToDate)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
             string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("dg_report_daily_production_Summary__Rpt ");
+            stringBuilder.Append(processType != null ? processType : "NULL");
+            stringBuilder.Append(" ,'");
+            stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + " '");
+            //stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
+            //stringBuilder.Append(" '");
+            string stateQu = stringBuilder.ToString();
             var tbldata = new DataTable[]
             {
-                _SqlCommon.get_InformationDataTable("dg_report_daily_production_Summary__Rpt '"+FromDate+"','"+ ToDate + "'", _dg_Oder_Mgt),
-                //_SqlCommon.get_InformationDataTable("dg_report_production_Rpt2 '"+FromDate+"','"+ ToDate + "'", _dg_Oder_Mgt),
 
+                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Oder_Mgt)
             };
             var strSetName = new string[]
             {
@@ -222,11 +229,13 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             };
             string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\DailyProductionSummary.rdlc";
             //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            string reportTitle = processType == 1 ? "Padding Production Report" : "Quilting Production Report";
+
             ReportParameterCollection reportParameters = new ReportParameterCollection
             {
             new ReportParameter("Company",ComName),
             new ReportParameter("Add1", cAdd1),
-            new ReportParameter("Title", " Daily Production Summary"),
+            new ReportParameter("Title",reportTitle),
             new ReportParameter("PrintUser", "" + UserName + "")
 
             };

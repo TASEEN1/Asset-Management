@@ -4083,29 +4083,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             private global::System.Data.DataColumn columnot_order_type;
             
-            private global::System.Data.DataColumn columnpi_number;
-            
-            private global::System.Data.DataColumn columnpp_createdBy_compId;
-            
-            private global::System.Data.DataColumn columnpp_or_order_qty;
-            
-            private global::System.Data.DataColumn columnpp_padding_production_balance_qty;
-            
-            private global::System.Data.DataColumn columnpp_padding_today_production_entry_qty;
-            
-            private global::System.Data.DataColumn columnpp_padding_total_production_qty;
-            
-            private global::System.Data.DataColumn columnpp_shift_id;
-            
             private global::System.Data.DataColumn columnps_shift_name;
             
             private global::System.Data.DataColumn columnpt_process_name;
             
-            private global::System.Data.DataColumn columnpp_created_date;
+            private global::System.Data.DataColumn columnprod_machine_operatorName;
             
-            private global::System.Data.DataColumn columnor_style_no1;
+            private global::System.Data.DataColumn columnprod_createdBy_compId;
             
-            private global::System.Data.DataColumn columnor_po_no1;
+            private global::System.Data.DataColumn columnprod_machine_operatorId;
+            
+            private global::System.Data.DataColumn columnprod_process_name;
+            
+            private global::System.Data.DataColumn columnprod_today_production;
+            
+            private global::System.Data.DataColumn columnprod_created_date;
+            
+            private global::System.Data.DataColumn columnpt_id;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -4382,62 +4376,6 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn pi_numberColumn {
-                get {
-                    return this.columnpi_number;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn pp_createdBy_compIdColumn {
-                get {
-                    return this.columnpp_createdBy_compId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn pp_or_order_qtyColumn {
-                get {
-                    return this.columnpp_or_order_qty;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn pp_padding_production_balance_qtyColumn {
-                get {
-                    return this.columnpp_padding_production_balance_qty;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn pp_padding_today_production_entry_qtyColumn {
-                get {
-                    return this.columnpp_padding_today_production_entry_qty;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn pp_padding_total_production_qtyColumn {
-                get {
-                    return this.columnpp_padding_total_production_qty;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn pp_shift_idColumn {
-                get {
-                    return this.columnpp_shift_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn ps_shift_nameColumn {
                 get {
                     return this.columnps_shift_name;
@@ -4454,25 +4392,57 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn pp_created_dateColumn {
+            public global::System.Data.DataColumn prod_machine_operatorNameColumn {
                 get {
-                    return this.columnpp_created_date;
+                    return this.columnprod_machine_operatorName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn or_style_no1Column {
+            public global::System.Data.DataColumn prod_createdBy_compIdColumn {
                 get {
-                    return this.columnor_style_no1;
+                    return this.columnprod_createdBy_compId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn or_po_no1Column {
+            public global::System.Data.DataColumn prod_machine_operatorIdColumn {
                 get {
-                    return this.columnor_po_no1;
+                    return this.columnprod_machine_operatorId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn prod_process_nameColumn {
+                get {
+                    return this.columnprod_process_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn prod_today_productionColumn {
+                get {
+                    return this.columnprod_today_production;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn prod_created_dateColumn {
+                get {
+                    return this.columnprod_created_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn pt_idColumn {
+                get {
+                    return this.columnpt_id;
                 }
             }
             
@@ -4543,18 +4513,15 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         string cCmpName, 
                         string cAdd1, 
                         string ot_order_type, 
-                        string pi_number, 
-                        int pp_createdBy_compId, 
-                        decimal pp_or_order_qty, 
-                        decimal pp_padding_production_balance_qty, 
-                        decimal pp_padding_today_production_entry_qty, 
-                        decimal pp_padding_total_production_qty, 
-                        int pp_shift_id, 
                         string ps_shift_name, 
                         string pt_process_name, 
-                        System.DateTime pp_created_date, 
-                        string or_style_no1, 
-                        string or_po_no1) {
+                        string prod_machine_operatorName, 
+                        int prod_createdBy_compId, 
+                        string prod_machine_operatorId, 
+                        string prod_process_name, 
+                        decimal prod_today_production, 
+                        System.DateTime prod_created_date, 
+                        int pt_id) {
                 dg_report_daily_production_Summary__RptRow rowdg_report_daily_production_Summary__RptRow = ((dg_report_daily_production_Summary__RptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         or_id,
@@ -4587,18 +4554,15 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         cCmpName,
                         cAdd1,
                         ot_order_type,
-                        pi_number,
-                        pp_createdBy_compId,
-                        pp_or_order_qty,
-                        pp_padding_production_balance_qty,
-                        pp_padding_today_production_entry_qty,
-                        pp_padding_total_production_qty,
-                        pp_shift_id,
                         ps_shift_name,
                         pt_process_name,
-                        pp_created_date,
-                        or_style_no1,
-                        or_po_no1};
+                        prod_machine_operatorName,
+                        prod_createdBy_compId,
+                        prod_machine_operatorId,
+                        prod_process_name,
+                        prod_today_production,
+                        prod_created_date,
+                        pt_id};
                 rowdg_report_daily_production_Summary__RptRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdg_report_daily_production_Summary__RptRow);
                 return rowdg_report_daily_production_Summary__RptRow;
@@ -4651,18 +4615,15 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columncCmpName = base.Columns["cCmpName"];
                 this.columncAdd1 = base.Columns["cAdd1"];
                 this.columnot_order_type = base.Columns["ot_order_type"];
-                this.columnpi_number = base.Columns["pi_number"];
-                this.columnpp_createdBy_compId = base.Columns["pp_createdBy_compId"];
-                this.columnpp_or_order_qty = base.Columns["pp_or_order_qty"];
-                this.columnpp_padding_production_balance_qty = base.Columns["pp_padding_production_balance_qty"];
-                this.columnpp_padding_today_production_entry_qty = base.Columns["pp_padding_today_production_entry_qty"];
-                this.columnpp_padding_total_production_qty = base.Columns["pp_padding_total_production_qty"];
-                this.columnpp_shift_id = base.Columns["pp_shift_id"];
                 this.columnps_shift_name = base.Columns["ps_shift_name"];
                 this.columnpt_process_name = base.Columns["pt_process_name"];
-                this.columnpp_created_date = base.Columns["pp_created_date"];
-                this.columnor_style_no1 = base.Columns["or_style_no1"];
-                this.columnor_po_no1 = base.Columns["or_po_no1"];
+                this.columnprod_machine_operatorName = base.Columns["prod_machine_operatorName"];
+                this.columnprod_createdBy_compId = base.Columns["prod_createdBy_compId"];
+                this.columnprod_machine_operatorId = base.Columns["prod_machine_operatorId"];
+                this.columnprod_process_name = base.Columns["prod_process_name"];
+                this.columnprod_today_production = base.Columns["prod_today_production"];
+                this.columnprod_created_date = base.Columns["prod_created_date"];
+                this.columnpt_id = base.Columns["pt_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4728,30 +4689,24 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 base.Columns.Add(this.columncAdd1);
                 this.columnot_order_type = new global::System.Data.DataColumn("ot_order_type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnot_order_type);
-                this.columnpi_number = new global::System.Data.DataColumn("pi_number", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpi_number);
-                this.columnpp_createdBy_compId = new global::System.Data.DataColumn("pp_createdBy_compId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpp_createdBy_compId);
-                this.columnpp_or_order_qty = new global::System.Data.DataColumn("pp_or_order_qty", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpp_or_order_qty);
-                this.columnpp_padding_production_balance_qty = new global::System.Data.DataColumn("pp_padding_production_balance_qty", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpp_padding_production_balance_qty);
-                this.columnpp_padding_today_production_entry_qty = new global::System.Data.DataColumn("pp_padding_today_production_entry_qty", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpp_padding_today_production_entry_qty);
-                this.columnpp_padding_total_production_qty = new global::System.Data.DataColumn("pp_padding_total_production_qty", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpp_padding_total_production_qty);
-                this.columnpp_shift_id = new global::System.Data.DataColumn("pp_shift_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpp_shift_id);
                 this.columnps_shift_name = new global::System.Data.DataColumn("ps_shift_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnps_shift_name);
                 this.columnpt_process_name = new global::System.Data.DataColumn("pt_process_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpt_process_name);
-                this.columnpp_created_date = new global::System.Data.DataColumn("pp_created_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpp_created_date);
-                this.columnor_style_no1 = new global::System.Data.DataColumn("or_style_no1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnor_style_no1);
-                this.columnor_po_no1 = new global::System.Data.DataColumn("or_po_no1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnor_po_no1);
+                this.columnprod_machine_operatorName = new global::System.Data.DataColumn("prod_machine_operatorName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprod_machine_operatorName);
+                this.columnprod_createdBy_compId = new global::System.Data.DataColumn("prod_createdBy_compId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprod_createdBy_compId);
+                this.columnprod_machine_operatorId = new global::System.Data.DataColumn("prod_machine_operatorId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprod_machine_operatorId);
+                this.columnprod_process_name = new global::System.Data.DataColumn("prod_process_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprod_process_name);
+                this.columnprod_today_production = new global::System.Data.DataColumn("prod_today_production", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprod_today_production);
+                this.columnprod_created_date = new global::System.Data.DataColumn("prod_created_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprod_created_date);
+                this.columnpt_id = new global::System.Data.DataColumn("pt_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpt_id);
                 this.columnor_id.AllowDBNull = false;
                 this.columnc_customer_name.MaxLength = 250;
                 this.columnc_id.AllowDBNull = false;
@@ -4776,11 +4731,12 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columncCmpName.MaxLength = 200;
                 this.columncAdd1.MaxLength = 200;
                 this.columnot_order_type.MaxLength = 50;
-                this.columnpi_number.MaxLength = 20;
                 this.columnps_shift_name.MaxLength = 50;
                 this.columnpt_process_name.MaxLength = 100;
-                this.columnor_style_no1.MaxLength = 30;
-                this.columnor_po_no1.MaxLength = 30;
+                this.columnprod_machine_operatorName.MaxLength = 100;
+                this.columnprod_machine_operatorId.MaxLength = 50;
+                this.columnprod_process_name.MaxLength = 100;
+                this.columnpt_id.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10008,125 +9964,6 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string pi_number {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_report_daily_production_Summary__Rpt.pi_numberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pi_number\' in table \'dg_report_daily_production_Summary__Rp" +
-                                "t\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_daily_production_Summary__Rpt.pi_numberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int pp_createdBy_compId {
-                get {
-                    try {
-                        return ((int)(this[this.tabledg_report_daily_production_Summary__Rpt.pp_createdBy_compIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pp_createdBy_compId\' in table \'dg_report_daily_production_S" +
-                                "ummary__Rpt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_daily_production_Summary__Rpt.pp_createdBy_compIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal pp_or_order_qty {
-                get {
-                    try {
-                        return ((decimal)(this[this.tabledg_report_daily_production_Summary__Rpt.pp_or_order_qtyColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pp_or_order_qty\' in table \'dg_report_daily_production_Summa" +
-                                "ry__Rpt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_daily_production_Summary__Rpt.pp_or_order_qtyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal pp_padding_production_balance_qty {
-                get {
-                    try {
-                        return ((decimal)(this[this.tabledg_report_daily_production_Summary__Rpt.pp_padding_production_balance_qtyColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pp_padding_production_balance_qty\' in table \'dg_report_dail" +
-                                "y_production_Summary__Rpt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_daily_production_Summary__Rpt.pp_padding_production_balance_qtyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal pp_padding_today_production_entry_qty {
-                get {
-                    try {
-                        return ((decimal)(this[this.tabledg_report_daily_production_Summary__Rpt.pp_padding_today_production_entry_qtyColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pp_padding_today_production_entry_qty\' in table \'dg_report_" +
-                                "daily_production_Summary__Rpt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_daily_production_Summary__Rpt.pp_padding_today_production_entry_qtyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal pp_padding_total_production_qty {
-                get {
-                    try {
-                        return ((decimal)(this[this.tabledg_report_daily_production_Summary__Rpt.pp_padding_total_production_qtyColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pp_padding_total_production_qty\' in table \'dg_report_daily_" +
-                                "production_Summary__Rpt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_daily_production_Summary__Rpt.pp_padding_total_production_qtyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int pp_shift_id {
-                get {
-                    try {
-                        return ((int)(this[this.tabledg_report_daily_production_Summary__Rpt.pp_shift_idColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pp_shift_id\' in table \'dg_report_daily_production_Summary__" +
-                                "Rpt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_daily_production_Summary__Rpt.pp_shift_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string ps_shift_name {
                 get {
                     try {
@@ -10161,52 +9998,114 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime pp_created_date {
+            public string prod_machine_operatorName {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tabledg_report_daily_production_Summary__Rpt.pp_created_dateColumn]));
+                        return ((string)(this[this.tabledg_report_daily_production_Summary__Rpt.prod_machine_operatorNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pp_created_date\' in table \'dg_report_daily_production_Summa" +
-                                "ry__Rpt\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'prod_machine_operatorName\' in table \'dg_report_daily_produc" +
+                                "tion_Summary__Rpt\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledg_report_daily_production_Summary__Rpt.pp_created_dateColumn] = value;
+                    this[this.tabledg_report_daily_production_Summary__Rpt.prod_machine_operatorNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string or_style_no1 {
+            public int prod_createdBy_compId {
                 get {
                     try {
-                        return ((string)(this[this.tabledg_report_daily_production_Summary__Rpt.or_style_no1Column]));
+                        return ((int)(this[this.tabledg_report_daily_production_Summary__Rpt.prod_createdBy_compIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'or_style_no1\' in table \'dg_report_daily_production_Summary_" +
-                                "_Rpt\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'prod_createdBy_compId\' in table \'dg_report_daily_production" +
+                                "_Summary__Rpt\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledg_report_daily_production_Summary__Rpt.or_style_no1Column] = value;
+                    this[this.tabledg_report_daily_production_Summary__Rpt.prod_createdBy_compIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string or_po_no1 {
+            public string prod_machine_operatorId {
                 get {
                     try {
-                        return ((string)(this[this.tabledg_report_daily_production_Summary__Rpt.or_po_no1Column]));
+                        return ((string)(this[this.tabledg_report_daily_production_Summary__Rpt.prod_machine_operatorIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'or_po_no1\' in table \'dg_report_daily_production_Summary__Rp" +
-                                "t\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'prod_machine_operatorId\' in table \'dg_report_daily_producti" +
+                                "on_Summary__Rpt\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledg_report_daily_production_Summary__Rpt.or_po_no1Column] = value;
+                    this[this.tabledg_report_daily_production_Summary__Rpt.prod_machine_operatorIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string prod_process_name {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_report_daily_production_Summary__Rpt.prod_process_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'prod_process_name\' in table \'dg_report_daily_production_Sum" +
+                                "mary__Rpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_daily_production_Summary__Rpt.prod_process_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal prod_today_production {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledg_report_daily_production_Summary__Rpt.prod_today_productionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'prod_today_production\' in table \'dg_report_daily_production" +
+                                "_Summary__Rpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_daily_production_Summary__Rpt.prod_today_productionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime prod_created_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabledg_report_daily_production_Summary__Rpt.prod_created_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'prod_created_date\' in table \'dg_report_daily_production_Sum" +
+                                "mary__Rpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_daily_production_Summary__Rpt.prod_created_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int pt_id {
+                get {
+                    return ((int)(this[this.tabledg_report_daily_production_Summary__Rpt.pt_idColumn]));
+                }
+                set {
+                    this[this.tabledg_report_daily_production_Summary__Rpt.pt_idColumn] = value;
                 }
             }
             
@@ -10500,90 +10399,6 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Ispi_numberNull() {
-                return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.pi_numberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setpi_numberNull() {
-                this[this.tabledg_report_daily_production_Summary__Rpt.pi_numberColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Ispp_createdBy_compIdNull() {
-                return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.pp_createdBy_compIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setpp_createdBy_compIdNull() {
-                this[this.tabledg_report_daily_production_Summary__Rpt.pp_createdBy_compIdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Ispp_or_order_qtyNull() {
-                return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.pp_or_order_qtyColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setpp_or_order_qtyNull() {
-                this[this.tabledg_report_daily_production_Summary__Rpt.pp_or_order_qtyColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Ispp_padding_production_balance_qtyNull() {
-                return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.pp_padding_production_balance_qtyColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setpp_padding_production_balance_qtyNull() {
-                this[this.tabledg_report_daily_production_Summary__Rpt.pp_padding_production_balance_qtyColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Ispp_padding_today_production_entry_qtyNull() {
-                return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.pp_padding_today_production_entry_qtyColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setpp_padding_today_production_entry_qtyNull() {
-                this[this.tabledg_report_daily_production_Summary__Rpt.pp_padding_today_production_entry_qtyColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Ispp_padding_total_production_qtyNull() {
-                return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.pp_padding_total_production_qtyColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setpp_padding_total_production_qtyNull() {
-                this[this.tabledg_report_daily_production_Summary__Rpt.pp_padding_total_production_qtyColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Ispp_shift_idNull() {
-                return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.pp_shift_idColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setpp_shift_idNull() {
-                this[this.tabledg_report_daily_production_Summary__Rpt.pp_shift_idColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isps_shift_nameNull() {
                 return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.ps_shift_nameColumn);
             }
@@ -10608,38 +10423,74 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Ispp_created_dateNull() {
-                return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.pp_created_dateColumn);
+            public bool Isprod_machine_operatorNameNull() {
+                return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.prod_machine_operatorNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setpp_created_dateNull() {
-                this[this.tabledg_report_daily_production_Summary__Rpt.pp_created_dateColumn] = global::System.Convert.DBNull;
+            public void Setprod_machine_operatorNameNull() {
+                this[this.tabledg_report_daily_production_Summary__Rpt.prod_machine_operatorNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isor_style_no1Null() {
-                return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.or_style_no1Column);
+            public bool Isprod_createdBy_compIdNull() {
+                return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.prod_createdBy_compIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setor_style_no1Null() {
-                this[this.tabledg_report_daily_production_Summary__Rpt.or_style_no1Column] = global::System.Convert.DBNull;
+            public void Setprod_createdBy_compIdNull() {
+                this[this.tabledg_report_daily_production_Summary__Rpt.prod_createdBy_compIdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isor_po_no1Null() {
-                return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.or_po_no1Column);
+            public bool Isprod_machine_operatorIdNull() {
+                return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.prod_machine_operatorIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setor_po_no1Null() {
-                this[this.tabledg_report_daily_production_Summary__Rpt.or_po_no1Column] = global::System.Convert.DBNull;
+            public void Setprod_machine_operatorIdNull() {
+                this[this.tabledg_report_daily_production_Summary__Rpt.prod_machine_operatorIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isprod_process_nameNull() {
+                return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.prod_process_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setprod_process_nameNull() {
+                this[this.tabledg_report_daily_production_Summary__Rpt.prod_process_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isprod_today_productionNull() {
+                return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.prod_today_productionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setprod_today_productionNull() {
+                this[this.tabledg_report_daily_production_Summary__Rpt.prod_today_productionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isprod_created_dateNull() {
+                return this.IsNull(this.tabledg_report_daily_production_Summary__Rpt.prod_created_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setprod_created_dateNull() {
+                this[this.tabledg_report_daily_production_Summary__Rpt.prod_created_dateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -11900,18 +11751,15 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.OrdDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("cCmpName", "cCmpName");
             tableMapping.ColumnMappings.Add("cAdd1", "cAdd1");
             tableMapping.ColumnMappings.Add("ot_order_type", "ot_order_type");
-            tableMapping.ColumnMappings.Add("pi_number", "pi_number");
-            tableMapping.ColumnMappings.Add("pp_createdBy_compId", "pp_createdBy_compId");
-            tableMapping.ColumnMappings.Add("pp_or_order_qty", "pp_or_order_qty");
-            tableMapping.ColumnMappings.Add("pp_padding_production_balance_qty", "pp_padding_production_balance_qty");
-            tableMapping.ColumnMappings.Add("pp_padding_today_production_entry_qty", "pp_padding_today_production_entry_qty");
-            tableMapping.ColumnMappings.Add("pp_padding_total_production_qty", "pp_padding_total_production_qty");
-            tableMapping.ColumnMappings.Add("pp_shift_id", "pp_shift_id");
             tableMapping.ColumnMappings.Add("ps_shift_name", "ps_shift_name");
             tableMapping.ColumnMappings.Add("pt_process_name", "pt_process_name");
-            tableMapping.ColumnMappings.Add("pp_created_date", "pp_created_date");
-            tableMapping.ColumnMappings.Add("or_style_no1", "or_style_no1");
-            tableMapping.ColumnMappings.Add("or_po_no1", "or_po_no1");
+            tableMapping.ColumnMappings.Add("prod_machine_operatorName", "prod_machine_operatorName");
+            tableMapping.ColumnMappings.Add("prod_createdBy_compId", "prod_createdBy_compId");
+            tableMapping.ColumnMappings.Add("prod_machine_operatorId", "prod_machine_operatorId");
+            tableMapping.ColumnMappings.Add("prod_process_name", "prod_process_name");
+            tableMapping.ColumnMappings.Add("prod_today_production", "prod_today_production");
+            tableMapping.ColumnMappings.Add("prod_created_date", "prod_created_date");
+            tableMapping.ColumnMappings.Add("pt_id", "pt_id");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -11932,24 +11780,24 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.OrdDataSetTableAdapters {
             this._commandCollection[0].CommandText = "dbo.dg_report_daily_production_Summary__Rpt";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@processType", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FromDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ToDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(OrdDataSet.dg_report_daily_production_Summary__RptDataTable dataTable, global::System.Nullable<global::System.DateTime> FromDate, global::System.Nullable<global::System.DateTime> ToDate) {
+        public virtual int Fill(OrdDataSet.dg_report_daily_production_Summary__RptDataTable dataTable, global::System.Nullable<int> processType, global::System.Nullable<global::System.DateTime> FromDate) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((FromDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FromDate.Value));
+            if ((processType.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(processType.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((ToDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(ToDate.Value));
+            if ((FromDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(FromDate.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -11965,16 +11813,16 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.OrdDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual OrdDataSet.dg_report_daily_production_Summary__RptDataTable GetData(global::System.Nullable<global::System.DateTime> FromDate, global::System.Nullable<global::System.DateTime> ToDate) {
+        public virtual OrdDataSet.dg_report_daily_production_Summary__RptDataTable GetData(global::System.Nullable<int> processType, global::System.Nullable<global::System.DateTime> FromDate) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((FromDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FromDate.Value));
+            if ((processType.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(processType.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((ToDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(ToDate.Value));
+            if ((FromDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(FromDate.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;

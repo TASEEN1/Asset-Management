@@ -198,9 +198,9 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
 
 
-        public async Task<DataTable> GetReport_Style(int custID)
+        public async Task<DataTable> GetReport_Style(string username, int custID, int RefNO)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync(" select distinct or_style_no,or_ref_no FROM  dbo.dg_order_receiving inner join dg_dimtbl_customer on or_cust = dg_dimtbl_customer.c_id where or_com_post_bit=1 and or_cust = '" + custID + "'", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_style_no FROM dbo.dg_order_receiving where or_com_post_bit=1 and or_created_by = '"+ username + "' and or_cust = "+ custID + " and or_ref_no = "+ RefNO + " order by or_style_no" , _dg_Oder_Mgt);
             return data;
         }
         //----------------------//---------

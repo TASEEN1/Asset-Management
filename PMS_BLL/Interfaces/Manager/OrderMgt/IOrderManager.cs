@@ -63,7 +63,7 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         //----------------------------Report-----------------------------
         public Task<DataTable> GetReport_Customer( string username);
         public Task<DataTable> GetReport_RefNo( string usernmae , int customerID);
-        public Task<DataTable> GetReport_Style( int custID);
+        public Task<DataTable> GetReport_Style(string usernmae, int custID, int RefNO);
 
 
 

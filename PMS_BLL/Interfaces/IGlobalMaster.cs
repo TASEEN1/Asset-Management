@@ -1,7 +1,6 @@
 ﻿using PMS_BLL.Interfaces.Manager;
 using PMS_BLL.Interfaces.Manager.Asset_Master;
 using PMS_BLL.Interfaces.Manager.AssetMaster;
-using PMS_BLL.Interfaces.Manager.Cutting;
 using PMS_BLL.Interfaces.Manager.OrderMgt;
 
 namespace PMS_BLL.Interfaces
@@ -10,8 +9,7 @@ namespace PMS_BLL.Interfaces
     {
         //Asset Managment System
         IUserLoginManager userLogin { get; }
-        ICuttingManager cuttingmanager { get; }
-        ICuttingReportManager cuttingreportmanager { get; }
+
         IAssetMasterManager assetmastermanager { get; }
         IRentAsset rent_Asset { get; }
         IRentedAssetReturnManager rentedAssetReturnManager { get; }
@@ -27,6 +25,7 @@ namespace PMS_BLL.Interfaces
         IPIManager piManager { get; }
         IworkOrderManager workOrderManager { get; }
         IProductionManager  productionManager { get; }
+        IPlaningManager planingManager { get; }
 
 
 

@@ -570,7 +570,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=First(Fields!pi_number.Value, "OrdDataSet")</Value>
+                                      <Value>=IIF(Fields!pi_revised_no.Value = 0, Fields!pi_number.Value, Fields!pi_number.Value &amp; "R" &amp; Fields!pi_revised_no.Value</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
                                         <FontSize>8pt</FontSize>
