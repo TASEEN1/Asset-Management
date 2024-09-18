@@ -33,6 +33,19 @@ namespace PMS_BOL.Models.OrderMgt
         //public DateTime pi_approvedBy_date { get; set; }
 
 
+        public class PIRevisedModel
+        {
+            public int comID { get; set; }
+            public string PI_Number { get; set; }
+            public int ProcessType { get; set; }
+            public int paymentType { get; set; }
+            public string Terms_cond { get; set; }
+            public string Created_by { get; set; }
+
+
+        }
+
+
 
     }
 }

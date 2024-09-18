@@ -12,6 +12,7 @@
     <Content Remove="wwwroot\Report\Asset_report\AssetDetailsMaster_Rpt.rdlc" />
     <Content Remove="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
     <Content Remove="wwwroot\Report\Asset_report\ScheduledMaintenance Report.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\DailyPlaningReport.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\DailyProductionSummary.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\OrderWiseRpt.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\Production_Summary.rdlc" />
@@ -92,6 +93,7 @@
     <EmbeddedResource Include="wwwroot\Report\Asset_report\Asset Details.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Asset_report\AssetDetailsSummary.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Asset_report\ScheduledMaintenance Report.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\DailyPlaningReport.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\DailyProductionSummary.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\OrderWiseRpt.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\Production_Summary.rdlc" />

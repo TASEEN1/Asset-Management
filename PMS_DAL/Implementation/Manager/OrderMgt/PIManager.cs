@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static PMS_BOL.Models.OrderMgt.PI_Model;
 
 namespace PMS_DAL.Implementation.Manager.OrderMgt
 {
@@ -67,20 +68,13 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_revise_view '" + Created_by + "'", _dg_Oder_Mgt);
             return data;
         }
-        //public async Task<DataTable> GetPIcustomer()
-        //{
-        //    var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_cust, c_customer_name from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_com_post_bit = 1 and or_pi_add_bit = 0 and or_pi_revise_bit = 0", _dg_Oder_Mgt);
-        //    return data;
-        //}
+       
 
-        //public async Task<DataTable> GetPIstyle(int custId)
-        //{
-        //    var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_style_no, or_ref_no from dg_order_receiving where or_com_post_bit = 1 and or_pi_add_bit = 0 and or_pi_revise_bit = 0 and or_cust = " + custId, _dg_Oder_Mgt);
-        //    return data;
-        //}
+
+        // report
         public async Task<DataTable> GetPI_Number()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_number, pi_issued_ref_no from dg_pi_issued order by pi_issued_ref_no desc", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_number, pi_issued_ref_no from dg_pi_issued where pi_isRevised = 0 order by pi_issued_ref_no desc", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetPI_ProcessType()
@@ -314,7 +308,69 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
 
 
-        
+
+        // REVISED PI
+
+        public async Task<DataTable> GetRevised_PI_Number()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_number, pi_issued_ref_no from dg_pi_issued where pi_issued_ref_no not in ( select pi_issued_ref_no from dg_pi_issued where pi_isRevised =0) and pi_isRevised = 1 order by pi_issued_ref_no desc", _dg_Oder_Mgt);
+            return data;
+        }
+        public async Task<DataTable> GetRevised_Version(string PINumber)
+        {
+            var query = $"select max(pi_revise_version)+1 as versionNo from dg_pi_issued where pi_number= '{PINumber}'";
+            var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
+            return data;
+            
+        }
+        public async Task<DataTable> GetRevised_Before_View(string PINumber)
+        {
+            var query = $"dg_generate_revisedPi_before_view '{PINumber}'";
+            var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
+            return data;
+
+        }
+
+        public async Task<string> Generate_RevisedPI(List<PIRevisedModel> app)
+        {
+            string message = string.Empty;
+            await _dg_Oder_Mgt.OpenAsync();
+
+            try
+            {
+                foreach (PIRevisedModel ord in app)
+                {
+                    SqlCommand cmd = new SqlCommand("dg_generate_revisedPi_regenerate", _dg_Oder_Mgt);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@pi_createdBy_compId", ord.comID);
+                    cmd.Parameters.AddWithValue("@piNumber", ord.PI_Number);
+                    cmd.Parameters.AddWithValue("@pi_proc_type", ord.ProcessType);
+                    cmd.Parameters.AddWithValue("@pi_payment_type", ord.paymentType);
+                    cmd.Parameters.AddWithValue("@pi_cust_terms_cond ", ord.Terms_cond);
+                    cmd.Parameters.AddWithValue("@pi_created_by", ord.Created_by);
+                    cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+                    cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+                    await cmd.ExecuteNonQueryAsync();
+                    message = (string)cmd.Parameters["@ERROR"].Value;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                _dg_Oder_Mgt.Close();
+            }
+            return message;
+        }
+
+
+
+
+
+
 
 
     }

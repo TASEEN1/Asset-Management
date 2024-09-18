@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PMS_BLL.Interfaces;
 using PMS_BOL.Models.OrderMgt;
+using static PMS_BOL.Models.OrderMgt.PI_Model;
 
 namespace PMS_API.Controllers.OrderMgt
 {
@@ -142,6 +143,37 @@ namespace PMS_API.Controllers.OrderMgt
             var data = await _globalMaster.piManager.CheckedByApprove(app);
             return Ok(new { message = data });
         }
-        
+
+
+
+        // REVISED PI
+        [HttpGet]
+        public async Task<IActionResult> GetRevised_PI_Number()
+        {
+            var data = await _globalMaster.piManager.GetRevised_PI_Number();
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetRevised_Version(string PINumber)
+        {
+            var data = await _globalMaster.piManager.GetRevised_Version(PINumber);
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetRevised_Before_View(string PINumber)
+        {
+            var data = await _globalMaster.piManager.GetRevised_Before_View(PINumber);
+            return Ok(data);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Generate_RevisedPI(List<PIRevisedModel> app)
+        {
+            var data = await _globalMaster.piManager.Generate_RevisedPI(app);
+            return Ok(new { message = data });
+        }
+
+
+
     }
 }

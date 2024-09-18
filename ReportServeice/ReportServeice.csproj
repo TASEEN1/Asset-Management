@@ -102,6 +102,7 @@
     <EmbeddedResource Include="AssetDetailsMaster_Rpt.rdlc" />
     <EmbeddedResource Include="AssetDetailsSummary.rdlc" />
     <EmbeddedResource Include="Asset_Repair_ReportDatails.rdlc" />
+    <EmbeddedResource Include="DailyPlaningReport.rdlc" />
     <EmbeddedResource Include="DailyProductionSummary.rdlc" />
     <EmbeddedResource Include="OrderWiseRpt.rdlc" />
     <EmbeddedResource Include="Production_Summary.rdlc" />

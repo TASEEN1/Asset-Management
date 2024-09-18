@@ -213,8 +213,8 @@
           <DataField>pi_created_date</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="pi_revised_no">
-          <DataField>pi_revised_no</DataField>
+        <Field Name="pi_revise_version">
+          <DataField>pi_revise_version</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="or_order_net_weight">
@@ -563,14 +563,14 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox45">
+                            <Textbox Name="pi_number">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=IIF(Fields!pi_revised_no.Value = 0, Fields!pi_number.Value, Fields!pi_number.Value &amp; "R" &amp; Fields!pi_revised_no.Value</Value>
+                                      <Value>=IIF(Fields!pi_revise_version.Value = 0, Fields!pi_number.Value, Fields!pi_number.Value &amp; "R" &amp; Fields!pi_revise_version.Value)</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
                                         <FontSize>8pt</FontSize>
@@ -584,7 +584,7 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox45</rd:DefaultName>
+                              <rd:DefaultName>pi_number</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>White</Color>

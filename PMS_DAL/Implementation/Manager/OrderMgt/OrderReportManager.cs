@@ -114,35 +114,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         }
 
-        public byte[] WorkOrderReport(int comID, string UserName, string reportType, int Rrf_No)
-        {
-            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
-            string ComName = dt.Rows[0]["cCmpName"].ToString();
-            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
-            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
-            var tbldata = new DataTable[]
-            {
-                _SqlCommon.get_InformationDataTable("dg_report_work_order_complete_Rpt '"+Rrf_No+"'", _dg_Oder_Mgt),
-                _SqlCommon.get_InformationDataTable("dg_report_padding_type_Rpt '"+Rrf_No+"'", _dg_Oder_Mgt),
-                _SqlCommon.get_InformationDataTable("dg_report_work_order_Rpt '"+Rrf_No+"'", _dg_Oder_Mgt),
-            };
-            var strSetName = new string[]
-            {
-                "Work_order_Complete_DataSet","padding_type_DataSet","Work_order_DataSet"
-            };
-            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\work_order_Rpt.rdlc";
-            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
-            ReportParameterCollection reportParameters = new ReportParameterCollection
-            {
-            new ReportParameter("Company",ComName),
-            new ReportParameter("Add1", cAdd1),
-            new ReportParameter("Title", "Work Order Formate"),
-            new ReportParameter("PrintUser", "" + UserName + "")
-
-            };
-            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
-            return reportBytes;
-        }
+       
 
         public byte[] WorkOrderReportFormate(int comID, string UserName, string reportType, int Rrf_No, int customerId)
         {
@@ -236,6 +208,44 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             new ReportParameter("Company",ComName),
             new ReportParameter("Add1", cAdd1),
             new ReportParameter("Title",reportTitle),
+            new ReportParameter("PrintUser", "" + UserName + "")
+
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
+        public byte[] DailyPlaningReport(int comID, string UserName, string reportType, int processType, DateTime FromDate)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("dg_report_Daily_Planing_Rpt ");
+            stringBuilder.Append(processType != null ? processType : "NULL");
+            stringBuilder.Append(" ,'");
+            stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + " '");
+            //stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
+            //stringBuilder.Append(" '");
+            string stateQu = stringBuilder.ToString();
+            var tbldata = new DataTable[]
+            {
+
+                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Oder_Mgt)
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\DailyPlaningReport.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            //string reportTitle = processType == 1 ? "Padding Production Report" : "Quilting Production Report";
+
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title","Daily Planing Report"),
             new ReportParameter("PrintUser", "" + UserName + "")
 
             };

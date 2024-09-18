@@ -37,16 +37,6 @@ namespace PMS_API.Controllers.OrderMgt
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
 
-
-        [HttpGet]
-        public async Task<IActionResult> WorkOrderReport(int comID, string UserName, string reportType, int Rrf_No)
-
-
-        {
-            ReportFileExt reportFileExt = new ReportFileExt();
-            var data = _globalMaster.orderReportManager.WorkOrderReport(comID, UserName, reportType, Rrf_No);
-            return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
-        }
         [HttpGet]
         public async Task<IActionResult>WorkOrderReportFormate(int comID, string UserName, string reportType, int Rrf_No, int customerId)
 
@@ -72,6 +62,16 @@ namespace PMS_API.Controllers.OrderMgt
         {
             ReportFileExt reportFileExt = new ReportFileExt();
             var data = _globalMaster.orderReportManager.DailyProductionSummaryReport(comID, UserName, reportType,processType, FromDate, ToDate);
+            return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> DailyPlaningReport(int comID, string UserName, string reportType, int processType, DateTime FromDate)
+
+
+        {
+            ReportFileExt reportFileExt = new ReportFileExt();
+            var data = _globalMaster.orderReportManager.DailyPlaningReport(comID, UserName, reportType, processType, FromDate);
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
 
