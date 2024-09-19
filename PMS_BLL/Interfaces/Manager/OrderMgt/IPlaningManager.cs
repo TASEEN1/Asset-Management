@@ -15,7 +15,7 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
 
 
         //VIEW
-        public Task<DataTable> GetPlaning_Details_BeforeAdd( string Pi_Number, int Proc_ID);
+        public Task<DataTable> GetPlaning_Details_BeforeAdd( string Pi_Number, int Proc_ID,int ItemProc_ID);
         public Task<DataTable> GetPlaning_Details_AfterAdd(string Pi_Number, int Proc_ID,string sessionUser);
 
 

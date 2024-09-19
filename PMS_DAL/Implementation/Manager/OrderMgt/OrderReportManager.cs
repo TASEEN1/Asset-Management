@@ -239,13 +239,13 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             };
             string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\DailyPlaningReport.rdlc";
             //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
-            //string reportTitle = processType == 1 ? "Padding Production Report" : "Quilting Production Report";
+            string reportTitle = processType == 1 ? "Padding Daily Planning Report" : "Quilting Daily Planning Report";
 
             ReportParameterCollection reportParameters = new ReportParameterCollection
             {
             new ReportParameter("Company",ComName),
             new ReportParameter("Add1", cAdd1),
-            new ReportParameter("Title","Daily Planing Report"),
+            new ReportParameter("Title",reportTitle),
             new ReportParameter("PrintUser", "" + UserName + "")
 
             };

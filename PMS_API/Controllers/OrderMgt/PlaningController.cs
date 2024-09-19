@@ -27,9 +27,9 @@ namespace PMS_API.Controllers.OrderMgt
         }
         //VIEW
         [HttpGet]
-        public async Task<IActionResult> GetPlaning_Details_BeforeAdd(string Pi_Number, int Proc_ID)
+        public async Task<IActionResult> GetPlaning_Details_BeforeAdd(string Pi_Number, int Proc_ID, int ItemProc_ID)
         {
-            var data = await _globalMaster.planingManager.GetPlaning_Details_BeforeAdd(Pi_Number,Proc_ID);
+            var data = await _globalMaster.planingManager.GetPlaning_Details_BeforeAdd(Pi_Number,Proc_ID,ItemProc_ID);
             return Ok(data);
         }
         [HttpGet]

@@ -141,6 +141,10 @@
           <DataField>pln_createdBy_compId</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="md_machine_name">
+          <DataField>md_machine_name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>OrdDataSet</rd:DataSetName>
@@ -187,12 +191,12 @@
                   <Width>0.51389in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.73611in</Width>
+                  <Width>0.85414in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.22222in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -219,20 +223,19 @@
                           <rd:DefaultName>Textbox21</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -268,20 +271,19 @@
                           <rd:DefaultName>Textbox1</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -317,20 +319,19 @@
                           <rd:DefaultName>Textbox3</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -366,20 +367,19 @@
                           <rd:DefaultName>Textbox24</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -399,7 +399,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>PINO</Value>
+                                  <Value>PI NO</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>8pt</FontSize>
@@ -415,20 +415,19 @@
                           <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -464,20 +463,19 @@
                           <rd:DefaultName>Textbox7</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -513,20 +511,19 @@
                           <rd:DefaultName>Textbox9</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -562,20 +559,19 @@
                           <rd:DefaultName>Textbox11</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -611,20 +607,19 @@
                           <rd:DefaultName>Textbox13</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -660,20 +655,19 @@
                           <rd:DefaultName>Textbox15</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -687,7 +681,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.20833in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -713,20 +707,19 @@
                           <rd:DefaultName>Textbox22</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -760,20 +753,19 @@
                           <rd:DefaultName>c_customer_name</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -807,20 +799,19 @@
                           <rd:DefaultName>or_style_no</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -854,20 +845,19 @@
                           <rd:DefaultName>pln_proc_name</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -901,20 +891,19 @@
                           <rd:DefaultName>pi_number</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -948,20 +937,19 @@
                           <rd:DefaultName>in_item_name</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -995,20 +983,19 @@
                           <rd:DefaultName>g_gsm</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1042,20 +1029,19 @@
                           <rd:DefaultName>d_name</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1090,20 +1076,19 @@
                           <rd:DefaultName>pln_tday_pln</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1137,20 +1122,19 @@
                           <rd:DefaultName>Textbox16</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1163,7 +1147,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.20833in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1190,20 +1174,19 @@
                           <rd:DefaultName>Textbox8</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -1247,20 +1230,19 @@
                           <rd:DefaultName>Textbox25</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1294,20 +1276,19 @@
                           <rd:DefaultName>Textbox26</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                             </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1361,10 +1342,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.04444in</Top>
+            <Top>0.03194in</Top>
             <Left>0.15083in</Left>
-            <Height>0.75in</Height>
-            <Width>7.76944in</Width>
+            <Height>0.63889in</Height>
+            <Width>7.88747in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1372,13 +1353,13 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>1.5in</Height>
         <Style />
       </Body>
-      <Width>8.09388in</Width>
+      <Width>8.1258in</Width>
       <Page>
         <PageHeader>
-          <Height>0.96528in</Height>
+          <Height>1.155in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1420,7 +1401,7 @@
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Value xml:space="preserve">                                                                                                                                                                   </Value>
+                      <Value xml:space="preserve">                                                                                                                                                          </Value>
                       <Style>
                         <FontFamily>Calibri</FontFamily>
                         <FontSize>12pt</FontSize>
@@ -1429,12 +1410,26 @@
                   </TextRuns>
                   <Style />
                 </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value xml:space="preserve">                                                                                                                                                                                                                                                                                                              </Value>
+                      <Style>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>12pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox23</rd:DefaultName>
-              <Top>0.10639in</Top>
+              <Top>0.08556in</Top>
               <Left>0.17583in</Left>
-              <Height>0.81722in</Height>
-              <Width>7.74445in</Width>
+              <Height>0.99444in</Height>
+              <Width>7.86247in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1445,37 +1440,58 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox39">
+            <Line Name="Line2">
+              <Top>1.11889in</Top>
+              <Left>8.0383in</Left>
+              <Height>0in</Height>
+              <Width>-8.01246in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="Textbox20">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value xml:space="preserve">    </Value>
+                      <Value>                     Machine Name :</Value>
                       <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Format>dd-MMM-yy</Format>
+                        <TextDecoration>None</TextDecoration>
+                        <Color>#000000</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve"> </Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
                         <FontFamily>Calibri</FontFamily>
                         <FontSize>12pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                        <Format>dd-MMM-yy</Format>
+                        <TextDecoration>None</TextDecoration>
+                        <Color>#000000</Color>
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Value>Date</Value>
+                      <Value>=Fields!md_machine_name.Value</Value>
                       <Style>
+                        <FontStyle>Normal</FontStyle>
                         <FontFamily>Calibri</FontFamily>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>:</Value>
-                      <Style>
-                        <FontFamily>Calibri</FontFamily>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>=Format(First(Fields!pln_created_date.Value, "DataSet1"), "dd-MMM-yyyy")</Value>
-                      <Style>
-                        <FontFamily>Calibri</FontFamily>
-                        <FontSize>9pt</FontSize>
+                        <FontSize>7pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                        <Format>dd-MMM-yy</Format>
+                        <TextDecoration>None</TextDecoration>
+                        <Color>#000000</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1484,22 +1500,51 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value />
+                      <Value>                     Date                    : </Value>
                       <Style>
+                        <FontStyle>Normal</FontStyle>
                         <FontFamily>Calibri</FontFamily>
-                        <FontSize>9pt</FontSize>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Format>dd-MMM-yy</Format>
+                        <TextDecoration>None</TextDecoration>
+                        <Color>#000000</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve">  </Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>7pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                        <Format>dd-MMM-yy</Format>
+                        <TextDecoration>None</TextDecoration>
+                        <Color>#000000</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=First(Fields!pln_created_date.Value, "DataSet1")</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>7pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                        <Format>dd-MMM-yy</Format>
+                        <TextDecoration>None</TextDecoration>
+                        <Color>#000000</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox39</rd:DefaultName>
-              <Top>0.57222in</Top>
-              <Left>5.90917in</Left>
-              <Height>0.26389in</Height>
-              <Width>1.97222in</Width>
-              <ZIndex>1</ZIndex>
+              <rd:DefaultName>Textbox20</rd:DefaultName>
+              <Top>0.64389in</Top>
+              <Left>5.52027in</Left>
+              <Height>0.38889in</Height>
+              <Width>2.51804in</Width>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1519,7 +1564,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.45139in</Height>
+          <Height>0.69445in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1552,9 +1597,9 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox111</rd:DefaultName>
-              <Top>0.03766in</Top>
-              <Left>0.13833in</Left>
-              <Height>0.25in</Height>
+              <Top>0.35016in</Top>
+              <Left>0.07583in</Left>
+              <Height>0.24428in</Height>
               <Width>1.68889in</Width>
               <Style>
                 <Border>
@@ -1596,8 +1641,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox111</rd:DefaultName>
-              <Top>0.0439in</Top>
-              <Left>5.98139in</Left>
+              <Top>0.3564in</Top>
+              <Left>6.06889in</Left>
               <Height>0.24376in</Height>
               <Width>1.925in</Width>
               <ZIndex>1</ZIndex>
@@ -1633,7 +1678,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox27</rd:DefaultName>
-              <Top>0.03194in</Top>
+              <Top>0.34444in</Top>
               <Left>3.42722in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
@@ -1648,6 +1693,361 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
+            <Line Name="Line3">
+              <Top>0.33542in</Top>
+              <Left>8.04067in</Left>
+              <Height>0in</Height>
+              <Width>-8.01246in</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="Textbox118">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Prepared By IE &amp; Planning</Value>
+                      <Style>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>6pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox111</rd:DefaultName>
+              <Top>0.03194in</Top>
+              <Left>0.05085in</Left>
+              <Height>0.24931in</Height>
+              <Width>0.97082in</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Line Name="Line4">
+              <Top>0.09583in</Top>
+              <Left>0.04071in</Left>
+              <Height>0in</Height>
+              <Width>1in</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="Textbox120">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Delivery Asst. Manager</Value>
+                      <Style>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>6pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox111</rd:DefaultName>
+              <Top>0.03194in</Top>
+              <Left>1.2668in</Left>
+              <Height>0.24931in</Height>
+              <Width>0.97082in</Width>
+              <ZIndex>6</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Line Name="Line5">
+              <Top>0.09583in</Top>
+              <Left>1.2668in</Left>
+              <Height>0in</Height>
+              <Width>0.97082in</Width>
+              <ZIndex>7</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="Textbox121">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>R&amp;D Asst. Manager</Value>
+                      <Style>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>6pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox111</rd:DefaultName>
+              <Top>0.01806in</Top>
+              <Left>2.39569in</Left>
+              <Height>0.24931in</Height>
+              <Width>0.97082in</Width>
+              <ZIndex>8</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Line Name="Line6">
+              <Top>0.09445in</Top>
+              <Left>2.38555in</Left>
+              <Height>0in</Height>
+              <Width>1in</Width>
+              <ZIndex>9</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="Textbox122">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>A.P.M Padding</Value>
+                      <Style>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>6pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox111</rd:DefaultName>
+              <Top>0.01944in</Top>
+              <Left>3.49875in</Left>
+              <Height>0.24931in</Height>
+              <Width>0.97082in</Width>
+              <ZIndex>10</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Line Name="Line7">
+              <Top>0.09583in</Top>
+              <Left>3.48861in</Left>
+              <Height>0in</Height>
+              <Width>1in</Width>
+              <ZIndex>11</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="Textbox123">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>(Lab) Deputy Manager</Value>
+                      <Style>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>6pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox111</rd:DefaultName>
+              <Top>0.01944in</Top>
+              <Left>4.6543in</Left>
+              <Height>0.24931in</Height>
+              <Width>0.97082in</Width>
+              <ZIndex>12</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Line Name="Line8">
+              <Top>0.09583in</Top>
+              <Left>4.66916in</Left>
+              <Height>0in</Height>
+              <Width>0.95833in</Width>
+              <ZIndex>13</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="Textbox124">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>OP. &amp; Planning</Value>
+                      <Style>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>6pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox111</rd:DefaultName>
+              <Top>0.03194in</Top>
+              <Left>5.81334in</Left>
+              <Height>0.24931in</Height>
+              <Width>0.97082in</Width>
+              <ZIndex>14</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Line Name="Line9">
+              <Top>0.09583in</Top>
+              <Left>5.8157in</Left>
+              <Height>0in</Height>
+              <Width>0.96846in</Width>
+              <ZIndex>15</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="Textbox125">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>(A.D.O) SIR</Value>
+                      <Style>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>6pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox111</rd:DefaultName>
+              <Top>0.01806in</Top>
+              <Left>7.01196in</Left>
+              <Height>0.24931in</Height>
+              <Width>0.97082in</Width>
+              <ZIndex>16</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Line Name="Line10">
+              <Top>0.075in</Top>
+              <Left>7.005in</Left>
+              <Height>0in</Height>
+              <Width>0.96528in</Width>
+              <ZIndex>17</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
           </ReportItems>
           <Style>
             <Border>

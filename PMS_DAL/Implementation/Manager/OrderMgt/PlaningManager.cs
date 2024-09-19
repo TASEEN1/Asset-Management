@@ -36,9 +36,9 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return data;
         }
         //VIEW
-        public async Task<DataTable> GetPlaning_Details_BeforeAdd(string Pi_Number, int Proc_ID)
+        public async Task<DataTable> GetPlaning_Details_BeforeAdd(string Pi_Number, int Proc_ID, int ItemProc_ID)
         {
-            var query = $"dg_planning_getDetails_FromPINumNProc  {Pi_Number}, '{Proc_ID}'";
+            var query = $"dg_planning_getDetails_FromPINumNProc  '{Pi_Number}', {Proc_ID},{ItemProc_ID}";
             var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
             return data;
 
@@ -73,7 +73,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@pln_pi_number", ord.Pi_Number);
                     cmd.Parameters.AddWithValue("@pln_proc_id", ord.Proc_ID);
                     cmd.Parameters.AddWithValue("@pln_plan_date", ord.PlanDate.ToString("yyyy-MM-dd"));
-                    cmd.Parameters.AddWithValue("@pln_proc_name ", ord.Proc_Name);
+                    //cmd.Parameters.AddWithValue("@pln_proc_name ", ord.Proc_Name);
                     cmd.Parameters.AddWithValue("@pln_mc_id ", ord.MC_ID);
                     cmd.Parameters.AddWithValue("@pln_tday_pln", ord.Today_Plan);
                     cmd.Parameters.AddWithValue("@pln_created_by", ord.Created_By);
