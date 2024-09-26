@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.CookiePolicy;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Reporting.NETCore;
 using PMS_BLL.Interfaces.Manager.OrderMgt;
 using PMS_BLL.Utility;
@@ -34,7 +35,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
 
 
-        public byte[] OrderReceivedReport (int comID , string UserName , string reportType, int? Ref_NO, int customer)
+        public byte[] OrderReceivedReport (int comID , string UserName , string reportType, int? customer, string? style)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
@@ -42,12 +43,12 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append("dg_order_receiving_Rpt ");
-            stringBuilder.Append(Ref_NO != null ? Ref_NO : "NULL");
-            stringBuilder.Append(", " + (customer != null ? customer : "NULL"));
-            //stringBuilder.Append(" ,'");
+            stringBuilder.Append(customer != null ? customer : "NULL");
+            stringBuilder.Append(", '" + (style != null ? style : "NULL"));
+            stringBuilder.Append(" '");
             //stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + "', '");
             //stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
-            //stringBuilder.Append(" ");
+            //stringBuilder.Append(" '");
 
             string stateQu = stringBuilder.ToString();
             var tbldata = new DataTable[]
@@ -64,7 +65,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             {
             new ReportParameter("Company",ComName),
             new ReportParameter("Add1", cAdd1),
-            new ReportParameter("Title", "Order Receive Report"),
+            new ReportParameter("Title", "Style Wise Order Receive Report"),
             new ReportParameter("PrintUser",  "" + UserName + "")
             };
             byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
@@ -124,7 +125,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
             var tbldata = new DataTable[]
             {
-                _SqlCommon.get_InformationDataTable("dg_report_work_order_Rpt '"+customerId+"','"+ Rrf_No + "'", _dg_Oder_Mgt),
+                _SqlCommon.get_InformationDataTable("dg_report_work_order_Rpt_2 '"+customerId+"','"+ Rrf_No + "'", _dg_Oder_Mgt),
 
             };
             var strSetName = new string[]
@@ -252,6 +253,154 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
             return reportBytes;
         }
+        public byte[] StyleWisePeoductionReport(int comID, string UserName, string reportType, int customer, int refNO ,string Style, int processType, DateTime FromDate)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("dg_report_production_StyleWise_Rpt ");
+            stringBuilder.Append(customer != null ? customer : "NULL" );
+            stringBuilder.Append(" ,");
+            stringBuilder.Append(refNO != null ? refNO : "NULL");
+            stringBuilder.Append("  ,'");
+            stringBuilder.Append(Style != null ? Style : "NULL");
+            stringBuilder.Append(" ',");
+            stringBuilder.Append(processType != null ? processType : "NULL");
+            stringBuilder.Append(" ,'");
+            stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") +" '");
+            //stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
+            //stringBuilder.Append(" '");
+            string stateQu = stringBuilder.ToString();
+            var tbldata = new DataTable[]
+            {
+
+                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Oder_Mgt)
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\StyleWiseProductionReport.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            string reportTitle = processType == 1 ? "Padding Style Wise Production Report" : "Quilting Style Wise Production Reportt";
+
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title",reportTitle),
+            new ReportParameter("PrintUser", "" + UserName + "")
+
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
+        public byte[] HourlyPeoductionReport(int comID, string UserName, string reportType, DateTime productionDate,int? pprodprocID)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("dg_report_production_hourly ");
+            stringBuilder.Append(" '");
+            stringBuilder.Append(productionDate.ToString("yyyy-MM-dd") + " ',");
+            stringBuilder.Append(pprodprocID != null ? pprodprocID : "NULL");
+            string stateQu = stringBuilder.ToString();
+            var tbldata = new DataTable[]
+            {
+
+                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Oder_Mgt)
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\ProductionReport.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            string reportTitle = pprodprocID == 1 ? "Padding Hourly Production Report" : "Quilting Hourly Production Report";
+
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title",reportTitle),
+            new ReportParameter("PrintUser", "" + UserName + "")
+
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
+
+        public byte[] OrderReceivedReportD2D(int comID, string UserName, string reportType, DateTime FromDate, DateTime ToDate)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("dg_order_receiving_RptD2D ");
+            stringBuilder.Append(" '");
+            stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + " ','");
+            stringBuilder.Append(ToDate.ToString("yyyy-MM-dd") + " '");
+            string stateQu = stringBuilder.ToString();
+            var tbldata = new DataTable[]
+            {
+
+                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Oder_Mgt)
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\OrderReceivedReportD2D.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            //string reportTitle = processType == 1 ? "Padding Style Wise Production Report" : "Quilting Style Wise Production Reportt";
+
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title","Order Received Report D2D"),
+            new ReportParameter("PrintUser", "" + UserName + "")
+
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
+        public byte[] AttributeFromReport(int comID, string UserName, string reportType, string? pi_number)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            var tbldata = new DataTable[]
+             {
+                _SqlCommon.get_InformationDataTable("dg_report_work_order_Rpt '"+pi_number+"'", _dg_Oder_Mgt),
+
+             };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\AttributeFrom.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+           
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title","Attribute From"),
+            new ReportParameter("PrintUser", "" + UserName + "")
+
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
+
+
 
 
         //Common Report Code

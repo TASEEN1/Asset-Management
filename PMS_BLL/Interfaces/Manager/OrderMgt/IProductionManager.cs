@@ -11,13 +11,19 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
     public interface IProductionManager
     {
         //Dropdown
-        public Task<DataTable> GetmachineNo();
+        public Task<DataTable> GetmachineNo( int Production_ProcID);
+
         public Task<DataTable> GetShift();
         public Task<DataTable> GetProductionPadding_RefNo();
         public Task<DataTable> GetProductionQuilting_RefNo();
-        public Task<DataTable> Get_PI_Number();
+        public Task<DataTable> GetProduction_Padding_PI_Number();
+
+        public Task<DataTable> GetProduction_Quilting_PI_Number();
+
         public Task<DataTable>GetProductionQuilting_ProcessType (int Ordr_refNO , int Process_ID);
         public Task<DataTable> GetProduction_ProcessType();
+        public Task<DataTable> GetProduction_Hour();
+
 
         //GET Report DROP DOWN
         public Task<DataTable> Get_ReportProduction_ProcessType();
@@ -28,9 +34,9 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
 
         //GET
         public Task<DataTable> GetPadding_ProductionItemBeforeAdd(string Pi_Number);
-        public Task<DataTable> GetPadding_ProductionItemAfterAdd(int refNO, string SessionUser);
-        public Task<DataTable> GetQuilting_ProductionItemAfterAdd(int refNO, string SessionUser);
-        public Task<DataTable> GetQuilting_ProductionItemBeforeAdd(int refNO);
+        public Task<DataTable> GetPadding_ProductionItemAfterAdd( int ProcessID, string SessionUser);
+        public Task<DataTable> GetQuilting_ProductionItemAfterAdd(int ProcessID ,string SessionUser);
+        public Task<DataTable> GetQuilting_ProductionItemBeforeAdd(string PINumber, int ProType);
 
 
 
@@ -41,6 +47,7 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable> GetShiftview();
         public Task<string> MachineDetailsSave(List<MachineDetails>MC);
         public Task<string> shiftSave(List<ShiftDetails>SF);
+        public Task<DataTable> GetMechinType();
 
         //Main Page
         public Task<string> ProductionSave (List<ProductionModel> PD);

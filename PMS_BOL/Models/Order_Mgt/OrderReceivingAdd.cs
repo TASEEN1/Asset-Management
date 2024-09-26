@@ -95,7 +95,7 @@ namespace PMS_BOL.Models.OrderMgt
     public class customerSave
     {
         public int ComID { get; set; }
-        public int customer_orderType { get; set; }
+        public int customer_Type { get; set; }
         public int customerId { get; set; }
         public string Cus_Name { get; set; }
         public string AttPerson { get; set; }

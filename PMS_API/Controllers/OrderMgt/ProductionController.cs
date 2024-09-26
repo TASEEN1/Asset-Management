@@ -18,9 +18,9 @@ namespace PMS_API.Controllers.OrderMgt
         }
         //DropDown 
         [HttpGet]
-        public async Task<IActionResult> GetmachineNo()
+        public async Task<IActionResult> GetmachineNo(int Production_ProcID)
         {
-            var data = await _globalMaster.productionManager.GetmachineNo();
+            var data = await _globalMaster.productionManager.GetmachineNo(Production_ProcID);
             return Ok(data);
         }
         [HttpGet]
@@ -54,9 +54,21 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(data);
         }
         [HttpGet]
-        public async Task<IActionResult> Get_PI_Number()
+        public async Task<IActionResult> GetProduction_Padding_PI_Number()
         {
-            var data = await _globalMaster.productionManager.Get_PI_Number();
+            var data = await _globalMaster.productionManager.GetProduction_Padding_PI_Number();
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetProduction_Quilting_PI_Number()
+        {
+            var data = await _globalMaster.productionManager.GetProduction_Quilting_PI_Number();
+            return Ok(data);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetProduction_Hour()
+        {
+            var data = await _globalMaster.productionManager.GetProduction_Hour();
             return Ok(data);
         }
         //GET Report DROP DOWN
@@ -70,32 +82,28 @@ namespace PMS_API.Controllers.OrderMgt
 
         //GET
         [HttpGet]
-        public async Task<IActionResult> GetPadding_ProductionItemBeforeAdd(string Pi_Number)
+        public async Task<IActionResult> GetPadding_ProductionItemBeforeAdd (string Pi_Number)
         {
             var data = await _globalMaster.productionManager.GetPadding_ProductionItemBeforeAdd(Pi_Number);
             return Ok(data);
         }
-        //public async Task<IActionResult> GetPadding_ProductionItemBeforeAdd(string Pi_Number)
-        //{
-        //    var data = await _globalMaster.productionManager.GetPadding_ProductionItemBeforeAdd(Pi_Number);
-        //    return Ok(data);
-        //}
+       
         [HttpGet]
-        public async Task<IActionResult> GetPadding_ProductionItemAfterAdd(int refNO, string SessionUser)
+        public async Task<IActionResult> GetPadding_ProductionItemAfterAdd(int ProcessID, string SessionUser)
         {
-            var data = await _globalMaster.productionManager.GetPadding_ProductionItemAfterAdd(refNO,SessionUser);
+            var data = await _globalMaster.productionManager.GetPadding_ProductionItemAfterAdd(ProcessID , SessionUser);
             return Ok(data);
         }
         [HttpGet]
-        public async Task<IActionResult> GetQuilting_ProductionItemAfterAdd(int refNO, string SessionUser)
+        public async Task<IActionResult> GetQuilting_ProductionItemAfterAdd(int ProcessID, string SessionUser)
         {
-            var data = await _globalMaster.productionManager.GetQuilting_ProductionItemAfterAdd(refNO, SessionUser);
+            var data = await _globalMaster.productionManager.GetQuilting_ProductionItemAfterAdd(ProcessID,SessionUser);
             return Ok(data);
         }
         [HttpGet]
-        public async Task<IActionResult> GetQuilting_ProductionItemBeforeAdd(int refNO)
+        public async Task<IActionResult> GetQuilting_ProductionItemBeforeAdd(string PINumber,int ProType)
         {
-            var data = await _globalMaster.productionManager.GetQuilting_ProductionItemBeforeAdd(refNO);
+            var data = await _globalMaster.productionManager.GetQuilting_ProductionItemBeforeAdd( PINumber,ProType);
             return Ok(data);
         }
 
@@ -126,6 +134,13 @@ namespace PMS_API.Controllers.OrderMgt
             var data = await _globalMaster.productionManager.shiftSave(SF);
             return Ok(new { message = data });
         }
+        [HttpGet]
+        public async Task<IActionResult> GetMechinType()
+        {
+            var data = await _globalMaster.productionManager.GetMechinType();
+            return Ok(data);
+        }
+
         [HttpPost]
         public async Task<IActionResult> ProductionSave(List<ProductionModel> PD)
         {

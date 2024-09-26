@@ -32,9 +32,9 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
 
         //DropDown
-        public async Task<DataTable> GetmachineNo()
+        public async Task<DataTable> GetmachineNo(int Production_ProcID)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select md_id,md_machine_no from dg_dimtbl_machine_details order by md_machine_no", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select md_id,md_machine_no from dg_dimtbl_machine_details where md_machine_type =  "+ Production_ProcID + "order by md_machine_no", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetShift()
@@ -64,9 +64,20 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id, pt_process_name from dg_dimtbl_process_type where pt_id not in (1)", _dg_Oder_Mgt);
             return data;
         }
-        public async Task<DataTable> Get_PI_Number()
+        public async Task<DataTable> GetProduction_Padding_PI_Number()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_number from dg_pi_issued where pi_approvedBy_bit = 1 order by pi_number desc", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_issued_ref_no, pln_pi_number, or_order_recv_date, or_cust, c_customer_name from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id  inner join dg_factTbl_planning on pln_or_id = or_id  inner join dg_pi_issued on pln_or_ref_no = pi_or_ref_no where or_production_status in ('approved', 'revised') and or_proc_type_forItem in (1,3) order by pi_issued_ref_no desc", _dg_Oder_Mgt);
+            return data;
+        }
+        public async Task<DataTable> GetProduction_Quilting_PI_Number()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_issued_ref_no, pln_pi_number, or_order_recv_date, or_cust, c_customer_name from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id  inner join dg_factTbl_planning on pln_or_id = or_id  inner join dg_pi_issued on pln_or_ref_no = pi_or_ref_no where or_production_status in ('approved', 'revised') and or_proc_type_forItem in (2,3) order by pi_issued_ref_no desc", _dg_Oder_Mgt);
+            return data;
+        }
+
+        public async Task<DataTable> GetProduction_Hour()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select ph_id, ph_name from dg_dimtbl_production_hour", _dg_Oder_Mgt);
             return data;
         }
         //GET Report DROP DOWN
@@ -86,22 +97,23 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync("dg_production_padding_GetItems_BeforeAdd "+ Pi_Number, _dg_Oder_Mgt);
             return data;
         }
-        public async Task<DataTable> GetPadding_ProductionItemAfterAdd(int refNO, string SessionUser)
+        public async Task<DataTable> GetPadding_ProductionItemAfterAdd(int ProcessID ,string SessionUser)
         {
-            var query = $"dg_production_padding_GetItems_AfterAdd {refNO}, '{SessionUser}'";
+            var query = $"dg_production_afterAdd {ProcessID},'{SessionUser}'";
             var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
             return data;
         }
-        public async Task<DataTable> GetQuilting_ProductionItemAfterAdd(int refNO, string SessionUser)
+        public async Task<DataTable> GetQuilting_ProductionItemAfterAdd(int ProcessID, string SessionUser)
         {
-            var query = $"dg_production_quilting_GetItems_AfterAdd  {refNO}, '{SessionUser}'";
+            var query = $"dg_production_afterAdd {ProcessID},'{SessionUser}'";
             var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
             return data;
            
         }
-        public async Task<DataTable> GetQuilting_ProductionItemBeforeAdd(int refNO)
+        public async Task<DataTable> GetQuilting_ProductionItemBeforeAdd(string PINumber, int ProType)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("dg_production_quilting_GetItems_BeforeAdd " + refNO, _dg_Oder_Mgt);
+            var query = $"dg_production_quilting_BeforeAdd_sir  {PINumber}, '{ProType}'";
+            var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
             return data;
         }
 
@@ -133,7 +145,8 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_machine_details_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@md_createdBy_compId", ord.ComID);
-                    cmd.Parameters.AddWithValue("@md_machine_name", ord.machine_Name);
+                    cmd.Parameters.AddWithValue("@md_machine_type", ord.machine_Type);
+                    cmd.Parameters.AddWithValue("@md_machine_desc", ord.machine_decs);
                     cmd.Parameters.AddWithValue("@md_machine_no", ord.machine_No);
                     cmd.Parameters.AddWithValue("@md_machine_capacity", ord.machine_capacity);
                     cmd.Parameters.AddWithValue("@md_created_by", ord.Created_by);
@@ -153,6 +166,15 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             }
             return message;
         }
+        public async Task<DataTable> GetMechinType()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id as mcTypeId , pt_process_name as mcType from dg_dimtbl_process_type where pt_id in (1,2)", _dg_Oder_Mgt);
+            return data;
+        }
+
+
+
+
 
 
 
@@ -205,14 +227,16 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     SqlCommand cmd = new SqlCommand("dg_production_add_forBothProc", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
-                    cmd.Parameters.AddWithValue("@prod_or_id", ord.prod_or_id);
                     cmd.Parameters.AddWithValue("@prod_or_ref_no", ord.prod_or_ref_no);
+                    cmd.Parameters.AddWithValue("@prod_or_id", ord.prod_or_ID);
+                    cmd.Parameters.AddWithValue("@prod_hour_id", ord.prod_Hour);
+                    cmd.Parameters.AddWithValue("@piNumber", ord.PI_Number);
                     cmd.Parameters.AddWithValue("@prod_process_id", ord.prod_process_id);
                     cmd.Parameters.AddWithValue("@prod_shift_id", ord.prod_shift_id);
                     cmd.Parameters.AddWithValue("@prod_production_date", ord.ProductionDate.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@prod_machine_id", ord.MachineID);
-                    cmd.Parameters.AddWithValue("@prod_machine_operatorName", ord.MachineOperatorName);
-                    cmd.Parameters.AddWithValue("@prod_machine_operatorId", ord.MachineOperatorID);
+                    cmd.Parameters.AddWithValue("@prod_spvNm ", ord.Superviser_Name);
+                    cmd.Parameters.AddWithValue("@prod_spvId", ord.Superviser_ID);
                     cmd.Parameters.AddWithValue("@prod_today_production", ord.prod_today_production);
                     cmd.Parameters.AddWithValue("@createdby", ord.createdby);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
@@ -282,7 +306,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 {
                     SqlCommand cmd = new SqlCommand("dg_production_complete", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@prod_or_ref_no", ord.prod_or_ref_no);
+                    //cmd.Parameters.AddWithValue("@prod_or_ref_no", ord.prod_or_ref_no);
                     cmd.Parameters.AddWithValue("@prod_process_id", ord.prod_process_id);
                     cmd.Parameters.AddWithValue("@sessionUser", ord.SessionUser);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);

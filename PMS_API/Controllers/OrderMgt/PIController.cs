@@ -165,6 +165,13 @@ namespace PMS_API.Controllers.OrderMgt
             var data = await _globalMaster.piManager.GetRevised_Before_View(PINumber);
             return Ok(data);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetRevised_CustomerPaymentAndProcessData(string PINumber)
+        {
+            var data = await _globalMaster.piManager.GetRevised_CustomerPaymentAndProcessData(PINumber);
+            return Ok(data);
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> Generate_RevisedPI(List<PIRevisedModel> app)
@@ -172,6 +179,8 @@ namespace PMS_API.Controllers.OrderMgt
             var data = await _globalMaster.piManager.Generate_RevisedPI(app);
             return Ok(new { message = data });
         }
+        
+
 
 
 

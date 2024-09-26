@@ -330,6 +330,13 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return data;
 
         }
+        public async Task<DataTable> GetRevised_CustomerPaymentAndProcessData(string PINumber)
+        {
+            var query = $"select * from (select distinct or_cust, c_customer_name, pi_proc_type, pt_process_name, pi_payment_type, Payment_Mode ,pi_cust_terms_cond,ROW_NUMBER() over(partition by pi_revise_version order by pi_revise_version desc) as rowNum from dg_pi_issued inner join dg_dimtbl_process_type on pt_id = pi_proc_type inner join SpecFo.dbo.Smt_PaymentMode on pi_payment_type = pm_id inner join dg_order_receiving on or_ref_no = pi_or_ref_no inner join dg_dimtbl_customer on or_cust = c_id where pi_number = '{PINumber}' and pi_isRevised = 1 )as alpha where alpha.rowNum = 1";
+            var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
+            return data;
+
+        }
 
         public async Task<string> Generate_RevisedPI(List<PIRevisedModel> app)
         {
@@ -344,8 +351,8 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@pi_createdBy_compId", ord.comID);
                     cmd.Parameters.AddWithValue("@piNumber", ord.PI_Number);
-                    cmd.Parameters.AddWithValue("@pi_proc_type", ord.ProcessType);
-                    cmd.Parameters.AddWithValue("@pi_payment_type", ord.paymentType);
+                    //cmd.Parameters.AddWithValue("@pi_proc_type", ord.ProcessType);
+                    //cmd.Parameters.AddWithValue("@pi_payment_type", ord.paymentType);
                     cmd.Parameters.AddWithValue("@pi_cust_terms_cond ", ord.Terms_cond);
                     cmd.Parameters.AddWithValue("@pi_created_by", ord.Created_by);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);

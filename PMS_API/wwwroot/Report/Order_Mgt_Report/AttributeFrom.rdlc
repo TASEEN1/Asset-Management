@@ -2,33 +2,19 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="padding_type_DataSet">
+    <DataSource Name="test">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>4acb2140-51a7-4a11-b48d-a822420fe8bf</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="Work_order_Complete_DataSet">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>c5a26e9b-b700-421b-aa08-b3d0e625e917</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="Work_order_DataSet">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>3574a2f0-175e-4c8e-b20b-5586acfa9bee</rd:DataSourceID>
+      <rd:DataSourceID>b686c5f8-a0b4-43ce-80c3-059c39ae0ae2</rd:DataSourceID>
     </DataSource>
     <DataSource Name="OrdDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>8679d3a7-7b44-486a-8c55-52f34750d2da</rd:DataSourceID>
+      <rd:DataSourceID>00fe308e-8fc2-4ab5-867e-2d60eb01e635</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -206,6 +192,10 @@
           <DataField>pt_padding_type</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="pi_number">
+          <DataField>pi_number</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>OrdDataSet</rd:DataSetName>
@@ -221,41 +211,70 @@
     <ReportSection>
       <Body>
         <ReportItems>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>0.04444in</Top>
+            <Left>0.17722in</Left>
+            <Height>0.80556in</Height>
+            <Width>11.3351in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
           <Tablix Name="Tablix2">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.19523in</Width>
+                  <Width>0.20865in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.46784in</Width>
+                  <Width>0.45248in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.45291in</Width>
+                  <Width>0.49853in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.47022in</Width>
+                  <Width>0.44806in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.687in</Width>
+                  <Width>0.63889in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.54764in</Width>
+                  <Width>0.56316in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.30517in</Width>
+                  <Width>0.50246in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.37422in</Width>
+                  <Width>0.39687in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.31866in</Width>
+                  <Width>0.37093in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.6429in</Width>
+                  <Width>0.4352in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.27561in</Width>
+                  <Width>1.25328in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.36306in</Width>
@@ -264,18 +283,18 @@
                   <Width>1.24095in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.04784in</Width>
+                  <Width>0.97391in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.2941in</Width>
+                  <Width>1.15673in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.60814in</Width>
+                  <Width>0.81944in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.29167in</Height>
+                  <Height>0.25in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -389,7 +408,7 @@
                     <TablixCell />
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox28">
+                        <Textbox Name="Textbox29">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -443,7 +462,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.20833in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -456,7 +475,6 @@
                                 <TextRun>
                                   <Value>SL</Value>
                                   <Style>
-                                    <FontFamily>calibri</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -543,7 +561,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox11">
+                        <Textbox Name="Textbox33">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -639,7 +657,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox15">
+                        <Textbox Name="Textbox34">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -687,7 +705,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox17">
+                        <Textbox Name="Textbox35">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -735,7 +753,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox19">
+                        <Textbox Name="Textbox36">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -782,7 +800,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox21">
+                        <Textbox Name="Textbox37">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -830,7 +848,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox23">
+                        <Textbox Name="Textbox38">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -878,7 +896,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox1">
+                        <Textbox Name="Textbox3">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -926,7 +944,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox29">
+                        <Textbox Name="Textbox39">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -936,7 +954,7 @@
                                   <Value>Padding Info</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -976,7 +994,7 @@
                     <TablixCell />
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox33">
+                        <Textbox Name="Textbox40">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -986,7 +1004,7 @@
                                   <Value>Quilting Info</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                   </Style>
@@ -1025,7 +1043,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox10">
+                        <Textbox Name="Textbox41">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -1036,7 +1054,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -1076,7 +1094,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox12">
+                        <Textbox Name="Textbox42">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -1087,7 +1105,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -1179,7 +1197,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.20556in</Height>
+                  <Height>0.25in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1192,9 +1210,8 @@
                                 <TextRun>
                                   <Value>=RowNumber(Nothing)</Value>
                                   <Style>
-                                    <FontFamily>calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
-                                    <TextDecoration>None</TextDecoration>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1241,8 +1258,7 @@
                                   <Value>=Fields!or_style_no.Value</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
-                                    <TextDecoration>None</TextDecoration>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1288,9 +1304,8 @@
                                 <TextRun>
                                   <Value>=Fields!or_po_no.Value</Value>
                                   <Style>
-                                    <FontFamily>calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
-                                    <TextDecoration>None</TextDecoration>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1336,9 +1351,8 @@
                                 <TextRun>
                                   <Value>=Fields!in_item_name.Value</Value>
                                   <Style>
-                                    <FontFamily>calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
-                                    <TextDecoration>None</TextDecoration>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1384,9 +1398,8 @@
                                 <TextRun>
                                   <Value>=Fields!or_item_desc.Value</Value>
                                   <Style>
-                                    <FontFamily>calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
-                                    <TextDecoration>None</TextDecoration>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1432,9 +1445,8 @@
                                 <TextRun>
                                   <Value>=Fields!or_item_HS_code.Value</Value>
                                   <Style>
-                                    <FontFamily>calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
-                                    <TextDecoration>None</TextDecoration>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1480,9 +1492,8 @@
                                 <TextRun>
                                   <Value>=Fields!d_name.Value</Value>
                                   <Style>
-                                    <FontFamily>calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
-                                    <TextDecoration>None</TextDecoration>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1528,9 +1539,8 @@
                                 <TextRun>
                                   <Value>=Fields!g_gsm.Value</Value>
                                   <Style>
-                                    <FontFamily>calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
-                                    <TextDecoration>None</TextDecoration>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1576,10 +1586,9 @@
                                 <TextRun>
                                   <Value>=Fields!or_order_qty.Value</Value>
                                   <Style>
-                                    <FontFamily>calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
                                     <Format>0;(0)</Format>
-                                    <TextDecoration>None</TextDecoration>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1625,9 +1634,8 @@
                                 <TextRun>
                                   <Value>=Fields!pt_process_name.Value</Value>
                                   <Style>
-                                    <FontFamily>calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
-                                    <TextDecoration>None</TextDecoration>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1664,7 +1672,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox30">
+                        <Textbox Name="Textbox28">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -1752,22 +1760,8 @@
                                 <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <TextDecoration>None</TextDecoration>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox30</rd:DefaultName>
+                          <rd:DefaultName>Textbox28</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1795,7 +1789,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox32">
+                        <Textbox Name="Textbox81">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -1875,7 +1869,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox32</rd:DefaultName>
+                          <rd:DefaultName>Textbox81</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1903,7 +1897,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox34">
+                        <Textbox Name="Textbox85">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -2052,22 +2046,8 @@
                                 <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <TextDecoration>None</TextDecoration>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox34</rd:DefaultName>
+                          <rd:DefaultName>Textbox85</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -2095,7 +2075,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox47">
+                        <Textbox Name="Textbox87">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -2128,40 +2108,8 @@
                                 <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <TextDecoration>None</TextDecoration>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Left</TextAlign>
-                              </Style>
-                            </Paragraph>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontStyle>Normal</FontStyle>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <TextDecoration>None</TextDecoration>
-                                    <Color>#000000</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox47</rd:DefaultName>
+                          <rd:DefaultName>Textbox87</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -2189,7 +2137,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox49">
+                        <Textbox Name="Textbox89">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -2273,7 +2221,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox49</rd:DefaultName>
+                          <rd:DefaultName>Textbox89</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -2310,13 +2258,14 @@
                                 <TextRun>
                                   <Value>=Fields!wo_test_name.Value</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
-                                    <TextDecoration>None</TextDecoration>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>wo_test_name</rd:DefaultName>
@@ -2385,259 +2334,262 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.9125in</Top>
-            <Left>0.19389in</Left>
-            <Height>0.74723in</Height>
-            <Width>11.29149in</Width>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-              </Border>
-            </Style>
-          </Tablix>
-          <Rectangle Name="Rectangle2">
-            <ReportItems>
-              <Textbox Name="Textbox55">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>Customer : </Value>
-                        <Style>
-                          <FontFamily>calibri</FontFamily>
-                          <FontSize>9pt</FontSize>
-                          <FontWeight>Bold</FontWeight>
-                        </Style>
-                      </TextRun>
-                      <TextRun>
-                        <Value>=Fields!cutomer_name.Value</Value>
-                        <Style>
-                          <FontFamily>calibri</FontFamily>
-                          <FontSize>9pt</FontSize>
-                          <FontWeight>Normal</FontWeight>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox55</rd:DefaultName>
-                <Top>0.06611in</Top>
-                <Left>0.05in</Left>
-                <Height>0.25in</Height>
-                <Width>2.15789in</Width>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <VerticalAlign>Middle</VerticalAlign>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox56">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>Buyer        : </Value>
-                        <Style>
-                          <FontFamily>calibri</FontFamily>
-                          <FontSize>9pt</FontSize>
-                          <FontWeight>Bold</FontWeight>
-                        </Style>
-                      </TextRun>
-                      <TextRun>
-                        <Value>=Fields!b_buyer_name.Value</Value>
-                        <Style>
-                          <FontFamily>calibri</FontFamily>
-                          <FontSize>9pt</FontSize>
-                          <FontWeight>Normal</FontWeight>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox55</rd:DefaultName>
-                <Top>0.29389in</Top>
-                <Left>0.05in</Left>
-                <Height>0.22501in</Height>
-                <Width>2.15789in</Width>
-                <ZIndex>1</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <VerticalAlign>Middle</VerticalAlign>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox57">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>Received Date :  </Value>
-                        <Style>
-                          <FontFamily>calibri</FontFamily>
-                          <FontSize>9pt</FontSize>
-                          <FontWeight>Bold</FontWeight>
-                        </Style>
-                      </TextRun>
-                      <TextRun>
-                        <Value>=Fields!or_order_recv_date.Value</Value>
-                        <Style>
-                          <FontFamily>calibri</FontFamily>
-                          <FontSize>9pt</FontSize>
-                          <FontWeight>Normal</FontWeight>
-                          <Format>dd-MMM-yy</Format>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox55</rd:DefaultName>
-                <Top>0.26334in</Top>
-                <Left>8.95in</Left>
-                <Height>0.25in</Height>
-                <Width>2.29403in</Width>
-                <ZIndex>2</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <VerticalAlign>Middle</VerticalAlign>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox58">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>Delivery Date   :  </Value>
-                        <Style>
-                          <FontFamily>calibri</FontFamily>
-                          <FontSize>9pt</FontSize>
-                          <FontWeight>Bold</FontWeight>
-                        </Style>
-                      </TextRun>
-                      <TextRun>
-                        <Value>=Fields!or_order_deli_date.Value</Value>
-                        <Style>
-                          <FontFamily>calibri</FontFamily>
-                          <FontSize>9pt</FontSize>
-                          <FontWeight>Normal</FontWeight>
-                          <Format>dd-MMM-yy</Format>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox55</rd:DefaultName>
-                <Top>0.49111in</Top>
-                <Left>8.95in</Left>
-                <Height>0.25in</Height>
-                <Width>2.29403in</Width>
-                <ZIndex>3</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <VerticalAlign>Middle</VerticalAlign>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox63">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>Order Ref No   :  </Value>
-                        <Style>
-                          <FontFamily>calibri</FontFamily>
-                          <FontSize>9pt</FontSize>
-                          <FontWeight>Bold</FontWeight>
-                        </Style>
-                      </TextRun>
-                      <TextRun>
-                        <Value>=Fields!wo_or_ref_no.Value</Value>
-                        <Style>
-                          <FontFamily>calibri</FontFamily>
-                          <FontSize>9pt</FontSize>
-                          <FontWeight>Normal</FontWeight>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox55</rd:DefaultName>
-                <Top>0.04111in</Top>
-                <Left>8.95162in</Left>
-                <Height>0.25in</Height>
-                <Width>2.29241in</Width>
-                <ZIndex>4</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <VerticalAlign>Middle</VerticalAlign>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-            </ReportItems>
-            <KeepTogether>true</KeepTogether>
-            <Top>0.01667in</Top>
-            <Left>0.19389in</Left>
-            <Height>0.84027in</Height>
-            <Width>11.29665in</Width>
+            <Top>0.905in</Top>
+            <Left>0.18972in</Left>
+            <Height>0.70833in</Height>
+            <Width>11.3226in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
             </Style>
-          </Rectangle>
+          </Tablix>
+          <Textbox Name="Textbox55">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Customer : </Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!cutomer_name.Value</Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox55</rd:DefaultName>
+            <Top>0.06944in</Top>
+            <Left>0.21688in</Left>
+            <Height>0.25in</Height>
+            <Width>2.15789in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox56">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Buyer        : </Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!b_buyer_name.Value</Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox55</rd:DefaultName>
+            <Top>0.29722in</Top>
+            <Left>0.21688in</Left>
+            <Height>0.22501in</Height>
+            <Width>2.15789in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox57">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Received Date :  </Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!or_order_recv_date.Value</Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Format>dd-MMM-yy</Format>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox55</rd:DefaultName>
+            <Top>0.29722in</Top>
+            <Left>9.17403in</Left>
+            <Height>0.25in</Height>
+            <Width>2.29403in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox58">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Delivery Date   :  </Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!or_order_deli_date.Value</Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Format>dd-MMM-yy</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox55</rd:DefaultName>
+            <Top>0.52499in</Top>
+            <Left>9.17403in</Left>
+            <Height>0.25in</Height>
+            <Width>2.29403in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox64">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>PI Number        :  </Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!pi_number.Value</Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox55</rd:DefaultName>
+            <Top>0.07499in</Top>
+            <Left>9.17565in</Left>
+            <Height>0.25in</Height>
+            <Width>2.29241in</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>2.73333in</Height>
+        <Height>2.69444in</Height>
         <Style />
       </Body>
-      <Width>11.62403in</Width>
+      <Width>11.63733in</Width>
       <Page>
         <PageHeader>
-          <Height>1.08611in</Height>
+          <Height>1.13194in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Textbox Name="Company">
+            <Textbox Name="Textbox1">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -2647,7 +2599,31 @@
                       <Value>=Fields!cCmpName.Value</Value>
                       <Style>
                         <FontFamily>Calibri</FontFamily>
-                        <FontSize>15pt</FontSize>
+                        <FontSize>14pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Fields!cAdd1.Value</Value>
+                      <Style>
+                        <FontFamily>Calibri</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!Title.Value</Value>
+                      <Style>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -2655,11 +2631,11 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Company</rd:DefaultName>
-              <Top>0.075in</Top>
-              <Left>0.19389in</Left>
-              <Height>0.3125in</Height>
-              <Width>5.35653in</Width>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.12028in</Top>
+              <Left>0.17722in</Left>
+              <Height>0.95403in</Height>
+              <Width>11.32833in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2670,84 +2646,6 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Add1">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Fields!cAdd1.Value</Value>
-                      <Style>
-                        <FontFamily>calibri</FontFamily>
-                        <FontSize>12pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Add1</rd:DefaultName>
-              <Top>0.42917in</Top>
-              <Left>0.19389in</Left>
-              <Height>0.25in</Height>
-              <Width>5.35653in</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Title">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Parameters!Title.Value</Value>
-                      <Style>
-                        <FontFamily>calibri</FontFamily>
-                        <FontSize>12pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Title</rd:DefaultName>
-              <Top>0.72222in</Top>
-              <Left>0.19389in</Left>
-              <Height>0.25in</Height>
-              <Width>5.35653in</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Line Name="Line3">
-              <Top>1.04306in</Top>
-              <Left>0.10385in</Left>
-              <Height>0in</Height>
-              <Width>11.44132in</Width>
-              <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Line>
           </ReportItems>
           <Style>
             <Border>
@@ -2756,7 +2654,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.84723in</Height>
+          <Height>0.75in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2789,8 +2687,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox111</rd:DefaultName>
-              <Top>0.4934in</Top>
-              <Left>0.12759in</Left>
+              <Top>0.35816in</Top>
+              <Left>0.10593in</Left>
               <Height>0.25in</Height>
               <Width>2.12419in</Width>
               <Style>
@@ -2804,7 +2702,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox38">
+            <Textbox Name="Textbox43">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -2825,8 +2723,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox27</rd:DefaultName>
-              <Top>0.47882in</Top>
-              <Left>5.17981in</Left>
+              <Top>0.34358in</Top>
+              <Left>5.15815in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <ZIndex>1</ZIndex>
@@ -2868,8 +2766,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox111</rd:DefaultName>
-              <Top>0.48194in</Top>
-              <Left>9.2991in</Left>
+              <Top>0.3467in</Top>
+              <Left>9.27744in</Left>
               <Height>0.24376in</Height>
               <Width>2.11111in</Width>
               <ZIndex>2</ZIndex>
@@ -2885,8 +2783,8 @@
               </Style>
             </Textbox>
             <Line Name="Line2">
-              <Top>0.45347in</Top>
-              <Left>0.04406in</Left>
+              <Top>0.31823in</Top>
+              <Left>0.0974in</Left>
               <Height>0in</Height>
               <Width>11.44132in</Width>
               <ZIndex>3</ZIndex>
@@ -2918,8 +2816,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox111</rd:DefaultName>
-              <Top>0.18751in</Top>
-              <Left>0.14389in</Left>
+              <Top>0.05227in</Top>
+              <Left>0.12223in</Left>
               <Height>0.23541in</Height>
               <Width>2.32836in</Width>
               <ZIndex>4</ZIndex>
@@ -2955,8 +2853,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox111</rd:DefaultName>
-              <Top>0.17709in</Top>
-              <Left>9.27111in</Left>
+              <Top>0.04185in</Top>
+              <Left>9.24945in</Left>
               <Height>0.23541in</Height>
               <Width>2.14443in</Width>
               <ZIndex>5</ZIndex>
@@ -2995,8 +2893,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox111</rd:DefaultName>
-              <Top>0.19029in</Top>
-              <Left>4.60892in</Left>
+              <Top>0.05505in</Top>
+              <Left>4.58726in</Left>
               <Height>0.23541in</Height>
               <Width>2.32836in</Width>
               <ZIndex>6</ZIndex>
@@ -3012,8 +2910,8 @@
               </Style>
             </Textbox>
             <Line Name="Line4">
-              <Top>0.25in</Top>
-              <Left>5.02971in</Left>
+              <Top>0.11476in</Top>
+              <Left>5.00805in</Left>
               <Height>0in</Height>
               <Width>1.47917in</Width>
               <ZIndex>7</ZIndex>
@@ -3024,8 +2922,8 @@
               </Style>
             </Line>
             <Line Name="Line5">
-              <Top>0.26146in</Top>
-              <Left>9.57971in</Left>
+              <Top>0.12622in</Top>
+              <Left>9.55805in</Left>
               <Height>0in</Height>
               <Width>1.47917in</Width>
               <ZIndex>8</ZIndex>
@@ -3036,8 +2934,8 @@
               </Style>
             </Line>
             <Line Name="Line6">
-              <Top>0.2625in</Top>
-              <Left>0.58346in</Left>
+              <Top>0.12726in</Top>
+              <Left>0.5618in</Left>
               <Height>0in</Height>
               <Width>1.47917in</Width>
               <ZIndex>9</ZIndex>
@@ -3065,7 +2963,7 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="Add1">
+    <ReportParameter Name="PrintUser">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -3073,7 +2971,7 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="PrintUser">
+    <ReportParameter Name="Add1">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -3091,7 +2989,7 @@
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>Add1</ParameterName>
+          <ParameterName>PrintUser</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
@@ -3101,11 +2999,11 @@
         <CellDefinition>
           <ColumnIndex>3</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>PrintUser</ParameterName>
+          <ParameterName>Add1</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>bbf48a39-eb42-4575-a984-2f00f117b213</rd:ReportID>
+  <rd:ReportID>13fb11db-2926-44d2-b79c-92060b99a210</rd:ReportID>
 </Report>

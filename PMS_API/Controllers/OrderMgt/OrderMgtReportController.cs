@@ -18,12 +18,12 @@ namespace PMS_API.Controllers.OrderMgt
         }
 
         [HttpGet]
-        public async Task<IActionResult> OrderReceivedReport(int comID, string UserName, string reportType, int? Ref_NO, int customer)
+        public async Task<IActionResult> OrderReceivedReport(int comID, string UserName, string reportType, int? customer, string? style)
 
 
         {
             ReportFileExt reportFileExt = new ReportFileExt();
-            var data = _globalMaster.orderReportManager.OrderReceivedReport(comID, UserName, reportType,Ref_NO, customer);
+            var data = _globalMaster.orderReportManager.OrderReceivedReport(comID, UserName, reportType, customer, style);
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
 
@@ -72,6 +72,45 @@ namespace PMS_API.Controllers.OrderMgt
         {
             ReportFileExt reportFileExt = new ReportFileExt();
             var data = _globalMaster.orderReportManager.DailyPlaningReport(comID, UserName, reportType, processType, FromDate);
+            return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> StyleWisePeoductionReport(int comID, string UserName, string reportType, int customer, int refNO, string Style, int processType, DateTime FromDate)
+
+
+        {
+            ReportFileExt reportFileExt = new ReportFileExt();
+            var data = _globalMaster.orderReportManager.StyleWisePeoductionReport(comID, UserName, reportType, customer, refNO, Style, processType, FromDate);
+            return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> HourlyPeoductionReport(int comID, string UserName, string reportType, DateTime productionDate,  int? prodprocID)
+
+
+        {
+            ReportFileExt reportFileExt = new ReportFileExt();
+            var data = _globalMaster.orderReportManager.HourlyPeoductionReport(comID, UserName, reportType, productionDate,  prodprocID);
+            return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> OrderReceivedReportD2D(int comID, string UserName, string reportType, DateTime FromDate, DateTime ToDate)
+
+
+        {
+            ReportFileExt reportFileExt = new ReportFileExt();
+            var data = _globalMaster.orderReportManager.OrderReceivedReportD2D(comID, UserName, reportType, FromDate, ToDate);
+            return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
+        }
+        [HttpGet]
+        public async Task<IActionResult> AttributeFromReport(int comID, string UserName, string reportType, string pi_number)
+
+
+        {
+            ReportFileExt reportFileExt = new ReportFileExt();
+            var data = _globalMaster.orderReportManager.AttributeFromReport(comID, UserName, reportType, pi_number);
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
 

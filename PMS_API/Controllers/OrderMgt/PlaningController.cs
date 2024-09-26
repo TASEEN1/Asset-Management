@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using PMS_BLL.Interfaces;
 using PMS_BOL.Models.Order_Mgt;
 using PMS_DAL.Implementation;
+using System.Runtime.ExceptionServices;
 
 namespace PMS_API.Controllers.OrderMgt
 {
@@ -20,11 +21,18 @@ namespace PMS_API.Controllers.OrderMgt
         //DROP DOWN
 
         [HttpGet]
-        public async Task<IActionResult> Get_PI_Number()
+        public async Task<IActionResult> GetPlanning_Padding_PI_Number()
         {
-            var data = await _globalMaster.planingManager.Get_PI_Number();
+            var data = await _globalMaster.planingManager.GetPlanning_Padding_PI_Number();
             return Ok(data);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetPlanning_Quilting_PI_Number()
+        {
+            var data = await _globalMaster.planingManager.GetPlanning_Quilting_PI_Number();
+            return Ok(data);
+        }
+       
         //VIEW
         [HttpGet]
         public async Task<IActionResult> GetPlaning_Details_BeforeAdd(string Pi_Number, int Proc_ID, int ItemProc_ID)
@@ -33,9 +41,17 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(data);
         }
         [HttpGet]
-        public async Task<IActionResult> GetPlaning_Details_AfterAdd(string Pi_Number, int Proc_ID, string sessionUser)
+        public async Task<IActionResult> GetPlaning_Details_AfterAdd( int Proc_ID, string sessionUser)
         {
-            var data = await _globalMaster.planingManager.GetPlaning_Details_AfterAdd(Pi_Number, Proc_ID,sessionUser);
+            var data = await _globalMaster.planingManager.GetPlaning_Details_AfterAdd( Proc_ID,sessionUser);
+            return Ok(data);
+        }
+
+        // DashBorad Get
+        [HttpGet]
+        public async Task<IActionResult> GetPlanning_DashBorad()
+        {
+            var data= await _globalMaster.planingManager.GetPlanning_DashBorad();
             return Ok(data);
         }
         //ADD/SAVE

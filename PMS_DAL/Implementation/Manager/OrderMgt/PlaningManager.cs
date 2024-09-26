@@ -30,11 +30,17 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         }
         //DROP DOWN
-        public async Task<DataTable> Get_PI_Number()
+        public async Task<DataTable> GetPlanning_Padding_PI_Number()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_number from dg_pi_issued where pi_approvedBy_bit = 1 order by pi_number desc", _dg_Oder_Mgt);
+        var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_issued_ref_no, pi_number from dg_pi_issued inner join dg_order_receiving on pi_or_ref_no = or_ref_no where pi_approvedBy_bit = 1 and or_proc_type_forItem in (1,3) order by pi_issued_ref_no desc", _dg_Oder_Mgt);
             return data;
         }
+        public async Task<DataTable> GetPlanning_Quilting_PI_Number()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_issued_ref_no, pi_number from dg_pi_issued inner join dg_order_receiving on pi_or_ref_no = or_ref_no where pi_approvedBy_bit = 1 and or_proc_type_forItem in (2,3) order by pi_issued_ref_no desc", _dg_Oder_Mgt);
+            return data;
+        }
+      
         //VIEW
         public async Task<DataTable> GetPlaning_Details_BeforeAdd(string Pi_Number, int Proc_ID, int ItemProc_ID)
         {
@@ -44,13 +50,23 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         }
 
-        public async Task<DataTable> GetPlaning_Details_AfterAdd(string Pi_Number, int Proc_ID, string sessionUser)
+        public async Task<DataTable> GetPlaning_Details_AfterAdd( int Proc_ID, string sessionUser)
         {
-            var query = $"dg_planning_afterAdd '{Pi_Number}', {Proc_ID}, '{sessionUser}'";
+            var query = $"dg_planning_afterAdd  {Proc_ID}, '{sessionUser}'";
             var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
             return data;
 
         }
+
+
+        // DashBorad Get
+        public async Task<DataTable> GetPlanning_DashBorad()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("dg_planning_dashboard_get", _dg_Oder_Mgt);
+            return data;
+        }
+
+
         //ADD/SAVE
 
 
@@ -107,7 +123,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
                     SqlCommand cmd = new SqlCommand("dg_planning_complete", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@piNumber", ord.Pi_Number);
+                    //cmd.Parameters.AddWithValue("@piNumber", ord.Pi_Number);
                     cmd.Parameters.AddWithValue("@pln_process_id", ord.Process_ID);
                     cmd.Parameters.AddWithValue("@sessionUser", ord.SessionUser);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);

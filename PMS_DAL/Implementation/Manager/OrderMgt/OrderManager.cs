@@ -44,7 +44,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetUnit()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct cUnitDes , nUnitID from Smt_Unit order by cUnitDes ", _SpecFoInventory);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct cUnitDes , nUnitID from Smt_Unit where nUnitID in (9,11) order by cUnitDes ", _SpecFoInventory);
             return data;
         }
         public async Task<DataTable> GetItemName()
@@ -66,9 +66,9 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return data;
         }
 
-        public async Task<DataTable> GetCustomer(int OrderType_ID)
+        public async Task<DataTable> GetCustomer()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as customer_id, c_customer_orderType, c_customer_name, c_att_person, c_att_mobile,c_att_email from dg_dimtbl_customer where c_active = 1 and c_customer_orderType = '" + OrderType_ID + "' order by c_customer_name", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as customer_id, c_customer_type, c_customer_name, c_att_person, c_att_mobile,c_att_email \r\nfrom dg_dimtbl_customer where c_active = 1 order by c_customer_name", _dg_Oder_Mgt);
 
             return data;
         }
@@ -91,13 +91,8 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
             return data;
         }
-        //public async Task<DataTable> Getdesign()
-        //{
-        //    var data = await _SqlCommon.get_InformationDataTableAsync("select des_id, des_name from dg_dimtbl_design", _dg_Oder_Mgt);
-
-        //    return data;
-        //}
-        //Modal View
+       
+        //MODAL  View
         public async Task<DataTable> GetBuyerView()
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_buyer where b_active = 1 order by b_buyer_name ", _dg_Oder_Mgt);
@@ -107,7 +102,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
       
         public async Task<DataTable> GetcustomerView()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as dimtbl_customer_id, *, ot_order_type from dg_dimtbl_customer inner join dg_dimtbl_order_type on c_customer_orderType = ot_id where c_active = 1 order by c_customer_name", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as dimtbl_customer_id, *, ct_customer_type from dg_dimtbl_customer inner join dg_dimtbl_customer_type on c_customer_type = ct_id where c_active = 1 order by c_customer_name", _dg_Oder_Mgt);
 
             return data;
         }
@@ -119,12 +114,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return data;
         }
 
-        //public async Task<DataTable> GetdesignView()
-        //{
-        //    var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_design", _dg_Oder_Mgt);
-
-        //    return data;
-        //}
+     
         public async Task<DataTable> GetDiaView()
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_dia order by d_name ", _dg_Oder_Mgt);
@@ -134,6 +124,11 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         public async Task<DataTable> GetgsmView()
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_gsm order by g_gsm ", _dg_Oder_Mgt);
+            return data;
+        }
+        public async Task<DataTable> GetCustomerType()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select ct_id, ct_customer_type from dg_dimtbl_customer_type", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetOrderType()
@@ -198,9 +193,9 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
 
 
-        public async Task<DataTable> GetReport_Style(string username, int custID, int RefNO)
+        public async Task<DataTable> GetReport_Style(string username, int custID)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_style_no FROM dbo.dg_order_receiving where or_com_post_bit=1 and or_created_by = '"+ username + "' and or_cust = "+ custID + " and or_ref_no = "+ RefNO + " order by or_style_no" , _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_style_no FROM dbo.dg_order_receiving where or_com_post_bit=1 and or_created_by = '"+ username + "' and or_cust = "+ custID + "  order by or_style_no" , _dg_Oder_Mgt);
             return data;
         }
         //----------------------//---------
@@ -355,7 +350,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     SqlCommand cmd = new SqlCommand("dg_dimtbl_customer_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@createdBy_compId", ord.ComID);
-                    cmd.Parameters.AddWithValue("@customer_orderType",ord.customer_orderType);
+                    cmd.Parameters.AddWithValue("@customer_type", ord.customer_Type);
                     cmd.Parameters.AddWithValue("@customerName", ord.Cus_Name);
                     cmd.Parameters.AddWithValue("@attPerson", ord.AttPerson);
                     cmd.Parameters.AddWithValue("@attEmail", ord.AttEmail);

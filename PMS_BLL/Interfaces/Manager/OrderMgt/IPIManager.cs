@@ -35,7 +35,10 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable> GetRevised_PI_Number();
         public Task<DataTable> GetRevised_Version(string PINumber);
         public Task<DataTable> GetRevised_Before_View(string PINumber);
+        public Task<DataTable> GetRevised_CustomerPaymentAndProcessData(string PINumber);
+
         public Task<string> Generate_RevisedPI(List<PIRevisedModel> app);
+        //public Task<string> Generate_RevisedPI(List<PIRevisedModel> app);
 
 
 
