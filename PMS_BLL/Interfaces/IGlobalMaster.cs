@@ -26,6 +26,9 @@ namespace PMS_BLL.Interfaces
         IworkOrderManager workOrderManager { get; }
         IProductionManager  productionManager { get; }
         IPlaningManager planingManager { get; }
+        IPaddingRawmaterialManager paddingRawmaterialManager { get; }
+        IDeliveryChallanManager challanManager { get; }
+
 
 
 

@@ -29,18 +29,18 @@ namespace PMS_API.Controllers.OrderMgt
             var data = await _globalMaster.productionManager.GetShift();
             return Ok(data);
         }
-        [HttpGet]
-        public async Task<IActionResult> GetProductionPadding_RefNo()
-        {
-            var data = await _globalMaster.productionManager.GetProductionPadding_RefNo();
-            return Ok(data);
-        }
-        [HttpGet]
-        public async Task<IActionResult> GetProductionQuilting_RefNo()
-        {
-            var data = await _globalMaster.productionManager.GetProductionQuilting_RefNo();
-            return Ok(data);
-        }
+        //[HttpGet]
+        //public async Task<IActionResult> GetProductionPadding_RefNo()
+        //{
+        //    var data = await _globalMaster.productionManager.GetProductionPadding_RefNo();
+        //    return Ok(data);
+        //}
+        //[HttpGet]
+        //public async Task<IActionResult> GetProductionQuilting_RefNo()
+        //{
+        //    var data = await _globalMaster.productionManager.GetProductionQuilting_RefNo();
+        //    return Ok(data);
+        //}
         [HttpGet]
         public async Task<IActionResult> GetProductionQuilting_ProcessType(int Ordr_refNO, int Process_ID)
         {

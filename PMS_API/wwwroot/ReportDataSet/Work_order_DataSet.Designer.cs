@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace PMS_API.wwwroot.Report.ReportDataSet {
+namespace PMS_API.wwwroot.ReportDataSet {
     
     
     /// <summary>
@@ -20,9 +20,9 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("test")]
+    [global::System.Xml.Serialization.XmlRootAttribute("Work_order_DataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class test : global::System.Data.DataSet {
+    public partial class Work_order_DataSet : global::System.Data.DataSet {
         
         private dg_report_work_order_RptDataTable tabledg_report_work_order_Rpt;
         
@@ -30,7 +30,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public test() {
+        public Work_order_DataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected test(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected Work_order_DataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            test cln = ((test)(base.Clone()));
+            Work_order_DataSet cln = ((Work_order_DataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "test";
+            this.DataSetName = "Work_order_DataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/test.xsd";
+            this.Namespace = "http://tempuri.org/Work_order_DataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tabledg_report_work_order_Rpt = new dg_report_work_order_RptDataTable();
@@ -225,7 +225,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            test ds = new test();
+            Work_order_DataSet ds = new Work_order_DataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -285,85 +285,77 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             private global::System.Data.DataColumn columncutomer_name;
             
-            private global::System.Data.DataColumn columnb_buyer_name;
+            private global::System.Data.DataColumn columnwo_created_by;
             
-            private global::System.Data.DataColumn columnor_style_no;
-            
-            private global::System.Data.DataColumn columnor_po_no;
-            
-            private global::System.Data.DataColumn columnin_item_name;
-            
-            private global::System.Data.DataColumn columnor_item_HS_code;
-            
-            private global::System.Data.DataColumn columnor_item_desc;
-            
-            private global::System.Data.DataColumn columnc_color_name;
-            
-            private global::System.Data.DataColumn columnd_name;
-            
-            private global::System.Data.DataColumn columng_gsm;
-            
-            private global::System.Data.DataColumn columnor_order_qty;
-            
-            private global::System.Data.DataColumn columnor_order_net_weight;
-            
-            private global::System.Data.DataColumn columnor_order_gross_weight;
-            
-            private global::System.Data.DataColumn columncUnitDes;
-            
-            private global::System.Data.DataColumn columnor_order_recv_date;
-            
-            private global::System.Data.DataColumn columnor_order_deli_date;
+            private global::System.Data.DataColumn columnwo_created_date;
             
             private global::System.Data.DataColumn columnwo_remarks;
             
+            private global::System.Data.DataColumn columnwo_thickness;
+            
             private global::System.Data.DataColumn columnpt_padding_thickness;
+            
+            private global::System.Data.DataColumn columnwo_wash_status;
             
             private global::System.Data.DataColumn columnws_wash_status;
             
+            private global::System.Data.DataColumn columnwo_garments_type;
+            
             private global::System.Data.DataColumn columngt_garments_type;
+            
+            private global::System.Data.DataColumn columnwo_heat_side;
             
             private global::System.Data.DataColumn columnhs_heat_side;
             
+            private global::System.Data.DataColumn columnwo_chemical_restriction;
+            
             private global::System.Data.DataColumn columncr_chemical_restriction;
+            
+            private global::System.Data.DataColumn columnwo_quilting_type;
             
             private global::System.Data.DataColumn columnqt_quilting_type;
             
+            private global::System.Data.DataColumn columnwo_machine_type;
+            
             private global::System.Data.DataColumn columnmt_machine_type;
+            
+            private global::System.Data.DataColumn columnwo_quilting_design_name;
             
             private global::System.Data.DataColumn columnqdn_quilting_design_name;
             
+            private global::System.Data.DataColumn columnwo_quilting_design_dimension;
+            
             private global::System.Data.DataColumn columnqdd_quilting_design_dimension;
+            
+            private global::System.Data.DataColumn columnwo_spi;
             
             private global::System.Data.DataColumn columnspi_stitch_per_inch;
             
+            private global::System.Data.DataColumn columnwo_quilting_fabric_side;
+            
             private global::System.Data.DataColumn columnqfs_quilting_fabric_side;
+            
+            private global::System.Data.DataColumn columnwo_lining_usage;
             
             private global::System.Data.DataColumn columnlu_lining_usage;
             
+            private global::System.Data.DataColumn columnwo_yarn_count;
+            
             private global::System.Data.DataColumn columnyc_yarn_count;
+            
+            private global::System.Data.DataColumn columnwo_quilting_fabric_name;
             
             private global::System.Data.DataColumn columnqfn_quilting_fabric_name;
             
+            private global::System.Data.DataColumn columnwo_quilting_fabric_type;
+            
             private global::System.Data.DataColumn columnqft_quilting_fabric_type;
+            
+            private global::System.Data.DataColumn columnwo_quilting_fabric_composition;
             
             private global::System.Data.DataColumn columnqfc_quilting_fabric_composition;
             
             private global::System.Data.DataColumn columnwo_test_name;
-            
-            private global::System.Data.DataColumn columnor_proc_type_forItem;
-            
-            private global::System.Data.DataColumn columnpt_process_name;
-            
-            private global::System.Data.DataColumn columncCmpName;
-            
-            private global::System.Data.DataColumn columncAdd1;
-            
-            private global::System.Data.DataColumn columnwo_insertedBy_compId;
-            
-            private global::System.Data.DataColumn columnpt_padding_type;
-            
-            private global::System.Data.DataColumn columnpi_number;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -424,121 +416,17 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn b_buyer_nameColumn {
+            public global::System.Data.DataColumn wo_created_byColumn {
                 get {
-                    return this.columnb_buyer_name;
+                    return this.columnwo_created_by;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn or_style_noColumn {
+            public global::System.Data.DataColumn wo_created_dateColumn {
                 get {
-                    return this.columnor_style_no;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn or_po_noColumn {
-                get {
-                    return this.columnor_po_no;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn in_item_nameColumn {
-                get {
-                    return this.columnin_item_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn or_item_HS_codeColumn {
-                get {
-                    return this.columnor_item_HS_code;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn or_item_descColumn {
-                get {
-                    return this.columnor_item_desc;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn c_color_nameColumn {
-                get {
-                    return this.columnc_color_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn d_nameColumn {
-                get {
-                    return this.columnd_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn g_gsmColumn {
-                get {
-                    return this.columng_gsm;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn or_order_qtyColumn {
-                get {
-                    return this.columnor_order_qty;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn or_order_net_weightColumn {
-                get {
-                    return this.columnor_order_net_weight;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn or_order_gross_weightColumn {
-                get {
-                    return this.columnor_order_gross_weight;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn cUnitDesColumn {
-                get {
-                    return this.columncUnitDes;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn or_order_recv_dateColumn {
-                get {
-                    return this.columnor_order_recv_date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn or_order_deli_dateColumn {
-                get {
-                    return this.columnor_order_deli_date;
+                    return this.columnwo_created_date;
                 }
             }
             
@@ -552,9 +440,25 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn wo_thicknessColumn {
+                get {
+                    return this.columnwo_thickness;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn pt_padding_thicknessColumn {
                 get {
                     return this.columnpt_padding_thickness;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn wo_wash_statusColumn {
+                get {
+                    return this.columnwo_wash_status;
                 }
             }
             
@@ -568,9 +472,25 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn wo_garments_typeColumn {
+                get {
+                    return this.columnwo_garments_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn gt_garments_typeColumn {
                 get {
                     return this.columngt_garments_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn wo_heat_sideColumn {
+                get {
+                    return this.columnwo_heat_side;
                 }
             }
             
@@ -584,9 +504,25 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn wo_chemical_restrictionColumn {
+                get {
+                    return this.columnwo_chemical_restriction;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn cr_chemical_restrictionColumn {
                 get {
                     return this.columncr_chemical_restriction;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn wo_quilting_typeColumn {
+                get {
+                    return this.columnwo_quilting_type;
                 }
             }
             
@@ -600,9 +536,25 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn wo_machine_typeColumn {
+                get {
+                    return this.columnwo_machine_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn mt_machine_typeColumn {
                 get {
                     return this.columnmt_machine_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn wo_quilting_design_nameColumn {
+                get {
+                    return this.columnwo_quilting_design_name;
                 }
             }
             
@@ -616,9 +568,25 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn wo_quilting_design_dimensionColumn {
+                get {
+                    return this.columnwo_quilting_design_dimension;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn qdd_quilting_design_dimensionColumn {
                 get {
                     return this.columnqdd_quilting_design_dimension;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn wo_spiColumn {
+                get {
+                    return this.columnwo_spi;
                 }
             }
             
@@ -632,9 +600,25 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn wo_quilting_fabric_sideColumn {
+                get {
+                    return this.columnwo_quilting_fabric_side;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn qfs_quilting_fabric_sideColumn {
                 get {
                     return this.columnqfs_quilting_fabric_side;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn wo_lining_usageColumn {
+                get {
+                    return this.columnwo_lining_usage;
                 }
             }
             
@@ -648,9 +632,25 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn wo_yarn_countColumn {
+                get {
+                    return this.columnwo_yarn_count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn yc_yarn_countColumn {
                 get {
                     return this.columnyc_yarn_count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn wo_quilting_fabric_nameColumn {
+                get {
+                    return this.columnwo_quilting_fabric_name;
                 }
             }
             
@@ -664,9 +664,25 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn wo_quilting_fabric_typeColumn {
+                get {
+                    return this.columnwo_quilting_fabric_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn qft_quilting_fabric_typeColumn {
                 get {
                     return this.columnqft_quilting_fabric_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn wo_quilting_fabric_compositionColumn {
+                get {
+                    return this.columnwo_quilting_fabric_composition;
                 }
             }
             
@@ -683,62 +699,6 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             public global::System.Data.DataColumn wo_test_nameColumn {
                 get {
                     return this.columnwo_test_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn or_proc_type_forItemColumn {
-                get {
-                    return this.columnor_proc_type_forItem;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn pt_process_nameColumn {
-                get {
-                    return this.columnpt_process_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn cCmpNameColumn {
-                get {
-                    return this.columncCmpName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn cAdd1Column {
-                get {
-                    return this.columncAdd1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn wo_insertedBy_compIdColumn {
-                get {
-                    return this.columnwo_insertedBy_compId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn pt_padding_typeColumn {
-                get {
-                    return this.columnpt_padding_type;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn pi_numberColumn {
-                get {
-                    return this.columnpi_number;
                 }
             }
             
@@ -783,91 +743,83 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                         int wo_or_ref_no, 
                         int customer_id, 
                         string cutomer_name, 
-                        string b_buyer_name, 
-                        string or_style_no, 
-                        string or_po_no, 
-                        string in_item_name, 
-                        string or_item_HS_code, 
-                        string or_item_desc, 
-                        string c_color_name, 
-                        string d_name, 
-                        string g_gsm, 
-                        decimal or_order_qty, 
-                        decimal or_order_net_weight, 
-                        decimal or_order_gross_weight, 
-                        string cUnitDes, 
-                        System.DateTime or_order_recv_date, 
-                        System.DateTime or_order_deli_date, 
+                        string wo_created_by, 
+                        System.DateTime wo_created_date, 
                         string wo_remarks, 
+                        int wo_thickness, 
                         string pt_padding_thickness, 
+                        int wo_wash_status, 
                         string ws_wash_status, 
+                        int wo_garments_type, 
                         string gt_garments_type, 
+                        int wo_heat_side, 
                         string hs_heat_side, 
+                        int wo_chemical_restriction, 
                         string cr_chemical_restriction, 
+                        int wo_quilting_type, 
                         string qt_quilting_type, 
+                        int wo_machine_type, 
                         string mt_machine_type, 
+                        int wo_quilting_design_name, 
                         string qdn_quilting_design_name, 
+                        int wo_quilting_design_dimension, 
                         string qdd_quilting_design_dimension, 
+                        int wo_spi, 
                         string spi_stitch_per_inch, 
+                        int wo_quilting_fabric_side, 
                         string qfs_quilting_fabric_side, 
+                        int wo_lining_usage, 
                         string lu_lining_usage, 
+                        int wo_yarn_count, 
                         string yc_yarn_count, 
+                        int wo_quilting_fabric_name, 
                         string qfn_quilting_fabric_name, 
+                        int wo_quilting_fabric_type, 
                         string qft_quilting_fabric_type, 
+                        int wo_quilting_fabric_composition, 
                         string qfc_quilting_fabric_composition, 
-                        string wo_test_name, 
-                        int or_proc_type_forItem, 
-                        string pt_process_name, 
-                        string cCmpName, 
-                        string cAdd1, 
-                        int wo_insertedBy_compId, 
-                        string pt_padding_type, 
-                        string pi_number) {
+                        string wo_test_name) {
                 dg_report_work_order_RptRow rowdg_report_work_order_RptRow = ((dg_report_work_order_RptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         wo_or_ref_no,
                         customer_id,
                         cutomer_name,
-                        b_buyer_name,
-                        or_style_no,
-                        or_po_no,
-                        in_item_name,
-                        or_item_HS_code,
-                        or_item_desc,
-                        c_color_name,
-                        d_name,
-                        g_gsm,
-                        or_order_qty,
-                        or_order_net_weight,
-                        or_order_gross_weight,
-                        cUnitDes,
-                        or_order_recv_date,
-                        or_order_deli_date,
+                        wo_created_by,
+                        wo_created_date,
                         wo_remarks,
+                        wo_thickness,
                         pt_padding_thickness,
+                        wo_wash_status,
                         ws_wash_status,
+                        wo_garments_type,
                         gt_garments_type,
+                        wo_heat_side,
                         hs_heat_side,
+                        wo_chemical_restriction,
                         cr_chemical_restriction,
+                        wo_quilting_type,
                         qt_quilting_type,
+                        wo_machine_type,
                         mt_machine_type,
+                        wo_quilting_design_name,
                         qdn_quilting_design_name,
+                        wo_quilting_design_dimension,
                         qdd_quilting_design_dimension,
+                        wo_spi,
                         spi_stitch_per_inch,
+                        wo_quilting_fabric_side,
                         qfs_quilting_fabric_side,
+                        wo_lining_usage,
                         lu_lining_usage,
+                        wo_yarn_count,
                         yc_yarn_count,
+                        wo_quilting_fabric_name,
                         qfn_quilting_fabric_name,
+                        wo_quilting_fabric_type,
                         qft_quilting_fabric_type,
+                        wo_quilting_fabric_composition,
                         qfc_quilting_fabric_composition,
-                        wo_test_name,
-                        or_proc_type_forItem,
-                        pt_process_name,
-                        cCmpName,
-                        cAdd1,
-                        wo_insertedBy_compId,
-                        pt_padding_type,
-                        pi_number};
+                        wo_test_name};
                 rowdg_report_work_order_RptRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdg_report_work_order_RptRow);
                 return rowdg_report_work_order_RptRow;
@@ -893,46 +845,42 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columnwo_or_ref_no = base.Columns["wo_or_ref_no"];
                 this.columncustomer_id = base.Columns["customer_id"];
                 this.columncutomer_name = base.Columns["cutomer_name"];
-                this.columnb_buyer_name = base.Columns["b_buyer_name"];
-                this.columnor_style_no = base.Columns["or_style_no"];
-                this.columnor_po_no = base.Columns["or_po_no"];
-                this.columnin_item_name = base.Columns["in_item_name"];
-                this.columnor_item_HS_code = base.Columns["or_item_HS_code"];
-                this.columnor_item_desc = base.Columns["or_item_desc"];
-                this.columnc_color_name = base.Columns["c_color_name"];
-                this.columnd_name = base.Columns["d_name"];
-                this.columng_gsm = base.Columns["g_gsm"];
-                this.columnor_order_qty = base.Columns["or_order_qty"];
-                this.columnor_order_net_weight = base.Columns["or_order_net_weight"];
-                this.columnor_order_gross_weight = base.Columns["or_order_gross_weight"];
-                this.columncUnitDes = base.Columns["cUnitDes"];
-                this.columnor_order_recv_date = base.Columns["or_order_recv_date"];
-                this.columnor_order_deli_date = base.Columns["or_order_deli_date"];
+                this.columnwo_created_by = base.Columns["wo_created_by"];
+                this.columnwo_created_date = base.Columns["wo_created_date"];
                 this.columnwo_remarks = base.Columns["wo_remarks"];
+                this.columnwo_thickness = base.Columns["wo_thickness"];
                 this.columnpt_padding_thickness = base.Columns["pt_padding_thickness"];
+                this.columnwo_wash_status = base.Columns["wo_wash_status"];
                 this.columnws_wash_status = base.Columns["ws_wash_status"];
+                this.columnwo_garments_type = base.Columns["wo_garments_type"];
                 this.columngt_garments_type = base.Columns["gt_garments_type"];
+                this.columnwo_heat_side = base.Columns["wo_heat_side"];
                 this.columnhs_heat_side = base.Columns["hs_heat_side"];
+                this.columnwo_chemical_restriction = base.Columns["wo_chemical_restriction"];
                 this.columncr_chemical_restriction = base.Columns["cr_chemical_restriction"];
+                this.columnwo_quilting_type = base.Columns["wo_quilting_type"];
                 this.columnqt_quilting_type = base.Columns["qt_quilting_type"];
+                this.columnwo_machine_type = base.Columns["wo_machine_type"];
                 this.columnmt_machine_type = base.Columns["mt_machine_type"];
+                this.columnwo_quilting_design_name = base.Columns["wo_quilting_design_name"];
                 this.columnqdn_quilting_design_name = base.Columns["qdn_quilting_design_name"];
+                this.columnwo_quilting_design_dimension = base.Columns["wo_quilting_design_dimension"];
                 this.columnqdd_quilting_design_dimension = base.Columns["qdd_quilting_design_dimension"];
+                this.columnwo_spi = base.Columns["wo_spi"];
                 this.columnspi_stitch_per_inch = base.Columns["spi_stitch_per_inch"];
+                this.columnwo_quilting_fabric_side = base.Columns["wo_quilting_fabric_side"];
                 this.columnqfs_quilting_fabric_side = base.Columns["qfs_quilting_fabric_side"];
+                this.columnwo_lining_usage = base.Columns["wo_lining_usage"];
                 this.columnlu_lining_usage = base.Columns["lu_lining_usage"];
+                this.columnwo_yarn_count = base.Columns["wo_yarn_count"];
                 this.columnyc_yarn_count = base.Columns["yc_yarn_count"];
+                this.columnwo_quilting_fabric_name = base.Columns["wo_quilting_fabric_name"];
                 this.columnqfn_quilting_fabric_name = base.Columns["qfn_quilting_fabric_name"];
+                this.columnwo_quilting_fabric_type = base.Columns["wo_quilting_fabric_type"];
                 this.columnqft_quilting_fabric_type = base.Columns["qft_quilting_fabric_type"];
+                this.columnwo_quilting_fabric_composition = base.Columns["wo_quilting_fabric_composition"];
                 this.columnqfc_quilting_fabric_composition = base.Columns["qfc_quilting_fabric_composition"];
                 this.columnwo_test_name = base.Columns["wo_test_name"];
-                this.columnor_proc_type_forItem = base.Columns["or_proc_type_forItem"];
-                this.columnpt_process_name = base.Columns["pt_process_name"];
-                this.columncCmpName = base.Columns["cCmpName"];
-                this.columncAdd1 = base.Columns["cAdd1"];
-                this.columnwo_insertedBy_compId = base.Columns["wo_insertedBy_compId"];
-                this.columnpt_padding_type = base.Columns["pt_padding_type"];
-                this.columnpi_number = base.Columns["pi_number"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -944,99 +892,82 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 base.Columns.Add(this.columncustomer_id);
                 this.columncutomer_name = new global::System.Data.DataColumn("cutomer_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncutomer_name);
-                this.columnb_buyer_name = new global::System.Data.DataColumn("b_buyer_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnb_buyer_name);
-                this.columnor_style_no = new global::System.Data.DataColumn("or_style_no", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnor_style_no);
-                this.columnor_po_no = new global::System.Data.DataColumn("or_po_no", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnor_po_no);
-                this.columnin_item_name = new global::System.Data.DataColumn("in_item_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnin_item_name);
-                this.columnor_item_HS_code = new global::System.Data.DataColumn("or_item_HS_code", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnor_item_HS_code);
-                this.columnor_item_desc = new global::System.Data.DataColumn("or_item_desc", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnor_item_desc);
-                this.columnc_color_name = new global::System.Data.DataColumn("c_color_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnc_color_name);
-                this.columnd_name = new global::System.Data.DataColumn("d_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnd_name);
-                this.columng_gsm = new global::System.Data.DataColumn("g_gsm", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columng_gsm);
-                this.columnor_order_qty = new global::System.Data.DataColumn("or_order_qty", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnor_order_qty);
-                this.columnor_order_net_weight = new global::System.Data.DataColumn("or_order_net_weight", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnor_order_net_weight);
-                this.columnor_order_gross_weight = new global::System.Data.DataColumn("or_order_gross_weight", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnor_order_gross_weight);
-                this.columncUnitDes = new global::System.Data.DataColumn("cUnitDes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncUnitDes);
-                this.columnor_order_recv_date = new global::System.Data.DataColumn("or_order_recv_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnor_order_recv_date);
-                this.columnor_order_deli_date = new global::System.Data.DataColumn("or_order_deli_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnor_order_deli_date);
+                this.columnwo_created_by = new global::System.Data.DataColumn("wo_created_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_created_by);
+                this.columnwo_created_date = new global::System.Data.DataColumn("wo_created_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_created_date);
                 this.columnwo_remarks = new global::System.Data.DataColumn("wo_remarks", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnwo_remarks);
+                this.columnwo_thickness = new global::System.Data.DataColumn("wo_thickness", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_thickness);
                 this.columnpt_padding_thickness = new global::System.Data.DataColumn("pt_padding_thickness", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpt_padding_thickness);
+                this.columnwo_wash_status = new global::System.Data.DataColumn("wo_wash_status", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_wash_status);
                 this.columnws_wash_status = new global::System.Data.DataColumn("ws_wash_status", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnws_wash_status);
+                this.columnwo_garments_type = new global::System.Data.DataColumn("wo_garments_type", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_garments_type);
                 this.columngt_garments_type = new global::System.Data.DataColumn("gt_garments_type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngt_garments_type);
+                this.columnwo_heat_side = new global::System.Data.DataColumn("wo_heat_side", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_heat_side);
                 this.columnhs_heat_side = new global::System.Data.DataColumn("hs_heat_side", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhs_heat_side);
+                this.columnwo_chemical_restriction = new global::System.Data.DataColumn("wo_chemical_restriction", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_chemical_restriction);
                 this.columncr_chemical_restriction = new global::System.Data.DataColumn("cr_chemical_restriction", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncr_chemical_restriction);
+                this.columnwo_quilting_type = new global::System.Data.DataColumn("wo_quilting_type", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_quilting_type);
                 this.columnqt_quilting_type = new global::System.Data.DataColumn("qt_quilting_type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnqt_quilting_type);
+                this.columnwo_machine_type = new global::System.Data.DataColumn("wo_machine_type", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_machine_type);
                 this.columnmt_machine_type = new global::System.Data.DataColumn("mt_machine_type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmt_machine_type);
+                this.columnwo_quilting_design_name = new global::System.Data.DataColumn("wo_quilting_design_name", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_quilting_design_name);
                 this.columnqdn_quilting_design_name = new global::System.Data.DataColumn("qdn_quilting_design_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnqdn_quilting_design_name);
+                this.columnwo_quilting_design_dimension = new global::System.Data.DataColumn("wo_quilting_design_dimension", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_quilting_design_dimension);
                 this.columnqdd_quilting_design_dimension = new global::System.Data.DataColumn("qdd_quilting_design_dimension", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnqdd_quilting_design_dimension);
+                this.columnwo_spi = new global::System.Data.DataColumn("wo_spi", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_spi);
                 this.columnspi_stitch_per_inch = new global::System.Data.DataColumn("spi_stitch_per_inch", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnspi_stitch_per_inch);
+                this.columnwo_quilting_fabric_side = new global::System.Data.DataColumn("wo_quilting_fabric_side", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_quilting_fabric_side);
                 this.columnqfs_quilting_fabric_side = new global::System.Data.DataColumn("qfs_quilting_fabric_side", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnqfs_quilting_fabric_side);
+                this.columnwo_lining_usage = new global::System.Data.DataColumn("wo_lining_usage", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_lining_usage);
                 this.columnlu_lining_usage = new global::System.Data.DataColumn("lu_lining_usage", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlu_lining_usage);
+                this.columnwo_yarn_count = new global::System.Data.DataColumn("wo_yarn_count", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_yarn_count);
                 this.columnyc_yarn_count = new global::System.Data.DataColumn("yc_yarn_count", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnyc_yarn_count);
+                this.columnwo_quilting_fabric_name = new global::System.Data.DataColumn("wo_quilting_fabric_name", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_quilting_fabric_name);
                 this.columnqfn_quilting_fabric_name = new global::System.Data.DataColumn("qfn_quilting_fabric_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnqfn_quilting_fabric_name);
+                this.columnwo_quilting_fabric_type = new global::System.Data.DataColumn("wo_quilting_fabric_type", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_quilting_fabric_type);
                 this.columnqft_quilting_fabric_type = new global::System.Data.DataColumn("qft_quilting_fabric_type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnqft_quilting_fabric_type);
+                this.columnwo_quilting_fabric_composition = new global::System.Data.DataColumn("wo_quilting_fabric_composition", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwo_quilting_fabric_composition);
                 this.columnqfc_quilting_fabric_composition = new global::System.Data.DataColumn("qfc_quilting_fabric_composition", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnqfc_quilting_fabric_composition);
                 this.columnwo_test_name = new global::System.Data.DataColumn("wo_test_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnwo_test_name);
-                this.columnor_proc_type_forItem = new global::System.Data.DataColumn("or_proc_type_forItem", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnor_proc_type_forItem);
-                this.columnpt_process_name = new global::System.Data.DataColumn("pt_process_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpt_process_name);
-                this.columncCmpName = new global::System.Data.DataColumn("cCmpName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncCmpName);
-                this.columncAdd1 = new global::System.Data.DataColumn("cAdd1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncAdd1);
-                this.columnwo_insertedBy_compId = new global::System.Data.DataColumn("wo_insertedBy_compId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnwo_insertedBy_compId);
-                this.columnpt_padding_type = new global::System.Data.DataColumn("pt_padding_type", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpt_padding_type);
-                this.columnpi_number = new global::System.Data.DataColumn("pi_number", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpi_number);
                 this.columncustomer_id.ReadOnly = true;
                 this.columncutomer_name.ReadOnly = true;
-                this.columncutomer_name.MaxLength = 250;
-                this.columnb_buyer_name.MaxLength = 50;
-                this.columnor_style_no.MaxLength = 30;
-                this.columnor_po_no.MaxLength = 30;
-                this.columnin_item_name.MaxLength = 200;
-                this.columnor_item_HS_code.MaxLength = 50;
-                this.columnor_item_desc.MaxLength = 500;
-                this.columnc_color_name.MaxLength = 50;
-                this.columnd_name.MaxLength = 10;
-                this.columng_gsm.MaxLength = 100;
-                this.columncUnitDes.MaxLength = 15;
+                this.columncutomer_name.MaxLength = 50;
+                this.columnwo_created_by.MaxLength = 50;
                 this.columnwo_remarks.MaxLength = 1000;
                 this.columnpt_padding_thickness.MaxLength = 10;
                 this.columnws_wash_status.MaxLength = 30;
@@ -1055,11 +986,6 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 this.columnqft_quilting_fabric_type.MaxLength = 50;
                 this.columnqfc_quilting_fabric_composition.MaxLength = 200;
                 this.columnwo_test_name.MaxLength = 100;
-                this.columnpt_process_name.MaxLength = 100;
-                this.columncCmpName.MaxLength = 200;
-                this.columncAdd1.MaxLength = 200;
-                this.columnpt_padding_type.MaxLength = 200;
-                this.columnpi_number.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1127,7 +1053,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                test ds = new test();
+                Work_order_DataSet ds = new Work_order_DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1253,252 +1179,35 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string b_buyer_name {
+            public string wo_created_by {
                 get {
                     try {
-                        return ((string)(this[this.tabledg_report_work_order_Rpt.b_buyer_nameColumn]));
+                        return ((string)(this[this.tabledg_report_work_order_Rpt.wo_created_byColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'b_buyer_name\' in table \'dg_report_work_order_Rpt\' is DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_created_by\' in table \'dg_report_work_order_Rpt\' is DBNul" +
+                                "l.", e);
                     }
                 }
                 set {
-                    this[this.tabledg_report_work_order_Rpt.b_buyer_nameColumn] = value;
+                    this[this.tabledg_report_work_order_Rpt.wo_created_byColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string or_style_no {
+            public System.DateTime wo_created_date {
                 get {
                     try {
-                        return ((string)(this[this.tabledg_report_work_order_Rpt.or_style_noColumn]));
+                        return ((global::System.DateTime)(this[this.tabledg_report_work_order_Rpt.wo_created_dateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'or_style_no\' in table \'dg_report_work_order_Rpt\' is DBNull." +
-                                "", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.or_style_noColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string or_po_no {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_report_work_order_Rpt.or_po_noColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'or_po_no\' in table \'dg_report_work_order_Rpt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.or_po_noColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string in_item_name {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_report_work_order_Rpt.in_item_nameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'in_item_name\' in table \'dg_report_work_order_Rpt\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.in_item_nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string or_item_HS_code {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_report_work_order_Rpt.or_item_HS_codeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'or_item_HS_code\' in table \'dg_report_work_order_Rpt\' is DBN" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_created_date\' in table \'dg_report_work_order_Rpt\' is DBN" +
                                 "ull.", e);
                     }
                 }
                 set {
-                    this[this.tabledg_report_work_order_Rpt.or_item_HS_codeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string or_item_desc {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_report_work_order_Rpt.or_item_descColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'or_item_desc\' in table \'dg_report_work_order_Rpt\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.or_item_descColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string c_color_name {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_report_work_order_Rpt.c_color_nameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'c_color_name\' in table \'dg_report_work_order_Rpt\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.c_color_nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string d_name {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_report_work_order_Rpt.d_nameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'d_name\' in table \'dg_report_work_order_Rpt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.d_nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string g_gsm {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_report_work_order_Rpt.g_gsmColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'g_gsm\' in table \'dg_report_work_order_Rpt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.g_gsmColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal or_order_qty {
-                get {
-                    try {
-                        return ((decimal)(this[this.tabledg_report_work_order_Rpt.or_order_qtyColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'or_order_qty\' in table \'dg_report_work_order_Rpt\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.or_order_qtyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal or_order_net_weight {
-                get {
-                    try {
-                        return ((decimal)(this[this.tabledg_report_work_order_Rpt.or_order_net_weightColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'or_order_net_weight\' in table \'dg_report_work_order_Rpt\' is" +
-                                " DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.or_order_net_weightColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal or_order_gross_weight {
-                get {
-                    try {
-                        return ((decimal)(this[this.tabledg_report_work_order_Rpt.or_order_gross_weightColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'or_order_gross_weight\' in table \'dg_report_work_order_Rpt\' " +
-                                "is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.or_order_gross_weightColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string cUnitDes {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_report_work_order_Rpt.cUnitDesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cUnitDes\' in table \'dg_report_work_order_Rpt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.cUnitDesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime or_order_recv_date {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tabledg_report_work_order_Rpt.or_order_recv_dateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'or_order_recv_date\' in table \'dg_report_work_order_Rpt\' is " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.or_order_recv_dateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime or_order_deli_date {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tabledg_report_work_order_Rpt.or_order_deli_dateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'or_order_deli_date\' in table \'dg_report_work_order_Rpt\' is " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.or_order_deli_dateColumn] = value;
+                    this[this.tabledg_report_work_order_Rpt.wo_created_dateColumn] = value;
                 }
             }
             
@@ -1515,6 +1224,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 }
                 set {
                     this[this.tabledg_report_work_order_Rpt.wo_remarksColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int wo_thickness {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_thicknessColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_thickness\' in table \'dg_report_work_order_Rpt\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_work_order_Rpt.wo_thicknessColumn] = value;
                 }
             }
             
@@ -1537,6 +1263,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int wo_wash_status {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_wash_statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_wash_status\' in table \'dg_report_work_order_Rpt\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_work_order_Rpt.wo_wash_statusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string ws_wash_status {
                 get {
                     try {
@@ -1549,6 +1292,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 }
                 set {
                     this[this.tabledg_report_work_order_Rpt.ws_wash_statusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int wo_garments_type {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_garments_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_garments_type\' in table \'dg_report_work_order_Rpt\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_work_order_Rpt.wo_garments_typeColumn] = value;
                 }
             }
             
@@ -1571,6 +1331,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int wo_heat_side {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_heat_sideColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_heat_side\' in table \'dg_report_work_order_Rpt\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_work_order_Rpt.wo_heat_sideColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string hs_heat_side {
                 get {
                     try {
@@ -1583,6 +1360,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 }
                 set {
                     this[this.tabledg_report_work_order_Rpt.hs_heat_sideColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int wo_chemical_restriction {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_chemical_restrictionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_chemical_restriction\' in table \'dg_report_work_order_Rpt" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_work_order_Rpt.wo_chemical_restrictionColumn] = value;
                 }
             }
             
@@ -1605,6 +1399,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int wo_quilting_type {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_quilting_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_quilting_type\' in table \'dg_report_work_order_Rpt\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_work_order_Rpt.wo_quilting_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string qt_quilting_type {
                 get {
                     try {
@@ -1617,6 +1428,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 }
                 set {
                     this[this.tabledg_report_work_order_Rpt.qt_quilting_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int wo_machine_type {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_machine_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_machine_type\' in table \'dg_report_work_order_Rpt\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_work_order_Rpt.wo_machine_typeColumn] = value;
                 }
             }
             
@@ -1639,6 +1467,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int wo_quilting_design_name {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_quilting_design_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_quilting_design_name\' in table \'dg_report_work_order_Rpt" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_work_order_Rpt.wo_quilting_design_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string qdn_quilting_design_name {
                 get {
                     try {
@@ -1651,6 +1496,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 }
                 set {
                     this[this.tabledg_report_work_order_Rpt.qdn_quilting_design_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int wo_quilting_design_dimension {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_quilting_design_dimensionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_quilting_design_dimension\' in table \'dg_report_work_orde" +
+                                "r_Rpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_work_order_Rpt.wo_quilting_design_dimensionColumn] = value;
                 }
             }
             
@@ -1673,6 +1535,22 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int wo_spi {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_spiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_spi\' in table \'dg_report_work_order_Rpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_work_order_Rpt.wo_spiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string spi_stitch_per_inch {
                 get {
                     try {
@@ -1685,6 +1563,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 }
                 set {
                     this[this.tabledg_report_work_order_Rpt.spi_stitch_per_inchColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int wo_quilting_fabric_side {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_quilting_fabric_sideColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_quilting_fabric_side\' in table \'dg_report_work_order_Rpt" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_work_order_Rpt.wo_quilting_fabric_sideColumn] = value;
                 }
             }
             
@@ -1707,6 +1602,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int wo_lining_usage {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_lining_usageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_lining_usage\' in table \'dg_report_work_order_Rpt\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_work_order_Rpt.wo_lining_usageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string lu_lining_usage {
                 get {
                     try {
@@ -1719,6 +1631,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 }
                 set {
                     this[this.tabledg_report_work_order_Rpt.lu_lining_usageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int wo_yarn_count {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_yarn_countColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_yarn_count\' in table \'dg_report_work_order_Rpt\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_work_order_Rpt.wo_yarn_countColumn] = value;
                 }
             }
             
@@ -1741,6 +1670,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int wo_quilting_fabric_name {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_quilting_fabric_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_quilting_fabric_name\' in table \'dg_report_work_order_Rpt" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_work_order_Rpt.wo_quilting_fabric_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string qfn_quilting_fabric_name {
                 get {
                     try {
@@ -1758,6 +1704,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int wo_quilting_fabric_type {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_quilting_fabric_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_quilting_fabric_type\' in table \'dg_report_work_order_Rpt" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_work_order_Rpt.wo_quilting_fabric_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string qft_quilting_fabric_type {
                 get {
                     try {
@@ -1770,6 +1733,23 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 }
                 set {
                     this[this.tabledg_report_work_order_Rpt.qft_quilting_fabric_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int wo_quilting_fabric_composition {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_quilting_fabric_compositionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wo_quilting_fabric_composition\' in table \'dg_report_work_or" +
+                                "der_Rpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_work_order_Rpt.wo_quilting_fabric_compositionColumn] = value;
                 }
             }
             
@@ -1804,122 +1784,6 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
                 }
                 set {
                     this[this.tabledg_report_work_order_Rpt.wo_test_nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int or_proc_type_forItem {
-                get {
-                    try {
-                        return ((int)(this[this.tabledg_report_work_order_Rpt.or_proc_type_forItemColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'or_proc_type_forItem\' in table \'dg_report_work_order_Rpt\' i" +
-                                "s DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.or_proc_type_forItemColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string pt_process_name {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_report_work_order_Rpt.pt_process_nameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pt_process_name\' in table \'dg_report_work_order_Rpt\' is DBN" +
-                                "ull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.pt_process_nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string cCmpName {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_report_work_order_Rpt.cCmpNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cCmpName\' in table \'dg_report_work_order_Rpt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.cCmpNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string cAdd1 {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_report_work_order_Rpt.cAdd1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cAdd1\' in table \'dg_report_work_order_Rpt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.cAdd1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int wo_insertedBy_compId {
-                get {
-                    try {
-                        return ((int)(this[this.tabledg_report_work_order_Rpt.wo_insertedBy_compIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'wo_insertedBy_compId\' in table \'dg_report_work_order_Rpt\' i" +
-                                "s DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.wo_insertedBy_compIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string pt_padding_type {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_report_work_order_Rpt.pt_padding_typeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pt_padding_type\' in table \'dg_report_work_order_Rpt\' is DBN" +
-                                "ull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.pt_padding_typeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string pi_number {
-                get {
-                    try {
-                        return ((string)(this[this.tabledg_report_work_order_Rpt.pi_numberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pi_number\' in table \'dg_report_work_order_Rpt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledg_report_work_order_Rpt.pi_numberColumn] = value;
                 }
             }
             
@@ -1961,182 +1825,26 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isb_buyer_nameNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.b_buyer_nameColumn);
+            public bool Iswo_created_byNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_created_byColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setb_buyer_nameNull() {
-                this[this.tabledg_report_work_order_Rpt.b_buyer_nameColumn] = global::System.Convert.DBNull;
+            public void Setwo_created_byNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_created_byColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isor_style_noNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.or_style_noColumn);
+            public bool Iswo_created_dateNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_created_dateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setor_style_noNull() {
-                this[this.tabledg_report_work_order_Rpt.or_style_noColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isor_po_noNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.or_po_noColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setor_po_noNull() {
-                this[this.tabledg_report_work_order_Rpt.or_po_noColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isin_item_nameNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.in_item_nameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setin_item_nameNull() {
-                this[this.tabledg_report_work_order_Rpt.in_item_nameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isor_item_HS_codeNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.or_item_HS_codeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setor_item_HS_codeNull() {
-                this[this.tabledg_report_work_order_Rpt.or_item_HS_codeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isor_item_descNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.or_item_descColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setor_item_descNull() {
-                this[this.tabledg_report_work_order_Rpt.or_item_descColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isc_color_nameNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.c_color_nameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setc_color_nameNull() {
-                this[this.tabledg_report_work_order_Rpt.c_color_nameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isd_nameNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.d_nameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setd_nameNull() {
-                this[this.tabledg_report_work_order_Rpt.d_nameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isg_gsmNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.g_gsmColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setg_gsmNull() {
-                this[this.tabledg_report_work_order_Rpt.g_gsmColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isor_order_qtyNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.or_order_qtyColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setor_order_qtyNull() {
-                this[this.tabledg_report_work_order_Rpt.or_order_qtyColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isor_order_net_weightNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.or_order_net_weightColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setor_order_net_weightNull() {
-                this[this.tabledg_report_work_order_Rpt.or_order_net_weightColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isor_order_gross_weightNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.or_order_gross_weightColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setor_order_gross_weightNull() {
-                this[this.tabledg_report_work_order_Rpt.or_order_gross_weightColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IscUnitDesNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.cUnitDesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetcUnitDesNull() {
-                this[this.tabledg_report_work_order_Rpt.cUnitDesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isor_order_recv_dateNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.or_order_recv_dateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setor_order_recv_dateNull() {
-                this[this.tabledg_report_work_order_Rpt.or_order_recv_dateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isor_order_deli_dateNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.or_order_deli_dateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setor_order_deli_dateNull() {
-                this[this.tabledg_report_work_order_Rpt.or_order_deli_dateColumn] = global::System.Convert.DBNull;
+            public void Setwo_created_dateNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_created_dateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2153,6 +1861,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iswo_thicknessNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_thicknessColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setwo_thicknessNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_thicknessColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Ispt_padding_thicknessNull() {
                 return this.IsNull(this.tabledg_report_work_order_Rpt.pt_padding_thicknessColumn);
             }
@@ -2161,6 +1881,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setpt_padding_thicknessNull() {
                 this[this.tabledg_report_work_order_Rpt.pt_padding_thicknessColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iswo_wash_statusNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_wash_statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setwo_wash_statusNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_wash_statusColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2177,6 +1909,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iswo_garments_typeNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_garments_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setwo_garments_typeNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_garments_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isgt_garments_typeNull() {
                 return this.IsNull(this.tabledg_report_work_order_Rpt.gt_garments_typeColumn);
             }
@@ -2185,6 +1929,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setgt_garments_typeNull() {
                 this[this.tabledg_report_work_order_Rpt.gt_garments_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iswo_heat_sideNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_heat_sideColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setwo_heat_sideNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_heat_sideColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2201,6 +1957,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iswo_chemical_restrictionNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_chemical_restrictionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setwo_chemical_restrictionNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_chemical_restrictionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Iscr_chemical_restrictionNull() {
                 return this.IsNull(this.tabledg_report_work_order_Rpt.cr_chemical_restrictionColumn);
             }
@@ -2209,6 +1977,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setcr_chemical_restrictionNull() {
                 this[this.tabledg_report_work_order_Rpt.cr_chemical_restrictionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iswo_quilting_typeNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_quilting_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setwo_quilting_typeNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_quilting_typeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2225,6 +2005,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iswo_machine_typeNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_machine_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setwo_machine_typeNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_machine_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Ismt_machine_typeNull() {
                 return this.IsNull(this.tabledg_report_work_order_Rpt.mt_machine_typeColumn);
             }
@@ -2233,6 +2025,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setmt_machine_typeNull() {
                 this[this.tabledg_report_work_order_Rpt.mt_machine_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iswo_quilting_design_nameNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_quilting_design_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setwo_quilting_design_nameNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_quilting_design_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2249,6 +2053,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iswo_quilting_design_dimensionNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_quilting_design_dimensionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setwo_quilting_design_dimensionNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_quilting_design_dimensionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isqdd_quilting_design_dimensionNull() {
                 return this.IsNull(this.tabledg_report_work_order_Rpt.qdd_quilting_design_dimensionColumn);
             }
@@ -2257,6 +2073,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setqdd_quilting_design_dimensionNull() {
                 this[this.tabledg_report_work_order_Rpt.qdd_quilting_design_dimensionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iswo_spiNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_spiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setwo_spiNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_spiColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2273,6 +2101,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iswo_quilting_fabric_sideNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_quilting_fabric_sideColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setwo_quilting_fabric_sideNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_quilting_fabric_sideColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isqfs_quilting_fabric_sideNull() {
                 return this.IsNull(this.tabledg_report_work_order_Rpt.qfs_quilting_fabric_sideColumn);
             }
@@ -2281,6 +2121,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setqfs_quilting_fabric_sideNull() {
                 this[this.tabledg_report_work_order_Rpt.qfs_quilting_fabric_sideColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iswo_lining_usageNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_lining_usageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setwo_lining_usageNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_lining_usageColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2297,6 +2149,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iswo_yarn_countNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_yarn_countColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setwo_yarn_countNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_yarn_countColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isyc_yarn_countNull() {
                 return this.IsNull(this.tabledg_report_work_order_Rpt.yc_yarn_countColumn);
             }
@@ -2305,6 +2169,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setyc_yarn_countNull() {
                 this[this.tabledg_report_work_order_Rpt.yc_yarn_countColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iswo_quilting_fabric_nameNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_quilting_fabric_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setwo_quilting_fabric_nameNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_quilting_fabric_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2321,6 +2197,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iswo_quilting_fabric_typeNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_quilting_fabric_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setwo_quilting_fabric_typeNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_quilting_fabric_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isqft_quilting_fabric_typeNull() {
                 return this.IsNull(this.tabledg_report_work_order_Rpt.qft_quilting_fabric_typeColumn);
             }
@@ -2329,6 +2217,18 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setqft_quilting_fabric_typeNull() {
                 this[this.tabledg_report_work_order_Rpt.qft_quilting_fabric_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iswo_quilting_fabric_compositionNull() {
+                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_quilting_fabric_compositionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setwo_quilting_fabric_compositionNull() {
+                this[this.tabledg_report_work_order_Rpt.wo_quilting_fabric_compositionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2353,90 +2253,6 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setwo_test_nameNull() {
                 this[this.tabledg_report_work_order_Rpt.wo_test_nameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isor_proc_type_forItemNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.or_proc_type_forItemColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setor_proc_type_forItemNull() {
-                this[this.tabledg_report_work_order_Rpt.or_proc_type_forItemColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Ispt_process_nameNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.pt_process_nameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setpt_process_nameNull() {
-                this[this.tabledg_report_work_order_Rpt.pt_process_nameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IscCmpNameNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.cCmpNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetcCmpNameNull() {
-                this[this.tabledg_report_work_order_Rpt.cCmpNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IscAdd1Null() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.cAdd1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetcAdd1Null() {
-                this[this.tabledg_report_work_order_Rpt.cAdd1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Iswo_insertedBy_compIdNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.wo_insertedBy_compIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setwo_insertedBy_compIdNull() {
-                this[this.tabledg_report_work_order_Rpt.wo_insertedBy_compIdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Ispt_padding_typeNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.pt_padding_typeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setpt_padding_typeNull() {
-                this[this.tabledg_report_work_order_Rpt.pt_padding_typeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Ispi_numberNull() {
-                return this.IsNull(this.tabledg_report_work_order_Rpt.pi_numberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setpi_numberNull() {
-                this[this.tabledg_report_work_order_Rpt.pi_numberColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2475,7 +2291,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
         }
     }
 }
-namespace PMS_API.wwwroot.Report.ReportDataSet.testTableAdapters {
+namespace PMS_API.wwwroot.ReportDataSet.Work_order_DataSetTableAdapters {
     
     
     /// <summary>
@@ -2602,46 +2418,42 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.testTableAdapters {
             tableMapping.ColumnMappings.Add("wo_or_ref_no", "wo_or_ref_no");
             tableMapping.ColumnMappings.Add("customer_id", "customer_id");
             tableMapping.ColumnMappings.Add("cutomer_name", "cutomer_name");
-            tableMapping.ColumnMappings.Add("b_buyer_name", "b_buyer_name");
-            tableMapping.ColumnMappings.Add("or_style_no", "or_style_no");
-            tableMapping.ColumnMappings.Add("or_po_no", "or_po_no");
-            tableMapping.ColumnMappings.Add("in_item_name", "in_item_name");
-            tableMapping.ColumnMappings.Add("or_item_HS_code", "or_item_HS_code");
-            tableMapping.ColumnMappings.Add("or_item_desc", "or_item_desc");
-            tableMapping.ColumnMappings.Add("c_color_name", "c_color_name");
-            tableMapping.ColumnMappings.Add("d_name", "d_name");
-            tableMapping.ColumnMappings.Add("g_gsm", "g_gsm");
-            tableMapping.ColumnMappings.Add("or_order_qty", "or_order_qty");
-            tableMapping.ColumnMappings.Add("or_order_net_weight", "or_order_net_weight");
-            tableMapping.ColumnMappings.Add("or_order_gross_weight", "or_order_gross_weight");
-            tableMapping.ColumnMappings.Add("cUnitDes", "cUnitDes");
-            tableMapping.ColumnMappings.Add("or_order_recv_date", "or_order_recv_date");
-            tableMapping.ColumnMappings.Add("or_order_deli_date", "or_order_deli_date");
+            tableMapping.ColumnMappings.Add("wo_created_by", "wo_created_by");
+            tableMapping.ColumnMappings.Add("wo_created_date", "wo_created_date");
             tableMapping.ColumnMappings.Add("wo_remarks", "wo_remarks");
+            tableMapping.ColumnMappings.Add("wo_thickness", "wo_thickness");
             tableMapping.ColumnMappings.Add("pt_padding_thickness", "pt_padding_thickness");
+            tableMapping.ColumnMappings.Add("wo_wash_status", "wo_wash_status");
             tableMapping.ColumnMappings.Add("ws_wash_status", "ws_wash_status");
+            tableMapping.ColumnMappings.Add("wo_garments_type", "wo_garments_type");
             tableMapping.ColumnMappings.Add("gt_garments_type", "gt_garments_type");
+            tableMapping.ColumnMappings.Add("wo_heat_side", "wo_heat_side");
             tableMapping.ColumnMappings.Add("hs_heat_side", "hs_heat_side");
+            tableMapping.ColumnMappings.Add("wo_chemical_restriction", "wo_chemical_restriction");
             tableMapping.ColumnMappings.Add("cr_chemical_restriction", "cr_chemical_restriction");
+            tableMapping.ColumnMappings.Add("wo_quilting_type", "wo_quilting_type");
             tableMapping.ColumnMappings.Add("qt_quilting_type", "qt_quilting_type");
+            tableMapping.ColumnMappings.Add("wo_machine_type", "wo_machine_type");
             tableMapping.ColumnMappings.Add("mt_machine_type", "mt_machine_type");
+            tableMapping.ColumnMappings.Add("wo_quilting_design_name", "wo_quilting_design_name");
             tableMapping.ColumnMappings.Add("qdn_quilting_design_name", "qdn_quilting_design_name");
+            tableMapping.ColumnMappings.Add("wo_quilting_design_dimension", "wo_quilting_design_dimension");
             tableMapping.ColumnMappings.Add("qdd_quilting_design_dimension", "qdd_quilting_design_dimension");
+            tableMapping.ColumnMappings.Add("wo_spi", "wo_spi");
             tableMapping.ColumnMappings.Add("spi_stitch_per_inch", "spi_stitch_per_inch");
+            tableMapping.ColumnMappings.Add("wo_quilting_fabric_side", "wo_quilting_fabric_side");
             tableMapping.ColumnMappings.Add("qfs_quilting_fabric_side", "qfs_quilting_fabric_side");
+            tableMapping.ColumnMappings.Add("wo_lining_usage", "wo_lining_usage");
             tableMapping.ColumnMappings.Add("lu_lining_usage", "lu_lining_usage");
+            tableMapping.ColumnMappings.Add("wo_yarn_count", "wo_yarn_count");
             tableMapping.ColumnMappings.Add("yc_yarn_count", "yc_yarn_count");
+            tableMapping.ColumnMappings.Add("wo_quilting_fabric_name", "wo_quilting_fabric_name");
             tableMapping.ColumnMappings.Add("qfn_quilting_fabric_name", "qfn_quilting_fabric_name");
+            tableMapping.ColumnMappings.Add("wo_quilting_fabric_type", "wo_quilting_fabric_type");
             tableMapping.ColumnMappings.Add("qft_quilting_fabric_type", "qft_quilting_fabric_type");
+            tableMapping.ColumnMappings.Add("wo_quilting_fabric_composition", "wo_quilting_fabric_composition");
             tableMapping.ColumnMappings.Add("qfc_quilting_fabric_composition", "qfc_quilting_fabric_composition");
             tableMapping.ColumnMappings.Add("wo_test_name", "wo_test_name");
-            tableMapping.ColumnMappings.Add("or_proc_type_forItem", "or_proc_type_forItem");
-            tableMapping.ColumnMappings.Add("pt_process_name", "pt_process_name");
-            tableMapping.ColumnMappings.Add("cCmpName", "cCmpName");
-            tableMapping.ColumnMappings.Add("cAdd1", "cAdd1");
-            tableMapping.ColumnMappings.Add("wo_insertedBy_compId", "wo_insertedBy_compId");
-            tableMapping.ColumnMappings.Add("pt_padding_type", "pt_padding_type");
-            tableMapping.ColumnMappings.Add("pi_number", "pi_number");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2649,8 +2461,8 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.testTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=DESKTOP-02OEO8I;Initial Catalog=dg_OMS;Integrated Security=True;Conne" +
-                "ct Timeout=30;Encrypt=False;TrustServerCertificate=False";
+            this._connection.ConnectionString = "Data Source=192.168.100.250;Initial Catalog=dg_OMS;User ID=Sa;Password=dg@INFO;Co" +
+                "nnect Timeout=30;Encrypt=False;TrustServerCertificate=False";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2662,20 +2474,20 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.testTableAdapters {
             this._commandCollection[0].CommandText = "dbo.dg_report_work_order_Rpt";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PI_Number", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@or_ref_no", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(test.dg_report_work_order_RptDataTable dataTable, string PI_Number) {
+        public virtual int Fill(Work_order_DataSet.dg_report_work_order_RptDataTable dataTable, global::System.Nullable<int> or_ref_no) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((PI_Number == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            if ((or_ref_no.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(or_ref_no.Value));
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(PI_Number));
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2688,15 +2500,15 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.testTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual test.dg_report_work_order_RptDataTable GetData(string PI_Number) {
+        public virtual Work_order_DataSet.dg_report_work_order_RptDataTable GetData(global::System.Nullable<int> or_ref_no) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((PI_Number == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            if ((or_ref_no.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(or_ref_no.Value));
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(PI_Number));
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            test.dg_report_work_order_RptDataTable dataTable = new test.dg_report_work_order_RptDataTable();
+            Work_order_DataSet.dg_report_work_order_RptDataTable dataTable = new Work_order_DataSet.dg_report_work_order_RptDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2770,7 +2582,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.testTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(test dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(Work_order_DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -2780,7 +2592,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.testTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(test dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(Work_order_DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -2790,7 +2602,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.testTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(test dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(Work_order_DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -2824,7 +2636,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet.testTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(test dataSet) {
+        public virtual int UpdateAll(Work_order_DataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

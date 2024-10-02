@@ -42,16 +42,16 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync("select ps_id, ps_shift_name from dg_dimtbl_production_shift order by ps_shift_name", _dg_Oder_Mgt);
             return data;
         }
-        public async Task<DataTable> GetProductionPadding_RefNo()
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no, or_order_recv_date,or_cust, c_customer_name  from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_production_status in ('approved', 'revised') and or_proc_type_forItem in (1,3) order by or_ref_no desc ", _dg_Oder_Mgt);
-            return data;
-        }
-        public async Task<DataTable> GetProductionQuilting_RefNo()
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no, or_order_recv_date,or_cust, c_customer_name from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_production_status in ('approved', 'revised') and or_proc_type_forItem in (2,3) order by or_ref_no desc", _dg_Oder_Mgt);
-            return data;
-        }
+        //public async Task<DataTable> GetProductionPadding_RefNo()
+        //{
+        //    var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no, or_order_recv_date,or_cust, c_customer_name  from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_production_status in ('approved', 'revised') and or_proc_type_forItem in (1,3) order by or_ref_no desc ", _dg_Oder_Mgt);
+        //    return data;
+        //}
+        //public async Task<DataTable> GetProductionQuilting_RefNo()
+        //{
+        //    var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no, or_order_recv_date,or_cust, c_customer_name from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_production_status in ('approved', 'revised') and or_proc_type_forItem in (2,3) order by or_ref_no desc", _dg_Oder_Mgt);
+        //    return data;
+        //}
 
         public async Task<DataTable> GetProductionQuilting_ProcessType(int Ordr_refNO, int Process_ID)
         {
@@ -123,7 +123,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         //Modal
         public async Task<DataTable> GetmachineView()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_machine_details order by md_machine_no", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_process_name as machine_type, md_machine_no, md_machine_desc, md_machine_capacity, md_created_by, md_created_date from dg_dimtbl_machine_details\r\ninner join dg_dimtbl_process_type on md_machine_type = pt_id order by md_machine_no", _dg_Oder_Mgt);
             return data;
         }
 

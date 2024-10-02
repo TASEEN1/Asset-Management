@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace PMS_API.wwwroot.Report.ReportDataSet {
+namespace PMS_API.wwwroot.ReportDataSet {
     
     
     /// <summary>
@@ -642,7 +642,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
         }
     }
 }
-namespace PMS_API.wwwroot.Report.ReportDataSet.padding_type_DataSetTableAdapters {
+namespace PMS_API.wwwroot.ReportDataSet.padding_type_DataSetTableAdapters {
     
     
     /// <summary>

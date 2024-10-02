@@ -37,6 +37,8 @@ namespace PMS_DAL.Implementation
             workOrderManager = new WorkOrderManager(_sqlCommon);
             productionManager = new ProductionManager(_sqlCommon);
             planingManager = new PlaningManager(_sqlCommon);
+            paddingRawmaterialManager = new PaddingRawmaterialManager(sqlCommon);
+            challanManager = new DeliveryChallanManager(sqlCommon);
 
 
 
@@ -66,6 +68,8 @@ namespace PMS_DAL.Implementation
             public IProductionManager productionManager { get; private set; }
 
             public IPlaningManager planingManager { get; private set; }
+            public IPaddingRawmaterialManager paddingRawmaterialManager { get; private set; }
+            public IDeliveryChallanManager challanManager { get; private set;}
 
 
 

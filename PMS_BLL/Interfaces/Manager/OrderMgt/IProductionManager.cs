@@ -14,8 +14,8 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable> GetmachineNo( int Production_ProcID);
 
         public Task<DataTable> GetShift();
-        public Task<DataTable> GetProductionPadding_RefNo();
-        public Task<DataTable> GetProductionQuilting_RefNo();
+        //public Task<DataTable> GetProductionPadding_RefNo();
+        //public Task<DataTable> GetProductionQuilting_RefNo();
         public Task<DataTable> GetProduction_Padding_PI_Number();
 
         public Task<DataTable> GetProduction_Quilting_PI_Number();

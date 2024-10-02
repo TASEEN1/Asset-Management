@@ -103,10 +103,15 @@
     <EmbeddedResource Include="AssetDetailsSummary.rdlc" />
     <EmbeddedResource Include="Asset_Repair_ReportDatails.rdlc" />
     <EmbeddedResource Include="AttributeFrom.rdlc" />
+    <EmbeddedResource Include="Buyer&amp;ShiftWise_ProductionReport.rdlc" />
     <EmbeddedResource Include="DailyPlaningReport.rdlc" />
     <EmbeddedResource Include="DailyProductionSummary.rdlc" />
+    <EmbeddedResource Include="Daily_P&amp;Q_Machine_Planning.rdlc" />
+    <EmbeddedResource Include="DeliveryChallanReport.rdlc" />
     <EmbeddedResource Include="OrderReceivedReportD2D.rdlc" />
     <EmbeddedResource Include="OrderWiseRpt.rdlc" />
+    <EmbeddedResource Include="Order_Summary_report.rdlc" />
+    <EmbeddedResource Include="Padding_Raw_Material_Report.rdlc" />
     <EmbeddedResource Include="ProductionReport.rdlc" />
     <EmbeddedResource Include="Production_Summary.rdlc" />
     <EmbeddedResource Include="Proforma_Invoice.rdlc" />

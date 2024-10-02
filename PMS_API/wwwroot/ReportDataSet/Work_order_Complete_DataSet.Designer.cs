@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace PMS_API.wwwroot.Report.ReportDataSet {
+namespace PMS_API.wwwroot.ReportDataSet {
     
     
     /// <summary>
@@ -1314,7 +1314,7 @@ namespace PMS_API.wwwroot.Report.ReportDataSet {
         }
     }
 }
-namespace PMS_API.wwwroot.Report.ReportDataSet.Work_order_Complete_DataSetTableAdapters {
+namespace PMS_API.wwwroot.ReportDataSet.Work_order_Complete_DataSetTableAdapters {
     
     
     /// <summary>

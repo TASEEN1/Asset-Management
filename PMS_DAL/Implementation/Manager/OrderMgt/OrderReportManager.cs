@@ -253,6 +253,44 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
             return reportBytes;
         }
+        public byte[] Daily_p_and_Q_Machine_PlannigReport(int comID, string UserName, string reportType, int processType, DateTime FromDate)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("dg_report_Daily_P_and_Q_Machine_Planing_Rpt ");
+            stringBuilder.Append(processType != null ? processType : "NULL");
+            stringBuilder.Append(" ,'");
+            stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + " '");
+            //stringBuilder.Append(ToDate.ToString("yyyy-MM-dd"));
+            //stringBuilder.Append(" '");
+            string stateQu = stringBuilder.ToString();
+            var tbldata = new DataTable[]
+            {
+
+                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Oder_Mgt)
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\Daily_P&Q_Machine_Planning.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            string reportTitle = processType == 1 ? " Daily Padding Mechine Planning Report" : " Daily Quilting Mechine Planning Report";
+
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title",reportTitle),
+            new ReportParameter("PrintUser", "" + UserName + "")
+
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
         public byte[] StyleWisePeoductionReport(int comID, string UserName, string reportType, int customer, int refNO ,string Style, int processType, DateTime FromDate)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
@@ -299,6 +337,8 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
         public byte[] HourlyPeoductionReport(int comID, string UserName, string reportType, DateTime productionDate,int? pprodprocID)
         {
+            
+
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
             string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
@@ -370,6 +410,112 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
             return reportBytes;
         }
+
+        public byte[] OrderSummaryReport(int comID, string UserName, string reportType, DateTime FromDate)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("dg_report_Order_Summary_Rpt");
+            stringBuilder.Append(" '");
+            stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + " '");
+            //stringBuilder.Append(ToDate.ToString("yyyy-MM-dd") + " '");
+
+            string stateQu = stringBuilder.ToString();
+            var tbldata = new DataTable[]
+            {
+
+                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Oder_Mgt)
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\Order_Summary_report.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            //string reportTitle = processType == 1 ? "Padding Style Wise Production Report" : "Quilting Style Wise Production Reportt";
+
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title","Order Summary Report"),
+            new ReportParameter("PrintUser", "" + UserName + "")
+
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
+        public byte[] BuyerAndShiftWise_ProductionReport(int comID, string UserName, string reportType, DateTime productionDate)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("dg_report_production_buyerwiseShift");
+            stringBuilder.Append(" '");
+            stringBuilder.Append(productionDate.ToString("yyyy-MM-dd") + " '");
+            string stateQu = stringBuilder.ToString();
+            var tbldata = new DataTable[]
+            {
+
+                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Oder_Mgt)
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\Buyer&ShiftWise_ProductionReport.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            //string reportTitle = processType == 1 ? "Padding Style Wise Production Report" : "Quilting Style Wise Production Reportt";
+
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title","Buyer Wise Production Report"),
+            new ReportParameter("PrintUser", "" + UserName + "")
+
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
+        public byte[] PaddingRaw_MaterialReport(int comID, string UserName, string reportType, DateTime productionDate, int MachineId)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            var tbldata = new DataTable[]
+            {
+                _SqlCommon.get_InformationDataTable("dg_report_Raw_material_Rpt'"+productionDate+"','"+ MachineId + "'", _dg_Oder_Mgt),
+                _SqlCommon.get_InformationDataTable("dg_report_Raw_materia_PSF_Rpt'"+productionDate+"','"+ MachineId + "'", _dg_Oder_Mgt),
+                _SqlCommon.get_InformationDataTable("dg_report_Raw_materia_Resin_Rpt'"+productionDate+"','"+ MachineId + "'", _dg_Oder_Mgt),
+
+
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1",  "DataSet2",  "DataSet3",
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\Padding_Raw_Material_Report.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            //string reportTitle = processType == 1 ? "Padding Style Wise Production Report" : "Quilting Style Wise Production Reportt";
+
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title","Daily Padding Production Report"),
+            new ReportParameter("PrintUser", "" + UserName + "")
+
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
         public byte[] AttributeFromReport(int comID, string UserName, string reportType, string? pi_number)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
@@ -388,6 +534,35 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\AttributeFrom.rdlc";
             //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
            
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title","Attribute From"),
+            new ReportParameter("PrintUser", "" + UserName + "")
+
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
+        public byte[] Delivery_ChallanReport(int comID, string UserName, string reportType, DateTime productionDate, int MachineId)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            var tbldata = new DataTable[]
+             {
+                _SqlCommon.get_InformationDataTable("dg_report_work_order_Rpt '"+MachineId+"'", _dg_Oder_Mgt),
+
+             };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\DeliveryChallanReport.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+
             ReportParameterCollection reportParameters = new ReportParameterCollection
             {
             new ReportParameter("Company",ComName),
