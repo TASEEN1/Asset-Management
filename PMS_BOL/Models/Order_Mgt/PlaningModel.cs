@@ -21,6 +21,7 @@ namespace PMS_BOL.Models.Order_Mgt
         public string Created_By { get; set; }
         public int Process_ID { get; set; }
         public string SessionUser { get; set; }
+        public DateTime proc_Delivery_date { get; set; }
 
 
 

@@ -151,12 +151,12 @@ namespace PMS_API.Controllers.OrderMgt
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
         [HttpGet]
-        public async Task<IActionResult> Delivery_ChallanReport(int comID, string UserName, string reportType, DateTime productionDate, int MachineId)
+        public async Task<IActionResult> Delivery_ChallanReport(int comID, string UserName, string reportType, int Refno)
 
 
         {
             ReportFileExt reportFileExt = new ReportFileExt();
-            var data = _globalMaster.orderReportManager.Delivery_ChallanReport(comID, UserName, reportType, productionDate, MachineId);
+            var data = _globalMaster.orderReportManager.Delivery_ChallanReport(comID, UserName, reportType, Refno);
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
 

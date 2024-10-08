@@ -17,7 +17,7 @@
     <Content Remove="wwwroot\Report\Order_Mgt_Report\DailyPlaningReport.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\DailyProductionSummary.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\Daily_P&amp;Q_Machine_Planning.rdlc" />
-    <Content Remove="wwwroot\Report\Order_Mgt_Report\DeliveryChallanReport.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\deliveryChallanReport.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\OrderReceivedReportD2D.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\OrderWiseRpt.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\Order_Summary_report.rdlc" />
@@ -107,7 +107,7 @@
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\DailyPlaningReport.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\DailyProductionSummary.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\Daily_P&amp;Q_Machine_Planning.rdlc" />
-    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\DeliveryChallanReport.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\deliveryChallanReport.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\OrderReceivedReportD2D.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\OrderWiseRpt.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\Order_Summary_report.rdlc" />

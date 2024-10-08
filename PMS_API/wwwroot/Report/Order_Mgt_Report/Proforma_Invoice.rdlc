@@ -570,7 +570,9 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=IIF(Fields!pi_revise_version.Value = 0, Fields!pi_number.Value, Fields!pi_number.Value &amp; "R" &amp; Fields!pi_revise_version.Value)</Value>
+                                      <Value>=IIF(Fields!pi_revise_version.Value = 0, 
+     Fields!pi_number.Value, 
+     Fields!pi_number.Value &amp; "R" &amp; Fields!pi_revise_version.Value)</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
                                         <FontSize>8pt</FontSize>

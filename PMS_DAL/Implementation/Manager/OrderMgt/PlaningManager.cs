@@ -89,7 +89,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@pln_pi_number", ord.Pi_Number);
                     cmd.Parameters.AddWithValue("@pln_proc_id", ord.Proc_ID);
                     cmd.Parameters.AddWithValue("@pln_plan_date", ord.PlanDate.ToString("yyyy-MM-dd"));
-                    //cmd.Parameters.AddWithValue("@pln_proc_name ", ord.Proc_Name);
+                    cmd.Parameters.AddWithValue("@pln_deli_date ",ord.proc_Delivery_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@pln_mc_id ", ord.MC_ID);
                     cmd.Parameters.AddWithValue("@pln_tday_pln", ord.Today_Plan);
                     cmd.Parameters.AddWithValue("@pln_created_by", ord.Created_By);

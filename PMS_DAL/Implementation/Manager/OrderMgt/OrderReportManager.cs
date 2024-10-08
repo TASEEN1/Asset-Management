@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -417,21 +418,18 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             string ComName = dt.Rows[0]["cCmpName"].ToString();
             string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append("dg_report_Order_Summary_Rpt");
-            stringBuilder.Append(" '");
-            stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + " '");
-            //stringBuilder.Append(ToDate.ToString("yyyy-MM-dd") + " '");
-
-            string stateQu = stringBuilder.ToString();
             var tbldata = new DataTable[]
             {
+                _SqlCommon.get_InformationDataTable("dg_report_Order_Summary_Rpt'"+FromDate+"'", _dg_Oder_Mgt),
+                _SqlCommon.get_InformationDataTable("dg_report_order_summary_custBuyerItem'"+FromDate+"'", _dg_Oder_Mgt),
+               
 
-                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Oder_Mgt)
+
+
             };
             var strSetName = new string[]
             {
-                "DataSet1"
+                "DataSet1", "DataSet2"
             };
             string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\Order_Summary_report.rdlc";
             //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
@@ -494,12 +492,14 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 _SqlCommon.get_InformationDataTable("dg_report_Raw_material_Rpt'"+productionDate+"','"+ MachineId + "'", _dg_Oder_Mgt),
                 _SqlCommon.get_InformationDataTable("dg_report_Raw_materia_PSF_Rpt'"+productionDate+"','"+ MachineId + "'", _dg_Oder_Mgt),
                 _SqlCommon.get_InformationDataTable("dg_report_Raw_materia_Resin_Rpt'"+productionDate+"','"+ MachineId + "'", _dg_Oder_Mgt),
+                _SqlCommon.get_InformationDataTable("dg_report_raw_material_remarks'"+productionDate+"','"+ MachineId + "'", _dg_Oder_Mgt),
+
 
 
             };
             var strSetName = new string[]
             {
-                "DataSet1",  "DataSet2",  "DataSet3",
+                "DataSet1",  "DataSet2",  "DataSet3","DataSet4"
             };
             string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\Padding_Raw_Material_Report.rdlc";
             //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
@@ -545,7 +545,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
             return reportBytes;
         }
-        public byte[] Delivery_ChallanReport(int comID, string UserName, string reportType, DateTime productionDate, int MachineId)
+        public byte[] Delivery_ChallanReport(int comID, string UserName, string reportType,int Refno)
         {
             DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
             string ComName = dt.Rows[0]["cCmpName"].ToString();
@@ -553,7 +553,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
             var tbldata = new DataTable[]
              {
-                _SqlCommon.get_InformationDataTable("dg_report_work_order_Rpt '"+MachineId+"'", _dg_Oder_Mgt),
+                _SqlCommon.get_InformationDataTable("dg_report_Delivery_Challan '"+Refno+"'", _dg_Oder_Mgt),
 
              };
             var strSetName = new string[]
@@ -561,12 +561,13 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                 "DataSet1"
             };
             string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\DeliveryChallanReport.rdlc";
-            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
 
             ReportParameterCollection reportParameters = new ReportParameterCollection
             {
             new ReportParameter("Company",ComName),
             new ReportParameter("Add1", cAdd1),
+            new ReportParameter("UserSignPath",imgERP),
             new ReportParameter("Title","Attribute From"),
             new ReportParameter("PrintUser", "" + UserName + "")
 

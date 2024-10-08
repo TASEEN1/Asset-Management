@@ -91,7 +91,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
 
 
-        //GET
+        //GET view
         public async Task<DataTable> GetPadding_ProductionItemBeforeAdd(string Pi_Number)
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("dg_production_padding_GetItems_BeforeAdd "+ Pi_Number, _dg_Oder_Mgt);
@@ -278,6 +278,16 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     SqlCommand cmd = new SqlCommand("dg_production_delete_single", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@prod_id", ord.prod_ID);
+                    cmd.Parameters.AddWithValue("@prod_or_ref_no", ord.prod_or_ref_no);
+                    cmd.Parameters.AddWithValue("@prod_or_id", ord.prod_or_ID);
+                    cmd.Parameters.AddWithValue("@prod_hour_id", ord.prod_Hour);
+                    cmd.Parameters.AddWithValue("@prod_pi_number", ord.PI_Number);
+                    cmd.Parameters.AddWithValue("@prod_process_id", ord.prod_process_id);
+                    cmd.Parameters.AddWithValue("@prod_shift_id", ord.prod_shift_id);
+                    cmd.Parameters.AddWithValue("@prod_production_date", ord.ProductionDate.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@prod_machine_id", ord.MachineID);
+                    cmd.Parameters.AddWithValue("@prod_today_production", ord.prod_today_production);
+
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();

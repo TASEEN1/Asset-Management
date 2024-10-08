@@ -107,7 +107,7 @@
     <EmbeddedResource Include="DailyPlaningReport.rdlc" />
     <EmbeddedResource Include="DailyProductionSummary.rdlc" />
     <EmbeddedResource Include="Daily_P&amp;Q_Machine_Planning.rdlc" />
-    <EmbeddedResource Include="DeliveryChallanReport.rdlc" />
+    <EmbeddedResource Include="deliveryChallanReport.rdlc" />
     <EmbeddedResource Include="OrderReceivedReportD2D.rdlc" />
     <EmbeddedResource Include="OrderWiseRpt.rdlc" />
     <EmbeddedResource Include="Order_Summary_report.rdlc" />

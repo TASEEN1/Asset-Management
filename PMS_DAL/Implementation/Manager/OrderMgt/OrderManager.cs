@@ -68,7 +68,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> GetCustomer()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as customer_id, c_customer_type, c_customer_name, c_att_person, c_att_mobile,c_att_email \r\nfrom dg_dimtbl_customer where c_active = 1 order by c_customer_name", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select c_id as customer_id, c_customer_type, c_customer_name, c_att_person, c_address, c_att_mobile,c_att_email from dg_dimtbl_customer where c_active = 1 order by c_customer_name", _dg_Oder_Mgt);
 
             return data;
         }

@@ -19,8 +19,8 @@
             {
                 if (_dg_pms == null)
                 {
-                    _dg_pms = String.Format("Data Source=.;Initial Catalog=Mr_PMS;Persist Security Info=true; User ID=sa; Password=taseen;TrustServerCertificate=True");
-                    //_dg_pms = String.Format("Data Source=192.168.100.250;Initial Catalog=Mr_PMS;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
+                    //_dg_pms = String.Format("Data Source=.;Initial Catalog=Mr_PMS;Persist Security Info=true; User ID=sa; Password=taseen;TrustServerCertificate=True");
+                    _dg_pms = String.Format("Data Source=192.168.100.250;Initial Catalog=Mr_PMS;Persist Security Info=true; User ID=sa; Password=dg@INFO;TrustServerCertificate=True");
                     //_dg_pms = String.Format("Data Source=192.168.1.42;Initial Catalog=Mr_PMS;Persist Security Info=true; User ID=sa; Password=--------;TrustServerCertificate=True");
 
                 }

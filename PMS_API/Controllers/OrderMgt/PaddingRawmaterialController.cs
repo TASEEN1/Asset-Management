@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PMS_BLL.Interfaces;
+using PMS_BOL.Functions;
 using PMS_BOL.Models.Order_Mgt;
 using PMS_BOL.Models.OrderMgt;
 
@@ -41,6 +42,12 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(data);
         }
         [HttpGet]
+        public async Task<IActionResult> GetPadding_raw_material_After_View_Remarks(DateTime date, int paddingMachineId)
+        {
+            var data = await _globalMaster.paddingRawmaterialManager.GetPadding_raw_material_After_View_Remarks(date, paddingMachineId);
+            return Ok(data);
+        }
+        [HttpGet]
         public async Task<IActionResult> GetPadding_raw_meterial_Before_view(DateTime date,int paddingMachineId)
         {
             var data = await _globalMaster.paddingRawmaterialManager.GetPadding_raw_meterial_Before_view(date, paddingMachineId);
@@ -50,9 +57,28 @@ namespace PMS_API.Controllers.OrderMgt
 
         // save
         [HttpPost]
-        public async Task<IActionResult> padding_raw_material_Save(List<RawmaterialModel> RM)
+        public async Task<IActionResult> padding_raw_material_Save(RawmaterailSaveRequest rawmaterailSaveRequests)
         {
-            var data = await _globalMaster.paddingRawmaterialManager.padding_raw_material_Save(RM);
+            var data = await _globalMaster.paddingRawmaterialManager.padding_raw_material_Save(rawmaterailSaveRequests);
+            return Ok(new { message = data});
+
+        }
+
+        // save
+        //[HttpPost]
+        //public async Task<IActionResult> padding_raw_material_Save1(RawmaterailSaveRequest rawmaterailSaveRequests)
+        //{
+        //    var data = await _globalMaster.paddingRawmaterialManager.padding_raw_material_Save1(rawmaterailSaveRequests);
+        //    return Ok(new { message = data, message1 = data });
+
+        //}
+
+
+
+        [HttpDelete]
+        public async Task<IActionResult> padding_raw_material_Delete(List<RawmaterialModel> RM)
+        {
+            var data = await _globalMaster.paddingRawmaterialManager.padding_raw_material_Delete(RM);
             return Ok(new { message = data });
 
         }

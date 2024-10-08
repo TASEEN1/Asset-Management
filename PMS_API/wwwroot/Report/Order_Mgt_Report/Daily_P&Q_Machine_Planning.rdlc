@@ -129,6 +129,10 @@
           <DataField>pln_created_date</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
+        <Field Name="pln_deli_date">
+          <DataField>pln_deli_date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
         <Field Name="pln_proc_name">
           <DataField>pln_proc_name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -1268,7 +1272,7 @@
                       <Style />
                     </TextRun>
                     <TextRun>
-                      <Value>=First(Fields!pln_created_date.Value, "DataSet1")</Value>
+                      <Value>=First(Fields!pln_deli_date.Value, "DataSet1")</Value>
                       <Style>
                         <FontFamily>Calibri</FontFamily>
                         <FontSize>8pt</FontSize>
