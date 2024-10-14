@@ -34,8 +34,8 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
 
         //GET
         public Task<DataTable> GetPadding_ProductionItemBeforeAdd(string Pi_Number);
-        public Task<DataTable> GetPadding_ProductionItemAfterAdd( int ProcessID, string SessionUser);
-        public Task<DataTable> GetQuilting_ProductionItemAfterAdd(int ProcessID ,string SessionUser);
+        public Task<DataTable> GetProductionAfterAdd( int ProcessID, string SessionUser);
+        //public Task<DataTable> GetQuilting_ProductionItemAfterAdd(int ProcessID ,string SessionUser);
         public Task<DataTable> GetQuilting_ProductionItemBeforeAdd(string PINumber, int ProType);
 
 

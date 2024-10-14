@@ -25,6 +25,14 @@
           <DataField>or_ref_no</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="pi_isRevised">
+          <DataField>pi_isRevised</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="pi_revise_version">
+          <DataField>pi_revise_version</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="or_payment_currency">
           <DataField>or_payment_currency</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -213,10 +221,6 @@
           <DataField>pi_created_date</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="pi_revise_version">
-          <DataField>pi_revise_version</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="or_order_net_weight">
           <DataField>or_order_net_weight</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
@@ -269,10 +273,6 @@
           <DataField>pi_checkedBy_date</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="pi_created_date1">
-          <DataField>pi_created_date1</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
         <Field Name="cCurCode">
           <DataField>cCurCode</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -293,14 +293,18 @@
           <DataField>cCmpName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="rowno">
+          <DataField>rowno</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>OrdDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\asst_management\PMS_API\wwwroot\Report\ReportDataSet\OrdDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>dg_proforma_invoice_Rpt</rd:TableName>
+        <rd:SchemaPath>D:\asst_management\PMS_API\wwwroot\ReportDataSet\OrdDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>dg_report_proforma_invoice_Rpt</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>dg_proforma_invoice_RptTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>dg_report_proforma_invoice_RptTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

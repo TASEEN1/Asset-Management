@@ -89,17 +89,12 @@ namespace PMS_API.Controllers.OrderMgt
         }
        
         [HttpGet]
-        public async Task<IActionResult> GetPadding_ProductionItemAfterAdd(int ProcessID, string SessionUser)
+        public async Task<IActionResult> GetProductionAfterAdd(int ProcessID, string SessionUser)
         {
-            var data = await _globalMaster.productionManager.GetPadding_ProductionItemAfterAdd(ProcessID , SessionUser);
+            var data = await _globalMaster.productionManager.GetProductionAfterAdd(ProcessID , SessionUser);
             return Ok(data);
         }
-        [HttpGet]
-        public async Task<IActionResult> GetQuilting_ProductionItemAfterAdd(int ProcessID, string SessionUser)
-        {
-            var data = await _globalMaster.productionManager.GetQuilting_ProductionItemAfterAdd(ProcessID,SessionUser);
-            return Ok(data);
-        }
+        
         [HttpGet]
         public async Task<IActionResult> GetQuilting_ProductionItemBeforeAdd(string PINumber,int ProType)
         {

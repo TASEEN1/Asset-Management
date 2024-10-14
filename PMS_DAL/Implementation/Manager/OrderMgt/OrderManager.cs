@@ -821,7 +821,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_buyer", ord.Buyer);
                     cmd.Parameters.AddWithValue("@or_style_no", ord.style_no);
                     cmd.Parameters.AddWithValue("@or_po_no", ord.Po_no);
-                    cmd.Parameters.AddWithValue("@or_item_name",ord.item_Name);
+                    //cmd.Parameters.AddWithValue("@or_item_name",ord.item_Name);
                     cmd.Parameters.AddWithValue("@or_item_desc", ord.Item_desc);
                     cmd.Parameters.AddWithValue("@or_item_color", ord.Item_color);
                     cmd.Parameters.AddWithValue("@or_dia", ord.Dia);
@@ -830,7 +830,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@or_unit_price", ord.Unit_price);
                     cmd.Parameters.AddWithValue("@or_unit", ord.unit);
                     cmd.Parameters.AddWithValue("@or_total_price", ord.Total_price);
-                    cmd.Parameters.AddWithValue("@or_item_HS_code", ord.Hs_code);
+                    //cmd.Parameters.AddWithValue("@or_item_HS_code", ord.Hs_code);
                     cmd.Parameters.AddWithValue("@or_order_recv_date", ord.Ord_receive_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_order_deli_date", ord.Ord_delivery_date.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@or_updated_by", ord.UpdatedBy);

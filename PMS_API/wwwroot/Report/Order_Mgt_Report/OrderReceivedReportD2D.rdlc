@@ -140,11 +140,11 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>OrdDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\asst_management\PMS_API\wwwroot\Report\ReportDataSet\OrdDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>dg_order_receiving_RptD2D</rd:TableName>
+        <rd:SchemaPath>D:\asst_management\PMS_API\wwwroot\ReportDataSet\OrdDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>dg_report_order_receiving_RptD2D</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>dg_order_receiving_RptD2DTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>dg_report_order_receiving_RptD2DTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

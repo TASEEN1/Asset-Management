@@ -112,6 +112,7 @@
     <EmbeddedResource Include="OrderWiseRpt.rdlc" />
     <EmbeddedResource Include="Order_Summary_report.rdlc" />
     <EmbeddedResource Include="Padding_Raw_Material_Report.rdlc" />
+    <EmbeddedResource Include="ProductionAndDeliveryStatus.rdlc" />
     <EmbeddedResource Include="ProductionReport.rdlc" />
     <EmbeddedResource Include="Production_Summary.rdlc" />
     <EmbeddedResource Include="Proforma_Invoice.rdlc" />

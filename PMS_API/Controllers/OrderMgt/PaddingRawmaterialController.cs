@@ -56,22 +56,22 @@ namespace PMS_API.Controllers.OrderMgt
 
 
         // save
+        //[HttpPost]
+        //public async Task<IActionResult> padding_raw_material_Save(RawmaterailSaveRequest rawmaterailSaveRequests)
+        //{
+        //    var data = await _globalMaster.paddingRawmaterialManager.padding_raw_material_Save(rawmaterailSaveRequests);
+        //    return Ok(data);
+
+        //}
         [HttpPost]
         public async Task<IActionResult> padding_raw_material_Save(RawmaterailSaveRequest rawmaterailSaveRequests)
         {
             var data = await _globalMaster.paddingRawmaterialManager.padding_raw_material_Save(rawmaterailSaveRequests);
-            return Ok(new { message = data});
+            return Ok(new { message = data });
 
         }
 
-        // save
-        //[HttpPost]
-        //public async Task<IActionResult> padding_raw_material_Save1(RawmaterailSaveRequest rawmaterailSaveRequests)
-        //{
-        //    var data = await _globalMaster.paddingRawmaterialManager.padding_raw_material_Save1(rawmaterailSaveRequests);
-        //    return Ok(new { message = data, message1 = data });
 
-        //}
 
 
 

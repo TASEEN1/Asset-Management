@@ -26,7 +26,9 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
 
 
         //ADD/SAVE
-        public Task<string> PlaningSave(List<PlaningModel>PL); 
+        public Task<string> PlaningSave(List<PlaningModel> PL);
+        //public Task<Response> PlaningSave(List<PlaningModel> PL);
+
         public Task<string>PlaningComplete(List<PlaningModel>PL);
         public Task<string> PL_Delete(List<PlaningModel> PL);
 

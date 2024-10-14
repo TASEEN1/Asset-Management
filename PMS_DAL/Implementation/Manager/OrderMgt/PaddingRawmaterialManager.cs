@@ -67,8 +67,101 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return data;
         }
 
-       
+
         // save
+        //public async Task<Response> padding_raw_material_Save(RawmaterailSaveRequest rawmaterailSaveRequest)
+        //{
+        //    string message = string.Empty;
+        //    string message1 = string.Empty;
+        //    await _dg_Oder_Mgt.OpenAsync();
+        //    var res = new Response();
+        //    int message2 = 0;
+        //    int message3 = 0;
+
+
+        //    try
+        //    {
+        //        foreach (var ord in rawmaterailSaveRequest.rawmaterialModels)
+        //        {
+
+        //            SqlCommand cmd = new SqlCommand("dg_raw_material_padding_save", _dg_Oder_Mgt);
+        //            {
+        //                cmd.CommandType = CommandType.StoredProcedure;
+        //                cmd.Parameters.AddWithValue("@padrm_createdBy_compId", ord.ComID);
+        //                cmd.Parameters.AddWithValue("@padrm_maincate", ord.Paddingrm_mainCetegory);
+        //                cmd.Parameters.AddWithValue("@padrm_qty", ord.Paddingrm_qty);
+        //                cmd.Parameters.AddWithValue("@padrm_mc_pad", ord.Paddingrm_Mc_pad);
+        //                cmd.Parameters.AddWithValue("@padrm_subcate", ord.Paddingrm_subCategory);
+        //                cmd.Parameters.AddWithValue("@padrm_prod_date", ord.production_Date.ToString("yyyy-MM-dd"));
+        //                cmd.Parameters.AddWithValue("@padrm_created_by", ord.paddingrm_Created_by);
+        //                //cmd.Parameters.AddWithValue("@padrm_remarks", ord.Paddingrm_remarks);
+        //                cmd.Parameters.Add("@status", SqlDbType.Char, 500);
+        //                cmd.Parameters["@status"].Direction = ParameterDirection.Output;
+        //                await cmd.ExecuteNonQueryAsync();
+        //                message2 = Convert.ToInt32(cmd.Parameters["@status"].Value);
+        //                res.Status_code = 200;
+
+        //            }
+
+        //        }
+        //        foreach (var ord in rawmaterailSaveRequest.paddingRemarks_Models)
+        //        {
+        //            using (SqlCommand cmd2 = new SqlCommand("dg_raw_material_padding_save_remarks", _dg_Oder_Mgt))
+        //            {
+        //                cmd2.CommandType = CommandType.StoredProcedure;
+        //                cmd2.Parameters.AddWithValue("@padrm_mc_pad ", ord.paddingrm_mc_pad);
+        //                cmd2.Parameters.AddWithValue("@padrm_prod_date", ord.padding_production_Date.ToString("yyyy-MM-dd"));
+        //                cmd2.Parameters.AddWithValue("@padrm_rem_sl", ord.paddingrm_SL);
+        //                cmd2.Parameters.AddWithValue("@padrm_rem", ord.padding_remarks);
+        //                cmd2.Parameters.Add("@status", SqlDbType.Char, 500);
+        //                cmd2.Parameters["@status"].Direction = ParameterDirection.Output;
+        //                await cmd2.ExecuteNonQueryAsync();
+        //                message3 = Convert.ToInt32(cmd2.Parameters["@status"].Value);
+        //                res.Status_code = 200;
+
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ex.ToString();
+        //    }
+        //    finally
+        //    {
+        //        _dg_Oder_Mgt.Close();
+        //    }
+        //    if (message2 == 1 && message3 == 0)
+        //    {
+        //        res.Status_code = 200;
+        //        message = "Raw Material Saved Successfully";
+        //    }
+        //    else if (message2 == 1 && message3 == 1)
+        //    {
+        //        res.Status_code = 200;
+        //        message = "Raw Material And Remarks Both Successfully";
+        //    }
+        //    else if(message2 == 0 && message3==1)
+        //    {
+        //        res.Status_code = 409;
+        //        message = "Remarks Saved Successfully";
+        //        message1 = "This Raw Material Already Exists";
+        //    }
+        //    if (message3 == 1)
+        //    {
+        //        res.Status_code = 202;
+        //        message = "Remarks Saved Successfully";
+        //        message1 = "Raw Material Not Provided";
+
+        //    }
+        //    res.Message = message;
+        //    res.Message1 = message1;
+        //    return res;
+        //}
+
+
+
+
+
         public async Task<string> padding_raw_material_Save(RawmaterailSaveRequest rawmaterailSaveRequest)
         {
             string msg = string.Empty;
@@ -81,7 +174,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
             try
             {
-                foreach ( var ord in  rawmaterailSaveRequest.rawmaterialModels)
+                foreach (var ord in rawmaterailSaveRequest.rawmaterialModels)
                 {
 
                     SqlCommand cmd = new SqlCommand("dg_raw_material_padding_save", _dg_Oder_Mgt);
@@ -139,15 +232,15 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             {
                 msg = message;
             }
-            else if(count1 > 0)
+            else if (count1 > 0)
             {
-                msg= message1;
+                msg = message1;
             }
             else
             {
                 msg = "Operation Failed";
             }
-            return (message + " "+ message1);
+            return (message + " " + message1);
         }
 
         public async Task<string> padding_raw_material_Delete(List<RawmaterialModel> RM)
@@ -183,67 +276,6 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return message;
         }
 
-        //public async Task<ResponseGen> padding_raw_material_Save1(RawmaterailSaveRequest rawmaterailSaveRequests)
-        //{
-        //    string message = string.Empty;
-        //    string message1 = string.Empty;
-
-        //    await _dg_Oder_Mgt.OpenAsync();
-
-
-        //    try
-        //    {
-        //        foreach (var ord in rawmaterailSaveRequest.rawmaterialModels)
-        //        {
-
-        //            SqlCommand cmd = new SqlCommand("dg_raw_material_padding_save", _dg_Oder_Mgt);
-        //            {
-        //                cmd.CommandType = CommandType.StoredProcedure;
-        //                cmd.Parameters.AddWithValue("@padrm_createdBy_compId", ord.ComID);
-        //                cmd.Parameters.AddWithValue("@padrm_maincate", ord.Paddingrm_mainCetegory);
-        //                cmd.Parameters.AddWithValue("@padrm_qty", ord.Paddingrm_qty);
-        //                cmd.Parameters.AddWithValue("@padrm_mc_pad", ord.Paddingrm_Mc_pad);
-        //                cmd.Parameters.AddWithValue("@padrm_subcate", ord.Paddingrm_subCategory);
-        //                cmd.Parameters.AddWithValue("@padrm_prod_date", ord.production_Date.ToString("yyyy-MM-dd"));
-        //                cmd.Parameters.AddWithValue("@padrm_created_by", ord.paddingrm_Created_by);
-        //                //cmd.Parameters.AddWithValue("@padrm_remarks", ord.Paddingrm_remarks);
-        //                cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
-        //                cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
-        //                await cmd.ExecuteNonQueryAsync();
-        //                message = (string)cmd.Parameters["@ERROR"].Value;
-        //            }
-
-        //        }
-        //        foreach (var ord in rawmaterailSaveRequest.paddingRemarks_Models)
-        //        {
-        //            using (SqlCommand cmd2 = new SqlCommand("dg_raw_material_padding_save_remarks", _dg_Oder_Mgt))
-        //            {
-        //                cmd2.CommandType = CommandType.StoredProcedure;
-        //                cmd2.Parameters.AddWithValue("@padrm_mc_pad ", ord.paddingrm_mc_pad);
-        //                cmd2.Parameters.AddWithValue("@padrm_prod_date", ord.padding_production_Date.ToString("yyyy-MM-dd"));
-        //                cmd2.Parameters.AddWithValue("@padrm_rem_sl", ord.paddingrm_SL);
-        //                cmd2.Parameters.AddWithValue("@padrm_rem", ord.padding_remarks);
-        //                cmd2.Parameters.Add("@ERROR", SqlDbType.Char, 500);
-        //                cmd2.Parameters["@ERROR"].Direction = ParameterDirection.Output;
-        //                await cmd2.ExecuteNonQueryAsync();
-        //                message1 = (string)cmd2.Parameters["@ERROR"].Value;
-
-
-
-        //            }
-        //        }
-
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ex.ToString();
-        //    }
-        //    finally
-        //    {
-        //        _dg_Oder_Mgt.Close();
-        //    }
-        //    return (message);
-        //}
+        
     }
 }

@@ -22,6 +22,7 @@
     <Content Remove="wwwroot\Report\Order_Mgt_Report\OrderWiseRpt.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\Order_Summary_report.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\Padding_Raw_Material_Report.rdlc" />
+    <Content Remove="wwwroot\Report\Order_Mgt_Report\ProductionAndDeliveryStatus.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\ProductionReport.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\Proforma_Invoice.rdlc" />
     <Content Remove="wwwroot\Report\Order_Mgt_Report\WorkOrderFormate.rdlc" />
@@ -112,6 +113,7 @@
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\OrderWiseRpt.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\Order_Summary_report.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\Padding_Raw_Material_Report.rdlc" />
+    <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\ProductionAndDeliveryStatus.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\ProductionReport.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\Proforma_Invoice.rdlc" />
     <EmbeddedResource Include="wwwroot\Report\Order_Mgt_Report\WorkOrderFormate.rdlc" />

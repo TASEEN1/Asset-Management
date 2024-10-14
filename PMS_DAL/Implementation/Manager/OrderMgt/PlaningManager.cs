@@ -74,6 +74,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         {
             string message = string.Empty;
             await _dg_Oder_Mgt.OpenAsync();
+           
 
 
             try
@@ -107,7 +108,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             {
                 _dg_Oder_Mgt.Close();
             }
-            return message;
+           return message;
         }
 
         public async Task<string> PlaningComplete(List<PlaningModel> PL)

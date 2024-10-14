@@ -73,6 +73,12 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var res = new Response();
             int message1= 0;
 
+            if (DV == null || !DV.Any())
+            {
+                res.Status_code = 400; // Bad request
+                res.Message = "No data provided.";
+                return res;
+            }
 
             try
             {

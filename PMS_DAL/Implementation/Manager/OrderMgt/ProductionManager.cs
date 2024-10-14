@@ -66,12 +66,12 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
         public async Task<DataTable> GetProduction_Padding_PI_Number()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_issued_ref_no, pln_pi_number, or_order_recv_date, or_cust, c_customer_name from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id  inner join dg_factTbl_planning on pln_or_id = or_id  inner join dg_pi_issued on pln_or_ref_no = pi_or_ref_no where or_production_status in ('approved', 'revised') and or_proc_type_forItem in (1,3) order by pi_issued_ref_no desc", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_issued_ref_no, pln_pi_number, or_cust, c_customer_name  from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id inner join dg_factTbl_planning on pln_or_id = or_id inner join dg_pi_issued on pln_or_ref_no = pi_or_ref_no  where or_production_status in ('approved', 'revised') and or_proc_type_forItem in (1,3)  order by pi_issued_ref_no desc", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetProduction_Quilting_PI_Number()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_issued_ref_no, pln_pi_number, or_order_recv_date, or_cust, c_customer_name from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id  inner join dg_factTbl_planning on pln_or_id = or_id  inner join dg_pi_issued on pln_or_ref_no = pi_or_ref_no where or_production_status in ('approved', 'revised') and or_proc_type_forItem in (2,3) order by pi_issued_ref_no desc", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_issued_ref_no, pln_pi_number, or_cust, c_customer_name from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id inner join dg_factTbl_planning on pln_or_id = or_id  inner join dg_pi_issued on pln_or_ref_no = pi_or_ref_no where or_production_status in ('approved', 'revised') and or_proc_type_forItem in (2,3) order by pi_issued_ref_no desc", _dg_Oder_Mgt);
             return data;
         }
 
@@ -97,19 +97,13 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync("dg_production_padding_GetItems_BeforeAdd "+ Pi_Number, _dg_Oder_Mgt);
             return data;
         }
-        public async Task<DataTable> GetPadding_ProductionItemAfterAdd(int ProcessID ,string SessionUser)
+        public async Task<DataTable> GetProductionAfterAdd(int ProcessID ,string SessionUser)
         {
             var query = $"dg_production_afterAdd {ProcessID},'{SessionUser}'";
             var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
             return data;
         }
-        public async Task<DataTable> GetQuilting_ProductionItemAfterAdd(int ProcessID, string SessionUser)
-        {
-            var query = $"dg_production_afterAdd {ProcessID},'{SessionUser}'";
-            var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
-            return data;
-           
-        }
+        
         public async Task<DataTable> GetQuilting_ProductionItemBeforeAdd(string PINumber, int ProType)
         {
             var query = $"dg_production_quilting_BeforeAdd_sir  {PINumber}, '{ProType}'";

@@ -10,6 +10,7 @@ namespace PMS_BOL.Models.Order_Mgt
     {
         public int Status_code { get; set; }
         public string Message { get; set; }
+        public string Message1 { get; set; }
 
     }
 }

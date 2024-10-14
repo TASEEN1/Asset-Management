@@ -43,7 +43,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append("dg_order_receiving_Rpt ");
+            stringBuilder.Append("dg_report_order_receiving_Rpt ");
             stringBuilder.Append(customer != null ? customer : "NULL");
             stringBuilder.Append(", '" + (style != null ? style : "NULL"));
             stringBuilder.Append(" '");
@@ -83,7 +83,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append("dg_proforma_invoice_Rpt ");
+            stringBuilder.Append("dg_report_proforma_invoice_Rpt ");
             //stringBuilder.Append(pi_issued_ref_no != null ? pi_issued_ref_no : "NULL");
             //stringBuilder.Append(pi_number != null ? pi_number : "NULL");
             stringBuilder.Append(" '" + (pi_number != null ? pi_number : "NULL"));
@@ -382,7 +382,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append("dg_order_receiving_RptD2D ");
+            stringBuilder.Append("dg_report_order_receiving_RptD2D ");
             stringBuilder.Append(" '");
             stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + " ','");
             stringBuilder.Append(ToDate.ToString("yyyy-MM-dd") + " '");

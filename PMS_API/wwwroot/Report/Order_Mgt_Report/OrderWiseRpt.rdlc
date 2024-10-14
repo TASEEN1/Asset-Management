@@ -132,11 +132,11 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>OrdDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\asst_management\PMS_API\wwwroot\Report\ReportDataSet\OrdDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>dg_order_receiving_Rpt</rd:TableName>
+        <rd:SchemaPath>D:\asst_management\PMS_API\wwwroot\ReportDataSet\OrdDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>dg_report_order_receiving_Rpt</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>dg_order_receiving_RptTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>dg_report_order_receiving_RptTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -277,9 +277,9 @@
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Top>0.05694in</Top>
-            <Left>0.24389in</Left>
+            <Left>0.21889in</Left>
             <Height>0.70834in</Height>
-            <Width>7.9897in</Width>
+            <Width>7.83692in</Width>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -320,10 +320,10 @@
                   <Width>0.43896in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.464in</Width>
+                  <Width>0.37372in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.43055in</Width>
+                  <Width>0.36805in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.5861in</Width>
@@ -1443,43 +1443,10 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>2</ColSpan>
                       </CellContents>
                     </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox60">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>7pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox60</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox17">
@@ -1932,9 +1899,9 @@
             </TablixRowHierarchy>
             <DataSetName>OrdDataSet</DataSetName>
             <Top>0.79722in</Top>
-            <Left>0.24389in</Left>
+            <Left>0.21889in</Left>
             <Height>0.69444in</Height>
-            <Width>7.9897in</Width>
+            <Width>7.83692in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1958,7 +1925,7 @@
         <Height>2.18736in</Height>
         <Style />
       </Body>
-      <Width>8.3447in</Width>
+      <Width>8.25442in</Width>
       <Page>
         <PageHeader>
           <Height>1.00695in</Height>
@@ -2023,9 +1990,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.11111in</Top>
-              <Left>0.19389in</Left>
+              <Left>0.24389in</Left>
               <Height>0.8264in</Height>
-              <Width>7.99722in</Width>
+              <Width>7.78414in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2158,7 +2125,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox111</rd:DefaultName>
               <Top>0.32848in</Top>
-              <Left>6.205in</Left>
+              <Left>6.0675in</Left>
               <Height>0.24376in</Height>
               <Width>1.98611in</Width>
               <ZIndex>2</ZIndex>
@@ -2175,9 +2142,9 @@
             </Textbox>
             <Line Name="Line2">
               <Top>0.26944in</Top>
-              <Left>0.07306in</Left>
+              <Left>0.09806in</Left>
               <Height>0in</Height>
-              <Width>8.16053in</Width>
+              <Width>7.98275in</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -2297,7 +2264,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox111</rd:DefaultName>
               <Top>0.05556in</Top>
-              <Left>6.59967in</Left>
+              <Left>6.46217in</Left>
               <Height>0.18507in</Height>
               <Width>1.59225in</Width>
               <ZIndex>7</ZIndex>
@@ -2314,7 +2281,7 @@
             </Textbox>
             <Line Name="Line8">
               <Top>0.08444in</Top>
-              <Left>6.74839in</Left>
+              <Left>6.61089in</Left>
               <Height>0in</Height>
               <Width>1.15357in</Width>
               <ZIndex>8</ZIndex>
@@ -2343,7 +2310,8 @@
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>13in</PageHeight>
+        <PageHeight>11.69in</PageHeight>
+        <PageWidth>8.27in</PageWidth>
         <Style />
       </Page>
     </ReportSection>
