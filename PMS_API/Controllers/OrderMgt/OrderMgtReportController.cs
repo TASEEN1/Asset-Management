@@ -160,6 +160,16 @@ namespace PMS_API.Controllers.OrderMgt
             return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Production_And_Delivery_StatusReport(int comID, string UserName, string reportType, DateTime FromDate, DateTime ToDate)
+
+
+        {
+            ReportFileExt reportFileExt = new ReportFileExt();
+            var data = _globalMaster.orderReportManager.Production_And_Delivery_StatusReport(comID, UserName, reportType, FromDate, ToDate);
+            return File(data, MediaTypeNames.Application.Octet, (reportFileExt.GetContentType(reportType)));
+        }
+
 
     }
 }

@@ -576,6 +576,43 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return reportBytes;
         }
 
+        public byte[] Production_And_Delivery_StatusReport(int comID, string UserName, string reportType, DateTime FromDate, DateTime ToDate)
+        {
+            DataTable dt = _SqlCommon.get_InformationDataTable("select cCmpName,cAdd1,cAdd2 from Smt_Company where nCompanyID='" + comID + "'", _specfo_conn);
+            string ComName = dt.Rows[0]["cCmpName"].ToString();
+            string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
+            string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("dg_report_productionNDelivery_balance ");
+            stringBuilder.Append(" '");
+            stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + " ','");
+            stringBuilder.Append(ToDate.ToString("yyyy-MM-dd") + " '");
+            string stateQu = stringBuilder.ToString();
+            var tbldata = new DataTable[]
+            {
+
+                 _SqlCommon.get_InformationDataTable(stateQu,_dg_Oder_Mgt)
+            };
+            var strSetName = new string[]
+            {
+                "DataSet1"
+            };
+            string path = $"{_webHostEnvironment.WebRootPath}\\Report\\Order_Mgt_Report\\ProductionAndDeliveryStatus.rdlc";
+            //string imgERP = new Uri($"http://192.168.1.42/ERP/imgsign/").AbsoluteUri;
+            //string reportTitle = processType == 1 ? "Padding Style Wise Production Report" : "Quilting Style Wise Production Reportt";
+
+            ReportParameterCollection reportParameters = new ReportParameterCollection
+            {
+            new ReportParameter("Company",ComName),
+            new ReportParameter("Add1", cAdd1),
+            new ReportParameter("Title","Production And Delivery Status"),
+            new ReportParameter("PrintUser", "" + UserName + "")
+
+            };
+            byte[] reportBytes = this.GenerateReport(tbldata, strSetName, path, reportType, reportParameters);
+            return reportBytes;
+        }
+
 
 
 

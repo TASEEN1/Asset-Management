@@ -68,20 +68,23 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_approval_revise_view '" + Created_by + "'", _dg_Oder_Mgt);
             return data;
         }
-       
+        public async Task<DataTable> GetPI_ProcessType()
+        {
+            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id, pt_process_name from dg_ms_process_type", _dg_Oder_Mgt);
+            return data;
+        }
 
 
-        // report
+
+        // report//
         public async Task<DataTable> GetPI_Number()
         {
             var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_number, pi_issued_ref_no from dg_pi_issued where pi_isRevised = 0 order by pi_issued_ref_no desc", _dg_Oder_Mgt);
             return data;
         }
-        public async Task<DataTable> GetPI_ProcessType()
-        {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id, pt_process_name from dg_dimtbl_process_type", _dg_Oder_Mgt);
-            return data;
-        }
+       
+
+        // report//
 
         public async Task<string> GeneratePIAdd(List<PI_Model> app)
         {
@@ -281,29 +284,12 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             var data = await _SqlCommon.get_InformationDataTableAsync("dg_generate_pi_GetForPiBookingRef " + CustomerID, _dg_Oder_Mgt);
             return data;
         }
-        //public async Task<DataTable> GetBookingRefForPiGenerate(int CustomerID)
-        //{
-        //    string query;
-
-        //    if (CustomerID==0)
-        //    {
-        //        query = "dg_generate_pi_GetForPiBookingRef NULL";
-
-        //    }
-        //    else
-        //    {
-        //        query = $"dg_generate_pi_GetForPiBookingRef {CustomerID}";
-        //    }
-
-        //    var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
-        //    return data;
-        //}
-
+       
 
 
         public async Task<DataTable> GetPI_CustomerTermsAndCondition(int Ref_No)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct c_id as customer_id, c_customer_name,c_tnc_concatedFromFE,c_att_person,c_att_mobile,c_att_email from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_ref_no = " + Ref_No, _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct c_id as customer_id, c_customer_name,c_tnc_concatedFromFE,c_att_person,c_att_mobile,c_att_email from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_ref_no = " + Ref_No, _dg_Oder_Mgt);
             return data;
         }
 
@@ -332,7 +318,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
         public async Task<DataTable> GetRevised_CustomerPaymentAndProcessData(string PINumber)
         {
-            var query = $"select * from (select distinct or_cust, c_customer_name, pi_proc_type, pt_process_name, pi_payment_type, Payment_Mode ,pi_cust_terms_cond,ROW_NUMBER() over(partition by pi_revise_version order by pi_revise_version desc) as rowNum from dg_pi_issued inner join dg_dimtbl_process_type on pt_id = pi_proc_type inner join SpecFo.dbo.Smt_PaymentMode on pi_payment_type = pm_id inner join dg_order_receiving on or_ref_no = pi_or_ref_no inner join dg_dimtbl_customer on or_cust = c_id where pi_number = '{PINumber}' and pi_isRevised = 1 )as alpha where alpha.rowNum = 1";
+            var query = $"select * from (select distinct or_cust, c_customer_name, pi_proc_type, pt_process_name, pi_payment_type, Payment_Mode ,pi_cust_terms_cond,ROW_NUMBER() over(partition by pi_revise_version order by pi_revise_version desc) as rowNum from dg_pi_issued inner join dg_ms_process_type on pt_id = pi_proc_type inner join SpecFo.dbo.Smt_PaymentMode on pi_payment_type = pm_id inner join dg_order_receiving on or_ref_no = pi_or_ref_no inner join dg_dimtbl_customer on or_cust = c_id where pi_number = '{PINumber}' and pi_isRevised = 1 )as alpha where alpha.rowNum = 1";
             var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
             return data;
 
@@ -351,8 +337,6 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@pi_createdBy_compId", ord.comID);
                     cmd.Parameters.AddWithValue("@piNumber", ord.PI_Number);
-                    //cmd.Parameters.AddWithValue("@pi_proc_type", ord.ProcessType);
-                    //cmd.Parameters.AddWithValue("@pi_payment_type", ord.paymentType);
                     cmd.Parameters.AddWithValue("@pi_cust_terms_cond ", ord.Terms_cond);
                     cmd.Parameters.AddWithValue("@pi_created_by", ord.Created_by);
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);

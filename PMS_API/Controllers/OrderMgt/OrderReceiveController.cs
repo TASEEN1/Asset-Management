@@ -222,13 +222,13 @@ namespace PMS_API.Controllers.OrderMgt
 
         }
 
-        [HttpPost]
-        public async Task<IActionResult> ProcessTypeSave(List<ProcessTypeSave> app)
-        {
-            var data = await _globalMaster.orderManager.ProcessTypeSave(app);
-            return Ok(new { message = data });
+        //[HttpPost]
+        //public async Task<IActionResult> ProcessTypeSave(List<ProcessTypeSave> app)
+        //{
+        //    var data = await _globalMaster.orderManager.ProcessTypeSave(app);
+        //    return Ok(new { message = data });
 
-        }
+        //}
         [HttpPost]
         public async Task<IActionResult> BuyerSave(List<BuyerSave> app)
         {
@@ -259,14 +259,14 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(new { message = data });
 
         }
-        [HttpPost]
-        public async Task<IActionResult> DesignSave(List<designSave> app)
-        {
-            var data = await _globalMaster.orderManager.DesignSave(app);
-            return Ok(new { message = data });
+        //[HttpPost]
+        //public async Task<IActionResult> DesignSave(List<designSave> app)
+        //{
+        //    var data = await _globalMaster.orderManager.DesignSave(app);
+        //    return Ok(new { message = data });
 
 
-        }
+        //}
         [HttpDelete]
         public async Task<IActionResult> OrderReceiveDelete(List<orderReceiveDelete> app)
         {
@@ -282,13 +282,13 @@ namespace PMS_API.Controllers.OrderMgt
             return Ok(new { message = data });
 
         }
-        [HttpDelete]
-        public async Task<IActionResult> CustomerDelete(List<customerSave> app)
-        {
-            var data = await _globalMaster.orderManager.CustomerDelete(app);
-            return Ok(new { message = data });
+        //[HttpDelete]
+        //public async Task<IActionResult> CustomerDelete(List<customerSave> app)
+        //{
+        //    var data = await _globalMaster.orderManager.CustomerDelete(app);
+        //    return Ok(new { message = data });
 
-        }
+        //}
 
         [HttpPut]
         public async Task<IActionResult> CustomerUpdate(List<customerSave> app)
@@ -298,13 +298,13 @@ namespace PMS_API.Controllers.OrderMgt
 
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> BuyerDelete(List<BuyerSave> app)
-        {
-            var data = await _globalMaster.orderManager.BuyerDelete(app);
-            return Ok(new { message = data });
+        //[HttpDelete]
+        //public async Task<IActionResult> BuyerDelete(List<BuyerSave> app)
+        //{
+        //    var data = await _globalMaster.orderManager.BuyerDelete(app);
+        //    return Ok(new { message = data });
 
-        }
+        //}
 
         [HttpPut]
         public async Task<IActionResult> BuyerUpdate(List<BuyerSave> app)

@@ -34,24 +34,15 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         //DropDown
         public async Task<DataTable> GetmachineNo(int Production_ProcID)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select md_id,md_machine_no from dg_dimtbl_machine_details where md_machine_type =  "+ Production_ProcID + "order by md_machine_no", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select md_id,md_machine_no from dg_ms_machine_details where md_machine_type =  "+ Production_ProcID + "order by md_machine_no", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetShift()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select ps_id, ps_shift_name from dg_dimtbl_production_shift order by ps_shift_name", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select ps_id, ps_shift_name from dg_ms_production_shift order by ps_shift_name", _dg_Oder_Mgt);
             return data;
         }
-        //public async Task<DataTable> GetProductionPadding_RefNo()
-        //{
-        //    var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no, or_order_recv_date,or_cust, c_customer_name  from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_production_status in ('approved', 'revised') and or_proc_type_forItem in (1,3) order by or_ref_no desc ", _dg_Oder_Mgt);
-        //    return data;
-        //}
-        //public async Task<DataTable> GetProductionQuilting_RefNo()
-        //{
-        //    var data = await _SqlCommon.get_InformationDataTableAsync("select distinct or_ref_no, or_order_recv_date,or_cust, c_customer_name from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id where or_production_status in ('approved', 'revised') and or_proc_type_forItem in (2,3) order by or_ref_no desc", _dg_Oder_Mgt);
-        //    return data;
-        //}
+        
 
         public async Task<DataTable> GetProductionQuilting_ProcessType(int Ordr_refNO, int Process_ID)
         {
@@ -61,29 +52,29 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
         public async Task<DataTable> GetProduction_ProcessType()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id, pt_process_name from dg_dimtbl_process_type where pt_id not in (1)", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id, pt_process_name from dg_ms_process_type where pt_id not in (1)", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetProduction_Padding_PI_Number()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_issued_ref_no, pln_pi_number, or_cust, c_customer_name  from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id inner join dg_factTbl_planning on pln_or_id = or_id inner join dg_pi_issued on pln_or_ref_no = pi_or_ref_no  where or_production_status in ('approved', 'revised') and or_proc_type_forItem in (1,3)  order by pi_issued_ref_no desc", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_issued_ref_no, pln_pi_number, or_cust, c_customer_name  from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id inner join dg_planning on pln_or_id = or_id inner join dg_pi_issued on pln_or_ref_no = pi_or_ref_no  where or_production_status in ('approved', 'revised') and or_proc_type_forItem in (1,3)  order by pi_issued_ref_no desc ", _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetProduction_Quilting_PI_Number()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_issued_ref_no, pln_pi_number, or_cust, c_customer_name from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id inner join dg_factTbl_planning on pln_or_id = or_id  inner join dg_pi_issued on pln_or_ref_no = pi_or_ref_no where or_production_status in ('approved', 'revised') and or_proc_type_forItem in (2,3) order by pi_issued_ref_no desc", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct pi_issued_ref_no, pln_pi_number, or_cust, c_customer_name from dg_order_receiving inner join dg_dimtbl_customer on or_cust = c_id inner join dg_planning on pln_or_id = or_id  inner join dg_pi_issued on pln_or_ref_no = pi_or_ref_no where or_production_status in ('approved', 'revised') and or_proc_type_forItem in (2,3) order by pi_issued_ref_no desc", _dg_Oder_Mgt);
             return data;
         }
 
         public async Task<DataTable> GetProduction_Hour()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select ph_id, ph_name from dg_dimtbl_production_hour", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select ph_id, ph_name from dg_ms_production_hour", _dg_Oder_Mgt);
             return data;
         }
         //GET Report DROP DOWN
         public async Task<DataTable> Get_ReportProduction_ProcessType()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id, pt_process_name from dg_dimtbl_process_type where pt_id not in (3)", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id, pt_process_name from dg_ms_process_type where pt_id not in (3)", _dg_Oder_Mgt);
             return data;
         }
 
@@ -117,13 +108,13 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         //Modal
         public async Task<DataTable> GetmachineView()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_process_name as machine_type, md_machine_no, md_machine_desc, md_machine_capacity, md_created_by, md_created_date from dg_dimtbl_machine_details\r\ninner join dg_dimtbl_process_type on md_machine_type = pt_id order by md_machine_no", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_process_name as machine_type, md_machine_no, md_machine_desc, md_machine_capacity, md_created_by, md_created_date from dg_ms_machine_details inner join dg_ms_process_type on md_machine_type = pt_id order by md_machine_no", _dg_Oder_Mgt);
             return data;
         }
 
         public async Task<DataTable> GetShiftview()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_production_shift", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_ms_production_shift", _dg_Oder_Mgt);
             return data;
         }
 
@@ -136,7 +127,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             {
                 foreach (MachineDetails ord in MC)
                 {
-                    SqlCommand cmd = new SqlCommand("dg_dimtbl_machine_details_save", _dg_Oder_Mgt);
+                    SqlCommand cmd = new SqlCommand("dg_ms_machine_details_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@md_createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@md_machine_type", ord.machine_Type);
@@ -162,7 +153,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
         public async Task<DataTable> GetMechinType()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id as mcTypeId , pt_process_name as mcType from dg_dimtbl_process_type where pt_id in (1,2)", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id as mcTypeId , pt_process_name as mcType from dg_ms_process_type where pt_id in (1,2)", _dg_Oder_Mgt);
             return data;
         }
 
@@ -181,7 +172,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             {
                 foreach (ShiftDetails ord in SF)
                 {
-                    SqlCommand cmd = new SqlCommand("dg_dimtbl_production_shift_save", _dg_Oder_Mgt);
+                    SqlCommand cmd = new SqlCommand("dg_ms_production_shift_save", _dg_Oder_Mgt);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@ps_createdBy_compId", ord.ComID);
                     cmd.Parameters.AddWithValue("@ps_shift_name", ord.shiftName);

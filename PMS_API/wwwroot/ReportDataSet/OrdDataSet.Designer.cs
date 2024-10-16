@@ -62,6 +62,8 @@ namespace PMS_API.wwwroot.ReportDataSet {
         
         private dg_report_proforma_invoice_RptDataTable tabledg_report_proforma_invoice_Rpt;
         
+        private dg_report_productionNDelivery_balanceDataTable tabledg_report_productionNDelivery_balance;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -146,6 +148,9 @@ namespace PMS_API.wwwroot.ReportDataSet {
                 }
                 if ((ds.Tables["dg_report_proforma_invoice_Rpt"] != null)) {
                     base.Tables.Add(new dg_report_proforma_invoice_RptDataTable(ds.Tables["dg_report_proforma_invoice_Rpt"]));
+                }
+                if ((ds.Tables["dg_report_productionNDelivery_balance"] != null)) {
+                    base.Tables.Add(new dg_report_productionNDelivery_balanceDataTable(ds.Tables["dg_report_productionNDelivery_balance"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -357,6 +362,16 @@ namespace PMS_API.wwwroot.ReportDataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public dg_report_productionNDelivery_balanceDataTable dg_report_productionNDelivery_balance {
+            get {
+                return this.tabledg_report_productionNDelivery_balance;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -478,6 +493,9 @@ namespace PMS_API.wwwroot.ReportDataSet {
                 }
                 if ((ds.Tables["dg_report_proforma_invoice_Rpt"] != null)) {
                     base.Tables.Add(new dg_report_proforma_invoice_RptDataTable(ds.Tables["dg_report_proforma_invoice_Rpt"]));
+                }
+                if ((ds.Tables["dg_report_productionNDelivery_balance"] != null)) {
+                    base.Tables.Add(new dg_report_productionNDelivery_balanceDataTable(ds.Tables["dg_report_productionNDelivery_balance"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -626,6 +644,12 @@ namespace PMS_API.wwwroot.ReportDataSet {
                     this.tabledg_report_proforma_invoice_Rpt.InitVars();
                 }
             }
+            this.tabledg_report_productionNDelivery_balance = ((dg_report_productionNDelivery_balanceDataTable)(base.Tables["dg_report_productionNDelivery_balance"]));
+            if ((initTable == true)) {
+                if ((this.tabledg_report_productionNDelivery_balance != null)) {
+                    this.tabledg_report_productionNDelivery_balance.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -674,6 +698,8 @@ namespace PMS_API.wwwroot.ReportDataSet {
             base.Tables.Add(this.tabledg_report_order_receiving_RptD2D);
             this.tabledg_report_proforma_invoice_Rpt = new dg_report_proforma_invoice_RptDataTable();
             base.Tables.Add(this.tabledg_report_proforma_invoice_Rpt);
+            this.tabledg_report_productionNDelivery_balance = new dg_report_productionNDelivery_balanceDataTable();
+            base.Tables.Add(this.tabledg_report_productionNDelivery_balance);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -792,6 +818,12 @@ namespace PMS_API.wwwroot.ReportDataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializedg_report_productionNDelivery_balance() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -901,6 +933,9 @@ namespace PMS_API.wwwroot.ReportDataSet {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void dg_report_proforma_invoice_RptRowChangeEventHandler(object sender, dg_report_proforma_invoice_RptRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void dg_report_productionNDelivery_balanceRowChangeEventHandler(object sender, dg_report_productionNDelivery_balanceRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -14503,6 +14538,599 @@ namespace PMS_API.wwwroot.ReportDataSet {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "dg_report_proforma_invoice_RptDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class dg_report_productionNDelivery_balanceDataTable : global::System.Data.TypedTableBase<dg_report_productionNDelivery_balanceRow> {
+            
+            private global::System.Data.DataColumn columnor_id;
+            
+            private global::System.Data.DataColumn columnor_proc_type_forItem;
+            
+            private global::System.Data.DataColumn columnor_style_no;
+            
+            private global::System.Data.DataColumn columnor_po_no;
+            
+            private global::System.Data.DataColumn columnor_order_qty;
+            
+            private global::System.Data.DataColumn columnpi_number;
+            
+            private global::System.Data.DataColumn columnb_buyer_name;
+            
+            private global::System.Data.DataColumn columnin_item_name;
+            
+            private global::System.Data.DataColumn columnpt_process_name;
+            
+            private global::System.Data.DataColumn columnc_color_name;
+            
+            private global::System.Data.DataColumn columnd_name;
+            
+            private global::System.Data.DataColumn columng_gsm;
+            
+            private global::System.Data.DataColumn columntot_padding_prod;
+            
+            private global::System.Data.DataColumn columnpadding_prod_balance;
+            
+            private global::System.Data.DataColumn columntot_quilting_prod;
+            
+            private global::System.Data.DataColumn columnquilting_prod_balance;
+            
+            private global::System.Data.DataColumn columntot_padding_delivery;
+            
+            private global::System.Data.DataColumn columnpadding_deli_balance;
+            
+            private global::System.Data.DataColumn columntot_quilting_delivery;
+            
+            private global::System.Data.DataColumn columnquilting_deli_balance;
+            
+            private global::System.Data.DataColumn columncAdd1;
+            
+            private global::System.Data.DataColumn columncCmpName;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dg_report_productionNDelivery_balanceDataTable() {
+                this.TableName = "dg_report_productionNDelivery_balance";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal dg_report_productionNDelivery_balanceDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected dg_report_productionNDelivery_balanceDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn or_idColumn {
+                get {
+                    return this.columnor_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn or_proc_type_forItemColumn {
+                get {
+                    return this.columnor_proc_type_forItem;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn or_style_noColumn {
+                get {
+                    return this.columnor_style_no;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn or_po_noColumn {
+                get {
+                    return this.columnor_po_no;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn or_order_qtyColumn {
+                get {
+                    return this.columnor_order_qty;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn pi_numberColumn {
+                get {
+                    return this.columnpi_number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn b_buyer_nameColumn {
+                get {
+                    return this.columnb_buyer_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn in_item_nameColumn {
+                get {
+                    return this.columnin_item_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn pt_process_nameColumn {
+                get {
+                    return this.columnpt_process_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn c_color_nameColumn {
+                get {
+                    return this.columnc_color_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn d_nameColumn {
+                get {
+                    return this.columnd_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn g_gsmColumn {
+                get {
+                    return this.columng_gsm;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn tot_padding_prodColumn {
+                get {
+                    return this.columntot_padding_prod;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn padding_prod_balanceColumn {
+                get {
+                    return this.columnpadding_prod_balance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn tot_quilting_prodColumn {
+                get {
+                    return this.columntot_quilting_prod;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn quilting_prod_balanceColumn {
+                get {
+                    return this.columnquilting_prod_balance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn tot_padding_deliveryColumn {
+                get {
+                    return this.columntot_padding_delivery;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn padding_deli_balanceColumn {
+                get {
+                    return this.columnpadding_deli_balance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn tot_quilting_deliveryColumn {
+                get {
+                    return this.columntot_quilting_delivery;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn quilting_deli_balanceColumn {
+                get {
+                    return this.columnquilting_deli_balance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn cAdd1Column {
+                get {
+                    return this.columncAdd1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn cCmpNameColumn {
+                get {
+                    return this.columncCmpName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dg_report_productionNDelivery_balanceRow this[int index] {
+                get {
+                    return ((dg_report_productionNDelivery_balanceRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event dg_report_productionNDelivery_balanceRowChangeEventHandler dg_report_productionNDelivery_balanceRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event dg_report_productionNDelivery_balanceRowChangeEventHandler dg_report_productionNDelivery_balanceRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event dg_report_productionNDelivery_balanceRowChangeEventHandler dg_report_productionNDelivery_balanceRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event dg_report_productionNDelivery_balanceRowChangeEventHandler dg_report_productionNDelivery_balanceRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Adddg_report_productionNDelivery_balanceRow(dg_report_productionNDelivery_balanceRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dg_report_productionNDelivery_balanceRow Adddg_report_productionNDelivery_balanceRow(
+                        int or_id, 
+                        int or_proc_type_forItem, 
+                        string or_style_no, 
+                        string or_po_no, 
+                        decimal or_order_qty, 
+                        string pi_number, 
+                        string b_buyer_name, 
+                        string in_item_name, 
+                        string pt_process_name, 
+                        string c_color_name, 
+                        string d_name, 
+                        string g_gsm, 
+                        decimal tot_padding_prod, 
+                        decimal padding_prod_balance, 
+                        decimal tot_quilting_prod, 
+                        decimal quilting_prod_balance, 
+                        decimal tot_padding_delivery, 
+                        decimal padding_deli_balance, 
+                        decimal tot_quilting_delivery, 
+                        decimal quilting_deli_balance, 
+                        string cAdd1, 
+                        string cCmpName) {
+                dg_report_productionNDelivery_balanceRow rowdg_report_productionNDelivery_balanceRow = ((dg_report_productionNDelivery_balanceRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        or_id,
+                        or_proc_type_forItem,
+                        or_style_no,
+                        or_po_no,
+                        or_order_qty,
+                        pi_number,
+                        b_buyer_name,
+                        in_item_name,
+                        pt_process_name,
+                        c_color_name,
+                        d_name,
+                        g_gsm,
+                        tot_padding_prod,
+                        padding_prod_balance,
+                        tot_quilting_prod,
+                        quilting_prod_balance,
+                        tot_padding_delivery,
+                        padding_deli_balance,
+                        tot_quilting_delivery,
+                        quilting_deli_balance,
+                        cAdd1,
+                        cCmpName};
+                rowdg_report_productionNDelivery_balanceRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdg_report_productionNDelivery_balanceRow);
+                return rowdg_report_productionNDelivery_balanceRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dg_report_productionNDelivery_balanceRow FindByor_id(int or_id) {
+                return ((dg_report_productionNDelivery_balanceRow)(this.Rows.Find(new object[] {
+                            or_id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                dg_report_productionNDelivery_balanceDataTable cln = ((dg_report_productionNDelivery_balanceDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new dg_report_productionNDelivery_balanceDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnor_id = base.Columns["or_id"];
+                this.columnor_proc_type_forItem = base.Columns["or_proc_type_forItem"];
+                this.columnor_style_no = base.Columns["or_style_no"];
+                this.columnor_po_no = base.Columns["or_po_no"];
+                this.columnor_order_qty = base.Columns["or_order_qty"];
+                this.columnpi_number = base.Columns["pi_number"];
+                this.columnb_buyer_name = base.Columns["b_buyer_name"];
+                this.columnin_item_name = base.Columns["in_item_name"];
+                this.columnpt_process_name = base.Columns["pt_process_name"];
+                this.columnc_color_name = base.Columns["c_color_name"];
+                this.columnd_name = base.Columns["d_name"];
+                this.columng_gsm = base.Columns["g_gsm"];
+                this.columntot_padding_prod = base.Columns["tot_padding_prod"];
+                this.columnpadding_prod_balance = base.Columns["padding_prod_balance"];
+                this.columntot_quilting_prod = base.Columns["tot_quilting_prod"];
+                this.columnquilting_prod_balance = base.Columns["quilting_prod_balance"];
+                this.columntot_padding_delivery = base.Columns["tot_padding_delivery"];
+                this.columnpadding_deli_balance = base.Columns["padding_deli_balance"];
+                this.columntot_quilting_delivery = base.Columns["tot_quilting_delivery"];
+                this.columnquilting_deli_balance = base.Columns["quilting_deli_balance"];
+                this.columncAdd1 = base.Columns["cAdd1"];
+                this.columncCmpName = base.Columns["cCmpName"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnor_id = new global::System.Data.DataColumn("or_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnor_id);
+                this.columnor_proc_type_forItem = new global::System.Data.DataColumn("or_proc_type_forItem", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnor_proc_type_forItem);
+                this.columnor_style_no = new global::System.Data.DataColumn("or_style_no", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnor_style_no);
+                this.columnor_po_no = new global::System.Data.DataColumn("or_po_no", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnor_po_no);
+                this.columnor_order_qty = new global::System.Data.DataColumn("or_order_qty", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnor_order_qty);
+                this.columnpi_number = new global::System.Data.DataColumn("pi_number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpi_number);
+                this.columnb_buyer_name = new global::System.Data.DataColumn("b_buyer_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnb_buyer_name);
+                this.columnin_item_name = new global::System.Data.DataColumn("in_item_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnin_item_name);
+                this.columnpt_process_name = new global::System.Data.DataColumn("pt_process_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpt_process_name);
+                this.columnc_color_name = new global::System.Data.DataColumn("c_color_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnc_color_name);
+                this.columnd_name = new global::System.Data.DataColumn("d_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnd_name);
+                this.columng_gsm = new global::System.Data.DataColumn("g_gsm", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columng_gsm);
+                this.columntot_padding_prod = new global::System.Data.DataColumn("tot_padding_prod", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntot_padding_prod);
+                this.columnpadding_prod_balance = new global::System.Data.DataColumn("padding_prod_balance", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpadding_prod_balance);
+                this.columntot_quilting_prod = new global::System.Data.DataColumn("tot_quilting_prod", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntot_quilting_prod);
+                this.columnquilting_prod_balance = new global::System.Data.DataColumn("quilting_prod_balance", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnquilting_prod_balance);
+                this.columntot_padding_delivery = new global::System.Data.DataColumn("tot_padding_delivery", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntot_padding_delivery);
+                this.columnpadding_deli_balance = new global::System.Data.DataColumn("padding_deli_balance", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpadding_deli_balance);
+                this.columntot_quilting_delivery = new global::System.Data.DataColumn("tot_quilting_delivery", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntot_quilting_delivery);
+                this.columnquilting_deli_balance = new global::System.Data.DataColumn("quilting_deli_balance", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnquilting_deli_balance);
+                this.columncAdd1 = new global::System.Data.DataColumn("cAdd1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncAdd1);
+                this.columncCmpName = new global::System.Data.DataColumn("cCmpName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncCmpName);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnor_id}, true));
+                this.columnor_id.AllowDBNull = false;
+                this.columnor_id.Unique = true;
+                this.columnor_style_no.MaxLength = 30;
+                this.columnor_po_no.MaxLength = 30;
+                this.columnpi_number.MaxLength = 20;
+                this.columnb_buyer_name.MaxLength = 50;
+                this.columnin_item_name.MaxLength = 200;
+                this.columnpt_process_name.MaxLength = 100;
+                this.columnc_color_name.MaxLength = 50;
+                this.columnd_name.MaxLength = 10;
+                this.columng_gsm.MaxLength = 100;
+                this.columntot_padding_prod.ReadOnly = true;
+                this.columnpadding_prod_balance.ReadOnly = true;
+                this.columntot_quilting_prod.ReadOnly = true;
+                this.columnquilting_prod_balance.ReadOnly = true;
+                this.columntot_padding_delivery.ReadOnly = true;
+                this.columnpadding_deli_balance.ReadOnly = true;
+                this.columntot_quilting_delivery.ReadOnly = true;
+                this.columnquilting_deli_balance.ReadOnly = true;
+                this.columncAdd1.MaxLength = 200;
+                this.columncCmpName.MaxLength = 200;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dg_report_productionNDelivery_balanceRow Newdg_report_productionNDelivery_balanceRow() {
+                return ((dg_report_productionNDelivery_balanceRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new dg_report_productionNDelivery_balanceRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(dg_report_productionNDelivery_balanceRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.dg_report_productionNDelivery_balanceRowChanged != null)) {
+                    this.dg_report_productionNDelivery_balanceRowChanged(this, new dg_report_productionNDelivery_balanceRowChangeEvent(((dg_report_productionNDelivery_balanceRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.dg_report_productionNDelivery_balanceRowChanging != null)) {
+                    this.dg_report_productionNDelivery_balanceRowChanging(this, new dg_report_productionNDelivery_balanceRowChangeEvent(((dg_report_productionNDelivery_balanceRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.dg_report_productionNDelivery_balanceRowDeleted != null)) {
+                    this.dg_report_productionNDelivery_balanceRowDeleted(this, new dg_report_productionNDelivery_balanceRowChangeEvent(((dg_report_productionNDelivery_balanceRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.dg_report_productionNDelivery_balanceRowDeleting != null)) {
+                    this.dg_report_productionNDelivery_balanceRowDeleting(this, new dg_report_productionNDelivery_balanceRowChangeEvent(((dg_report_productionNDelivery_balanceRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Removedg_report_productionNDelivery_balanceRow(dg_report_productionNDelivery_balanceRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                OrdDataSet ds = new OrdDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "dg_report_productionNDelivery_balanceDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -30562,6 +31190,641 @@ namespace PMS_API.wwwroot.ReportDataSet {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class dg_report_productionNDelivery_balanceRow : global::System.Data.DataRow {
+            
+            private dg_report_productionNDelivery_balanceDataTable tabledg_report_productionNDelivery_balance;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal dg_report_productionNDelivery_balanceRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledg_report_productionNDelivery_balance = ((dg_report_productionNDelivery_balanceDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int or_id {
+                get {
+                    return ((int)(this[this.tabledg_report_productionNDelivery_balance.or_idColumn]));
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.or_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int or_proc_type_forItem {
+                get {
+                    try {
+                        return ((int)(this[this.tabledg_report_productionNDelivery_balance.or_proc_type_forItemColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'or_proc_type_forItem\' in table \'dg_report_productionNDelive" +
+                                "ry_balance\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.or_proc_type_forItemColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string or_style_no {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_report_productionNDelivery_balance.or_style_noColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'or_style_no\' in table \'dg_report_productionNDelivery_balanc" +
+                                "e\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.or_style_noColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string or_po_no {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_report_productionNDelivery_balance.or_po_noColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'or_po_no\' in table \'dg_report_productionNDelivery_balance\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.or_po_noColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal or_order_qty {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledg_report_productionNDelivery_balance.or_order_qtyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'or_order_qty\' in table \'dg_report_productionNDelivery_balan" +
+                                "ce\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.or_order_qtyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string pi_number {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_report_productionNDelivery_balance.pi_numberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pi_number\' in table \'dg_report_productionNDelivery_balance\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.pi_numberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string b_buyer_name {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_report_productionNDelivery_balance.b_buyer_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'b_buyer_name\' in table \'dg_report_productionNDelivery_balan" +
+                                "ce\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.b_buyer_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string in_item_name {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_report_productionNDelivery_balance.in_item_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'in_item_name\' in table \'dg_report_productionNDelivery_balan" +
+                                "ce\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.in_item_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string pt_process_name {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_report_productionNDelivery_balance.pt_process_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pt_process_name\' in table \'dg_report_productionNDelivery_ba" +
+                                "lance\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.pt_process_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string c_color_name {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_report_productionNDelivery_balance.c_color_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'c_color_name\' in table \'dg_report_productionNDelivery_balan" +
+                                "ce\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.c_color_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string d_name {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_report_productionNDelivery_balance.d_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'d_name\' in table \'dg_report_productionNDelivery_balance\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.d_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string g_gsm {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_report_productionNDelivery_balance.g_gsmColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'g_gsm\' in table \'dg_report_productionNDelivery_balance\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.g_gsmColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal tot_padding_prod {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledg_report_productionNDelivery_balance.tot_padding_prodColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'tot_padding_prod\' in table \'dg_report_productionNDelivery_b" +
+                                "alance\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.tot_padding_prodColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal padding_prod_balance {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledg_report_productionNDelivery_balance.padding_prod_balanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'padding_prod_balance\' in table \'dg_report_productionNDelive" +
+                                "ry_balance\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.padding_prod_balanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal tot_quilting_prod {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledg_report_productionNDelivery_balance.tot_quilting_prodColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'tot_quilting_prod\' in table \'dg_report_productionNDelivery_" +
+                                "balance\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.tot_quilting_prodColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal quilting_prod_balance {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledg_report_productionNDelivery_balance.quilting_prod_balanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'quilting_prod_balance\' in table \'dg_report_productionNDeliv" +
+                                "ery_balance\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.quilting_prod_balanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal tot_padding_delivery {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledg_report_productionNDelivery_balance.tot_padding_deliveryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'tot_padding_delivery\' in table \'dg_report_productionNDelive" +
+                                "ry_balance\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.tot_padding_deliveryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal padding_deli_balance {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledg_report_productionNDelivery_balance.padding_deli_balanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'padding_deli_balance\' in table \'dg_report_productionNDelive" +
+                                "ry_balance\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.padding_deli_balanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal tot_quilting_delivery {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledg_report_productionNDelivery_balance.tot_quilting_deliveryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'tot_quilting_delivery\' in table \'dg_report_productionNDeliv" +
+                                "ery_balance\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.tot_quilting_deliveryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal quilting_deli_balance {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledg_report_productionNDelivery_balance.quilting_deli_balanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'quilting_deli_balance\' in table \'dg_report_productionNDeliv" +
+                                "ery_balance\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.quilting_deli_balanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string cAdd1 {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_report_productionNDelivery_balance.cAdd1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cAdd1\' in table \'dg_report_productionNDelivery_balance\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.cAdd1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string cCmpName {
+                get {
+                    try {
+                        return ((string)(this[this.tabledg_report_productionNDelivery_balance.cCmpNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cCmpName\' in table \'dg_report_productionNDelivery_balance\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledg_report_productionNDelivery_balance.cCmpNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isor_proc_type_forItemNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.or_proc_type_forItemColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setor_proc_type_forItemNull() {
+                this[this.tabledg_report_productionNDelivery_balance.or_proc_type_forItemColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isor_style_noNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.or_style_noColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setor_style_noNull() {
+                this[this.tabledg_report_productionNDelivery_balance.or_style_noColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isor_po_noNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.or_po_noColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setor_po_noNull() {
+                this[this.tabledg_report_productionNDelivery_balance.or_po_noColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isor_order_qtyNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.or_order_qtyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setor_order_qtyNull() {
+                this[this.tabledg_report_productionNDelivery_balance.or_order_qtyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Ispi_numberNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.pi_numberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setpi_numberNull() {
+                this[this.tabledg_report_productionNDelivery_balance.pi_numberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isb_buyer_nameNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.b_buyer_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setb_buyer_nameNull() {
+                this[this.tabledg_report_productionNDelivery_balance.b_buyer_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isin_item_nameNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.in_item_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setin_item_nameNull() {
+                this[this.tabledg_report_productionNDelivery_balance.in_item_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Ispt_process_nameNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.pt_process_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setpt_process_nameNull() {
+                this[this.tabledg_report_productionNDelivery_balance.pt_process_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isc_color_nameNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.c_color_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setc_color_nameNull() {
+                this[this.tabledg_report_productionNDelivery_balance.c_color_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isd_nameNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.d_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setd_nameNull() {
+                this[this.tabledg_report_productionNDelivery_balance.d_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isg_gsmNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.g_gsmColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setg_gsmNull() {
+                this[this.tabledg_report_productionNDelivery_balance.g_gsmColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Istot_padding_prodNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.tot_padding_prodColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Settot_padding_prodNull() {
+                this[this.tabledg_report_productionNDelivery_balance.tot_padding_prodColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Ispadding_prod_balanceNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.padding_prod_balanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setpadding_prod_balanceNull() {
+                this[this.tabledg_report_productionNDelivery_balance.padding_prod_balanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Istot_quilting_prodNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.tot_quilting_prodColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Settot_quilting_prodNull() {
+                this[this.tabledg_report_productionNDelivery_balance.tot_quilting_prodColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isquilting_prod_balanceNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.quilting_prod_balanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setquilting_prod_balanceNull() {
+                this[this.tabledg_report_productionNDelivery_balance.quilting_prod_balanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Istot_padding_deliveryNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.tot_padding_deliveryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Settot_padding_deliveryNull() {
+                this[this.tabledg_report_productionNDelivery_balance.tot_padding_deliveryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Ispadding_deli_balanceNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.padding_deli_balanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setpadding_deli_balanceNull() {
+                this[this.tabledg_report_productionNDelivery_balance.padding_deli_balanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Istot_quilting_deliveryNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.tot_quilting_deliveryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Settot_quilting_deliveryNull() {
+                this[this.tabledg_report_productionNDelivery_balance.tot_quilting_deliveryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isquilting_deli_balanceNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.quilting_deli_balanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setquilting_deli_balanceNull() {
+                this[this.tabledg_report_productionNDelivery_balance.quilting_deli_balanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscAdd1Null() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.cAdd1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcAdd1Null() {
+                this[this.tabledg_report_productionNDelivery_balance.cAdd1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscCmpNameNull() {
+                return this.IsNull(this.tabledg_report_productionNDelivery_balance.cCmpNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcCmpNameNull() {
+                this[this.tabledg_report_productionNDelivery_balance.cCmpNameColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -31193,6 +32456,40 @@ namespace PMS_API.wwwroot.ReportDataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public dg_report_proforma_invoice_RptRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class dg_report_productionNDelivery_balanceRowChangeEvent : global::System.EventArgs {
+            
+            private dg_report_productionNDelivery_balanceRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dg_report_productionNDelivery_balanceRowChangeEvent(dg_report_productionNDelivery_balanceRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dg_report_productionNDelivery_balanceRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -35409,6 +36706,222 @@ namespace PMS_API.wwwroot.ReportDataSet.OrdDataSetTableAdapters {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pi_number));
             }
             OrdDataSet.dg_report_proforma_invoice_RptDataTable dataTable = new OrdDataSet.dg_report_proforma_invoice_RptDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class dg_report_productionNDelivery_balanceTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public dg_report_productionNDelivery_balanceTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "dg_report_productionNDelivery_balance";
+            tableMapping.ColumnMappings.Add("or_id", "or_id");
+            tableMapping.ColumnMappings.Add("or_proc_type_forItem", "or_proc_type_forItem");
+            tableMapping.ColumnMappings.Add("or_style_no", "or_style_no");
+            tableMapping.ColumnMappings.Add("or_po_no", "or_po_no");
+            tableMapping.ColumnMappings.Add("or_order_qty", "or_order_qty");
+            tableMapping.ColumnMappings.Add("pi_number", "pi_number");
+            tableMapping.ColumnMappings.Add("b_buyer_name", "b_buyer_name");
+            tableMapping.ColumnMappings.Add("in_item_name", "in_item_name");
+            tableMapping.ColumnMappings.Add("pt_process_name", "pt_process_name");
+            tableMapping.ColumnMappings.Add("c_color_name", "c_color_name");
+            tableMapping.ColumnMappings.Add("d_name", "d_name");
+            tableMapping.ColumnMappings.Add("g_gsm", "g_gsm");
+            tableMapping.ColumnMappings.Add("tot_padding_prod", "tot_padding_prod");
+            tableMapping.ColumnMappings.Add("padding_prod_balance", "padding_prod_balance");
+            tableMapping.ColumnMappings.Add("tot_quilting_prod", "tot_quilting_prod");
+            tableMapping.ColumnMappings.Add("quilting_prod_balance", "quilting_prod_balance");
+            tableMapping.ColumnMappings.Add("tot_padding_delivery", "tot_padding_delivery");
+            tableMapping.ColumnMappings.Add("padding_deli_balance", "padding_deli_balance");
+            tableMapping.ColumnMappings.Add("tot_quilting_delivery", "tot_quilting_delivery");
+            tableMapping.ColumnMappings.Add("quilting_deli_balance", "quilting_deli_balance");
+            tableMapping.ColumnMappings.Add("cAdd1", "cAdd1");
+            tableMapping.ColumnMappings.Add("cCmpName", "cCmpName");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = "Data Source=192.168.100.250;Initial Catalog=dg_OMS;User ID=Sa;Password=dg@INFO;Co" +
+                "nnect Timeout=30;Encrypt=False;TrustServerCertificate=False";
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.dg_report_productionNDelivery_balance";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_from_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_to_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(OrdDataSet.dg_report_productionNDelivery_balanceDataTable dataTable, global::System.Nullable<global::System.DateTime> order_from_date, global::System.Nullable<global::System.DateTime> order_to_date) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((order_from_date.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(order_from_date.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((order_to_date.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(order_to_date.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual OrdDataSet.dg_report_productionNDelivery_balanceDataTable GetData(global::System.Nullable<global::System.DateTime> order_from_date, global::System.Nullable<global::System.DateTime> order_to_date) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((order_from_date.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(order_from_date.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((order_to_date.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(order_to_date.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            OrdDataSet.dg_report_productionNDelivery_balanceDataTable dataTable = new OrdDataSet.dg_report_productionNDelivery_balanceDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

@@ -43,19 +43,19 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
 
         public Task<string> OrderReceivedComplete(List<OrderReciveComplete> app);
         public Task<string> ItemNameSave(List<ItemDescriptionSave> app);
-        public Task<string> ProcessTypeSave(List<ProcessTypeSave> app);
+        //public Task<string> ProcessTypeSave(List<ProcessTypeSave> app);
         public Task<string> BuyerSave(List<BuyerSave> app);
         public Task<string> CustomerSave(List<customerSave> app);
         public Task<string> DiaSave(List<diaSave> app);
 
         public Task<string> GsmSave(List<gsmSave> app);
-        public Task<string> DesignSave(List<designSave> app);
+        //public Task<string> DesignSave(List<designSave> app);
         public Task<string> OrderReceiveDelete(List<orderReceiveDelete> app);
         public Task<string> OrderReceiveEditUpdate(List<OrderReceivingAdd> app);
 
-        public Task<string> CustomerDelete (List<customerSave> app);
+        //public Task<string> CustomerDelete (List<customerSave> app);
         public Task<string> CustomerUpdate(List<customerSave> app);
-        public Task<string> BuyerDelete(List<BuyerSave> app);
+        //public Task<string> BuyerDelete(List<BuyerSave> app);
         public Task<string> BuyerUpdate(List<BuyerSave> app);
         public Task<string> OrderReceiveEditAdd(List<OrderReceivingAdd> app);
         public Task<string> OrderReceiveAddOrderUpdate(List<OrderReceivingAdd> app);

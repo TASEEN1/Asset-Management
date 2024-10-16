@@ -28,8 +28,8 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             _dg_Oder_Mgt = new SqlConnection(Dg_Getway.dg_Oder_Mgt);
 
         }
-        //Common 
-        //GetDelivery_Challan_PINumber(customer wise)
+      
+  
         public async Task<DataTable> GetDelivery_Challan_PINumber(string? PI_Number, int custParamForPI, int pageProcId, int itemProcId)
         {
             var piNumberValue = PI_Number == null ? $"'{PI_Number}'" : "NULL";
@@ -38,12 +38,12 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             return data;
         }
 
-        //-------Padding------//
+       
 
         //Drop Down
         public async Task<DataTable> GetPadding_Challan_ProcessType()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id, pt_process_name from dg_dimtbl_process_type where pt_id not in (2) ", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select pt_id, pt_process_name from dg_ms_process_type where pt_id not in (2) ", _dg_Oder_Mgt);
             return data;
         }
         //view 
@@ -216,7 +216,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         //Report
         public async Task<DataTable> Get_Challan()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct dc_challan_refNo from dg_factTbl_delivery_challan where dc_challan_refNo <> 0 order by dc_challan_refNo desc", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select distinct dc_challan_refNo from dg_delivery_challan where dc_challan_refNo <> 0 order by dc_challan_refNo desc", _dg_Oder_Mgt);
             return data;
         }
 

@@ -28,6 +28,10 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public byte[] BuyerAndShiftWise_ProductionReport(int comID, string UserName, string reportType, DateTime productionDate);
         public byte[] PaddingRaw_MaterialReport(int comID, string UserName, string reportType, DateTime productionDate, int MachineId);
         public byte[] Delivery_ChallanReport(int comID, string UserName, string reportType,int Refno);
+        public byte[] Production_And_Delivery_StatusReport(int comID, string UserName, string reportType, DateTime FromDate,DateTime ToDate);
+
+
+
 
 
 
