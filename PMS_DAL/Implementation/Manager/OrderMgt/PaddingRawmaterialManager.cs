@@ -36,13 +36,13 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
 
         public async Task<DataTable> Get_mianCetegory()
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_dimtbl_rawmat_maincate order by mrm_main_cate ", _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select * from dg_ms_rawmat_maincate order by mrm_main_cate ", _dg_Oder_Mgt);
             return data;
         }
 
         public async Task<DataTable> Get_subCategory(int mainCateID)
         {
-            var query = $"select * from dg_dimtbl_rawmat_subcate where srm_mrm_id={mainCateID} order by srm_sub_cate";
+            var query = $"select * from dg_ms_rawmat_subcate where srm_mrm_id={mainCateID} order by srm_sub_cate";
             var data = await _SqlCommon.get_InformationDataTableAsync(query, _dg_Oder_Mgt);
             return data;
         }

@@ -272,7 +272,6 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
                     cmd.Parameters.AddWithValue("@prod_production_date", ord.ProductionDate.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@prod_machine_id", ord.MachineID);
                     cmd.Parameters.AddWithValue("@prod_today_production", ord.prod_today_production);
-
                     cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
                     cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
                     await cmd.ExecuteNonQueryAsync();

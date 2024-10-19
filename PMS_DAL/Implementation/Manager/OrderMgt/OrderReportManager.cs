@@ -185,7 +185,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
             string cAdd1 = dt.Rows[0]["cAdd1"].ToString();
             string cAdd2 = dt.Rows[0]["cAdd2"].ToString();
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append("dg_report_daily_production_Summary__Rpt ");
+            stringBuilder.Append("dg_report_daily_production_Summary_Rpt ");
             stringBuilder.Append(processType != null ? processType : "NULL");
             stringBuilder.Append(" ,'");
             stringBuilder.Append(FromDate.ToString("yyyy-MM-dd") + " '");

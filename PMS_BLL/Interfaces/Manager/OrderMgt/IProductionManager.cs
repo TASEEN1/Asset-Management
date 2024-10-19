@@ -14,8 +14,7 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<DataTable> GetmachineNo( int Production_ProcID);
 
         public Task<DataTable> GetShift();
-        //public Task<DataTable> GetProductionPadding_RefNo();
-        //public Task<DataTable> GetProductionQuilting_RefNo();
+      
         public Task<DataTable> GetProduction_Padding_PI_Number();
 
         public Task<DataTable> GetProduction_Quilting_PI_Number();
@@ -35,7 +34,7 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         //GET
         public Task<DataTable> GetPadding_ProductionItemBeforeAdd(string Pi_Number);
         public Task<DataTable> GetProductionAfterAdd( int ProcessID, string SessionUser);
-        //public Task<DataTable> GetQuilting_ProductionItemAfterAdd(int ProcessID ,string SessionUser);
+       
         public Task<DataTable> GetQuilting_ProductionItemBeforeAdd(string PINumber, int ProType);
 
 

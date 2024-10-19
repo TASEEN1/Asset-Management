@@ -31,6 +31,6 @@ namespace PMS_BLL.Interfaces.Manager.OrderMgt
         public Task<string> padding_raw_material_Save(RawmaterailSaveRequest rawmaterailSaveRequests);
 
         public Task<string> padding_raw_material_Delete(List<RawmaterialModel> RM);
-        //Task<ResponseGen> padding_raw_material_Save1(RawmaterailSaveRequest rawmaterailSaveRequests);
+       
     }
 }

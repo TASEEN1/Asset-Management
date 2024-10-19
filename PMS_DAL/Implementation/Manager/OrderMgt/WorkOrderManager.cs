@@ -322,7 +322,7 @@ namespace PMS_DAL.Implementation.Manager.OrderMgt
         }
         public async Task<DataTable> GetpaddingtypeUpdateSelect(int Wo_or_ID)
         {
-            var data = await _SqlCommon.get_InformationDataTableAsync("select wopt_padding_type, dg_dimtbl_padding_type.pt_padding_type from dg_wo_padding_type inner join dg_dimtbl_padding_type on wopt_padding_type = pt_id where wopt_or_id = " + Wo_or_ID, _dg_Oder_Mgt);
+            var data = await _SqlCommon.get_InformationDataTableAsync("select wopt_padding_type, dg_ms_padding_type.pt_padding_type from dg_wo_padding_type inner join dg_ms_padding_type on wopt_padding_type = pt_id where wopt_or_id =" + Wo_or_ID, _dg_Oder_Mgt);
             return data;
         }
         public async Task<DataTable> GetWorkOrderUpdateSelect(int Id)

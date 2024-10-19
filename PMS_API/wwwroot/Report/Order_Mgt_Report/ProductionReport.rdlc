@@ -41,6 +41,14 @@
           <DataField>or_po_no</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="md_machine_desc">
+          <DataField>md_machine_desc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="md_machine_no">
+          <DataField>md_machine_no</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="rhr_id">
           <DataField>rhr_id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -71,100 +79,104 @@
         </Field>
         <Field Name="h1s1">
           <DataField>h1s1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h1s2">
           <DataField>h1s2</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h2s1">
           <DataField>h2s1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h2s2">
           <DataField>h2s2</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h3s1">
           <DataField>h3s1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h3s2">
           <DataField>h3s2</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h4s1">
           <DataField>h4s1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h4s2">
           <DataField>h4s2</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h5s1">
           <DataField>h5s1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h5s2">
           <DataField>h5s2</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h6s1">
           <DataField>h6s1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h6s2">
           <DataField>h6s2</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h7s1">
           <DataField>h7s1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h7s2">
           <DataField>h7s2</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h8s1">
           <DataField>h8s1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h8s2">
           <DataField>h8s2</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h9s1">
           <DataField>h9s1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h9s2">
           <DataField>h9s2</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h10s1">
           <DataField>h10s1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="h10s2">
           <DataField>h10s2</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="rhr_s1tot">
           <DataField>rhr_s1tot</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="rhr_s2tot">
           <DataField>rhr_s2tot</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="rhr_mctot">
           <DataField>rhr_mctot</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="rhr_createdDate">
+          <DataField>rhr_createdDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>OrdDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\asst_management\PMS_API\wwwroot\Report\ReportDataSet\OrdDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\asst_management\PMS_API\wwwroot\ReportDataSet\OrdDataSet.xsd</rd:SchemaPath>
         <rd:TableName>dg_report_production_hourly</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -302,7 +314,7 @@
                               <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>Black</Color>
+                              <Style>None</Style>
                             </BottomBorder>
                             <LeftBorder>
                               <Color>Black</Color>
@@ -365,7 +377,7 @@
                               <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>Black</Color>
+                              <Style>None</Style>
                             </BottomBorder>
                             <LeftBorder>
                               <Color>Black</Color>
@@ -413,7 +425,7 @@
                               <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>Black</Color>
+                              <Style>None</Style>
                             </BottomBorder>
                             <LeftBorder>
                               <Color>Black</Color>
@@ -461,7 +473,7 @@
                               <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>Black</Color>
+                              <Style>None</Style>
                             </BottomBorder>
                             <LeftBorder>
                               <Color>Black</Color>
@@ -759,7 +771,7 @@
                               <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>Black</Color>
+                              <Style>None</Style>
                             </BottomBorder>
                             <LeftBorder>
                               <Color>Black</Color>
@@ -1069,18 +1081,9 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>Black</Color>
-                            </TopBorder>
                             <BottomBorder>
-                              <Color>Black</Color>
+                              <Style>None</Style>
                             </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1136,7 +1139,7 @@
                               <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>Black</Color>
+                              <Style>None</Style>
                             </BottomBorder>
                             <LeftBorder>
                               <Color>Black</Color>
@@ -1200,7 +1203,7 @@
                               <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>Black</Color>
+                              <Style>None</Style>
                             </BottomBorder>
                             <LeftBorder>
                               <Color>Black</Color>
@@ -1249,7 +1252,7 @@
                               <Color>Black</Color>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>Black</Color>
+                              <Style>None</Style>
                             </BottomBorder>
                             <LeftBorder>
                               <Color>Black</Color>
@@ -1299,7 +1302,7 @@
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>White</Color>
+                              <Style>None</Style>
                             </TopBorder>
                             <BottomBorder>
                               <Color>Black</Color>
@@ -1348,7 +1351,7 @@
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>White</Color>
+                              <Style>None</Style>
                             </TopBorder>
                             <BottomBorder>
                               <Color>Black</Color>
@@ -1397,7 +1400,7 @@
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>White</Color>
+                              <Style>None</Style>
                             </TopBorder>
                             <BottomBorder>
                               <Color>Black</Color>
@@ -1446,7 +1449,7 @@
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>White</Color>
+                              <Style>None</Style>
                             </TopBorder>
                             <BottomBorder>
                               <Color>Black</Color>
@@ -1970,8 +1973,11 @@
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>White</Color>
+                              <Style>None</Style>
                             </TopBorder>
+                            <BottomBorder>
+                              <Style>None</Style>
+                            </BottomBorder>
                             <BackgroundColor>White</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -2500,7 +2506,7 @@
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>White</Color>
+                              <Style>None</Style>
                             </TopBorder>
                             <BottomBorder>
                               <Color>Black</Color>
@@ -2549,7 +2555,7 @@
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>White</Color>
+                              <Style>None</Style>
                             </TopBorder>
                             <BottomBorder>
                               <Color>Black</Color>
@@ -2598,16 +2604,19 @@
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>White</Color>
+                              <Style>None</Style>
                             </TopBorder>
                             <BottomBorder>
                               <Color>Black</Color>
+                              <Width>1pt</Width>
                             </BottomBorder>
                             <LeftBorder>
                               <Color>Black</Color>
+                              <Width>1pt</Width>
                             </LeftBorder>
                             <RightBorder>
                               <Color>Black</Color>
+                              <Width>1pt</Width>
                             </RightBorder>
                             <BackgroundColor>LightGrey</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
@@ -2647,7 +2656,7 @@
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>White</Color>
+                              <Style>None</Style>
                             </TopBorder>
                             <BottomBorder>
                               <Color>Black</Color>
@@ -2721,14 +2730,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="prod_machine_id">
+                        <Textbox Name="Textbox1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!rhr_mcId.Value</Value>
+                                  <Value>=Fields!md_machine_no.Value</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>6pt</FontSize>
@@ -2740,7 +2749,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>prod_machine_id</rd:DefaultName>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -3291,8 +3300,11 @@
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>White</Color>
+                              <Style>None</Style>
                             </TopBorder>
+                            <BottomBorder>
+                              <Style>None</Style>
+                            </BottomBorder>
                             <BackgroundColor>White</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -4270,7 +4282,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -4299,7 +4310,7 @@
                               <Style>Solid</Style>
                             </Border>
                             <TopBorder>
-                              <Color>White</Color>
+                              <Style>None</Style>
                             </TopBorder>
                             <BackgroundColor>White</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
